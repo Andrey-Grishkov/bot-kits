@@ -14,7 +14,6 @@ import InfoTooltip from "../InfoTooltip/InfoTooltip";
 function App() {
   return (
     <div className="page">
-        ABCD
      <Header/>
      <SidebarMenu/>
      <Routes>
