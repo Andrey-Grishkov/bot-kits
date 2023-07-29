@@ -24,3 +24,21 @@
     src: url(../fonts/IBMPlexMono-SemiBold.woff) format('woff');
     src: url(../fonts/IBMPlexMono-SemiBold.woff2) format('woff2');
   }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/OpenSans-Regular.woff) format('woff');
+    src: url(../fonts/OpenSans-Regular.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../fonts/OpenSans-SemiBold.woff) format('woff');
+    src: url(../fonts/OpenSans-SemiBold.woff2) format('woff2');
+  }
