@@ -1,8 +1,20 @@
-import './AddBotButton.scss';
+import styles from './AddBotButton.module.scss';
+import { ReactNode, useState, useEffect } from 'react';
+import classNames from 'classnames';
 
-export function AddBotButton() {
+interface IaddSocialButtonProps {
+  children: ReactNode
+  value: string
+  variant?: string
+}
+
+export function AddBotButton({children, value, variant = 'active'}: IaddSocialButtonProps) {
   return (
-    <button>
+    <button className={ classNames(styles.button, styles[variant]) }>
+      <div>
+        {children}
+      </div>
+      {value}
     </button>
   );
 }
