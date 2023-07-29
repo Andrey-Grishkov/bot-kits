@@ -80,3 +80,42 @@ $colorSecondaryCulturedPress: #D7DEEA;
 %AgButtonL {
   font-size: 14px;
 }
+
+$page: (
+  dimensions-and-margins: (
+    width: 100%,
+    margin: 0 auto,
+  ),
+  main-fonts: (
+    font-family: 'IBM Plex Mono', 'Open Sans', sans-serif,
+  ),
+  font-and-background-colors: (
+    color: #FFFFFF,
+    background-color: #202020,
+  ),
+  font-display-properties: (
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%,
+    -moz-text-size-adjust: 100%,
+    -webkit-font-smoothing: antialiased,
+    -moz-osx-font-smoothing: grayscale,
+  ),
+);
+
+/*
+Example of how to use these styles:
+
+.page {
+  width: map-get(map-get($page, dimensions-and-margins), width);
+  margin: map-get(map-get($page, dimensions-and-margins), margin);
+  font-family: map-get($page, main-fonts);
+  color: map-get(map-get($page, font-and-background-colors), color);
+  background-color: map-get(map-get($page, font-and-background-colors), background-color);
+
+  -webkit-text-size-adjust: map-get(map-get($page, font-display-properties), -webkit-text-size-adjust);
+  -ms-text-size-adjust: map-get(map-get($page, font-display-properties), -ms-text-size-adjust);
+  -moz-text-size-adjust: map-get(map-get($page, font-display-properties), -moz-text-size-adjust);
+  -webkit-font-smoothing: map-get(map-get($page, font-display-properties), -webkit-font-smoothing);
+  -moz-osx-font-smoothing: map-get(map-get($page, font-display-properties), -moz-osx-font-smoothing);
+}
+*/
