@@ -2,10 +2,10 @@
 $colorBlue: #0C4BA0;
 
 // Дополнительные цвета
-$colorGrey: #CCD4E0;   
-$colorGrey2: #BFC9D9;  
-$colorGrey3: #A6B3C9;  
-$colorGrey4: #8392AB;  
+$colorGreyLight: #CCD4E0;   
+$colorGreyMedium: #BFC9D9;  
+$colorGreySemi: #A6B3C9;  
+$colorGreyDark: #8392AB;  
 $colorBlueDisabled: #ECEFFF; 
 $colorOffWhite: #FFFFFF; 
 
@@ -49,7 +49,6 @@ $colorSecondaryCulturedPress: #D7DEEA;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   font-size: 16px;
-  font-weight: bold;
 }
 
 %AgH5Med {
@@ -112,21 +111,6 @@ $colorSecondaryCulturedPress: #D7DEEA;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
-}
-
-// Миксины для отступов
-@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  padding-top: $top;
-  padding-right: $right;
-  padding-bottom: $bottom;
-  padding-left: $left;
-}
-
-@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  margin-top: $top;
-  margin-right: $right;
-  margin-bottom: $bottom;
-  margin-left: $left;
 }
 
 // Миксины для медиа-запросов
