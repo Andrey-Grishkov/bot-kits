@@ -1,6 +1,150 @@
-@mixin flex($flex-direction, $justify-content, $align-items) {
+// Переменные цветов
+$colorBlue: #0C4BA0;
+
+// Дополнительные цвета
+$colorGrey: #CCD4E0;   
+$colorGrey2: #BFC9D9;  
+$colorGrey3: #A6B3C9;  
+$colorGrey4: #8392AB;  
+$colorBlueDisabled: #ECEFFF; 
+$colorOffWhite: #FFFFFF; 
+
+// Основные цвета
+$colorPrimaryPersianBlue: #243CBB;  
+$colorPrimaryDefaultOxfordBlue: #060C23;  
+$colorPrimaryDefaultMediumSpringGreen: #22FFAA;  
+
+// Второстепенные цвета
+$colorSecondaryError: #FF5656;  
+$colorSecondaryCulturedHover: #F2F4F8; 
+$colorSecondaryCulturedDefault: #F8F9FB;
+$colorSecondaryCulturedPress: #D7DEEA;
+
+
+// Типографические стили
+%AgH2 {
+  font-size: 32px;
+}
+
+%AgH3Med {
+  font-size: 24px;
+  font-weight: 500; // Medium
+}
+
+%AgH4 {
+  font-size: 18px;
+}
+
+%AgH5Bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+%AgH5Med {
+  font-size: 16px;
+  font-weight: 500; // Medium
+}
+
+%AgPL {
+  font-size: 16px;
+}
+
+%AgPM {
+  font-size: 14px;
+}
+
+%AgPS {
+  font-size: 13px;
+}
+
+%AgPSReg {
+  font-size: 13px;
+  font-weight: normal; // Regular
+}
+
+%AgLabel {
+  font-size: 12px;
+}
+
+%AgLabelS {
+  font-size: 12px;
+}
+
+%AgLabelXS {
+  font-size: 10px;
+}
+
+%AgButtonL {
+  font-size: 14px;
+  line-height: 134%;
+}
+
+// Миксины для flex
+@mixin flex($flex-direction: row, $justify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
+}
+
+// Миксины для отступов
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+// Миксины для медиа-запросов
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+// Миксины для переходов
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Миксины для теней
+@mixin box-shadow($x: 0, $y: 0, $blur: 0, $color: #000, $inset: "") {
+  -webkit-box-shadow: $x $y $blur $color $inset;
+  -moz-box-shadow: $x $y $blur $color $inset;
+  -ms-box-shadow: $x $y $blur $color $inset;
+  box-shadow: $x $y $blur $color $inset;
+}
+
+// Миксины для преобразования
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
 }
