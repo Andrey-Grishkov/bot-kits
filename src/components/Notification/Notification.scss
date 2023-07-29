@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
   visibility: hidden;
   background-color: #243CBB;
 }
@@ -23,11 +24,15 @@
 }
 
 .notification__message {
-  // ваш стиль
+  font-family: IBM Plex Mono, monospace;
+  font-weight: 500;
+  font-size: 64px;
+  color: #ffff;
 }
 
 .notification__email {
-  // ваш стиль
+  color: #22FFAA;
+  padding: 9px 21px;
 }
 
 .notification__image {
