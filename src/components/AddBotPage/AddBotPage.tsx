@@ -4,7 +4,7 @@ import './AddBotPage.scss';
 function AddBotPage() {
     return (
         <section>
-        <Notification></Notification>
+            <Notification></Notification>
         </section>
     );
 }
