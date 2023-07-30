@@ -86,9 +86,7 @@ $page: (
     width: 100%,
     margin: 0 auto,
   ),
-  main-fonts: (
-    font-family: 'IBM Plex Mono', 'Open Sans', sans-serif,
-  ),
+  main-fonts: "'IBM Plex Mono', monospace",
   font-and-background-colors: (
     color: #FFFFFF,
     background-color: #202020,
@@ -101,3 +99,10 @@ $page: (
     -moz-osx-font-smoothing: grayscale,
   ),
 );
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
