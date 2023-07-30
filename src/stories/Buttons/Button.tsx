@@ -6,22 +6,27 @@ interface IButton {
     /**
         * Является ли это основной кнопкой на странице?
     */
-    primary?: boolean;
+    type: 'primary' | 'secondary';
 
     /**
         * Текст кнопки
     */
-    label: 'Добавить бота' | 'Остановить' | 'Возобновить' | '';
+    label: string;
 
     /**
         * Размер кнопки
     */
-    size: 'l' | 'm' | 's';
+    size: 'l' | 's';
 
     /**
         * Цвет кнопки
     */
-    backgroundColor?: string;
+    buttonColor?: string;
+
+    /**
+        * Цвет текста
+    */
+    textColor?: string;
 
     /**
         * Доступность кнопки
@@ -33,19 +38,22 @@ interface IButton {
  * Кнопка для управления ботом
  */
 export const Button = ({
-    primary,
-    label,
-    size,
-    backgroundColor,
-    disabled
+    type = 'primary',
+    label = 'Добавить бота',
+    size = 'l',
+    buttonColor = 'purple',
+    textColor = '#FFFFFF',
+    disabled = false
 }: IButton) => {
+    // const modeClass = type === 'primary' ? styles.button_type_primary : styles.button_type_secondary;
+    const typeClass = styles[`button_type_${type}`];
     const sizeClass = styles[`button_size_${size}`];
-    const modeClass = primary ? styles.button_type_primary : styles.button_type_secondary;
+    const colorClass = styles[`button_color_${buttonColor}`];
     return (
         <button 
             type="button"
-            className={cn(styles.button, disabled ? styles.button_disabled : '', sizeClass, modeClass)}
-            style={{ backgroundColor }}
+            className={cn(styles.button, disabled ? styles.button_disabled : '', typeClass, sizeClass, colorClass)}
+            // style={{ backgroundColor, color: textColor }}
             disabled={disabled}
         >
             {label}

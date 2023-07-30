@@ -5,11 +5,23 @@ const meta = {
     title: 'Button',
     component: Button,
     tags: ['autodocs'],
-    // argTypes: {
-    //   disabled: {
-    //     type: 'boolean',
-    //   },
-    // },
+    argTypes: {
+      // disabled: {
+      //   type: 'boolean',
+      // },
+      // buttonColor: {
+      //   control: {
+      //     type: 'color',
+      //     presetColors: ['#243CBB', '#22FFAA', '#E4E9F1'],
+      //   },
+      // },
+      // textColor: {
+      //   control: {
+      //     type: 'color',
+      //     presetColors: ['#FFFFFF' , '#060C23']
+      //   }
+      // }
+    },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -17,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
+    type: 'primary',
     label: 'Добавить бота',
     size: 'l',
     disabled: false,
@@ -26,25 +38,28 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    primary: false,
+    type: 'secondary',
     label: 'Остановить',
-    size: 'm',
+    size: 'l',
+    buttonColor: 'grey',
+    textColor: '#060C23',
     disabled: false,
   },
 };
 
 export const Small: Story = {
   args: {
-    primary: true,
+    type: 'primary',
     label: '',
     size: 's',
     disabled: false,
   },
 };
 
+
 export const PrimaryDisabled: Story = {
   args: {
-    primary: true,
+    type: 'primary',
     label: 'Добавить бота',
     size: 'l',
     disabled: true,
@@ -53,9 +68,9 @@ export const PrimaryDisabled: Story = {
 
 export const SecondaryDisabled: Story = {
   args: {
-    primary: false,
+    type: 'secondary',
     label: 'Остановить',
-    size: 'm',
+    size: 'l',
     disabled: true,
   },
 };
