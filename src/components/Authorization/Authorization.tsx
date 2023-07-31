@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useState, FC } from "react";
 import Select from "react-select";
 import ReactCountryFlag from "react-country-flag";
 import { Link } from "react-router-dom";
+import roboIcon from '../../vendor/icons/robo_icon_desktop.svg'
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -184,7 +185,7 @@ export const Authorization: FC<IAuthProps> = ({
           <form onSubmit={handleSubmit} className="form_login">
             <fieldset className="formfield">
               <input
-                className="formfield__input"
+                className="formfield__input formfield__input_login"
                 type="email"
                 value={email}
                 placeholder="E-mail"
@@ -192,7 +193,7 @@ export const Authorization: FC<IAuthProps> = ({
                 required
               />
               <input
-                className="formfield__input"
+                className="formfield__input formfield__input_login"
                 type="password"
                 value={password}
                 placeholder="Пароль"
@@ -201,7 +202,7 @@ export const Authorization: FC<IAuthProps> = ({
               />
             </fieldset>
             <div className="caption">
-              <Link to={"/password-reset"} className="caption__link">
+              <Link to={"/reset-password"} className="caption__link">
                 Забыли пароль?
               </Link>
               <Link to={"/signup"} className="caption__link">
@@ -270,6 +271,34 @@ export const Authorization: FC<IAuthProps> = ({
               </li>
             </ul>
           </div>
+        </>
+      )}
+      {isResetPasswordPage && !isLoginPage && !isRegistrationPage  && (
+        <>
+          <form onSubmit={handleSubmit} className="form_login">
+            <fieldset className="formfield">
+              <input
+                className="formfield__input formfield__input_login"
+                type="email"
+                value={email}
+                placeholder="E-mail"
+                onChange={handleEmailChange}
+                required
+              />
+            </fieldset>
+            <div className="caption">
+              <Link to={"/password-reset"} className="caption__link">
+                Забыли пароль?
+              </Link>
+              <Link to={"/signup"} className="caption__link">
+                Регистрация
+              </Link>
+            </div>
+            <button type="submit" className="form__button">
+              Сбросить пароль
+            </button>
+          </form>
+          <img src={roboIcon} alt="робот" />
         </>
       )}
     </div>

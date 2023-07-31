@@ -51,9 +51,9 @@
 }
 
 .socials_login {
-    margin-top: 40px;
-    @include flex(row, center, none);
-    max-width: 540px;
+  margin-top: 40px;
+  @include flex(row, center, none);
+  max-width: 540px;
 }
 .socials {
   @include flex(row, center, none);
@@ -81,13 +81,13 @@
   }
 }
 .form_login {
-    background-color: #243cbb;
-    width: 770px;
-    height: 428px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #243cbb;
+  width: 770px;
+  height: 428px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .form {
   background-color: #243cbb;
@@ -121,11 +121,15 @@
     width: 320px;
     height: 60px;
     color: white;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    &_login {
+      width: 500px;
+    }
   }
+
   &__input:last-of-type {
     width: 204;
   }
@@ -146,23 +150,22 @@
     top: 0px;
     margin: 12px 0 0;
   }
-  
 }
 .caption {
-    display: flex;
-    max-width: 400px;
-    margin-top: 50px;
-    font-family: 'Open Sans';
-    font-weight: 600;
-    line-height: 21px;
-    font-size: 14px;
-    color: white;
-    &__text {
-        margin: 0 10px 0 0;
-        font-weight: 700;
-    }
-    &__link {
-        color: white;
-        margin-right: 20px;
-    }
+  display: flex;
+  max-width: 400px;
+  margin-top: 50px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  line-height: 21px;
+  font-size: 14px;
+  color: white;
+  &__text {
+    margin: 0 10px 0 0;
+    font-weight: 700;
   }
+  &__link {
+    color: white;
+    margin-right: 20px;
+  }
+}
