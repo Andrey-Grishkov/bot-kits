@@ -4,7 +4,7 @@ import './Notification.scss';
 
 interface NotificationProps {
   text: string;
-  handleOpen: () => void;
+  handleOpen: () => boolean;
 }
 
 const Notification: FC<NotificationProps> = ({ text, handleOpen }) => {
@@ -13,7 +13,7 @@ const Notification: FC<NotificationProps> = ({ text, handleOpen }) => {
   const handleClose = () => {
     setIsVisible(false);
   };
-
+  
   // Эффект открытия уведомления
   useEffect(() => {
     handleOpen();
@@ -22,7 +22,7 @@ const Notification: FC<NotificationProps> = ({ text, handleOpen }) => {
   return (
     <div className={`notification__popup ${isVisible ? 'notification__popup--visible' : ''}`}>
       <p className="notification__message">
-        {text} <span className="notification__email">/email!</span>!
+        {text}<div className="notification__email">/email!</div>!
       </p>
       <img src={image} className="notification__image" alt="Бот" />
       <div className="notification__close-button" onClick={handleClose}></div>
