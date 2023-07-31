@@ -1,0 +1,104 @@
+@import "../../utils/variables";
+
+.authorization {
+  @include flex(column, none, center);
+  width: 770px;
+  height: 620px;
+  box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+  border-radius: 30px;
+  background-color: #2743ce;
+
+  &__title {
+    color: white;
+    margin-top: 50px;
+  }
+  &__choice {
+    @include flex(row, center, center);
+    border-radius: 15px;
+    background: #243cbb;
+    min-width: 80px;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: -5px;
+  }
+  &__text {
+    color: white;
+    margin: 0;
+  }
+}
+
+.socials {
+  @include flex(row, center, none);
+  max-width: 540px;
+
+  &__list {
+    @include flex(row, space-between, center);
+    margin: 0 20px 0 0;
+    padding: 0;
+    list-style-type: none;
+    border-radius: 30px;
+    background: #314dd8;
+    min-height: 60px;
+    min-width: 220px;
+  }
+  &__list:last-of-type {
+    margin: 0;
+  }
+  &__item {
+    margin: 10px;
+  }
+  &__icon:hover {
+    opacity: 0.5; 
+    transition: opacity 0.3s ease;
+  }
+}
+.form {
+    background-color: #243CBB;
+    width: 770px;
+    height: 428px;
+    border-radius: 30px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.formfield { 
+    max-width: 670px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 0 50px 0;
+    
+    border: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    
+    &__input  {
+        background-color: #243CBB;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        width: 320px;
+        height: 60px;
+        color: white;
+    }
+    &__input:last-of-type {
+        width: 204;
+    }
+    &__input:focus {
+        outline: none;
+        border-bottom: 1px solid #FFFFFF;
+    }
+    &__phone_wrapper {
+        position: relative;
+        display: flex;
+        max-width: 324px;
+    }
+    &__select {
+        background-color: #243CBB;
+        position: absolute;
+        max-width: 100px;
+        height: 10px;
+        top: 0px
+    }
+}
