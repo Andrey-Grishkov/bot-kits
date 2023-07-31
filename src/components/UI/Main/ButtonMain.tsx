@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './button.module.css';
+import styles from './buttonMain.module.css';
 
-interface IButton {
+interface IButtonMain {
     /**
         * Является ли это основной кнопкой на странице?
     */
@@ -37,14 +37,14 @@ interface IButton {
 /**
  * Кнопка для управления ботом
  */
-export const Button = ({
+export const ButtonMain = ({
     type = 'primary',
     label = 'Добавить бота',
     size = 'l',
     buttonColor = 'purple',
     textColor = '#FFFFFF',
     disabled = false
-}: IButton) => {
+}: IButtonMain) => {
     // const modeClass = type === 'primary' ? styles.button_type_primary : styles.button_type_secondary;
     const typeClass = styles[`button_type_${type}`];
     const sizeClass = styles[`button_size_${size}`];

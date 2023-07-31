@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonAddTemplate } from './ButtonAddTemplate';
+import { ButtonAddTemplate } from '../../components/UI/AddTemplate/ButtonAddTemplate';
 
 const meta = {
     title: 'ButtonAddTemplate',

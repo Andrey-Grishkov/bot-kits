@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonPlus } from './ButtonPlus';
+import { ButtonAddBlock } from '../../components/UI/AddBlock/ButtonAddBlock';
 
 const meta = {
-    title: 'ButtonPlus',
-    component: ButtonPlus,
+    title: 'ButtonAddBlock',
+    component: ButtonAddBlock,
     tags: ['autodocs'],
-} satisfies Meta<typeof ButtonPlus>;
+} satisfies Meta<typeof ButtonAddBlock>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -13,5 +13,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     type: 'default',
+    label: 'Блок сообщений'
   },
 };

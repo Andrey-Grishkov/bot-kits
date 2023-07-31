@@ -24,7 +24,7 @@ export const ButtonTutorial = ({
     disabled = false
 }: IButtonTutorial) => {
     return (
-        <button className={styles.buttonTutorial}
+        <button className={styles.buttonTutorial} disabled={disabled}
         >
             <div className={styles.buttonTutorial_iconsArea}>
                 <svg className={cn(styles.buttonTutorial_icon)} xmlns="http://www.w3.org/2000/svg" width="149" height="76" viewBox="0 0 149 76" fill="none">
@@ -35,8 +35,6 @@ export const ButtonTutorial = ({
                 </svg>
                 <img className={styles.buttonTutorial_mainIcon} src={coverIcon} alt="cover-icon" />
             </div>
-            {/* <img className={styles.loader_icon} src={coverIcon} alt="cover-icon" /> */}
-
             <span className={styles.buttonTutorial__textArea}>{label}</span>
         </button>
     )

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonTutorial } from './ButtonTutorial';
+import { ButtonTutorial } from '../../components/UI/Tutorial/ButtonTutorial';
 
 const meta = {
     title: 'ButtonTutorial',
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    state: 'active',
+    type: 'default',
     label: 'Пошаговая инструкция'
   },
 };
