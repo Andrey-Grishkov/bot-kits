@@ -1,72 +1,82 @@
-:root {
-  --gap: 30px;
-  --font-size-message: 64px;
-  --font-size-email: 34px;
-  --image-max-width: 570px;
-  --image-max-height: 540px;
+// переменные 
+$gap: 30px;
+$font-size-message: 64px;
+$font-size-email: 34px;
+$image-max-width: 570px;
+$image-max-height: 540px;
+$background-color: #243CBB;
+$font-family: IBM Plex Mono, monospace;
+
+// миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition ($property: all, $duration: 0.3s, $timing-function: ease-out) {
+  transition: $property $duration $timing-function;
 }
 
 .notification__popup {
+  @include flex-center;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 2vw;
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: $background-color;
   opacity: 0;
-  transition: opacity 0.3s ease-out, visibility 0s 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  @include transition(opacity, 0.3s, ease-out);
+  gap: $gap;
   visibility: hidden;
   flex-wrap: wrap-reverse;
-  background-color: #243CBB;
-}
 
-.notification__popup--visible {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
-}
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
 
-.notification__message {
-  font-family: IBM Plex Mono, monospace;
-  font-weight: 500;
-  font-size: 64px;
-  color: #ffff;
-  width: 100%;
-  max-width: 570px;
-}
+  &__message {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: $font-size-message;
+    color: #ffff;
+    width: 100%;
+    max-width: $image-max-width;
+  }
 
-.notification__email {
-  color: #22FFAA;
-  padding: 9px 20px;
-  border-radius: 14px;
-  display: inline;
-  vertical-align: middle;
-  margin-left: 10px;
-  font-size: 34px;
-  background-color: #435CDB;
-}
+  &__email {
+    color: #22FFAA;
+    padding: 9px 20px;
+    border-radius: 14px;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: $font-size-email;
+    background-color: #435CDB;
+  }
 
-.notification__image {
-  width: 100%;
-  height: 100%;
-  max-width: var(--image-max-width);
-  max-height: var(--image-max-height);
-  object-fit: contain;
-}
+  &__image {
+    width: 100%;
+    height: 100%;
+    max-width: $image-max-width;
+    max-height: $image-max-height;
+    object-fit: contain;
+  }
 
-.notification__close-button {
-  position: absolute;
-  width: 32px;
-  background-image: url(./images/close.png);
-  height: 32px;
-  right: 2vw;
-  top: 2vw;
+  &__close-button {
+    position: absolute;
+    width: 32px;
+    background-image: url(./images/close.png);
+    height: 32px;
+    right: 2vw;
+    top: 2vw;
+    border: none;
+    background-color: transparent;
+  }
 }
 
 @media (max-width: 768px) {
@@ -79,23 +89,17 @@
     justify-content: flex-start;
   }
   
-  .notification__popup--visible {
-  }
-  
-  .notification__message {
+  .notification__popup__message {
     font-size: 48px;
   }
   
-  .notification__email {
+  .notification__popup__email {
     padding: 9px 20px;
   }
   
-  .notification__image {
+  .notification__popup__image {
     max-width: 388px;
     max-height: 367px;
-  }
-  
-  .notification__close-button {
   }
 }
 
@@ -105,25 +109,19 @@
     padding-left: 4.5vw;
   }
   
-  .notification__popup--visible {
-  }
-  
-  .notification__message {
+  .notification__popup__message {
     font-size: 24px;
   }
   
-  .notification__email {
+  .notification__popup__email {
     margin-left: 5px;
     padding: 5px 10px;
     font-size: 17px;
     border-radius: 7px;
   }
   
-  .notification__image {
+  .notification__popup__image {
     max-width: 194px;
     max-height: 183px;
-  }
-  
-  .notification__close-button {
   }
 }
