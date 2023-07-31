@@ -1,10 +1,25 @@
 // переменные 
-$gap: 30px;
-$font-size-message: 64px;
-$font-size-email: 34px;
-$image-max-width: 570px;
-$image-max-height: 540px;
+$gap-large: 30px;
+$gap-medium: 9vw;
+$gap-small: 4.5vw;
+
+$font-size-message-large: 64px;
+$font-size-message-medium: 48px;
+$font-size-message-small: 32px;
+
+$font-size-email-large: 34px;
+$font-size-email-small: 20px;
+
+$image-max-width-large: 570px;
+$image-max-width-medium: 388px;
+$image-max-width-small: 194px;
+
+$image-max-height-large: 540px;
+$image-max-height-medium: 367px;
+$image-max-height-small: 183px;
+
 $background-color: #243CBB;
+
 $font-family: IBM Plex Mono, monospace;
 
 // миксины
@@ -18,6 +33,16 @@ $font-family: IBM Plex Mono, monospace;
   transition: $property $duration $timing-function;
 }
 
+@mixin max-dimensions($width, $height) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin font-settings($size, $family: $font-family) {
+  font-family: $family;
+  font-size: $size;
+}
+
 .notification__popup {
   @include flex-center;
   position: fixed;
@@ -29,7 +54,7 @@ $font-family: IBM Plex Mono, monospace;
   background-color: $background-color;
   opacity: 0;
   @include transition(opacity, 0.3s, ease-out);
-  gap: $gap;
+  gap: $gap-large;
   visibility: hidden;
   flex-wrap: wrap-reverse;
 
@@ -40,12 +65,10 @@ $font-family: IBM Plex Mono, monospace;
   }
 
   &__message {
-    font-family: $font-family;
-    font-weight: 500;
-    font-size: $font-size-message;
+    @include font-settings($font-size-message-large);
     color: #ffff;
     width: 100%;
-    max-width: $image-max-width;
+    max-width: $image-max-width-large;
   }
 
   &__email {
@@ -55,15 +78,14 @@ $font-family: IBM Plex Mono, monospace;
     display: inline;
     vertical-align: middle;
     margin-left: 10px;
-    font-size: $font-size-email;
+    @include font-settings($font-size-email-large);
     background-color: #435CDB;
   }
 
   &__image {
     width: 100%;
     height: 100%;
-    max-width: $image-max-width;
-    max-height: $image-max-height;
+    @include max-dimensions($image-max-width-large, $image-max-height-large);
     object-fit: contain;
   }
 
@@ -81,16 +103,16 @@ $font-family: IBM Plex Mono, monospace;
 
 @media (max-width: 768px) {
   .notification__popup {  
-    gap: 9vw;
-    padding-left: 9vw;
-    padding-right: 9vw;
+    gap: $gap-medium;
+    padding-left: $gap-medium;
+    padding-right: $gap-medium;
     align-content: center;
     flex-direction: row;
     justify-content: flex-start;
   }
   
   .notification__popup__message {
-    font-size: 48px;
+    @include font-settings($font-size-message-medium);
   }
   
   .notification__popup__email {
@@ -98,30 +120,30 @@ $font-family: IBM Plex Mono, monospace;
   }
   
   .notification__popup__image {
-    max-width: 388px;
-    max-height: 367px;
+    @include max-dimensions($image-max-width-medium, $image-max-height-medium);
   }
 }
 
 @media (max-width: 360px) {
   .notification__popup {
-    gap: 4.5vw;
-    padding-left: 4.5vw;
+    gap: $gap-small;
+    padding-left: $gap-small;
+    flex-wrap: wrap;
+    gap: 124px;
   }
   
   .notification__popup__message {
-    font-size: 24px;
+    @include font-settings($font-size-message-small);
   }
   
   .notification__popup__email {
     margin-left: 5px;
-    padding: 5px 10px;
-    font-size: 17px;
-    border-radius: 7px;
+    padding: 7px 10px;
+    @include font-settings($font-size-email-small);
+    border-radius: 8px;
   }
   
   .notification__popup__image {
-    max-width: 194px;
-    max-height: 183px;
+    @include max-dimensions($image-max-width-small, $image-max-height-small);
   }
 }
