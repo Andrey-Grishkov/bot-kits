@@ -1,3 +1,15 @@
-.page {
+@import "../../utils/variables";
 
-}
+.page {
+    width: map-get(map-get($page, dimensions-and-margins), width);
+    margin: map-get(map-get($page, dimensions-and-margins), margin);
+    font-family: map-get($page, main-fonts);
+    color: map-get(map-get($page, font-and-background-colors), color);
+    background-color: map-get(map-get($page, font-and-background-colors), background-color);
+  
+    -webkit-text-size-adjust: map-get(map-get($page, font-display-properties), -webkit-text-size-adjust);
+    -ms-text-size-adjust: map-get(map-get($page, font-display-properties), -ms-text-size-adjust);
+    -moz-text-size-adjust: map-get(map-get($page, font-display-properties), -moz-text-size-adjust);
+    -webkit-font-smoothing: map-get(map-get($page, font-display-properties), -webkit-font-smoothing);
+    -moz-osx-font-smoothing: map-get(map-get($page, font-display-properties), -moz-osx-font-smoothing);
+  }
