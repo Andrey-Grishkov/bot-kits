@@ -28,6 +28,8 @@
   font-weight: 500;
   font-size: 64px;
   color: #ffff;
+  width: 100%;
+  max-width: 570px;
 }
 
 .notification__email {
@@ -40,5 +42,10 @@
 }
 
 .notification__close-button {
-  // ваш стиль
+  position: absolute;
+  width: 32px;
+  background-image: url(./images/close.png);
+  height: 32px;
+  right: 30px;
+  top: 30px;
 }
