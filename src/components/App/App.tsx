@@ -10,6 +10,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import AddBotPage from "../AddBotPage/AddBotPage";
 import BotBuilder from "../BotBuilder/BotBuilder";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
+import { ResetPassword } from '../ResetPassword/Reset-password';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
        <Route path='/signup' element={<Registration/>}/>
        <Route path='/signin' element={<Login/>}/>
        <Route path='/ui' element={<UI/>}/>
+       <Route path='/reset-password' element={<ResetPassword />}/>
      </Routes>
      <Footer/>
      <InfoTooltip/>
