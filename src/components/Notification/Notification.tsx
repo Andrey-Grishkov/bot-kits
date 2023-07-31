@@ -1,30 +1,37 @@
 import React, { useState, FC, useEffect } from 'react';
-import image from './images/bot-kit.png';
 import './Notification.scss';
+import letterImage from './images/letter.png';
+import passwordImage from './images/password.png';
 
 interface NotificationProps {
-  text: string;
   handleOpen: () => boolean;
+  imageType?: 'letter' | 'password';
 }
 
-const Notification: FC<NotificationProps> = ({ text, handleOpen }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const Notification: FC<NotificationProps> = ({ handleOpen, imageType }) => {
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
     setIsVisible(false);
   };
-  
-  // Эффект открытия уведомления
+
   useEffect(() => {
     handleOpen();
   }, [handleOpen]);
 
+  let selectedImage;
+  if (imageType === 'letter') {
+    selectedImage = letterImage;
+  } else if (imageType === 'password') {
+    selectedImage = passwordImage;
+  }
+
   return (
     <div className={`notification__popup ${isVisible ? 'notification__popup--visible' : ''}`}>
-      <p className="notification__message">
-        {text}<div className="notification__email">/email!</div>!
-      </p>
-      <img src={image} className="notification__image" alt="Бот" />
+      <div className="notification__message">
+        {imageType === 'letter' ? 'Письмо с подтверждением отправлено тебе на' : 'Ссылка для сброса пароля отправлена тебе на'}<div className="notification__email">/email!</div>!
+      </div>
+        <img src={selectedImage} className="notification__image" alt="Уведомление" />
       <div className="notification__close-button" onClick={handleClose}></div>
     </div>
   );

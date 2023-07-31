@@ -6,7 +6,7 @@ function AddBotPage() {
 
     return (
         <section>
-            <Notification text='Письмо с подтверждением отправлено тебе на' handleOpen={handleOpen}></Notification>
+            <Notification imageType='password' handleOpen={handleOpen}></Notification>
         </section>
     );
 }

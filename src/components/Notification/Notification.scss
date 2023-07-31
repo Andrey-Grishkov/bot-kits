@@ -1,10 +1,18 @@
+:root {
+  --gap: 30px;
+  --font-size-message: 64px;
+  --font-size-email: 34px;
+  --image-max-width: 570px;
+  --image-max-height: 540px;
+}
+
 .notification__popup {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 20px;
+  padding: 2vw;
   background-color: #f8d7da;
   color: #721c24;
   opacity: 0;
@@ -14,6 +22,7 @@
   justify-content: center;
   gap: 30px;
   visibility: hidden;
+  flex-wrap: wrap-reverse;
   background-color: #243CBB;
 }
 
@@ -45,9 +54,10 @@
 
 .notification__image {
   width: 100%;
-  max-width: 570px;
-  max-height: 540px;
   height: 100%;
+  max-width: var(--image-max-width);
+  max-height: var(--image-max-height);
+  object-fit: contain;
 }
 
 .notification__close-button {
@@ -55,10 +65,65 @@
   width: 32px;
   background-image: url(./images/close.png);
   height: 32px;
-  right: 30px;
-  top: 30px;
+  right: 2vw;
+  top: 2vw;
 }
 
-@media screen {
+@media (max-width: 768px) {
+  .notification__popup {  
+    gap: 9vw;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    align-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
   
+  .notification__popup--visible {
+  }
+  
+  .notification__message {
+    font-size: 48px;
+  }
+  
+  .notification__email {
+    padding: 9px 20px;
+  }
+  
+  .notification__image {
+    max-width: 388px;
+    max-height: 367px;
+  }
+  
+  .notification__close-button {
+  }
+}
+
+@media (max-width: 360px) {
+  .notification__popup {
+    gap: 4.5vw;
+    padding-left: 4.5vw;
+  }
+  
+  .notification__popup--visible {
+  }
+  
+  .notification__message {
+    font-size: 24px;
+  }
+  
+  .notification__email {
+    margin-left: 5px;
+    padding: 5px 10px;
+    font-size: 17px;
+    border-radius: 7px;
+  }
+  
+  .notification__image {
+    max-width: 194px;
+    max-height: 183px;
+  }
+  
+  .notification__close-button {
+  }
 }
