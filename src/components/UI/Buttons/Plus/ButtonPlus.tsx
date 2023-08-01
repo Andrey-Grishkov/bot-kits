@@ -19,10 +19,11 @@ interface IButtonPlus {
 export const ButtonPlus = ({
     type = 'default',
     extraClass,
-    disabled = false
+    disabled = false,
+    ...rest
 }: IButtonPlus) => {
     return (
-        <button className={cn(styles.buttonPlus, extraClass)} disabled={disabled}>
+        <button className={cn(styles.buttonPlus, extraClass)} disabled={disabled} {...rest}>
             <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

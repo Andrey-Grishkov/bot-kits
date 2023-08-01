@@ -23,11 +23,12 @@ export const ButtonAddTemplate = ({
     label,
     icon = 'answering machine.svg',
     extraClass,
-    disabled = false
+    disabled = false,
+    ...rest
 }: IButtonAddTemplate) => {
     return (
         <div className={cn(styles.buttonAddTemplate__wrapper, extraClass)}>
-            <button className={styles.buttonAddTemplate} disabled={disabled}>
+            <button className={styles.buttonAddTemplate} disabled={disabled} {...rest}>
                 <img className={styles.buttonAddTemplate__mainIcon} src={require(`./${icon}`)} alt="info-icon" />
                 <svg 
                     className={styles.buttonAddTemplate__plusIcon} 

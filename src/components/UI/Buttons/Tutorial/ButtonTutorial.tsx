@@ -22,11 +22,11 @@ export const ButtonTutorial = ({
     // type = 'default',
     label,
     extraClass,
-    disabled = false
+    disabled = false,
+    ...rest
 }: IButtonTutorial) => {
     return (
-        <button className={cn(styles.buttonTutorial, extraClass)} disabled={disabled}
-        >
+        <button className={cn(styles.buttonTutorial, extraClass)} disabled={disabled} {...rest}>
             <div className={styles.buttonTutorial_iconsArea}>
                 <svg 
                     className={styles.buttonTutorial_icon}

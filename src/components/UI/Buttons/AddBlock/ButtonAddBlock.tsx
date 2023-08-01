@@ -15,17 +15,18 @@ interface IButtonAddBlock {
     type: TButtonTypes;
     label?: string;
     extraClass?: string;
-    disabled?: boolean
+    disabled?: boolean;
 }
 
 export const ButtonAddBlock = ({
     type = 'default',
     label,
     extraClass,
-    disabled = false
+    disabled = false,
+    ...rest
 }: IButtonAddBlock) => {
     return (
-        <button className={cn(styles.buttonAddBlock, extraClass)} disabled={disabled}>
+        <button className={cn(styles.buttonAddBlock, extraClass)} disabled={disabled} {...rest}>
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 

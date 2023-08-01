@@ -33,7 +33,8 @@ export const ButtonMain = ({
     label = 'Добавить бота',
     size = 'l',
     extraClass,
-    disabled = false
+    disabled = false,
+    ...rest
 }: IButtonMain) => {
     const themeClass = styles[`button_theme_${theme}`];
     const sizeClass = styles[`button_size_${size}`];
@@ -43,6 +44,7 @@ export const ButtonMain = ({
             className={cn(styles.button, themeClass, sizeClass, extraClass)}
             // style={{ backgroundColor, color: textColor }}
             disabled={disabled}
+            {...rest}
         >
             {label}
         </button>
