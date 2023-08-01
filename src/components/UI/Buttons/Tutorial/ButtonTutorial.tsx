@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import coverIcon from "./tutorial.svg";
-import styles from './buttonTutorial.module.css';
+import styles from './ButtonTutorial.module.scss';
 import { TButtonTypes } from '../../../../types/button';
 
 // const getColor = (type: TButtonTypes ) => {

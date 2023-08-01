@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './buttonMain.module.css';
+import styles from './ButtonMain.module.scss';
 
 interface IButtonMain {
     /**

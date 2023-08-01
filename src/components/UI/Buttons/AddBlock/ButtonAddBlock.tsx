@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './buttonAddBlock.module.css';
+// import styles from './buttonAddBlock.module.css';
+import styles from './ButtonAddBlock.module.scss';
 import { TButtonTypes } from '../../../../types/button';
 
 const getColor = (type: TButtonTypes ) => {

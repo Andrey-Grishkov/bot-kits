@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './buttonCopy.module.css';
+import styles from './ButtonCopy.module.scss';
 import { TButtonTypes } from '../../../../types/button';
 
 const getColor = (type: TButtonTypes ) => {

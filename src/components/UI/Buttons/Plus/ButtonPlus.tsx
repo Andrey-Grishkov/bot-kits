@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './buttonPlus.module.css';
+import styles from './ButtonPlus.module.scss';
 import { TButtonTypes } from '../../../../types/button';
 
 const getColor = (type: TButtonTypes ) => {

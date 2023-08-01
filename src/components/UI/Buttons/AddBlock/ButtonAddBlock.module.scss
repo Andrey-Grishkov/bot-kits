@@ -10,6 +10,34 @@
     border: transparent;
     border-radius: 10px;
     cursor: pointer;
+
+    &:hover {
+        background-color: #F2F4F8;
+    }
+
+    &:hover * {
+        stroke: #243CBB;
+        color: #243CBB;
+    }
+
+    &:active {
+        background-color: #ECEFFF;
+    }
+
+    &:active * {
+        stroke: #243CBB;
+        color: #243CBB;
+    }
+
+    &:disabled {
+        background-color: transparent;
+        cursor: default;
+    }
+
+    &:disabled * {
+        stroke: #BFC9D9;
+        color: #BFC9D9;
+    }
 }
 
 .buttonAddBlock__text {
@@ -20,32 +48,4 @@
     font-weight: 600;
     line-height: 150%; /* 21px */
     letter-spacing: 0.3px;
-}
-
-.buttonAddBlock:hover {
-    background-color: #F2F4F8;
-}
-
-.buttonAddBlock:hover * {
-    stroke: #243CBB;
-    color: #243CBB;
-}
-
-.buttonAddBlock:active {
-    background-color: #ECEFFF;
-}
-
-.buttonAddBlock:active * {
-    stroke: #243CBB;
-    color: #243CBB;
-}
-
-.buttonAddBlock:disabled {
-    background-color: transparent;
-    cursor: default;
-}
-
-.buttonAddBlock:disabled * {
-    stroke: #BFC9D9;
-    color: #BFC9D9;
 }

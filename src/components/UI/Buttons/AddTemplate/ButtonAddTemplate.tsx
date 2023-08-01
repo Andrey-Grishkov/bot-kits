@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './buttonAddTemplate.module.css';
+import styles from './ButtonAddTemplate.module.scss';
 import icon from "./answering machine.svg";
 import { TButtonTypes } from '../../../../types/button';
 
