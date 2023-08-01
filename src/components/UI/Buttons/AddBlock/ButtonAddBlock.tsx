@@ -13,7 +13,7 @@ const getColor = (type: TButtonTypes ) => {
 
 interface IButtonAddBlock {
     type: TButtonTypes;
-    label: string;
+    label?: string;
     extraClass?: string;
     disabled?: boolean
 }

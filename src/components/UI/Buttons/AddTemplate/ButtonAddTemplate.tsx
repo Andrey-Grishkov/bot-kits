@@ -21,7 +21,7 @@ interface IButtonAddTemplate {
 export const ButtonAddTemplate = ({
     type = 'default',
     label,
-    icon = "answering machine.svg",
+    icon = 'answering machine.svg',
     extraClass,
     disabled = false
 }: IButtonAddTemplate) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import coverIcon from "./tutorial.svg";
 import styles from './ButtonTutorial.module.scss';
-import { TButtonTypes } from '../../../../types/button';
+// import { TButtonTypes } from '../../../../types/button';
 
 // const getColor = (type: TButtonTypes ) => {
 //     switch (type) {
@@ -12,14 +12,14 @@ import { TButtonTypes } from '../../../../types/button';
 //   };
 
 interface IButtonTutorial {
-    type: TButtonTypes;
+    // type: TButtonTypes;
     label: string;
     extraClass?: string;
     disabled?: boolean;
 }
 
 export const ButtonTutorial = ({
-    type = 'default',
+    // type = 'default',
     label,
     extraClass,
     disabled = false
