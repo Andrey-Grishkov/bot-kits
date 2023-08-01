@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import coverIcon from "./tutorial.svg";
 import styles from './buttonTutorial.module.css';
-import { TButtonTypes } from '../../../types/button';
+import { TButtonTypes } from '../../../../types/button';
 
 // const getColor = (type: TButtonTypes ) => {
 //     switch (type) {
@@ -14,16 +14,18 @@ import { TButtonTypes } from '../../../types/button';
 interface IButtonTutorial {
     type: TButtonTypes;
     label: string;
+    extraClass?: string;
     disabled?: boolean;
 }
 
 export const ButtonTutorial = ({
     type = 'default',
     label,
+    extraClass,
     disabled = false
 }: IButtonTutorial) => {
     return (
-        <button className={styles.buttonTutorial} disabled={disabled}
+        <button className={cn(styles.buttonTutorial, extraClass)} disabled={disabled}
         >
             <div className={styles.buttonTutorial_iconsArea}>
                 <svg 

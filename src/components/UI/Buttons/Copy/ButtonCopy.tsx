@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './buttonCopy.module.css';
 import { TButtonTypes } from '../../../../types/button';
 
@@ -11,15 +12,17 @@ const getColor = (type: TButtonTypes ) => {
 
 interface IButtonCopy {
     type: TButtonTypes;
+    extraClass?: string;
     disabled?: boolean
 }
 
 export const ButtonCopy = ({
     type = 'default',
+    extraClass,
     disabled = false
 }: IButtonCopy) => {
     return (
-        <button className={styles.buttonCopy} disabled={disabled}>
+        <button className={cn(styles.buttonCopy, extraClass)} disabled={disabled}>
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 

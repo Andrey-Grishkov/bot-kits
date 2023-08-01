@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './buttonAddTemplate.module.css';
 import icon from "./answering machine.svg";
 import { TButtonTypes } from '../../../../types/button';
@@ -14,6 +15,7 @@ interface IButtonAddTemplate {
     type: TButtonTypes;
     label: string;
     // icon: string;
+    extraClass?: string;
     disabled?: boolean
 }
 
@@ -21,10 +23,11 @@ export const ButtonAddTemplate = ({
     type = 'default',
     label,
     // icon = "./src/stories/Buttons/AddTemplate/answering machine.svg",
+    extraClass,
     disabled = false
 }: IButtonAddTemplate) => {
     return (
-        <div className={styles.buttonAddTemplate__wrapper}>
+        <div className={cn(styles.buttonAddTemplate__wrapper, extraClass)}>
             <button className={styles.buttonAddTemplate} disabled={disabled}>
                 <img className={styles.buttonAddTemplate__mainIcon} src={icon} alt="info-icon" />
                 <svg className={styles.buttonAddTemplate__plusIcon} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

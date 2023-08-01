@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './buttonAddBlock.module.css';
 import { TButtonTypes } from '../../../../types/button';
 
@@ -12,16 +13,18 @@ const getColor = (type: TButtonTypes ) => {
 interface IButtonAddBlock {
     type: TButtonTypes;
     label: string;
+    extraClass?: string;
     disabled?: boolean
 }
 
 export const ButtonAddBlock = ({
     type = 'default',
     label,
+    extraClass,
     disabled = false
 }: IButtonAddBlock) => {
     return (
-        <button className={styles.buttonAddBlock} disabled={disabled}>
+        <button className={cn(styles.buttonAddBlock, extraClass)} disabled={disabled}>
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 

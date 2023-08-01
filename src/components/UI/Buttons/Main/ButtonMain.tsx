@@ -28,6 +28,7 @@ interface IButtonMain {
     */
     textColor?: string;
 
+    extraClass?: string;
     /**
         * Доступность кнопки
     */
@@ -43,6 +44,7 @@ export const ButtonMain = ({
     size = 'l',
     buttonColor = 'purple',
     textColor = '#FFFFFF',
+    extraClass,
     disabled = false
 }: IButtonMain) => {
     // const modeClass = type === 'primary' ? styles.button_type_primary : styles.button_type_secondary;
@@ -52,7 +54,7 @@ export const ButtonMain = ({
     return (
         <button 
             type="button"
-            className={cn(styles.button, disabled ? styles.button_disabled : '', typeClass, sizeClass, colorClass)}
+            className={cn(styles.button, disabled ? styles.button_disabled : '', typeClass, sizeClass, colorClass, extraClass)}
             // style={{ backgroundColor, color: textColor }}
             disabled={disabled}
         >
