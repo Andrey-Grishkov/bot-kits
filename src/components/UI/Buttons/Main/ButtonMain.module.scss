@@ -5,14 +5,67 @@
     height: 46px;
     border: none;
     cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
   }
 
-  .button_theme_primary {
+  .button_theme_purple {
     color: #FFFFFF;
+    background-color: #243CBB;
+
+    &:hover {
+      background-color: #435CDB;
+    }
+
+    &:active {
+      background-color: #243CBB;
+    }
+
+    &:disabled {
+      background-color: #ECEFFF;
+    }
   }
 
-  .button_theme_secondary {
+  .button_theme_green {
     color: #060C23;
+    background-color: #22FFAA;
+
+    &:hover {
+      background-color: #70FFC8;
+    }
+
+    &:active {
+      background-color: #22FFAA;
+    }
+
+    &:disabled {
+      opacity: .4;
+      background-color: #85FFD0;
+    }
+  }
+
+  .button_theme_grey {
+    color: #060C23;
+    background-color: #E4E9F1;
+
+    &:hover {
+      color: #243CBB;
+      background-color: #E4E9F1;
+    }
+
+    &:active {
+      color: #243CBB;
+      background-color: #ECEFFF;
+      box-shadow: 0px 4px 4px 0px #00000040;
+    }
+
+    &:disabled {
+      color: #A6B3C9;
+      background-color: #F2F4F8;
+      box-shadow: none;
+    }
   }
 
   .button_size_l {
@@ -31,65 +84,4 @@
     background-position: center;
     background-size: auto;
   }
-
-  .button_color_purple {
-    background-color: #243CBB;
-  }
-
-  .button_color_green {
-    background-color: #22FFAA;
-  }
-
-  .button_color_grey {
-    background-color: #E4E9F1;
-  }
   
-  .button_theme_primary:hover {
-    background-color: #435CDB;
-  }
-
-  .button_theme_primary:active {
-    background-color: #243CBB;
-  }
-
-  .button_theme_secondary:hover {
-    color: #243CBB;
-    background-color: #E4E9F1;
-  }
-
-  .button_theme_secondary:active {
-    color: #243CBB;
-    background-color: #ECEFFF;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-
-  .button_disabled,
-  .button_disabled:hover {
-    cursor: default;
-  }
-
-  .button_theme_primary.button_disabled {
-    color: #FFFFFF;
-    background-color: #ECEFFF;
-    cursor: default;
-  }
-
-  .button_theme_secondary.button_disabled {
-    color: #A6B3C9;
-    background-color: #F2F4F8;
-    box-shadow: none;
-    cursor: default;
-  }
-
-  .button_theme_primary.button_disabled.button_disabled:hover {
-    color: #FFFFFF;
-    background-color: #ECEFFF;
-    cursor: default;
-  }
-
-  .button_theme_secondary.button_disabled.button_disabled:hover {
-    color: #A6B3C9;
-    background-color: #F2F4F8;
-    box-shadow: none;
-    cursor: default;
-  }

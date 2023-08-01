@@ -5,23 +5,6 @@ const meta = {
     title: 'ButtonMain',
     component: ButtonMain,
     tags: ['autodocs'],
-    argTypes: {
-      // disabled: {
-      //   type: 'boolean',
-      // },
-      // buttonColor: {
-      //   control: {
-      //     type: 'color',
-      //     presetColors: ['#243CBB', '#22FFAA', '#E4E9F1'],
-      //   },
-      // },
-      // textColor: {
-      //   control: {
-      //     type: 'color',
-      //     presetColors: ['#FFFFFF' , '#060C23']
-      //   }
-      // }
-    },
 } satisfies Meta<typeof ButtonMain>;
 
 
@@ -30,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    theme: 'primary',
+    theme: 'purple',
     label: 'Добавить бота',
     size: 'l',
     disabled: false,
@@ -39,18 +22,16 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    theme: 'secondary',
+    theme: 'grey',
     label: 'Остановить',
     size: 'l',
-    buttonColor: 'grey',
-    textColor: '#060C23',
     disabled: false,
   },
 };
 
 export const Small: Story = {
   args: {
-    theme: 'primary',
+    theme: 'purple',
     label: '',
     size: 's',
     disabled: false,
@@ -60,7 +41,7 @@ export const Small: Story = {
 
 export const PrimaryDisabled: Story = {
   args: {
-    theme: 'primary',
+    theme: 'purple',
     label: 'Добавить бота',
     size: 'l',
     disabled: true,
@@ -69,7 +50,7 @@ export const PrimaryDisabled: Story = {
 
 export const SecondaryDisabled: Story = {
   args: {
-    theme: 'secondary',
+    theme: 'grey',
     label: 'Остановить',
     size: 'l',
     disabled: true,
