@@ -24,12 +24,13 @@ const meta = {
     },
 } satisfies Meta<typeof ButtonMain>;
 
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    type: 'primary',
+    theme: 'primary',
     label: 'Добавить бота',
     size: 'l',
     disabled: false,
@@ -38,7 +39,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    type: 'secondary',
+    theme: 'secondary',
     label: 'Остановить',
     size: 'l',
     buttonColor: 'grey',
@@ -49,7 +50,7 @@ export const Secondary: Story = {
 
 export const Small: Story = {
   args: {
-    type: 'primary',
+    theme: 'primary',
     label: '',
     size: 's',
     disabled: false,
@@ -59,7 +60,7 @@ export const Small: Story = {
 
 export const PrimaryDisabled: Story = {
   args: {
-    type: 'primary',
+    theme: 'primary',
     label: 'Добавить бота',
     size: 'l',
     disabled: true,
@@ -68,7 +69,7 @@ export const PrimaryDisabled: Story = {
 
 export const SecondaryDisabled: Story = {
   args: {
-    type: 'secondary',
+    theme: 'secondary',
     label: 'Остановить',
     size: 'l',
     disabled: true,

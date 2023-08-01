@@ -6,7 +6,7 @@ interface IButtonMain {
     /**
         * Является ли это основной кнопкой на странице?
     */
-    type: 'primary' | 'secondary';
+    theme: 'primary' | 'secondary';
 
     /**
         * Текст кнопки
@@ -39,7 +39,7 @@ interface IButtonMain {
  * Кнопка для управления ботом
  */
 export const ButtonMain = ({
-    type = 'primary',
+    theme = 'primary',
     label = 'Добавить бота',
     size = 'l',
     buttonColor = 'purple',
@@ -47,14 +47,13 @@ export const ButtonMain = ({
     extraClass,
     disabled = false
 }: IButtonMain) => {
-    // const modeClass = type === 'primary' ? styles.button_type_primary : styles.button_type_secondary;
-    const typeClass = styles[`button_type_${type}`];
+    const themeClass = styles[`button_theme_${theme}`];
     const sizeClass = styles[`button_size_${size}`];
     const colorClass = styles[`button_color_${buttonColor}`];
     return (
         <button 
             type="button"
-            className={cn(styles.button, disabled ? styles.button_disabled : '', typeClass, sizeClass, colorClass, extraClass)}
+            className={cn(styles.button, disabled ? styles.button_disabled : '', themeClass, sizeClass, colorClass, extraClass)}
             // style={{ backgroundColor, color: textColor }}
             disabled={disabled}
         >
