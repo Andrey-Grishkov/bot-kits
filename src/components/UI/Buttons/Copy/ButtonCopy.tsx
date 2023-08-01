@@ -1,22 +1,21 @@
 import React from 'react';
 import styles from './buttonCopy.module.css';
+import { TButtonTypes } from '../../../../types/button';
 
-const getColor = (type: 'default' ) => {
+const getColor = (type: TButtonTypes ) => {
     switch (type) {
-    //   case 'disabled':
-    //     return '#D7DEEA';
       default:
         return '#A6B3C9';
     }
   };
 
 interface IButtonCopy {
-    type: 'default';
+    type: TButtonTypes;
     disabled?: boolean
 }
 
 export const ButtonCopy = ({
-    type,
+    type = 'default',
     disabled = false
 }: IButtonCopy) => {
     return (

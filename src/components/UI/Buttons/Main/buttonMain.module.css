@@ -2,13 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 20px 50px 20px 50px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 19px; */
     height: 46px;
     border: none;
-    /* border-radius: 10px; */
     cursor: pointer;
   }
 
@@ -18,7 +13,6 @@
 
   .button_type_secondary {
     color: #060C23;
-    /* background-color: #E4E9F1; */
   }
 
   .button_size_l {

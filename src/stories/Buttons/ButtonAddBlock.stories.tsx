@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonAddBlock } from '../../components/UI/AddBlock/ButtonAddBlock';
+import { ButtonAddBlock } from '../../components/UI/Buttons/AddBlock/ButtonAddBlock';
 
 const meta = {
     title: 'ButtonAddBlock',

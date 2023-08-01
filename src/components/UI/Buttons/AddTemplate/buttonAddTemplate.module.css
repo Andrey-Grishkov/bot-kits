@@ -25,7 +25,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 21px */
-    letter-spacing: 0.3px;
+    letter-spacing: .3px;
 }
 
 .buttonAddTemplate:hover {
@@ -60,7 +60,7 @@
 }
 
 .buttonAddTemplate:disabled .buttonAddTemplate__mainIcon {
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .buttonAddTemplate:disabled .buttonAddTemplate__plusIcon * {

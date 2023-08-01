@@ -1,23 +1,22 @@
 import React from 'react';
 import styles from './buttonAddBlock.module.css';
+import { TButtonTypes } from '../../../../types/button';
 
-const getColor = (type: 'default' ) => {
+const getColor = (type: TButtonTypes ) => {
     switch (type) {
-    //   case 'disabled':
-    //     return '#D7DEEA';
       default:
         return '#BFC9D9';
     }
   };
 
 interface IButtonAddBlock {
-    type: 'default';
+    type: TButtonTypes;
     label: string;
     disabled?: boolean
 }
 
 export const ButtonAddBlock = ({
-    type,
+    type = 'default',
     label,
     disabled = false
 }: IButtonAddBlock) => {

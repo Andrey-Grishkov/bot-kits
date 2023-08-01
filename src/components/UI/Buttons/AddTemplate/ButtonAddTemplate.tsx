@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './buttonAddTemplate.module.css';
 import icon from "./answering machine.svg";
+import { TButtonTypes } from '../../../../types/button';
 
-const getColor = (type: 'default' ) => {
+const getColor = (type: TButtonTypes ) => {
     switch (type) {
       default:
         return '#CCD4E0';
@@ -10,14 +11,14 @@ const getColor = (type: 'default' ) => {
   };
 
 interface IButtonAddTemplate {
-    type: 'default';
+    type: TButtonTypes;
     label: string;
     // icon: string;
     disabled?: boolean
 }
 
 export const ButtonAddTemplate = ({
-    type,
+    type = 'default',
     label,
     // icon = "./src/stories/Buttons/AddTemplate/answering machine.svg",
     disabled = false
