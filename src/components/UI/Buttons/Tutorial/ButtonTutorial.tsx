@@ -45,7 +45,7 @@ export const ButtonTutorial = ({
                     />
                 </svg>
                 <svg 
-                    className={cn(styles.buttonTutorial_icon, styles.buttonTutorial_test )}
+                    className={cn(styles.buttonTutorial_icon, styles.buttonTutorial_strip)}
                     xmlns="http://www.w3.org/2000/svg" 
                     width="83" 
                     height="69" 
