@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './ButtonAddTemplate.module.scss';
-import icon from "./answering machine.svg";
 import { TButtonTypes } from '../../../../types/button';
 
 const getColor = (type: TButtonTypes ) => {
@@ -14,7 +13,7 @@ const getColor = (type: TButtonTypes ) => {
 interface IButtonAddTemplate {
     type: TButtonTypes;
     label: string;
-    // icon: string;
+    icon: string;
     extraClass?: string;
     disabled?: boolean
 }
@@ -22,14 +21,14 @@ interface IButtonAddTemplate {
 export const ButtonAddTemplate = ({
     type = 'default',
     label,
-    // icon = "./src/stories/Buttons/AddTemplate/answering machine.svg",
+    icon = "answering machine.svg",
     extraClass,
     disabled = false
 }: IButtonAddTemplate) => {
     return (
         <div className={cn(styles.buttonAddTemplate__wrapper, extraClass)}>
             <button className={styles.buttonAddTemplate} disabled={disabled}>
-                <img className={styles.buttonAddTemplate__mainIcon} src={icon} alt="info-icon" />
+                <img className={styles.buttonAddTemplate__mainIcon} src={require(`./${icon}`)} alt="info-icon" />
                 <svg className={styles.buttonAddTemplate__plusIcon} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M12 5V19" stroke={getColor(type)} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M5 12H19" stroke={getColor(type)} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -39,3 +38,5 @@ export const ButtonAddTemplate = ({
         </div>
     )
 }
+
+// require(`../../assets/${data[counter].image}.jpg`

@@ -13,6 +13,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     type: 'default',
+    icon: "answering machine.svg",
     label: 'Бот автоответчик'
   },
 };
