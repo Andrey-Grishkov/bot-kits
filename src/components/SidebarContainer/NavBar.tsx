@@ -13,17 +13,12 @@ const NavBar = ({ ...props }) => {
   const mockMenuItems = useMemo(() => mockMenu, [mockMenu]);
   const { isOverlayOpen, setIsOverlayOpen } = useNav();
 
-  /** Найдем активные пункты меню, соответсвующие урлу */
   const findActiveLink = () => {
-    // Удаляем первый символ из location.pathname, так как он является слешем
     const currentPath = location.pathname.substring(1);
 
-    // Поиск активной ссылки
     const activeLink = mockMenu.find((menuItem) => {
-      // Проверка на точное совпадение ссылки
       if (menuItem.link === currentPath) return true;
 
-      // Проверка на совпадение подменю
       if (menuItem.subMenu) {
         return menuItem.subMenu.some(
           (subMenuItem) => subMenuItem.link === currentPath
