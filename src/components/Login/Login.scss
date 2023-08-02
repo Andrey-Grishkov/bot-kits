@@ -20,3 +20,10 @@
     color: black;
 }
 }
+@media screen and (max-width: 768px) {
+    .login__title {
+        max-width: 320px;
+        font-size: 32px;
+        line-height: 35px;
+    }
+}

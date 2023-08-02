@@ -1,10 +1,11 @@
 import "./Authorization.scss";
 import googleLogo from "../../vendor/icons/google_icon.svg";
 import { ChangeEvent, FormEvent, useState, FC } from "react";
-import Select from "react-select";
-import ReactCountryFlag from "react-country-flag";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { Link } from "react-router-dom";
-import roboIcon from '../../vendor/icons/robo_icon_desktop.svg'
+import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
+import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -15,40 +16,16 @@ export const Authorization: FC<IAuthProps> = ({
   isRegistrationPage,
   isResetPasswordPage,
 }) => {
-  const countryOptions = [
-    {
-      value: "US",
-      label: (
-        <div>
-          <ReactCountryFlag countryCode="US" svg aria-label="United States" />
-          United States
-        </div>
-      ),
-    },
-    { value: "GB", label: "United Kingdom" },
-    // Добавьте другие варианты кодов стран
-  ];
-  const customStyles = {
-    control: (provided: any) => ({
-      ...provided,
-      minHeight: "50px",
-    }),
-    option: (provided: any) => ({
-      ...provided,
-      minHeight: "50px",
-    }),
-  };
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
+  const handlePhoneChange = (value: string) => {
+    setPhone(value);
   };
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -152,25 +129,15 @@ export const Authorization: FC<IAuthProps> = ({
                 onChange={handlePasswordChange}
                 required
               />
-              <div className="formfield__phone_wrapper">
-                <Select
-                  options={countryOptions}
-                  className="formfield__select"
-                  styles={customStyles}
-                ></Select>
-                <input
-                  className="formfield__input"
-                  type="tel"
-                  value={phone}
-                  placeholder="Телефон"
-                  onChange={handlePhoneChange}
-                  required
-                />
-              </div>
+              <PhoneInput
+                country="ru"
+                inputClass="formfield__input_phone"
+                containerClass="formfield__phone_wrapper"
+                value={phone}
+                onChange={handlePhoneChange}
+              />
             </fieldset>
-            <button type="submit" className="form__button">
-              Submit
-            </button>
+            <ButtonMain size="l" theme="green" label="создать аккаунт" extraClass="form__button" />
             <div className="caption">
               <p className="caption__text">Уже прошли регистрацию?</p>
               <Link to={"/signin"} className="caption__link">
@@ -183,7 +150,7 @@ export const Authorization: FC<IAuthProps> = ({
       {isLoginPage && !isRegistrationPage && !isResetPasswordPage && (
         <>
           <form onSubmit={handleSubmit} className="form_login">
-            <fieldset className="formfield">
+            <fieldset className="formfield formfield_login">
               <input
                 className="formfield__input formfield__input_login"
                 type="email"
@@ -201,7 +168,7 @@ export const Authorization: FC<IAuthProps> = ({
                 required
               />
             </fieldset>
-            <div className="caption">
+            <div className="caption caption_login">
               <Link to={"/reset-password"} className="caption__link">
                 Забыли пароль?
               </Link>
@@ -209,12 +176,10 @@ export const Authorization: FC<IAuthProps> = ({
                 Регистрация
               </Link>
             </div>
-            <button type="submit" className="form__button">
-              Войти
-            </button>
+            <ButtonMain size="l" theme="green" label="войти" />
           </form>
           <div className="authorization__choice_login">
-            <p className="authorization__text">или</p>
+            <p className="authorization__text">Быстрый вход</p>
           </div>
           <div className="socials_login">
             <ul className="socials__list">
@@ -273,9 +238,10 @@ export const Authorization: FC<IAuthProps> = ({
           </div>
         </>
       )}
-      {isResetPasswordPage && !isLoginPage && !isRegistrationPage  && (
+      {isResetPasswordPage && !isLoginPage && !isRegistrationPage && (
         <>
           <form onSubmit={handleSubmit} className="form_login">
+            <h2 className="authorization__title">Введи свой E-mail</h2>
             <fieldset className="formfield">
               <input
                 className="formfield__input formfield__input_login"
@@ -286,17 +252,7 @@ export const Authorization: FC<IAuthProps> = ({
                 required
               />
             </fieldset>
-            <div className="caption">
-              <Link to={"/password-reset"} className="caption__link">
-                Забыли пароль?
-              </Link>
-              <Link to={"/signup"} className="caption__link">
-                Регистрация
-              </Link>
-            </div>
-            <button type="submit" className="form__button">
-              Сбросить пароль
-            </button>
+            <ButtonMain size="l" theme="green" label="сбросить пароль" />
           </form>
           <img src={roboIcon} alt="робот" />
         </>
