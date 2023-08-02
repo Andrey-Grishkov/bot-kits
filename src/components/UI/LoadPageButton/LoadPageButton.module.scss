@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 580px;
+    height: 65px;
+    background-color: #f8f9fb;
+}
+
+.title {
+    margin-left: 17px;
+    color: #bfc9d9;
+}
+
+.title_hover {
+    margin-left: 17px;
+    color: #8392ab;
+}
+
+.title_disabled {
+    margin-left: 17px;
+    color: #d7deea;
+}
