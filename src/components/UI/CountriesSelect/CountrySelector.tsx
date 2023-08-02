@@ -25,7 +25,8 @@ import {
       e.stopPropagation();
       const currentElem = e.target;
   
-      setActive(true);
+      setUlElemActive(!ulElemActive);
+		  setImageActive(!imageActive);
   
       if (currentElem.closest("ul")) {
         setPayloadSeleted(currentElem.textContent);

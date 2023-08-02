@@ -13,8 +13,6 @@ export const UploadButton: FC<IUploadButton> = ({ size }) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [currentImage, setCurrentImage] = React.useState<File>();
     const [error, setError] = React.useState<string>("");
-
-
     const selectImage = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFiles = event.target.files as FileList;
         const filename = selectedFiles?.[0].name;

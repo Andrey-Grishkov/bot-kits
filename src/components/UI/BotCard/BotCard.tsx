@@ -3,7 +3,10 @@ import { FC } from 'react';
 import styles from "./BotCard.module.scss";
 import copy from "../../../images/icons/copy bot.svg";
 import share from "../../../images/icons/share.svg";
-import edit from "../../../images/icons/edit.svg";
+import edit from "../../../images/icons/edit.svg"
+import link from "../../../images/icons/link.svg"
+import info from "../../../images/icons/info.svg"
+import notification from "../../../images/icons/notifications setting.svg"
 import trash from "../../../images/icons/trash.svg"
 import { SocialButton } from "../SocialButton/SocialButton";
 
@@ -34,12 +37,21 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
     const handleEdit = () => {
       
     };
+    const handleLink = () => {
+      
+    };
+    const handleGetInfo = () => {
+      
+    };
+    const handleNotify = () => {
+      
+    };
     const handleDelete = () => {
       
     };
   
     return (
-      <div
+      <article
         id={id}
         className={styles.content}
       >
@@ -54,25 +66,49 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleCopy} >
               <img className={styles.buttonIcon} src={copy} alt="Копировать" />
-              <span className={styles.label}>Копировать</span>
+              <span className={styles.label}>Копировать бота</span>
             </button>
           </li>
+          <svg width="244" height="1" viewBox="0 0 244 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="0.5" x2="244" y2="0.5" stroke="#D7DEEA"/>
+          </svg>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleShare}>
               <img className={styles.buttonIcon} src={share} alt="Общий доступ" />
-              Общий доступ
+              <span className={styles.label}>Общий доступ</span>
             </button>
           </li>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleEdit}>
-              <img className={styles.buttonIcon} src={edit} alt="Редактировать" />
-              Редактировать 
+              <img className={styles.buttonIcon} src={edit} alt="Переименовать" />
+              <span className={styles.label}>Переименовать</span>
             </button>
           </li>
           <li className={styles.menuItem}>
+            <button className={styles.button} onClick={handleLink}>
+              <img className={styles.buttonIcon} src={link} alt="Получить ссылку" />
+              <span className={styles.label}>Получить ссылку </span>
+            </button>
+          </li>
+          <li className={styles.menuItem}>
+            <button className={styles.button} onClick={handleGetInfo}>
+              <img className={styles.buttonIcon} src={info} alt="Информация" />
+              <span className={styles.label}>Информация </span>
+            </button>
+          </li>
+          <li className={styles.menuItem}>
+            <button className={styles.button} onClick={handleNotify}>
+              <img className={styles.buttonIcon} src={notification} alt="Настройка уведомлений" />
+              <span className={styles.label}>Настройка уведомлений </span>
+            </button>
+          </li>
+          <svg width="244" height="1" viewBox="0 0 244 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="0.5" x2="244" y2="0.5" stroke="#D7DEEA"/>
+          </svg>
+          <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleDelete}>
               <img className={styles.buttonIcon}  src={trash} alt="Удалить" />
-              Удалить
+              <span className={styles.label}>Удалить</span>
             </button>
           </li>
         </ul>
@@ -82,6 +118,6 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
         <p className={styles.name}>
           {name}
         </p>
-      </div>
+      </article>
     );
   };

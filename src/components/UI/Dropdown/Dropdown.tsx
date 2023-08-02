@@ -25,7 +25,8 @@ export const Dropdown: FC<DropdownType> = ({ payload, setPayloadSeleted, optionA
 		e.stopPropagation();
 		const currentElem = e.target;
 
-		setActive(true);
+		setUlElemActive(!ulElemActive);
+		setImageActive(!imageActive);
 
 		if (currentElem.closest("ul")) {
 			setPayloadSeleted(currentElem.textContent);
@@ -71,7 +72,7 @@ export const Dropdown: FC<DropdownType> = ({ payload, setPayloadSeleted, optionA
 							alt="Стрелка вниз"
 						/>
 					</div>)}
-				<ul className={`${styles.ul} ${ulElemActive && styles.ulActive} ${optionArr.length > 3 && styles.ulScroll }`}>
+				<ul className={`${styles.ul} ${ulElemActive && styles.ulActive} ${optionArr.length > 1 && styles.ulScroll }`}>
 					{optionArr.map((item, index) => (
 						<li key={index}>{item}</li>
 					))}
