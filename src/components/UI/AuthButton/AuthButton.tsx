@@ -9,7 +9,7 @@ interface AuthButtonProps {
     notificationType?: 'letter' | 'password';
 }
 
-const AuthButton: FC<AuthButtonProps> = ({ isValidate, disableCondition, type = 'register', notificationType = 'password' }) => {
+export const AuthButton: FC<AuthButtonProps> = ({ isValidate, disableCondition, type = 'register', notificationType = 'password' }) => {
     const [isDisable, setDisable] = useState(disableCondition ? disableCondition() : true);
     const [showNotification, setShowNotification] = useState(false);
 
@@ -33,6 +33,4 @@ const AuthButton: FC<AuthButtonProps> = ({ isValidate, disableCondition, type = 
             {showNotification && <Notification handleOpen={() => false} imageType={notificationType} />}
         </div>
     )
-}
-
-export default AuthButton;  
+}  

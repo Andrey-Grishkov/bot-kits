@@ -6,6 +6,7 @@ import {InstructionButton} from "./InstructionButton/InstructionButton";
 import {MessageButton} from "./MessageButton/MessageButton";
 import {BotAnswerButton} from "./BotAnswerButton/BotAnswerButton";
 import {AddSocialButton} from "./AddSocialButton/AddSocialButton";
+import {AuthButton} from './AuthButton/AuthButton';
 
 export function UI() {
     return (
@@ -17,6 +18,7 @@ export function UI() {
             <BotAnswerButton/>
             <AddSocialButton/>
             <AddBotButton/>
+            <AuthButton type={'login'} />
         </section>
     );
 }
