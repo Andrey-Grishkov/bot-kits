@@ -21,6 +21,13 @@ import { ConstructorVideoButton } from "./ConstructorVideoButton/ConstructorVide
 import { ConstructorLogicButton } from "./ConstructorLogicButton/ConstructorLogicButton";
 import { ConstructorBackground } from './ConstructorLogicBackGround/ConstructorLogicBackGround'
 import { ConstructorPhoneButton } from './ConstructorPhoneButton/ConstructorPhoneButton'
+import { UploadButton } from './UploadButton/UploadButton';
+import { CountriesSelect } from './CountriesSelect/CountriesSelect';
+import { NumberSelect } from './NumberSelect/NumberSelect';
+import { BotCard } from './BotCard/BotCard';
+import { DropdownRepeat } from './DropdownRepeat/DropdownRepeat';
+import { DropdownSettings } from './DropdownSettings/DropdownSettings';
+import { AddTo } from './AddTo/AddTo';
 
 export function UI() {
   return (
@@ -60,6 +67,13 @@ export function UI() {
       </ConstructorLogicButton>
       </ConstructorBackground>
       <ConstructorPhoneButton/>
+      <UploadButton size="M" />
+      <BotCard id="id" name="Салон красоты" type="telegram"/>
+      <CountriesSelect />
+      <NumberSelect />
+      <AddTo />
+      <DropdownRepeat />
+      <DropdownSettings />
     </section>
   );
 }
