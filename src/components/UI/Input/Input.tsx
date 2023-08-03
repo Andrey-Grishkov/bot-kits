@@ -43,7 +43,6 @@ export const Input: FC<InputProps> = ({ size, placeholder, value, error, disable
       {error && (
         <p id='error' className={errorMessageCn}>{error}</p>
       )}
-      <p>{inputClasses}</p>
     </fieldset>
   );
 };

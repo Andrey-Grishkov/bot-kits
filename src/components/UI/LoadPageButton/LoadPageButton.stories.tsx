@@ -11,12 +11,27 @@ type Story = StoryObj<typeof LoadPageButton>;
 
 export const Default: Story = {
   args: {
-    //   placeholder: 'Введите ключ доступа',
+    title: 'Загрузить страницу',
   },
 };
 
 export const Disabled: Story = {
   args: {
+    title: 'Загрузить страницу',
     disabled: true,
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    title: 'Загрузить',
+    size: 'md',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    title: 'Загрузить',
+    size: 'sm',
   },
 };

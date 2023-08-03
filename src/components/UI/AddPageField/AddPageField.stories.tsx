@@ -10,7 +10,55 @@ export default meta;
 type Story = StoryObj<typeof AddPageField>;
 
 export const Default: Story = {
-    args: {
-      placeholder: 'Введите ключ доступа',
-    },
-  };
+  args: {
+    pages: [],
+  },
+};
+
+export const OnePage: Story = {
+  args: {
+    pages: [
+      {
+        title: 'Страница 1',
+      },
+    ],
+  },
+};
+
+export const TwoPage: Story = {
+  args: {
+    pages: [
+      {
+        title: 'Страница 1',
+      },
+      {
+        title: 'Страница 2',
+      },
+    ],
+  },
+};
+
+export const ManyPage: Story = {
+  args: {
+    pages: [
+      {
+        title: 'Страница 1',
+      },
+      {
+        title: 'Страница 2',
+      },
+      {
+        title: 'Страница 4',
+      },
+      {
+        title: 'Страница 4',
+      },
+      {
+        title: 'Страница 5',
+      },
+      {
+        title: 'Страница 6',
+      },
+    ],
+  },
+};

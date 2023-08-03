@@ -15,6 +15,12 @@ export const Default: Story = {
   },
 };
 
+export const LoadPageButton: Story = {
+  args: {
+    title: 'Загрузить',
+  },
+};
+
 export const Selected: Story = {
   args: {
     title: 'Страница 1',
@@ -23,8 +29,15 @@ export const Selected: Story = {
 };
 
 export const Disabled: Story = {
-    args: {
-      title: 'Страница 1',
-      disabled: true,
-    },
-  };
+  args: {
+    title: 'Страница 1',
+    disabled: true,
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    title: 'Страница 1',
+    size: 'md',
+  },
+};

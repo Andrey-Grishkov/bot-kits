@@ -1,32 +1,44 @@
 import cn from 'classnames';
 import classes from './LoadPageButton.module.scss';
-import { FC, MouseEventHandler, useState } from 'react';
+import { FC, MouseEventHandler, useEffect, useState } from 'react';
 import { AddPageIcon } from './AddPageIcon';
 // import AddIcon from './add.svg';
 
-export interface LoadPageButtonProps
-  extends MouseEventHandler<HTMLButtonElement> {
+export interface LoadPageButtonProps {
   type?: 'button';
-  handleClick: () => void;
+  title?: string;
+  handleClick?: () => void;
   size?: string;
-  value?: string;
   error?: 'Вы ввели неправильное значение' | 'Ошибка';
   disabled?: boolean;
-  children: any;
 }
 
 export const LoadPageButton: FC<LoadPageButtonProps> = ({
   handleClick,
   type = 'button',
+  title,
+  size = 'xl',
   disabled,
-  children,
 }) => {
-  const buttonCn = cn(classes.button);
+  let buttonCn = cn(classes.button);
+  let buttonMdCn = cn(classes.button_md);
+  let buttonSmCn = cn(classes.button_sm);
   let buttonTitleCn = cn(classes.title);
   const buttonTitleOverCn = cn(classes.title_hover);
 
+  const [btnClasses, setBtnClasses] = useState(buttonCn);
   const [titleColor, setTitleColor] = useState(buttonTitleCn);
   const [iconOpacity, setIconOpacity] = useState(0.5);
+
+  useEffect(() => {
+    if (size === 'md') {
+      setBtnClasses(buttonCn + ' ' + buttonMdCn);
+    }
+
+    if (size === 'sm') {
+      setBtnClasses(buttonCn + ' ' + buttonSmCn);
+    }
+  });
 
   const onMouseOver = () => {
     if (!disabled) {
@@ -44,7 +56,7 @@ export const LoadPageButton: FC<LoadPageButtonProps> = ({
 
   return (
     <button
-      className={buttonCn}
+      className={btnClasses}
       type={type}
       onClick={handleClick}
       onMouseOver={onMouseOver}
@@ -53,9 +65,8 @@ export const LoadPageButton: FC<LoadPageButtonProps> = ({
     >
       <AddPageIcon opacity={iconOpacity} />
       <span className={disabled ? cn(classes.title_disabled) : titleColor}>
-        Загрузить страницу
+        {title}
       </span>
-      {/* {children} */}
     </button>
   );
 };

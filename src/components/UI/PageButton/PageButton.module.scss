@@ -13,6 +13,13 @@
     letter-spacing: 0.3px;
 }
 
+.button_md {
+    justify-content: flex-start;
+    border-radius: 50px;
+    width: 274px;
+    height: 52px;
+}
+
 .button_selected {
     background-color: #ecefff;
 }
