@@ -13,6 +13,7 @@ const NavBar = ({ ...props }) => {
   const mockMenuItems = useMemo(() => mockMenu, [mockMenu]);
   const { isOverlayOpen, setIsOverlayOpen } = useNav();
 
+  //TODO refact this for array of links
   const findActiveLink = () => {
     const currentPath = location.pathname.substring(1);
 
@@ -45,6 +46,7 @@ const NavBar = ({ ...props }) => {
 
   return (
     <div
+      //TODO move away from inline styles to classes
       style={{
         gridArea: "N",
         position: "relative",
@@ -61,7 +63,7 @@ const NavBar = ({ ...props }) => {
           overflowX: "hidden",
           backgroundColor: "#F8F9FB",
           borderRadius: "10px",
-          transition: "width 0.3s ease",
+          transition: "width 0.15s ease",
           ...(isOverlayOpen && { position: "absolute" }),
         }}
       >

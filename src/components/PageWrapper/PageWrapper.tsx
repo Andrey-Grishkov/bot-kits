@@ -5,8 +5,6 @@ const PageWrapper = ({ children }: { children: ReactNode }) => {
     <div
       style={{
         gridArea: "C",
-        backgroundColor: "white",
-        padding: "20px",
       }}
     >
       {children}

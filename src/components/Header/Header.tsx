@@ -12,12 +12,13 @@ function Header() {
         gridArea: "H",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         backgroundColor: "#F8F9FB", // TODO delete this after fixes global background color
         borderBottom: "1px solid #D7DEEA",
         padding: "0 40px",
       }}
     >
-      <img src={Burger} alt="Burger Menu" />
+      <img width="24px" height="24px" src={Burger} alt="Burger Menu" />
       <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
         <p
           style={{

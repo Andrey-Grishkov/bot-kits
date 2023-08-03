@@ -13,7 +13,7 @@ function Footer() {
         color: "black",
       }}
     >
-      © 2021 BotKits
+      © 2023 BotKits
     </footer>
   );
 }
