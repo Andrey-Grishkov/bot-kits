@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// @ts-ignore
 import { Calendar } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './DateSelect.scss';
@@ -10,8 +11,8 @@ export const DateSelect: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(today);
   const [timeZoneSelected, setTimeZoneSeleted] = React.useState('UTC+3');
 
-  const options = [ 
-    'UTC+2', 
+  const options = [
+    'UTC+2',
     'UTC+3',
     'UTC+4',
     'UTC+5',
@@ -21,7 +22,7 @@ export const DateSelect: React.FC = () => {
     'UTC+9',
     'UTC+10',
     'UTC+11',
-    'UTC+12',    
+    'UTC+12',
   ]
 
   const handleDateChange = (date: Date | Date[]) => {
