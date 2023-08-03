@@ -23,6 +23,8 @@ interface IButtonMain {
         * Доступность кнопки
     */
     disabled?: boolean;
+
+    onClick?: () => void;
 }
 
 /**

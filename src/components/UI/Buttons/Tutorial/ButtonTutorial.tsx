@@ -1,66 +1,42 @@
 import React from 'react';
 import cn from 'classnames';
 import coverIcon from "./tutorial.svg";
-import styles from './ButtonTutorial.module.scss';
-// import { TButtonTypes } from '../../../../types/button';
-
-// const getColor = (type: TButtonTypes ) => {
-//     switch (type) {
-//       default:
-//         return '#A6B3C9';
-//     }
-//   };
+import styles from './buttonTutorial.module.css';
 
 interface IButtonTutorial {
-    // type: TButtonTypes;
+    state: 'notActive' | 'active';
     label: string;
-    extraClass?: string;
     disabled?: boolean;
 }
 
 export const ButtonTutorial = ({
-    // type = 'default',
+    state,
     label,
-    extraClass,
-    disabled = false,
-    ...rest
+    disabled = false
 }: IButtonTutorial) => {
+    let fill: string;
+    let icon: string;
+    if (state === 'notActive') {
+        fill = '#E4E9F1';
+        icon = '#A6B3C9';
+    } else {
+        fill = '#85FFD0';
+        icon = '#22FFAA';
+    }
     return (
-        <button className={cn(styles.buttonTutorial, extraClass)} disabled={disabled} {...rest}>
+        <button className={styles.buttonTutorial}
+        >
             <div className={styles.buttonTutorial_iconsArea}>
-                <svg 
-                    className={styles.buttonTutorial_icon}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="149" 
-                    height="76" 
-                    viewBox="0 0 149 76" 
-                    fill="none"
-                >
-                    <circle 
-                        cx="86.5" 
-                        cy="86.5" 
-                        r="86.5" 
-                        transform="matrix(-1 0 0 1 149 -48)" 
-                        fill="#E4E9F1"
-                    />
+                <svg className={cn(styles.buttonTutorial_icon)} xmlns="http://www.w3.org/2000/svg" width="149" height="76" viewBox="0 0 149 76" fill="none">
+                    <circle cx="86.5" cy="86.5" r="86.5" transform="matrix(-1 0 0 1 149 -48)" fill={fill}/>
                 </svg>
-                <svg 
-                    className={cn(styles.buttonTutorial_icon, styles.buttonTutorial_strip)}
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="83" 
-                    height="69" 
-                    viewBox="0 0 83 69" 
-                    fill="none"
-                >
-                    <path 
-                        d="M2 109C45.6305 109 81 73.9533 81 30.7211M75.5131 2C77.1081 6.00503 78.3793 10.1717 79.295 14.4683" 
-                        stroke="white" 
-                        stroke-width="3" 
-                        stroke-linecap="round"
-                    />
+                <svg className={cn(styles.buttonTutorial_icon, styles.buttonTutorial_test )} xmlns="http://www.w3.org/2000/svg" width="83" height="69" viewBox="0 0 83 69" fill="none">
+                    <path d="M2 109C45.6305 109 81 73.9533 81 30.7211M75.5131 2C77.1081 6.00503 78.3793 10.1717 79.295 14.4683" stroke="white" stroke-width="3" stroke-linecap="round"/>
                 </svg>
                 <img className={styles.buttonTutorial_mainIcon} src={coverIcon} alt="cover-icon" />
             </div>
+            {/* <img className={styles.loader_icon} src={coverIcon} alt="cover-icon" /> */}
+
             <span className={styles.buttonTutorial__textArea}>{label}</span>
         </button>
     )

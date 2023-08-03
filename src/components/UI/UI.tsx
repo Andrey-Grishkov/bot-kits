@@ -1,3 +1,5 @@
+import React, {useState} from 'react';
+
 import './UI.scss';
 import {AddBotButton} from "./AddBotButton/AddBotButton";
 import {Button} from "./Button/Button";
@@ -31,18 +33,28 @@ import { AddTo } from './AddTo/AddTo';
 import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
+import { Modal } from '../Modal/Modal';
 
 export function UI() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="ui">
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
       <ButtonCopy type='default'/>
-      <ButtonMain theme='purple' label='Добавить бота' size='l'/>
+      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowModal(true)}/>
+
+      {showModal &&
+        <Modal title='Общий вид поп-апа' onClose={() => setShowModal(false)}>
+          <div>Test modal</div>
+        </Modal>
+      }
+
       <ButtonMain theme='purple' label='' size='s'/>
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
-      <ButtonTutorial label='Пошаговая инструкция'/>
+      <ButtonTutorial state='active' label='Пошаговая инструкция'/>
       <Button />
       <StopButton />
       <InstructionButton />
