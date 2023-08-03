@@ -28,6 +28,9 @@ import { BotCard } from './BotCard/BotCard';
 import { DropdownRepeat } from './DropdownRepeat/DropdownRepeat';
 import { DropdownSettings } from './DropdownSettings/DropdownSettings';
 import { AddTo } from './AddTo/AddTo';
+import { DateSelect } from './DateSelect/DateSelect';
+import { DaySelect } from './DaySelect/DaySelect';
+import { TimeSelect } from './TimeSelect/TimeSelect';
 
 export function UI() {
   return (
@@ -74,6 +77,9 @@ export function UI() {
       <AddTo />
       <DropdownRepeat />
       <DropdownSettings />
+      <DateSelect />
+      <DaySelect />
+      <TimeSelect />
     </section>
   );
 }
