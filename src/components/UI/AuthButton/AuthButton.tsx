@@ -10,7 +10,7 @@ interface AuthButtonProps {
 
 export const AuthButton: FC<AuthButtonProps> = ({ visible, notificationType = 'password', setVisible }) => {
 
-    let buttonText = notificationType !== 'password' ? 'Создать аккаунт' : 'Сбросить пароль';
+    let buttonText = notificationType !== 'password' ? 'СОЗДАТЬ АККАУНТ' : 'СБРОСИТЬ ПАРОЛЬ';
 
     const handleClick = () => {
         setVisible(true);

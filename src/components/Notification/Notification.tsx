@@ -44,7 +44,7 @@ const Notification: FC<NotificationProps> = ({ setVisible, imageType, visible })
   const portalElement = document.getElementById('portal');
 
   if (!portalElement) {
-    return null; 
+    return null;
   }
 
   return ReactDOM.createPortal(
@@ -56,8 +56,8 @@ const Notification: FC<NotificationProps> = ({ setVisible, imageType, visible })
       <img src={selectedImage} className="notification__popup__image" alt="Уведомление" />
       <button className="notification__popup__close-button" onClick={handleClose} />
     </div>,
-    portalElement  
-  );  
+    portalElement
+  );
 }
 
 export default Notification;
