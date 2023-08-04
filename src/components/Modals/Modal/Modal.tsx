@@ -8,7 +8,7 @@ import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
 const modalsContainer = document.querySelector('#modals');
 
 interface IModalProps {
-  title?: string,
+  // title?: string,
   onClose: () => void,
   children: ReactNode,
 }
@@ -23,7 +23,7 @@ interface IModalProps {
 /* Внутрь <div className={styles.content}> передаётся непосредственно содержимое поп-апа. 
   В компоненте UI приведён пример использования компонента Modal. Поп-ап открывается по клику на кнопку MainButton*/
 
-export const Modal: FunctionComponent<IModalProps> = ({title, onClose, children}) => {
+export const Modal: FunctionComponent<IModalProps> = ({onClose, children}) => {
 
   function closeModal() {
     onClose();
@@ -54,14 +54,11 @@ export const Modal: FunctionComponent<IModalProps> = ({title, onClose, children}
   return ReactDOM.createPortal(
     (<>
       <div className={styles.modal}>
-        <div className={styles.header}>
-          <h3 className={styles.title}>{title}</h3>
-          <div className={styles.close} onClick={onCrossClick}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M19 5L5 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5 5L19 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+        <div className={styles.close} onClick={onCrossClick}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M19 5L5 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 5L19 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
         <div className={styles.content}>
           {children}

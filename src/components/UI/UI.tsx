@@ -47,8 +47,8 @@ export function UI() {
       <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowModal(true)}/>
 
       {showModal &&
-        <Modal title='Переименуйте файл' onClose={() => setShowModal(false)}>
-          <ModalCommonContent></ModalCommonContent>
+        <Modal onClose={() => setShowModal(false)}>
+          <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
         </Modal>
       }
 

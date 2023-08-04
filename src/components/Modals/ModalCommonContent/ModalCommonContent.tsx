@@ -4,12 +4,15 @@ import styles from './ModalCommonContent.module.scss';
 import React, { FunctionComponent }  from 'react';
 
 interface IModalCommonContent {
-  
+  title: string;
 }
 
-export const ModalCommonContent: FunctionComponent<IModalCommonContent> = () => {
+export const ModalCommonContent: FunctionComponent<IModalCommonContent> = ({title}) => {
   return (
     <>
+        <div className={styles.header}>
+          <h3 className={styles.title}>{title}</h3>
+        </div>
         <input></input>
         <div className={styles.buttonField}>
         <ButtonMain 
