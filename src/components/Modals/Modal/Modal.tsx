@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import styles from './Modal.module.scss'
 
-import { ModalOverlay } from './ModalOverlay';
+import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
 
 const modalsContainer = document.querySelector('#modals');
 
@@ -12,6 +12,16 @@ interface IModalProps {
   onClose: () => void,
   children: ReactNode,
 }
+
+/* Данный компонент содержит заголовок поп-апа, который передаётся пропсом title,
+  кнопку закрытия (крестик) + логику закрытия по нажатию на esc, оверлей или крестик.
+  Эта логика передаётся в пропсе onClose
+*/
+
+/* Все поп-апы монтируются в body (логика прописана в файле index.html) через CreatePortal */
+
+/* Внутрь <div className={styles.content}> передаётся непосредственно содержимое поп-апа. 
+  В компоненте UI приведён пример использования компонента Modal. Поп-ап открывается по клику на кнопку MainButton*/
 
 export const Modal: FunctionComponent<IModalProps> = ({title, onClose, children}) => {
 

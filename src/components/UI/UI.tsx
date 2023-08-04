@@ -33,8 +33,8 @@ import { AddTo } from './AddTo/AddTo';
 import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
-import { Modal } from '../Modal/Modal';
-import { ModalCommonContent } from '../Modal/ModalCommonContent';
+import { Modal } from '../Modals/Modal/Modal';
+import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
 
 export function UI() {
   const [showModal, setShowModal] = useState(false);

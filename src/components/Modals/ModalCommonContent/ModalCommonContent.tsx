@@ -1,4 +1,4 @@
-import { ButtonMain } from '../UI/Buttons/Main/ButtonMain';
+import { ButtonMain } from '../../UI/Buttons/Main/ButtonMain';
 import styles from './ModalCommonContent.module.scss';
 
 import React, { FunctionComponent }  from 'react';
