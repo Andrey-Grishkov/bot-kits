@@ -1,36 +1,27 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import './AuthButton.scss'
 import Notification from '../../Notification/Notification';
 
 interface AuthButtonProps {
-    isValidate?: () => Promise<boolean>;
-    disableCondition?: () => boolean;
-    type: 'register' | 'login' | 'reset';
+    visible?: boolean;
     notificationType?: 'letter' | 'password';
+    setVisible: (value: boolean) => void;
 }
 
-export const AuthButton: FC<AuthButtonProps> = ({ isValidate, disableCondition, type = 'register', notificationType = 'password' }) => {
-    const [isDisable, setDisable] = useState(disableCondition ? disableCondition() : true);
-    const [showNotification, setShowNotification] = useState(false);
+export const AuthButton: FC<AuthButtonProps> = ({ visible, notificationType = 'password', setVisible }) => {
 
-    const handleClick = async () => {
-        if (type !== 'login' && isValidate) {
-            const isValid = await isValidate();
-            setDisable(!isValid);
-            setShowNotification(isValid && type === 'reset');
-        }
+    let buttonText = notificationType !== 'password' ? 'Создать аккаунт' : 'Сбросить пароль';
+
+    const handleClick = () => {
+        setVisible(true);
     }
-
-    let buttonText = 'Создать аккаунт';
-    if (type === 'login') buttonText = 'Войти';
-    if (type === 'reset') buttonText = 'Сбросить пароль';
 
     return (
         <div>
-            <button className="auth-button" onClick={handleClick} disabled={type !== 'login' && isDisable}>
+            <button className="auth-button" onClick={handleClick}>
                 {buttonText}
             </button>
-            {showNotification && <Notification handleOpen={() => false} imageType={notificationType} />}
+            {visible && <Notification setVisible={setVisible} imageType={notificationType} visible={visible} />}
         </div>
     )
-}  
+}

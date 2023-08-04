@@ -57,11 +57,13 @@ $font-family: IBM Plex Mono, monospace;
   gap: $gap-large;
   visibility: hidden;
   flex-wrap: wrap-reverse;
+  transition-delay: 0.3s; // Добавьте это
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 
   &--visible {
     opacity: 1;
     visibility: visible;
-    transition-delay: 0s;
+    // transition-delay: 0s;
   }
 
   &__message {
