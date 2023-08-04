@@ -34,6 +34,7 @@ import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modal/Modal';
+import { ModalCommonContent } from '../Modal/ModalCommonContent';
 
 export function UI() {
   const [showModal, setShowModal] = useState(false);
@@ -46,8 +47,8 @@ export function UI() {
       <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowModal(true)}/>
 
       {showModal &&
-        <Modal title='Общий вид поп-апа' onClose={() => setShowModal(false)}>
-          <div>Test modal</div>
+        <Modal title='Переименуйте файл' onClose={() => setShowModal(false)}>
+          <ModalCommonContent></ModalCommonContent>
         </Modal>
       }
 

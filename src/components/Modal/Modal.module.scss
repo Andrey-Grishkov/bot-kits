@@ -19,6 +19,7 @@
     box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
 
     padding: 40px 40px 34px 40px;
+    box-sizing: border-box;
   }
   
   .header {
@@ -39,6 +40,7 @@
 
     align-self: start;
 
+    font-family: 'IBM Plex Mono', sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -54,5 +56,11 @@
         cursor: pointer;
         opacity: 0.5;
     }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
   

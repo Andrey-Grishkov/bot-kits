@@ -10,7 +10,7 @@ const modalsContainer = document.querySelector('#modals');
 interface IModalProps {
   title?: string,
   onClose: () => void,
-  children: ReactNode
+  children: ReactNode,
 }
 
 export const Modal: FunctionComponent<IModalProps> = ({title, onClose, children}) => {
@@ -53,7 +53,9 @@ export const Modal: FunctionComponent<IModalProps> = ({title, onClose, children}
             </svg>
           </div>
         </div>
-        {children}
+        <div className={styles.content}>
+          {children}
+        </div>
       </div>
 
 
