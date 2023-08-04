@@ -55,15 +55,10 @@ $font-family: IBM Plex Mono, monospace;
   opacity: 0;
   @include transition(opacity, 0.3s, ease-out);
   gap: $gap-large;
-  visibility: hidden;
-  flex-wrap: wrap-reverse;
-  transition-delay: 0.3s; // Добавьте это
-  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 
   &--visible {
     opacity: 1;
-    visibility: visible;
-    // transition-delay: 0s;
   }
 
   &__message {

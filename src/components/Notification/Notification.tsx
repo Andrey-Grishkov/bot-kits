@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import './Notification.scss';
 import ReactDOM from 'react-dom';
 import passwordImg from './images/password.png';
@@ -11,6 +11,24 @@ interface NotificationProps {
 }
 
 const Notification: FC<NotificationProps> = ({ setVisible, imageType, visible }) => {
+
+  // Добавляем новое состояние isVisible
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    if (visible) {
+      setIsVisible(true);
+    } else {
+      timeoutId = setTimeout(() => setIsVisible(false), 300);
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [visible]);
 
   const handleClose = () => {
     setVisible(false);
@@ -30,7 +48,7 @@ const Notification: FC<NotificationProps> = ({ setVisible, imageType, visible })
   }
 
   return ReactDOM.createPortal(
-    <div className={`notification__popup ${visible ? 'notification__popup--visible' : ''}`}>
+    <div className={`notification__popup ${isVisible ? 'notification__popup--visible' : ''}`}>
       <div className="notification__popup__message">
         {message}
         <div className="notification__popup__email">/email!</div>
