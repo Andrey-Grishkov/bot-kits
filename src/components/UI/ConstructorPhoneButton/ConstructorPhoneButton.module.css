@@ -1,0 +1,63 @@
+.container {
+  box-shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
+  width: 96px;
+  display: flex;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container button {
+  width: 48px;
+  height: 40px;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.container button:first-child {
+  border-right: 1px solid #f2f4f8;
+}
+.container button:first-child svg path {
+  stroke: #243cbb;
+  transition: stroke 0.5s;
+}
+.container button:first-child svg line {
+  stroke: #243cbb;
+  transition: stroke 0.5s;
+}
+
+.container:hover button:first-child svg path {
+  stroke: #435cdb;
+  transition: stroke 0.5s;
+}
+.container:hover button:first-child svg line {
+  stroke: #435cdb;
+  transition: stroke 0.5s;
+}
+
+.container button:last-child {
+  border-right: 1px solid #f2f4f8;
+}
+.container button:last-child svg path {
+  stroke: #a6b3c9;
+  transition: stroke 0.5s;
+}
+.container button:last-child svg line {
+  stroke: #a6b3c9;
+  transition: stroke 0.5s;
+}
+
+.container:hover button:last-child {
+  border-right: 1px solid #f2f4f8;
+}
+.container:hover button:last-child svg path {
+  stroke: #ccd4e0;
+  transition: stroke 0.5s;
+}
+.container:hover button:last-child svg line {
+  stroke: #ccd4e0;
+  transition: stroke 0.5s;
+}
