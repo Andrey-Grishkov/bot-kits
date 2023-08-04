@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     // type: 'default',
-    state: 'active',
+    // state: 'active',
     label: 'Пошаговая инструкция'
   },
 };

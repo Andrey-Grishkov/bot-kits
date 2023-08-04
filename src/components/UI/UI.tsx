@@ -55,7 +55,7 @@ export function UI() {
       <ButtonMain theme='purple' label='' size='s'/>
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
-      <ButtonTutorial state='active' label='Пошаговая инструкция'/>
+      <ButtonTutorial label='Пошаговая инструкция'/>
       <Button />
       <StopButton />
       <InstructionButton />
