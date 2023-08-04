@@ -36,7 +36,8 @@ import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
 import { Helper } from './Helper/Helper';
 import { MailingInput } from './MailingInput/MailingInput';
 import { Message } from './Message/Message';
-import { AddBotStepTitle } from './AddBotStepTitle/AddBotStepTitle';
+import { AddBotStep } from './AddBotStep/AddBotStep';
+import { MailingSelect } from './MailingSelect/MailingSelect';
 
 export function UI() {
   return (
@@ -89,10 +90,11 @@ export function UI() {
       <MailingInput />
       <MailingInput error/>
       <MailingInput disabled/>
+      <MailingSelect />
       <Message text="Ссылка скопирована"/>
       <Helper text='В работе' type='vertical' />
       <Helper text='Невидимое сообщение' type='horizontal' />
-      <AddBotStepTitle step='1' title='Загрузить страницу'/>
+      <AddBotStep step='1' type='facebook'/>
       <AccountSettingButton />
       <DropdownWithArrow />
     </section>
