@@ -1,0 +1,146 @@
+// переменные 
+$gap-large: 30px;
+$gap-medium: 9vw;
+$gap-small: 4.5vw;
+
+$font-size-message-large: 64px;
+$font-size-message-medium: 48px;
+$font-size-message-small: 32px;
+
+$font-size-email-large: 34px;
+$font-size-email-small: 20px;
+
+$image-max-width-large: 570px;
+$image-max-width-medium: 388px;
+$image-max-width-small: 194px;
+
+$image-max-height-large: 540px;
+$image-max-height-medium: 367px;
+$image-max-height-small: 183px;
+
+$background-color: #243CBB;
+
+$font-family: IBM Plex Mono, monospace;
+
+// миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition ($property: all, $duration: 0.3s, $timing-function: ease-out) {
+  transition: $property $duration $timing-function;
+}
+
+@mixin max-dimensions($width, $height) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin font-settings($size, $family: $font-family) {
+  font-family: $family;
+  font-size: $size;
+}
+
+.notification__popup {
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2vw;
+  background-color: $background-color;
+  opacity: 0;
+  @include transition(opacity, 0.3s, ease-out);
+  gap: $gap-large;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+  &--visible {
+    opacity: 1;
+  }
+
+  &__message {
+    @include font-settings($font-size-message-large);
+    color: #ffff;
+    width: 100%;
+    max-width: $image-max-width-large;
+  }
+
+  &__email {
+    color: #22FFAA;
+    padding: 9px 20px;
+    border-radius: 14px;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+    @include font-settings($font-size-email-large);
+    background-color: #435CDB;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    @include max-dimensions($image-max-width-large, $image-max-height-large);
+    object-fit: contain;
+  }
+
+  &__close-button {
+    position: absolute;
+    width: 32px;
+    background-image: url(./images/close.png);
+    height: 32px;
+    right: 2vw;
+    top: 2vw;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification__popup {  
+    gap: $gap-medium;
+    padding-left: $gap-medium;
+    padding-right: $gap-medium;
+    align-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .notification__popup__message {
+    @include font-settings($font-size-message-medium);
+  }
+  
+  .notification__popup__email {
+    padding: 9px 20px;
+  }
+  
+  .notification__popup__image {
+    @include max-dimensions($image-max-width-medium, $image-max-height-medium);
+  }
+}
+
+@media (max-width: 360px) {
+  .notification__popup {
+    gap: $gap-small;
+    padding-left: $gap-small;
+    flex-wrap: wrap;
+    gap: 124px;
+  }
+  
+  .notification__popup__message {
+    @include font-settings($font-size-message-small);
+  }
+  
+  .notification__popup__email {
+    margin-left: 5px;
+    padding: 7px 10px;
+    @include font-settings($font-size-email-small);
+    border-radius: 8px;
+  }
+  
+  .notification__popup__image {
+    @include max-dimensions($image-max-width-small, $image-max-height-small);
+  }
+}

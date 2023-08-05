@@ -1,6 +1,7 @@
 import './AddBotPage.scss';
 
 function AddBotPage() {
+
     return (
         <section>
         </section>

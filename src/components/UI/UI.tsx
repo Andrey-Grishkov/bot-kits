@@ -21,10 +21,35 @@ import { ConstructorVideoButton } from "./ConstructorVideoButton/ConstructorVide
 import { ConstructorLogicButton } from "./ConstructorLogicButton/ConstructorLogicButton";
 import { ConstructorBackground } from './ConstructorLogicBackGround/ConstructorLogicBackGround'
 import { ConstructorPhoneButton } from './ConstructorPhoneButton/ConstructorPhoneButton'
+import { UploadButton } from './UploadButton/UploadButton';
+import { CountriesSelect } from './CountriesSelect/CountriesSelect';
+import { NumberSelect } from './NumberSelect/NumberSelect';
+import { BotCard } from './BotCard/BotCard';
+import { DropdownRepeat } from './DropdownRepeat/DropdownRepeat';
+import { DropdownSettings } from './DropdownSettings/DropdownSettings';
+import { AddTo } from './AddTo/AddTo';
+import { DateSelect } from './DateSelect/DateSelect';
+import { DaySelect } from './DaySelect/DaySelect';
+import { TimeSelect } from './TimeSelect/TimeSelect';
+import { AuthButton } from './AuthButton/AuthButton';
+import { useState } from 'react'; 
 
 export function UI() {
+    const [visibleMailPopup, setVisibleMailPopup] = useState(false);
+    const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
+
+    const handleMailPopup = () => {
+        setVisibleMailPopup(!visibleMailPopup);
+    };
+
+    const handlePasswordPopup = () => {
+        setVisiblePasswordPopup(!visiblePasswordPopup);
+    };
+    
   return (
     <section className="ui">
+      <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
+      <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
       <ButtonCopy type='default'/>
@@ -60,6 +85,16 @@ export function UI() {
       </ConstructorLogicButton>
       </ConstructorBackground>
       <ConstructorPhoneButton/>
+      <UploadButton size="M" />
+      <BotCard id="id" name="Салон красоты" type="telegram"/>
+      <CountriesSelect />
+      <NumberSelect />
+      <AddTo />
+      <DropdownRepeat />
+      <DropdownSettings />
+      <DateSelect />
+      <DaySelect />
+      <TimeSelect />
     </section>
   );
 }
