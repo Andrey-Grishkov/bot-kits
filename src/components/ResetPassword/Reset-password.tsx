@@ -3,7 +3,7 @@ import { Authorization } from "../Authorization/Authorization";
 import logo from '../../vendor/icons/logo.svg'
 
 
-export const ResetPassword = () => {
+export function ResetPassword() {
   return (
     <section className="password-reset">
       <img src={logo} alt="Логотип" className="login__logo" />

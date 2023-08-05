@@ -28,7 +28,7 @@
     font-family: "Open Sans";
     position: absolute;
     z-index: 100;
-    top: 395px;
+    top: 445px;
   }
   &__choice_login {
     border-radius: 15px;
@@ -41,7 +41,7 @@
     font-family: "Open Sans";
     position: absolute;
     z-index: 100;
-    top: 610px;
+    top: 660px;
     @include flex(row, center, center);
   }
   &__text {
@@ -130,7 +130,7 @@
       width: 500px;
     }
     &_phone {
-      background-color: #243cbb !important ;
+      background-color: #243cbb !important;
       border: none !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
       height: 60px !important;
@@ -155,6 +155,7 @@
     position: relative;
     display: flex;
     max-width: 324px;
+    background: none;
   }
   &__select {
     background-color: #243cbb;

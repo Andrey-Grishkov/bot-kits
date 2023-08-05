@@ -3,9 +3,11 @@ import googleLogo from "../../vendor/icons/google_icon.svg";
 import { ChangeEvent, FormEvent, useState, FC } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import ru from 'react-phone-input-2/lang/ru.json'
 import { Link } from "react-router-dom";
 import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
+import { AuthButton } from "../UI/AuthButton/AuthButton";
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -20,6 +22,9 @@ export const Authorization: FC<IAuthProps> = ({
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [visibleMailPopup, setVisibleMailPopup] = useState(false);
+  const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
+  
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -38,6 +43,14 @@ export const Authorization: FC<IAuthProps> = ({
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  };
+
+  const handleMailPopup = () => {
+      setVisibleMailPopup(!visibleMailPopup);
+  };
+
+  const handlePasswordPopup = () => {
+      setVisiblePasswordPopup(!visiblePasswordPopup);
   };
 
   return (
@@ -131,13 +144,14 @@ export const Authorization: FC<IAuthProps> = ({
               />
               <PhoneInput
                 country="ru"
+                localization={ru}
                 inputClass="formfield__input_phone"
                 containerClass="formfield__phone_wrapper"
                 value={phone}
                 onChange={handlePhoneChange}
               />
             </fieldset>
-            <ButtonMain size="l" theme="green" label="создать аккаунт" extraClass="form__button" />
+            <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
             <div className="caption">
               <p className="caption__text">Уже прошли регистрацию?</p>
               <Link to={"/signin"} className="caption__link">
@@ -252,7 +266,7 @@ export const Authorization: FC<IAuthProps> = ({
                 required
               />
             </fieldset>
-            <ButtonMain size="l" theme="green" label="сбросить пароль" />
+            <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
           </form>
           <img src={roboIcon} alt="робот" />
         </>
