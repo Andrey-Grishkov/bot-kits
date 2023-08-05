@@ -31,10 +31,25 @@ import { AddTo } from './AddTo/AddTo';
 import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
+import { AuthButton } from './AuthButton/AuthButton';
+import { useState } from 'react'; 
 
 export function UI() {
+    const [visibleMailPopup, setVisibleMailPopup] = useState(false);
+    const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
+
+    const handleMailPopup = () => {
+        setVisibleMailPopup(!visibleMailPopup);
+    };
+
+    const handlePasswordPopup = () => {
+        setVisiblePasswordPopup(!visiblePasswordPopup);
+    };
+    
   return (
     <section className="ui">
+      <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
+      <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
       <ButtonCopy type='default'/>
