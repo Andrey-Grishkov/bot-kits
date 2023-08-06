@@ -36,8 +36,10 @@ import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
 import { AuthButton } from './AuthButton/AuthButton';
+import { NotificationModal } from '../Modals/NotificationModal/NotificationModal';
 export function UI() {
     const [showModal, setShowModal] = useState(false);
+    const [showNotModal, setNotShowModal] = useState(false);
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
 
@@ -63,8 +65,12 @@ export function UI() {
           <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
         </Modal>
       }
-
-      <ButtonMain theme='purple' label='' size='s'/>
+      {showNotModal &&
+        <NotificationModal onClose={ () => setNotShowModal(false)}></NotificationModal>
+      }
+      <ButtonMain theme='purple' label='' size='s' onClick={() => {
+        setNotShowModal(true)
+      }}/>
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция'/>

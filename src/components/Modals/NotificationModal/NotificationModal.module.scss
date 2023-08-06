@@ -1,0 +1,63 @@
+.modal {
+    min-width: 728px;
+    min-height: 275px;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 656px;
+    &__title {
+        max-width: 612px;
+        font-family: IBM Plex Mono;
+        font-size: 24px;
+        line-height: 21px;
+        letter-spacing: 0.3px;
+        margin: 0 0 20px;
+        text-align: start;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #E4E9F1;
+        margin-bottom: 20px;
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    &__caption {
+        font-family: 'Open Sans';
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        margin: 0 0 8px;
+    }
+    &__text {
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+        margin: 0 0 20px;
+       
+    }
+    &__input {
+        border: none;
+        min-width: 612px;
+        padding: 0;
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+        margin: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__copy {
+        display: flex;
+        justify-content: space-between;
+    }
+}
