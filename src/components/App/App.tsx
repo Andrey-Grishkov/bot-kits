@@ -10,6 +10,7 @@ import AddBotPage from "../AddBotPage/AddBotPage";
 import BotBuilder from "../BotBuilder/BotBuilder";
 import NavBar from "../NavBar/NavBar";
 import PageWrapper from "../PageWrapper/PageWrapper";
+import { SubscriptionAndPayments } from "../SubscriptionAndPayments/SubscriptionAndPayments";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <PageWrapper>
                 <Routes>
                     <Route path='/' element={<Dashboard />} />
+                    <Route path='/subscription_and_payments' element={<SubscriptionAndPayments />} />
                     <Route path='/addbot' element={<AddBotPage />} />
                     <Route path='/botbuilder' element={<BotBuilder />} />
                     <Route path='/signup' element={<Registration />} />

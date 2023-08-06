@@ -1,0 +1,234 @@
+.button {
+  width: 52px;
+  height: 52px;
+  margin: 24px 32px 0;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.button_type_alisa {
+  background-image: url(../../../images/social_icons/alisa/alisa.svg);
+}
+
+.button_type_alisa:hover {
+  background-image: url(../../../images/social_icons/alisa/alisa_hover.svg);
+}
+
+.button_type_alisa_disabled {
+  background-image: url(../../../images/social_icons/alisa/alisa__inactive.svg);
+}
+
+.button_type_alisa_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_facebook {
+  background-image: url(../../../images/social_icons/facebook/facebook.svg);
+}
+
+.button_type_facebook:hover {
+  background-image: url(../../../images/social_icons/facebook/facebook_hover.svg);
+}
+
+.button_type_facebook_disabled {
+  background-image: url(../../../images/social_icons/facebook/facebook__inactive.svg);
+}
+
+.button_type_facebook_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_google {
+  background-image: url(../../../images/social_icons/google/google.svg);
+}
+
+.button_type_google:hover {
+  background-image: url(../../../images/social_icons/google/google_hover.svg);
+}
+
+.button_type_google_disabled {
+  background-image: url(../../../images/social_icons/google/google__inactive.svg);
+}
+
+.button_type_google_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_insta {
+  background-image: url(../../../images/social_icons/insta/insta.svg);
+}
+
+.button_type_insta:hover {
+  background-image: url(../../../images/social_icons/insta/insta_hover.svg);
+}
+
+.button_type_insta_disabled {
+  background-image: url(../../../images/social_icons/insta/insta__inactive.svg);
+}
+
+.button_type_insta_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_mailru {
+  background-image: url(../../../images/social_icons/mailru/mailru.svg);
+}
+
+.button_type_mailru:hover {
+  background-image: url(../../../images/social_icons/mailru/mailru_hover.svg);
+}
+
+.button_type_mailru_disabled {
+  background-image: url(../../../images/social_icons/mailru/mailru__inactive.svg);
+}
+
+.button_type_mailru_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_odnoklassniki {
+  background-image: url(../../../images/social_icons/odnoklassniki/odnoklassniki.svg);
+}
+
+.button_type_odnoklassniki:hover {
+  background-image: url(../../../images/social_icons/odnoklassniki/odnoklassniki_hover.svg);
+}
+
+.button_type_odnoklassniki_disabled {
+  background-image: url(../../../images/social_icons/odnoklassniki/odnoklassniki__inactive.svg);
+}
+
+.button_type_odnoklassniki_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_telegram {
+  background-image: url(../../../images/social_icons/telegram/telegram.svg);
+}
+
+.button_type_telegram:hover {
+  background-image: url(../../../images/social_icons/telegram/telegram_hover.svg);
+}
+
+.button_type_telegram_disabled {
+  background-image: url(../../../images/social_icons/telegram/telegaram__inactive.svg);
+}
+
+.button_type_telegram_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_twitter {
+  background-image: url(../../../images/social_icons/twitter/twitter.svg);
+}
+
+.button_type_twitter:hover {
+  background-image: url(../../../images/social_icons/twitter/twitter_hover.svg);
+}
+
+.button_type_twitter_disabled {
+  background-image: url(../../../images/social_icons/twitter/twitter__inactive.svg);
+}
+
+.button_type_twitter_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_viber {
+  background-image: url(../../../images/social_icons/viber/viber.svg);
+}
+
+.button_type_viber:hover {
+  background-image: url(../../../images/social_icons/viber/viber_hover.svg);
+}
+
+.button_type_viber_disabled {
+  background-image: url(../../../images/social_icons/viber/viber__inactive.svg);
+}
+
+.button_type_viber_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_vk {
+  background-image: url(../../../images/social_icons/vk/vk.svg);
+}
+
+.button_type_vkm:hover {
+  background-image: url(../../../images/social_icons/vk/vk_hover.svg);
+}
+
+.button_type_vk_disabled {
+  background-image: url(../../../images/social_icons/vk/vk__inactive.svg);
+}
+
+.button_type_vk_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_web {
+  background-image: url(../../../images/social_icons/web/web.svg);
+}
+
+.button_type_web:hover {
+  background-image: url(../../../images/social_icons/web/web_hover.svg);
+}
+
+.button_type_web_disabled {
+  background-image: url(../../../images/social_icons/web/web__inactive.svg);
+}
+
+.button_type_web_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_whatsapp {
+  background-image: url(../../../images/social_icons/whatsapp/whatsapp.svg);
+}
+
+.button_type_whatsapp:hover {
+  background-image: url(../../../images/social_icons/whatsapp/whatsapp_hover.svg);
+}
+
+.button_type_whatsapp_disabled {
+  background-image: url(../../../images/social_icons/whatsapp/whatsapp__inactive.svg);
+}
+
+.button_type_whatsapp_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_yandex {
+  background-image: url(../../../images/social_icons/yandex/yandex.svg);
+}
+
+.button_type_yandex:hover {
+  background-image: url(../../../images/social_icons/yandex/yandex_hover.svg);
+}
+
+.button_type_yandex_disabled {
+  background-image: url(../../../images/social_icons/yandex/yandex__inactive.svg);
+}
+
+.button_type_yandex_disabled:hover {
+  cursor: auto;
+}
+
+.button_type_youtube {
+  background-image: url(../../../images/social_icons/youtube/youtube.svg);
+}
+
+.button_type_youtube:hover {
+  background-image: url(../../../images/social_icons/youtube/youtube_hover.svg);
+}
+
+.button_type_youtube_disabled {
+  background-image: url(../../../images/social_icons/youtube/youtube__inactive.svg);
+}
+
+.button_type_youtube_disabled:hover {
+  cursor: auto;
+}/*# sourceMappingURL=SocialButton.module.css.map */
