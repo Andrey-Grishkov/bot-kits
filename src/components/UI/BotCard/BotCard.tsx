@@ -13,7 +13,8 @@ import { SocialButton } from "../SocialButton/SocialButton";
 interface IBotCard {
   id: string;
   name: string;
-  type: 'alisa' | 'facebook' | 'google' | 'insta' | 'mailru' | 'odnoklassniki' | 'telegram'| 'twitter'| 'viber'| 'vk'| 'web'| 'whatsapp'| 'yandex'| 'youtube';
+  type: string;
+  //type: 'alisa' | 'facebook' | 'google' | 'insta' | 'mailru' | 'odnoklassniki' | 'telegram'| 'twitter'| 'viber'| 'vk'| 'web'| 'whatsapp'| 'yandex'| 'youtube';
 }
 
 export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
@@ -63,7 +64,7 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
           className={styles.dropbtn}></button>
           {open ? (
         <ul className={styles.menu}>
-          <li className={styles.menuItem}>
+          <li className={styles.menuItemFixed}>
             <button className={styles.button} onClick={handleCopy} >
               <img className={styles.buttonIcon} src={copy} alt="Копировать" />
               <span className={styles.label}>Копировать бота</span>
@@ -75,31 +76,31 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleShare}>
               <img className={styles.buttonIcon} src={share} alt="Общий доступ" />
-              <span className={styles.label}>Общий доступ</span>
+              Общий доступ
             </button>
           </li>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleEdit}>
               <img className={styles.buttonIcon} src={edit} alt="Переименовать" />
-              <span className={styles.label}>Переименовать</span>
+              Переименовать
             </button>
           </li>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleLink}>
               <img className={styles.buttonIcon} src={link} alt="Получить ссылку" />
-              <span className={styles.label}>Получить ссылку </span>
+              Получить ссылку 
             </button>
           </li>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleGetInfo}>
               <img className={styles.buttonIcon} src={info} alt="Информация" />
-              <span className={styles.label}>Информация </span>
+              Информация 
             </button>
           </li>
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleNotify}>
               <img className={styles.buttonIcon} src={notification} alt="Настройка уведомлений" />
-              <span className={styles.label}>Настройка уведомлений </span>
+              Настройка уведомлений 
             </button>
           </li>
           <svg width="244" height="1" viewBox="0 0 244 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +109,7 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
           <li className={styles.menuItem}>
             <button className={styles.button} onClick={handleDelete}>
               <img className={styles.buttonIcon}  src={trash} alt="Удалить" />
-              <span className={styles.label}>Удалить</span>
+              Удалить
             </button>
           </li>
         </ul>

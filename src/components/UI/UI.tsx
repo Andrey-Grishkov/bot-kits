@@ -35,12 +35,24 @@ import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
-
+import { AuthButton } from './AuthButton/AuthButton';
 export function UI() {
-  const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [visibleMailPopup, setVisibleMailPopup] = useState(false);
+    const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
 
+    const handleMailPopup = () => {
+        setVisibleMailPopup(!visibleMailPopup);
+    };
+
+    const handlePasswordPopup = () => {
+        setVisiblePasswordPopup(!visiblePasswordPopup);
+    };
+    
   return (
     <section className="ui">
+      <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
+      <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
       <ButtonCopy type='default'/>

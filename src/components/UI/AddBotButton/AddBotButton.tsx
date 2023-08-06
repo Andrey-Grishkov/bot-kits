@@ -1,5 +1,5 @@
 import styles from './AddBotButton.module.scss';
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import classNames from 'classnames';
 
 interface IaddSocialButtonProps {

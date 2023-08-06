@@ -1,0 +1,11 @@
+.container {
+  box-sizing: border-box;
+  width: 328px;
+  padding: 25px 32px;
+  border-radius: 10px;
+  background-color: #F8F9FB;
+}
+
+.container button:last-child {
+  margin-bottom: 0;
+}
