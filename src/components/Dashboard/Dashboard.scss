@@ -1,0 +1,148 @@
+.dashboard__wrapper {
+	width: 1268px;
+	margin: 40px auto 0;
+}
+
+.dashboard__container {
+	position: relative
+}
+
+.dashboard__title {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 42px;
+	letter-spacing: -0.20000000298023224px;
+	text-align: left;
+	color: #060C23;
+}
+
+.dashboard__button {
+	position: absolute;
+	top: 22px;
+	right: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.30000001192092896px;
+	text-align: right;
+	color: #A6B3C9;
+	background-color: transparent;
+	border: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.imgCaret {
+	margin: 0 0 0 17px;
+	transform: rotate(0deg);
+	transition: transform .4s ease;
+}
+
+.imgCaret__active {
+	margin: 0 0 0 17px;
+	transition: transform .4s ease;
+	transform: rotate(180deg);
+}
+
+.dashboard__templates {
+	margin: 22px auto 60px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px;
+	justify-content: space-around;
+}
+
+.dashboard__bots {
+	margin: 22px auto 70px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px;
+}
+
+.dashboard__tutorial {
+  height: 283px;
+	background-color: #F2F4F8;
+	border-radius: 30px;
+	position: relative;
+	padding: 0 0 0px 32px;
+	margin-bottom: 32px;
+}
+
+.dashboard__subtitle {
+	padding: 32px 0 24px;
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 23px;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+.dashboard__videos {
+	display: flex;
+	gap: 20px;
+}
+
+.dashboard__menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 580px;
+	height: 283px;
+	background-color: #E4E9F1;
+	border-radius: 30px;
+	padding: 0 0 0 32px;
+	z-index: 25;
+}
+
+.dashboard__menu-button {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	padding: 0;
+	margin: 0px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.dashboard__text {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 21px;
+	letter-spacing: 0.3px;
+	text-align: left;
+	margin: 0;
+	padding: 0 0 33px;
+}
+
+.dashboard__buttons-area {
+	display: grid;
+	grid-template-columns: repeat(2, 264px);
+	gap: 16px;
+	justify-items: start;
+	padding-right: 32px;
+}
+
+.dashboard__tutorial-button {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.dashboard__tutorial-button:hover {
+	opacity: 0.5px;
+}
+
+.dashboard__tutorial-button__label {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: 0.3px;
+	text-align: left;
+	padding: 0 0 0 12px;
+}
+

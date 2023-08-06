@@ -4,7 +4,8 @@ import cn from 'classnames';
 import styles from './SocialButton.module.scss';
 
 interface ISocialButton {
-  type: 'alisa' | 'facebook' | 'google' | 'insta' | 'mailru' | 'odnoklassniki' | 'telegram'| 'twitter'| 'viber'| 'vk'| 'web'| 'whatsapp'| 'yandex'| 'youtube';
+  //type: 'alisa' | 'facebook' | 'google' | 'insta' | 'mailru' | 'odnoklassniki' | 'telegram'| 'twitter'| 'viber'| 'vk'| 'web'| 'whatsapp'| 'yandex'| 'youtube';
+  type: string;
   disabled?: boolean;
 }
 
