@@ -1,0 +1,200 @@
+.titleText {
+  font-size: 32px;
+}
+
+.titleTextSubscription, .sum {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.titleTextStatus {
+  font-size: 18px;
+}
+
+.text {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.buttonActivedSubscription, .buttonChangeTariff, .button {
+  font-size: 14px;
+}
+
+.section {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.block {
+  margin-left: 20px;
+  width: 404px;
+  height: 352px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  margin-left: 20px;
+  height: 112px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container {
+  margin-left: 20px;
+  padding: 0;
+  border-radius: 30px;
+  display: block;
+  position: relative;
+  background-color: #F2F4F8;
+}
+
+.containerBalans {
+  bottom: 80px;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0;
+  width: 404px;
+  min-height: 205px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.subscription {
+  z-index: 10;
+  background-color: #FFFFFF;
+  width: 404px;
+  min-height: 228px;
+  box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.payments {
+  background-color: #F2F4F8;
+  width: 836px;
+  min-height: 228px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.blockInfo {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.button {
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+  margin-right: 35px;
+  width: 229px;
+  height: 60px;
+  padding: 0;
+}
+
+.buttonChangeTariff {
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  margin: 35px;
+  width: 188px;
+  height: 46px;
+  padding: 0;
+}
+
+.sum {
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  margin: 0;
+  padding: 0;
+  line-height: 32px;
+}
+
+.balance {
+  width: 50px;
+  margin: auto auto 35px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-family: "Open Sans";
+  width: 87px;
+  min-height: 31px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.titleText {
+  font-family: "IBM Plex Mono";
+  min-width: 342px;
+  min-height: 42px;
+  margin-right: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.titleTextSubscription {
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  min-width: 87px;
+  min-height: 31px;
+  margin: 0 150px 0 35px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.titleSubscription {
+  padding: 35px 0 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.titleTextStatus {
+  color: #FF5656;
+  font-family: "IBM Plex Mono";
+  width: 98px;
+  max-height: 23px;
+  margin: 0 35px 0 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.buttonActivedSubscription {
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  letter-spacing: 1px;
+  margin-top: 25px;
+  width: 340px;
+  height: 56px;
+  padding: 0;
+}
+
+.answerText {
+  align-self: self-start;
+  margin: 3px 0 0 35px;
+}/*# sourceMappingURL=SubscriptionAndPayments.module.css.map */

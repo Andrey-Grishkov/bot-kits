@@ -55,6 +55,31 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
+  }
+  .payments {
+    // z-index: 10;
+    background-color: $colorSecondaryCulturedHover;
+    width: 836px;
+    min-height: 228px;
+    // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+  .blockInfo {
+    // z-index: 10;
+    // background-color: $colorSecondaryCulturedHover;
+    // width: 836px;
+    // min-height: 228px;
+    // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+    // margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    // align-items: center;
   }
   .button {
     @extend %AgButtonL;
@@ -145,16 +170,31 @@
     display: flex;
     align-items: center;
   }
-  .titleText {
-    @extend %AgH3Med;
-    font-family: 'IBM Plex Mono';
+  // .titleText {
+  //   @extend %AgH3Med;
+  //   font-family: 'IBM Plex Mono';
+  //   font-weight: 600;
+  //   width: 87px;
+  //   min-height: 31px;
+  //   margin: 0;
+  //   padding: 0;
+  //   display: flex;
+  //   align-items: center;
+  // }
+  .buttonActivedSubscription {
+    @extend %AgButtonL;
     font-weight: 600;
-    width: 87px;
-    min-height: 31px;
-    margin: 0;
+    font-family: 'IBM Plex Mono';
+    letter-spacing: 1px;
+    margin-top: 25px;
+    // margin-right: 35px;
+    width: 340px;
+    height: 56px;
     padding: 0;
-    display: flex;
-    align-items: center;
+  }
+  .answerText{
+    align-self: self-start;
+    margin: 3px 0 0 35px;
   }
   // .blockRate {
   //   position: absolute;
