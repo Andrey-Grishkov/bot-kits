@@ -1,7 +1,7 @@
 import React from 'react';
 import { FC } from 'react';
-import styles from './CountriesSelect.module.scss';
-import { countries } from '../../../utils/countries';
+import styles from './CountriesSelect.module.css';
+import { countries } from '../../../utils/data';
 import { Select } from './CountrySelector';
 
 export const CountriesSelect: FC = () => {
