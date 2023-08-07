@@ -35,24 +35,33 @@ import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
+import { ModalAddBot } from '../Modals/ModalAddBot/ModalAddBot';
 
 export function UI() {
-  const [showModal, setShowModal] = useState(false);
+  const [showCommonContentModal, setShowCommonContentModal] = useState(false);
+  const [showAddBotModal, setShowAddBotModal] = useState(false);
 
   return (
     <section className="ui">
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
       <ButtonCopy type='default'/>
-      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowModal(true)}/>
+      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
 
-      {showModal &&
-        <Modal onClose={() => setShowModal(false)}>
+      {showCommonContentModal &&
+        <Modal onClose={() => setShowCommonContentModal(false)}>
           <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
         </Modal>
       }
 
-      <ButtonMain theme='purple' label='' size='s'/>
+      <ButtonMain theme='purple' label='' size='s' onClick={() => setShowAddBotModal(true)}/>
+
+      {showAddBotModal &&
+        <Modal onClose={() => setShowAddBotModal(false)}>
+          <ModalAddBot title='Бот автоответчик'></ModalAddBot>
+        </Modal>
+      }
+
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция'/>

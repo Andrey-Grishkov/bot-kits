@@ -1,0 +1,94 @@
+.header {
+    width: 100%;
+    box-sizing: border-box;
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+  }
+  
+  .title {
+    margin: 0;
+    padding: 0;
+
+    align-self: start;
+
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+  }
+
+  .headerIcon {
+    width: 88px;
+    height: 88px;
+    align-self: flex-start;
+  }
+
+  .text {
+    color: #060C23;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.3px;
+
+    margin: 0;
+    padding: 03;
+  }
+  
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    list-style-type: none;
+    counter-reset: elementcounter;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .listElement {
+    color: var(--primary-oxford-blue-default, #060C23);
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 21px */
+    letter-spacing: 0.3px;
+
+    &:before {
+        content: counter(elementcounter) "> ";
+        counter-increment: elementcounter;
+        color: var(--primary-persian-blue-default, #243CBB);
+    
+        font-family: 'IBM Plex Mono', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%; /* 20.8px */
+        letter-spacing: 0.5px;
+
+        padding-right: 28px;
+      }
+  }
+
+  .buttonField {
+    align-self: flex-end;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+
+    padding-top: 40px;
+}
