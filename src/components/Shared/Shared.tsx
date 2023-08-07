@@ -1,16 +1,18 @@
 import React from 'react';
+import './Shared.scss'
+import copyImg from './images/copy.png';
 
 const Shared = () => {
     return (
         <div className="partners">
             <div className="partners__header">
-                <h2>Партнерская программа</h2>
+                <h2 className="partners__title">Партнерская программа</h2>
                 <button className="partners__btn-request">Запросить выплату</button>
             </div>
             <div className="partners__ref">
-                <div>botkits.ru/?ref=12345</div>
+                <div className="partners__ref-link">botkits.ru/?ref=12345</div>
                 <div className="partners__ref-copy">
-                    <img src='' alt='Скопировать'/>
+                    <img src={copyImg} alt='Скопировать'/>
                 </div>
             </div>
             <div className="partners__content">

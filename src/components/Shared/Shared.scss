@@ -1,51 +1,184 @@
 .partners {
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
     &__header {
-        // стили для заголовка
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-    
+
+    &__title {
+        font-family: 'IBM Plex Mono', 'monospace';
+        font-size: 32px;
+        font-weight: 600;
+    }
+
     &__btn-request {
-        // стили для кнопки запроса
+        font-size: 14px;
+        font-family: 'IBM Plex Mono';
+        font-weight: 600;
+        width: 100%;
+        height: 46px;
+        max-width: 188px;
+        box-sizing: border-box;
+        padding: 13.5px 14.5px;
+        border: none;
+        border-radius: 10px;
+        background-color: #22FFAA;
     }
-    
+
     &__ref {
-        // стили для ссылки реферала
+        display: flex;
+        gap: 16px;
+        align-items: center;
     }
-    
+
+    &__ref-link {
+        width: 100%;
+        color: #243CBB;
+        font-size: 14px;
+        font-family: 'Open Sans', Arial;
+        box-sizing: border-box;
+        font-weight: 600;
+        max-width: 400px;
+        padding: 22px 24px;
+        border-radius: 10px;
+        background-color: #F8F9FB;
+    }
+
     &__ref-copy {
         // стили для кнопки копирования ссылки
     }
-    
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-family: 'IBM Plex Mono', 'monospace';
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &__btn-request {
+        font-size: 14px;
+        font-family: 'IBM Plex Mono';
+        font-weight: 600;
+        width: 100%;
+        height: 46px;
+        max-width: 188px;
+        box-sizing: border-box;
+        padding: 13.5px 14.5px;
+        border: none;
+        border-radius: 10px;
+        background-color: #22FFAA;
+    }
+
+    &__ref {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__ref-link {
+        width: 100%;
+        color: #243CBB;
+        font-size: 14px;
+        font-family: 'Open Sans', Arial;
+        box-sizing: border-box;
+        font-weight: 600;
+        max-width: 400px;
+        padding: 22px 24px;
+        border-radius: 10px;
+        background-color: #F8F9FB;
+    }
+
+    &__ref-copy {
+        // стили для кнопки копирования ссылки
+    }
+
     &__content {
-        // общие стили для контента
+        background-color: rgb(248, 249, 251);
+        border-radius: 30px;
     }
-    
-    &__stats, &__payouts {
+
+    &__stats {
+        position: relative;
+        box-shadow: 0 6px 10px rgba(21, 18, 51, 0.25);
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    &__payouts {
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        gap: 26px;
+    }
+
+    &__stats,
+    &__payouts {
+        padding: 40px;
+        border-radius: 30px;
+
         h3 {
-            // стили для заголовков внутри блоков
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
         }
     }
-    
+
     &__table {
-        // общие стили для таблицы
+        width: 100%;
+
         thead {
-            // стили для шапки таблицы
-        }
-        tbody {
-            // стили для тела таблицы
+            table-layout: auto;
+            border-collapse: collapse;
+
             tr {
-                // стили для строк
-                td {
-                    // стили для ячеек
+                th {
+                    padding-bottom: 16px;
+                    text-align: left;
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: 'IBM Plex Mono', monospace;
+                }
+                th:last-child {
+                    text-align: right;
                 }
             }
         }
 
-        &--stats {
-            // специфические стили для таблицы со статистикой
-        }
+        tbody {
 
-        &--payouts {
-            // специфические стили для таблицы выплат
+            th, td {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: 13px;
+                text-align: left;
+                box-sizing: border-box;
+                padding: 16px 0;
+            }
+
+            td:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    &__table--payouts {
+        thead {
+        }
+        tbody {
         }
     }
 }
