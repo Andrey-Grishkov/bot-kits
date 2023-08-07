@@ -84,19 +84,20 @@
 
 .payments {
   background-color: #F2F4F8;
-  width: 836px;
+  min-width: 836px;
   min-height: 228px;
-  margin-left: 0px;
+  margin: 0 35px auto 30px;
+  padding-left: 15px;
   display: flex;
   flex-direction: column;
   position: relative;
-  align-items: center;
 }
 
 .blockInfo {
   display: flex;
   flex-direction: row;
   position: relative;
+  justify-content: space-between;
 }
 
 .button {
@@ -197,4 +198,13 @@
 .answerText {
   align-self: self-start;
   margin: 3px 0 0 35px;
+}
+
+.tableHead {
+  margin: 7px;
+}
+
+.table__td {
+  padding: 17px;
+  color: red;
 }/*# sourceMappingURL=SubscriptionAndPayments.module.css.map */

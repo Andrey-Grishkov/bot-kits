@@ -6,19 +6,10 @@ import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { Subscription } from "./Subscription";
 import { BlockBalance } from "./BlockBalance";
 import { Container } from "./Container";
+import { DropdownOperations } from "./DropdownOperations";
+import { devConstant } from "./devConstant";
+import { Payments } from "./Payments";
 
-  export const devConstant = {
-    subscription: 'Бизнес',
-    statusNotActive: 'неактивен',
-    statusActive: 'активен',
-    whyNoSubscription: 'Недостаточно средств',
-    answerSubscription: 'Не удалось продлить подписку ',
-    answerPayments: 'Следующее списание',
-    dateAnswerSubscription: "15/06/2020",
-    dateAnswerPayments: "2020-06-15",
-    cardBank: '*****1119',
-    balance: 0
-  }
   const {subscription , balance , statusNotActive, whyNoSubscription, answerSubscription, dateAnswerSubscription} = devConstant;
 const status = statusNotActive;
 export const SubscriptionAndPayments: FC = () => {
@@ -46,8 +37,14 @@ export const SubscriptionAndPayments: FC = () => {
             </Container>
         </div >
         <Container extraClass = "payments">
+
+            <Payments />
+
+
             </Container>
         </div>
         </div>
     );
 };
+
+

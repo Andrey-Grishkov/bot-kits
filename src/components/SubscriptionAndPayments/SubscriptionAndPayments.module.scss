@@ -60,14 +60,15 @@
   .payments {
     // z-index: 10;
     background-color: $colorSecondaryCulturedHover;
-    width: 836px;
+    min-width: 836px;
     min-height: 228px;
     // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-    margin-left: 0px;
+    margin: 0 35px auto 30px ;
+    padding-left: 15px;
     display: flex;
     flex-direction: column;
     position: relative;
-    align-items: center;
+    // align-items: center;
   }
   .blockInfo {
     // z-index: 10;
@@ -75,10 +76,11 @@
     // width: 836px;
     // min-height: 228px;
     // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-    // margin-left: 0px;
+    // margin-left: 30px;
     display: flex;
     flex-direction: row;
     position: relative;
+    justify-content: space-between;
     // align-items: center;
   }
   .button {
@@ -196,6 +198,14 @@
     align-self: self-start;
     margin: 3px 0 0 35px;
   }
+.tableHead {
+  margin: 7px;
+}
+.table__td {
+  padding: 17px;
+  color: red;
+}
+
   // .blockRate {
   //   position: absolute;
   //   // top: 30px;

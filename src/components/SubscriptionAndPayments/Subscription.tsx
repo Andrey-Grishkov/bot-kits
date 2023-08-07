@@ -3,7 +3,8 @@ import { FC } from 'react';
 import styles from "./SubscriptionAndPayments.module.scss";
 import className from "classnames";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
-import { devConstant } from "./SubscriptionAndPayments";
+import { devConstant } from "./devConstant";
+
 
 const {subscription , statusNotActive, whyNoSubscription, answerSubscription, dateAnswerSubscription} = devConstant;
 const status = statusNotActive;
