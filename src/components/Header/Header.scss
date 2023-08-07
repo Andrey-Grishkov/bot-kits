@@ -1,0 +1,15 @@
+.header {
+    grid-area: H;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fb; // TODO delete this after fixes global background color
+    border-bottom: 1px solid #d7deea;
+    padding: 0 40px;
+}
+
+.icon-desktop {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

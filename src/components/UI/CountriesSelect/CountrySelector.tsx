@@ -6,7 +6,7 @@ import {
     SetStateAction,
     Dispatch,
   } from "react";
-  import styles from "./CountriesSelect.module.scss";
+  import styles from "./CountriesSelect.module.css";
   import caret from "../../../images/icons/down.svg";
   
   type SelectType = {
@@ -25,8 +25,7 @@ import {
       e.stopPropagation();
       const currentElem = e.target;
   
-      setUlElemActive(!ulElemActive);
-		  setImageActive(!imageActive);
+      setActive(true);
   
       if (currentElem.closest("ul")) {
         setPayloadSeleted(currentElem.textContent);
