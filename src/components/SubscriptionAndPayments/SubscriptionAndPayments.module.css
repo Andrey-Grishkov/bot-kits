@@ -11,11 +11,11 @@
   font-size: 18px;
 }
 
-.table__trHead {
+.dropDown, .table__trHead, .buttonCancel {
   font-size: 14px;
 }
 
-.table__tr, .text {
+.table__tr, .cardNum, .answerText, .text {
   font-size: 13px;
   font-weight: normal;
 }
@@ -118,7 +118,7 @@
 .buttonChangeTariff {
   font-weight: 600;
   font-family: "IBM Plex Mono";
-  margin: 35px;
+  margin-right: 35px;
   width: 188px;
   height: 46px;
   padding: 0;
@@ -171,7 +171,8 @@
 }
 
 .titleSubscription {
-  padding: 35px 0 0;
+  padding: 35px 0 10px 0;
+  width: 100%;
   display: flex;
   align-items: center;
   position: relative;
@@ -179,9 +180,10 @@
 }
 
 .titleTextStatus {
-  color: #FF5656;
   font-family: "IBM Plex Mono";
-  width: 98px;
+  font-weight: 600;
+  line-height: 23.4px;
+  min-width: 98px;
   max-height: 23px;
   margin: 0 35px 0 0;
   padding: 0;
@@ -192,16 +194,42 @@
 .buttonActivedSubscription {
   font-weight: 600;
   font-family: "IBM Plex Mono";
-  letter-spacing: 1px;
-  margin-top: 25px;
+  margin: auto 0 35px 0;
   width: 340px;
   height: 56px;
   padding: 0;
 }
 
+.buttonCancel {
+  font-weight: 600;
+  color: #8392AB;
+  background-color: #FFFFFF;
+  font-family: "IBM Plex Mono";
+  line-height: 21px;
+  letter-spacing: 0.3px;
+  margin: auto auto 15px 0;
+  width: 140px;
+  height: 56px;
+  padding: 0;
+}
+
 .answerText {
+  font-family: "Open Sans";
   align-self: self-start;
-  margin: 3px 0 0 35px;
+  padding: 0;
+  margin: 0px auto 0 35px;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
+}
+
+.cardNum {
+  font-family: "Open Sans";
+  font-weight: 600;
+  margin: 0;
+  -moz-text-align-last: right;
+       text-align-last: right;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
 }
 
 .tableHead {
@@ -226,8 +254,12 @@
   color: #FF5656;
 }
 
+.greenColorText {
+  color: #22FFAA;
+}
+
 .dropDown {
   margin-right: 35px;
   align-self: center;
-  width: 156px;
+  width: 115px;
 }/*# sourceMappingURL=SubscriptionAndPayments.module.css.map */

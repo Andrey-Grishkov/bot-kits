@@ -98,8 +98,8 @@
   @extend %AgButtonL;
   font-weight: 600;
   font-family: "IBM Plex Mono";
-  margin: 35px;
-  // margin-right: 35px;
+  // margin: auto 35 px 35px;
+  margin-right: 35px;
   width: 188px;
   height: 46px;
   padding: 0;
@@ -154,7 +154,8 @@
   // justify-content: space-between;
 }
 .titleSubscription {
-  padding: 35px 0 0;
+  padding: 35px 0 10px 0;
+  width: 100%;
   display: flex;
   align-items: center;
   // flex-direction: row;
@@ -163,9 +164,10 @@
 }
 .titleTextStatus {
   @extend %AgH4;
-  color: $colorSecondaryError;
   font-family: "IBM Plex Mono";
-  width: 98px;
+  font-weight: 600;
+  line-height: 23.4px;
+  min-width: 98px;
   max-height: 23px;
   margin: 0 35px 0 0;
   padding: 0;
@@ -187,16 +189,48 @@
   @extend %AgButtonL;
   font-weight: 600;
   font-family: "IBM Plex Mono";
-  letter-spacing: 1px;
-  margin-top: 25px;
+  margin: auto 0 35px 0;
+  // letter-spacing: 0.3px;
   // margin-right: 35px;
   width: 340px;
   height: 56px;
   padding: 0;
 }
+.buttonCancel {
+  @extend %AgPM;
+  font-weight: 600;
+  color: $colorGrey4;
+  background-color: $colorOffWhite;
+  font-family: "IBM Plex Mono";
+  line-height: 21px;
+  letter-spacing: 0.3px;
+  margin: auto auto 15px 0;
+  // letter-spacing: 0.3px;
+  // margin-right: 35px;
+  width: 140px;
+  height: 56px;
+  padding: 0;
+}
 .answerText {
+  @extend %AgPSReg;
+  font-family: "Open Sans";
   align-self: self-start;
-  margin: 3px 0 0 35px;
+  // margin: 0;
+  padding: 0;
+  margin: 0px auto 0 35px;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
+}
+.cardNum {
+  @extend %AgPSReg;
+  font-family: "Open Sans";
+  font-weight: 600;
+  // padding-left: 150px;
+  margin: 0;
+  text-align-last: right;
+  // align: left ;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
 }
 .tableHead {
   margin: 7px;
@@ -220,10 +254,14 @@
 .redColorText {
   color: $colorSecondaryError;
 }
+.greenColorText {
+  color: $colorPrimaryDefaultMediumSpringGreen;
+}
 .dropDown{
+  @extend %AgPM;
   margin-right: 35px;
   align-self: center;
-  width: 156px;
+  width: 115px;
 }
 // .blockRate {
 //   position: absolute;
