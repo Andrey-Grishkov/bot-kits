@@ -31,6 +31,13 @@ import { AddTo } from './AddTo/AddTo';
 import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
+import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
+import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
+import { Helper } from './Helper/Helper';
+import { MailingInput } from './MailingInput/MailingInput';
+import { Message } from './Message/Message';
+import { AddBotStep } from './AddBotStep/AddBotStep';
+import { MailingSelect } from './MailingSelect/MailingSelect';
 import { AuthButton } from './AuthButton/AuthButton';
 import { useState } from 'react'; 
 
@@ -95,6 +102,16 @@ export function UI() {
       <DateSelect />
       <DaySelect />
       <TimeSelect />
+      <MailingInput />
+      <MailingInput error/>
+      <MailingInput disabled/>
+      <MailingSelect />
+      <Message text="Ссылка скопирована"/>
+      <Helper text='В работе' type='vertical' />
+      <Helper text='Невидимое сообщение' type='horizontal' />
+      <AddBotStep step='1' type='facebook'/>
+      <AccountSettingButton />
+      <DropdownWithArrow />
     </section>
   );
 }
