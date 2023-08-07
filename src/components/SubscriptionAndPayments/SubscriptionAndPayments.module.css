@@ -11,7 +11,11 @@
   font-size: 18px;
 }
 
-.text {
+.table__trHead {
+  font-size: 14px;
+}
+
+.table__tr, .text {
   font-size: 13px;
   font-weight: normal;
 }
@@ -204,7 +208,26 @@
   margin: 7px;
 }
 
-.table__td {
-  padding: 17px;
-  color: red;
+.table__trHead {
+  font-weight: 600;
+  font-family: "Open Sans";
+  letter-spacing: 0.3px;
+  line-height: 21px;
+  padding: 0px 14px 14px 0;
+}
+
+.table__tr {
+  font-family: "Open Sans";
+  padding: 14px 14px 14px 0;
+  line-height: 20px;
+}
+
+.redColorText {
+  color: #FF5656;
+}
+
+.dropDown {
+  margin-right: 35px;
+  align-self: center;
+  width: 156px;
 }/*# sourceMappingURL=SubscriptionAndPayments.module.css.map */

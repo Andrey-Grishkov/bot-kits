@@ -21,21 +21,22 @@ export const Payments: FC = () => {
 <DropdownOperations repeatSelected={repeatSelected} setRepeatSeleted={setRepeatSeleted} />
 </div>
 <table className={'.tableHead'}>
-        <tr className={styles.table__td}>
-            <td className={styles.table__td}> {tableHead.data}</td>    
-            <td className={styles.table__td}> {tableHead.sum}&#8381;</td>    
-            <td className={styles.table__td}> {tableHead.operatin}</td>    
-            <td className={styles.table__td}> {tableHead.annotation}</td>    
-            <td className={styles.table__td}> {tableHead.statusPay}</td>    
+        <tr className={styles.table__trHead}>
+            <td className={styles.table__trHead}> {tableHead.data}</td>    
+            <td> {tableHead.sum}</td>    
+            <td> {tableHead.operatin}</td>    
+            <td> {tableHead.annotation}</td>    
+            <td> {tableHead.statusPay}</td>    
         </tr>
     {payArray.map((item, index) => 
-        (repeatSelected === "Все" || repeatSelected === item.operatin) && 
-        <tr key={index} className={styles.table__td}>
-            <td > {item.data.d + ' ' + item.data.h}</td>    
+        // (index > 10 && break;
+        (index <= 10 && (repeatSelected === "Все" || repeatSelected === item.operatin)) && 
+        <tr  className={styles.table__tr} key={index} >
+            <td  className={styles.table__tr}> {item.data.d + ' ' + item.data.h}</td>    
             <td> {item.sum}&#8381;</td>    
             <td> {item.operatin}</td>    
             <td> {item.annotation}</td>    
-            <td> {item.status}</td>    
+            <td className={(item.status === 'Отклонено') ? styles.redColorText : ''}>{item.status}</td>    
         </tr>
 
 	)
