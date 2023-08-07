@@ -10,6 +10,7 @@ import AddBotPage from "../AddBotPage/AddBotPage";
 import BotBuilder from "../BotBuilder/BotBuilder";
 import NavBar from "../NavBar/NavBar";
 import PageWrapper from "../PageWrapper/PageWrapper";
+import { ResetPassword } from "../ResetPassword/Reset-password";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path='/' element={<Dashboard />} />
                     <Route path='/addbot' element={<AddBotPage />} />
                     <Route path='/botbuilder' element={<BotBuilder />} />
+                    <Route path='reset-password' element={<ResetPassword />} />
                     <Route path='/signup' element={<Registration />} />
                     <Route path='/signin' element={<Login />} />
                     <Route path='/ui' element={<UI />} />
