@@ -5,11 +5,12 @@ import { ChangeEvent, FormEvent, useState, FC } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 // @ts-ignore
-import ru from 'react-phone-input-2/lang/ru.json'
+import ru from "react-phone-input-2/lang/ru.json";
 import { Link } from "react-router-dom";
 import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { AuthButton } from "../UI/AuthButton/AuthButton";
+import robotImg from '../../vendor/icons/robo_registration.svg'
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -48,11 +49,11 @@ export const Authorization: FC<IAuthProps> = ({
   };
 
   const handleMailPopup = () => {
-      setVisibleMailPopup(!visibleMailPopup);
+    setVisibleMailPopup(!visibleMailPopup);
   };
 
   const handlePasswordPopup = () => {
-      setVisiblePasswordPopup(!visiblePasswordPopup);
+    setVisiblePasswordPopup(!visiblePasswordPopup);
   };
 
   return (
@@ -120,40 +121,56 @@ export const Authorization: FC<IAuthProps> = ({
           </div>
           <form onSubmit={handleSubmit} className="form">
             <fieldset className="formfield">
-              <input
-                className="formfield__input"
-                type="text"
-                value={username}
-                placeholder="Имя"
-                onChange={handleUsernameChange}
-                required
-              />
-              <input
-                className="formfield__input"
-                type="email"
-                value={email}
-                placeholder="E-mail"
-                onChange={handleEmailChange}
-                required
-              />
-              <input
-                className="formfield__input"
-                type="password"
-                value={password}
-                placeholder="Пароль"
-                onChange={handlePasswordChange}
-                required
-              />
-              <PhoneInput
-                country="ru"
-                localization={ru}
-                inputClass="formfield__input_phone"
-                containerClass="formfield__phone_wrapper"
-                value={phone}
-                onChange={handlePhoneChange}
-              />
+              <div className="input__container">
+                <input
+                  className="formfield__input"
+                  type="text"
+                  value={username}
+                  placeholder="Имя"
+                  onChange={handleUsernameChange}
+                  required
+                />
+                <span className="input__star">*</span>
+              </div>
+              <div className="input__container">
+                <input
+                  className="formfield__input"
+                  type="email"
+                  value={email}
+                  placeholder="E-mail"
+                  onChange={handleEmailChange}
+                  required
+                />
+                <span className="input__star">*</span>
+              </div>
+              <div className="input__container">
+                <input
+                  className="formfield__input"
+                  type="password"
+                  value={password}
+                  placeholder="Пароль"
+                  onChange={handlePasswordChange}
+                  required
+                />
+                <span className="input__star">*</span>
+              </div>
+              <div className="input__container">
+                <PhoneInput
+                  country="ru"
+                  localization={ru}
+                  inputClass="formfield__input_phone"
+                  containerClass="formfield__phone_wrapper"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                />
+                <span className="input__star">*</span>
+              </div>
             </fieldset>
-            <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
+            <AuthButton
+              visible={visibleMailPopup}
+              notificationType={"letter"}
+              setVisible={handleMailPopup}
+            />
             <div className="caption">
               <p className="caption__text">Уже прошли регистрацию?</p>
               <Link to={"/signin"} className="caption__link">
@@ -161,28 +178,35 @@ export const Authorization: FC<IAuthProps> = ({
               </Link>
             </div>
           </form>
+          <div className="authorization__robot"/>
         </>
       )}
       {isLoginPage && !isRegistrationPage && !isResetPasswordPage && (
         <>
           <form onSubmit={handleSubmit} className="form_login">
             <fieldset className="formfield formfield_login">
-              <input
-                className="formfield__input formfield__input_login"
-                type="email"
-                value={email}
-                placeholder="E-mail"
-                onChange={handleEmailChange}
-                required
-              />
-              <input
-                className="formfield__input formfield__input_login"
-                type="password"
-                value={password}
-                placeholder="Пароль"
-                onChange={handlePasswordChange}
-                required
-              />
+              <div className="input__container">
+                <input
+                  className="formfield__input formfield__input_login"
+                  type="email"
+                  value={email}
+                  placeholder="E-mail"
+                  onChange={handleEmailChange}
+                  required
+                />
+                <span className="input__star">*</span>
+              </div>
+              <div className="input__container">
+                <input
+                  className="formfield__input formfield__input_login"
+                  type="password"
+                  value={password}
+                  placeholder="Пароль"
+                  onChange={handlePasswordChange}
+                  required
+                />
+                <span className="input__star">*</span>
+              </div>
             </fieldset>
             <div className="caption caption_login">
               <Link to={"/reset-password"} className="caption__link">
@@ -268,7 +292,11 @@ export const Authorization: FC<IAuthProps> = ({
                 required
               />
             </fieldset>
-            <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
+            <AuthButton
+              visible={visiblePasswordPopup}
+              notificationType={"password"}
+              setVisible={handlePasswordPopup}
+            />
           </form>
           <img src={roboIcon} alt="робот" />
         </>
