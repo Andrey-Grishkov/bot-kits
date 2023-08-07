@@ -1,8 +1,10 @@
 import "./Authorization.scss";
 import googleLogo from "../../vendor/icons/google_icon.svg";
 import { ChangeEvent, FormEvent, useState, FC } from "react";
+// @ts-ignore
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+// @ts-ignore
 import ru from 'react-phone-input-2/lang/ru.json'
 import { Link } from "react-router-dom";
 import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
@@ -24,7 +26,7 @@ export const Authorization: FC<IAuthProps> = ({
   const [username, setUsername] = useState("");
   const [visibleMailPopup, setVisibleMailPopup] = useState(false);
   const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
-  
+
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
