@@ -17,7 +17,8 @@ interface IButtonAddTemplate {
     label: string;
     icon: string;
     extraClass?: string;
-    disabled?: boolean
+    onClick?: () => void;
+    disabled?: boolean;
 }
 
 export const ButtonAddTemplate = ({
@@ -30,8 +31,8 @@ export const ButtonAddTemplate = ({
 }: IButtonAddTemplate) => {
     return (
         <div className={cn(styles.buttonAddTemplate__wrapper, extraClass)}>
-            <button className={styles.buttonAddTemplate} disabled={disabled} {...rest}>
-                <img className={styles.buttonAddTemplate__mainIcon} src={icon} alt="info-icon" />
+            <button className={styles.buttonAddTemplate} disabled={disabled} {...rest} >
+                <img className={styles.buttonAddTemplate__mainIcon} src={require(`./${icon}`)} alt="info-icon" />
                 <svg 
                     className={styles.buttonAddTemplate__plusIcon} 
                     xmlns="http://www.w3.org/2000/svg" 

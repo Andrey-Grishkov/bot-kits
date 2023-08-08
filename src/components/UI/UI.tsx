@@ -1,3 +1,5 @@
+import React, {useState} from 'react';
+
 import './UI.scss';
 import {AddBotButton} from "./AddBotButton/AddBotButton";
 import {Button} from "./Button/Button";
@@ -31,6 +33,9 @@ import { AddTo } from './AddTo/AddTo';
 import { DateSelect } from './DateSelect/DateSelect';
 import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
+import { Modal } from '../Modals/Modal/Modal';
+import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
+import { ModalAddBot } from '../Modals/ModalAddBot/ModalAddBot';
 import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
 import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
 import { Helper } from './Helper/Helper';
@@ -48,6 +53,9 @@ import { useState } from 'react';
 export function UI() {
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
+    const [showCommonContentModal, setShowCommonContentModal] = useState(false);
+    const [showAddBotModal, setShowAddBotModal] = useState(false);
+  
 
     const handleMailPopup = () => {
         setVisibleMailPopup(!visibleMailPopup);
@@ -56,16 +64,30 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
-    
+  
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
       <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
-      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
+      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg' onClick={() => setShowAddBotModal(true)}/>
       <ButtonCopy type='default'/>
-      <ButtonMain theme='purple' label='Добавить бота' size='l'/>
+      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
+
+      {showCommonContentModal &&
+        <Modal onClose={() => setShowCommonContentModal(false)}>
+          <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
+        </Modal>
+      }
+
       <ButtonMain theme='purple' label='' size='s'/>
+
+      {showAddBotModal &&
+        <Modal onClose={() => setShowAddBotModal(false)}>
+          <ModalAddBot title='Бот автоответчик'></ModalAddBot>
+        </Modal>
+      }
+
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция'/>
