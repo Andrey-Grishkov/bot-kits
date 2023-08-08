@@ -30,7 +30,7 @@ export const SubscriptionAndPayments: FC = () => {
         <h2 className={className(styles.titleText)}>Подписка и платежи</h2>
         <ButtonMain
           theme={"green"}
-          label={"сменить тариф"}
+          label={"СМЕНИТЬ ТАРИФ"}
           size={"l"}
           extraClass={styles.buttonChangeTariff}
         />

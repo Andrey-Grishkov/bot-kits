@@ -19,8 +19,8 @@ export const Payments: FC = () => {
   const [repeatSelected, setRepeatSeleted] = React.useState("Все");
   return (
     <>
-      <div className={className(styles.title)}>
-        <h2 className={className(styles.titleText)}>История платежей</h2>
+      <div className={className(styles.titlePay)}>
+        <h2 className={className(styles.titleTableText)}>История платежей</h2>
 
         <DropdownOperations
           repeatSelected={repeatSelected}

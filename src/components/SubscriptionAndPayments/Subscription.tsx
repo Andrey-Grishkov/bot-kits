@@ -13,7 +13,7 @@ const {
   answerSubscription,
   dateAnswerSubscription,
   cardBank,
-  answerPayments
+  answerPayments,
 } = devConstant;
 type Subscription = {
   status: string;
@@ -28,7 +28,11 @@ export const Subscription: FC<Subscription> = ({ status }) => {
             <h3 className={className(styles.titleTextSubscription)}>
               {subscription}
             </h3>
-            <h4 className={className(styles.titleTextStatus, styles.redColorText)}>{status}</h4>
+            <h4
+              className={className(styles.titleTextStatus, styles.redColorText)}
+            >
+              {status}
+            </h4>
           </div>
           <p className={className(styles.answerText)}>
             {answerSubscription + dateAnswerSubscription}
@@ -48,17 +52,21 @@ export const Subscription: FC<Subscription> = ({ status }) => {
       element = (
         <>
           <div className={className(styles.titleSubscription)}>
-            <h3 className={className(styles.titleTextSubscription, styles.greenColorText)}>
+            <h3
+              className={className(
+                styles.titleTextSubscription,
+              )}
+            >
               {subscription}
             </h3>
-            <h4 className={className(styles.titleTextStatus)}>{status}</h4>
+            <h4 className={className(styles.titleTextStatus, styles.greenColorText)}>{status}</h4>
           </div>
-          <p className={className(styles.answerText)}>
-            {answerPayments}
-          </p>
+          <p className={className(styles.answerText)}>{answerPayments}</p>
           <div className={className(styles.titleSubscription)}>
-          <p className={className(styles.answerText)}>{dateAnswerSubscription }</p>
-          <p className={className(styles.cardNum)}>{cardBank }</p>
+            <p className={className(styles.answerData)}>
+              {dateAnswerSubscription}
+            </p>
+            <p className={className(styles.cardNum)}>{cardBank}</p>
           </div>
           <ButtonMain
             theme={"grey"}
@@ -74,12 +82,12 @@ export const Subscription: FC<Subscription> = ({ status }) => {
       element = (
         <>
           <div className={className(styles.titleSubscription)}>
-            <h3 className={className(styles.titleTextStatus)}>
-              {'У вас нет активных подписок'}
-            </h3>
+            <h4 className={className(styles.titleTextStatus)}>
+              {"У вас нет активных подписок"}
+            </h4>
           </div>
           <p className={className(styles.answerText)}>
-          {'Выберите оптимальный тариф для себя'}
+            {"Выберите оптимальный тариф для себя"}
           </p>
           <ButtonMain
             theme={"green"}

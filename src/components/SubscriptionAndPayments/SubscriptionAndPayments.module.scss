@@ -1,38 +1,50 @@
 @import "../../utils/variables";
 .section {
   margin: 0;
-  padding: 0;
+  padding: 0px 30px 0 35px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  // position: relative;
 }
 .block {
-  margin-left: 20px;
+  // margin-left: 20px;
   width: 404px;
   height: 352px;
-  padding: 0;
+  // padding: 0;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 .title {
-  margin-left: 20px;
+  // margin-left: 20px;
   // width: 404px;
   height: 112px;
   padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
+  align-items: baseline;
+  // position: relative;
+}
+.titlePay {
+  // margin-left: 20px;
+  // width: 404px;
+  // height: 112px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // position: relative;
 }
 
 .container {
-  margin-left: 20px;
   padding: 0;
   border-radius: 30px;
-  display: block;
-  position: relative;
+  // display: block;
+  // position: relative;
   background-color: $colorSecondaryCulturedHover;
+  // margin-left: 20px;
 }
 .containerBalans {
   bottom: 80px;
@@ -46,16 +58,18 @@
   position: relative;
 }
 .subscription {
+  padding: 35px;
+  box-sizing: border-box;
   z-index: 10;
   background-color: $colorOffWhite;
-  width: 404px;
+  width: 100%;
   min-height: 228px;
   box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-  margin-left: 0px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  align-items: center;
+  // position: relative;
+  // align-items: center;
 }
 .payments {
   // z-index: 10;
@@ -63,8 +77,9 @@
   min-width: 836px;
   min-height: 228px;
   // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-  margin: 0 35px auto 30px;
-  padding-left: 15px;
+  margin: 0 0 auto auto;
+  box-sizing: border-box;
+  padding: 35px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -78,9 +93,9 @@
   // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
   // margin-left: 30px;
   display: flex;
-  flex-direction: row;
-  position: relative;
-  justify-content: space-between;
+  // flex-direction: row;
+  // position: relative;
+  // justify-content: space-between;
   // align-items: center;
 }
 .button {
@@ -98,11 +113,15 @@
   @extend %AgButtonL;
   font-weight: 600;
   font-family: "IBM Plex Mono";
+  line-height: 18.76px;
+  letter-spacing: 1px;
+
   // margin: auto 35 px 35px;
-  margin-right: 35px;
-  width: 188px;
+  // margin-right: 35px;
+  min-width: 188px;
   height: 46px;
   padding: 0;
+  margin: 0;
 }
 .sum {
   @extend %AgH3Med;
@@ -132,34 +151,51 @@
 .titleText {
   @extend %AgH2;
   font-family: "IBM Plex Mono";
-  min-width: 342px;
-  min-height: 42px;
-  margin-right: auto;
-  padding: 0;
-  display: flex;
-  align-items: center;
+  // margin: 0;
+  // min-width: 342px;
+  // min-height: 42px;
+  // margin-right: auto;
+  // padding: 0;
+  // display: flex;
+  // align-items: center;
+}
+.titleTableText {
+  @extend %AgH4;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  line-height: 23.4px;
+  margin: 0;
+  // min-width: 342px;
+  // min-height: 42px;
+  // margin-right: auto;
+  // padding: 0;
+  // display: flex;
+  // align-items: center;
 }
 .titleTextSubscription {
   @extend %AgH3Med;
   font-family: "IBM Plex Mono";
   font-weight: 600;
-  min-width: 87px;
-  min-height: 31px;
-  margin: 0 150px 0 35px;
-  padding: 0;
-  display: flex;
-  align-items: center;
+  // min-width: 87px;
+  // min-height: 31px;
+  // margin: 0 150px 0 35px;
+  // padding-bottom: 35px;
+  margin: 0 0 auto 0;
+  // display: flex;
+  // align-items: center;
   // flex-direction: row;
   // position: relative;
   // justify-content: space-between;
 }
 .titleSubscription {
-  padding: 35px 0 10px 0;
+  // padding: 35px 0 10px 0;
+  margin: 0 0 auto 0;
+  // padding-bottom: 35px;
   width: 100%;
   display: flex;
-  align-items: center;
+  // align-items: center;
   // flex-direction: row;
-  position: relative;
+  // position: relative;
   justify-content: space-between;
 }
 .titleTextStatus {
@@ -167,12 +203,13 @@
   font-family: "IBM Plex Mono";
   font-weight: 600;
   line-height: 23.4px;
-  min-width: 98px;
+  // min-width: 98px;
   max-height: 23px;
-  margin: 0 35px 0 0;
+  // margin: 0 35px 0 0;
+  margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
 }
 // .titleText {
 //   @extend %AgH3Med;
@@ -189,7 +226,9 @@
   @extend %AgButtonL;
   font-weight: 600;
   font-family: "IBM Plex Mono";
-  margin: auto 0 35px 0;
+  line-height: 18.76px;
+  letter-spacing: 1px;
+  margin: auto 0 0 0;
   // letter-spacing: 0.3px;
   // margin-right: 35px;
   width: 340px;
@@ -204,27 +243,40 @@
   font-family: "IBM Plex Mono";
   line-height: 21px;
   letter-spacing: 0.3px;
-  margin: auto auto 15px 0;
+  margin: auto auto 0 0;
   // letter-spacing: 0.3px;
   // margin-right: 35px;
-  width: 140px;
-  height: 56px;
+  // width: 140px;
+  height: auto;
   padding: 0;
 }
 .answerText {
   @extend %AgPSReg;
   font-family: "Open Sans";
+  font-weight: 400;
   align-self: self-start;
-  // margin: 0;
+  margin: 0 0 10px 0;
   padding: 0;
-  margin: 0px auto 0 35px;
+  // margin: 0px auto 0 35px;
   letter-spacing: 0.3px;
   line-height: 19.5px;
 }
-.cardNum {
-  @extend %AgPSReg;
+.answerData {
+  @extend %AgPL;
   font-family: "Open Sans";
   font-weight: 600;
+  align-self: self-start;
+  margin: 0;
+  padding: 0;
+  // margin: 0px auto 0 35px;
+  letter-spacing: 0.3px;
+  line-height: 24px;
+}
+.cardNum {
+  @extend %AgPL;
+  font-family: "Open Sans";
+  font-weight: 600;
+  color: $colorGrey2;
   // padding-left: 150px;
   margin: 0;
   text-align-last: right;
