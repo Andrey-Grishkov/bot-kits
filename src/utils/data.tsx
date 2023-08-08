@@ -14,6 +14,12 @@ import settingUp from '../images/icons/video settingup.svg';
 import mailing from '../images/icons/video mailing.svg';
 import schemes from '../images/icons/video schemes.svg';
 
+export const pages = [
+	{ id: '1', title: "Yandex", link: "https://yandex.com/" },
+	{ id: '2', title: "Yandex", link: "https://yandex.com/" },
+	{ id: '3', title: "Yandex", link: "https://yandex.com/" },
+	]
+
 export const templates = [
 	{ id: '1', name: "Бот автоответчик", icon: answeringMachine },
   { id: '2', name: "Доставка еды", icon: foodDelivery },
@@ -27,6 +33,30 @@ export const templates = [
 	{ id: '10', name: "Салон красоты", icon: beauty },
   { id: '11', name: "Онлайн-покупки", icon: internetShopping },
   { id: '12', name: "Вопрос/ответ", icon: question },
+]
+
+export const mailings = [
+  { id: '22496346', 
+    name: "№1", 
+    messenger: "Telegram", 
+    sent: "8",
+    conversion: "60",
+    status: "started",
+  },
+  { id: '32284427', 
+    name: "№2", 
+    messenger: "Viber", 
+    sent: "1",
+    conversion: "0",
+    status: "stopped",
+  },
+  { id: '65390710', 
+    name: "№3", 
+    messenger: "Vk", 
+    sent: "16",
+    conversion: "82",
+    status: "started",
+  },
 ]
 
 export const bots = [

@@ -11,6 +11,7 @@ import BotBuilder from "../BotBuilder/BotBuilder";
 import NavBar from "../NavBar/NavBar";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import { ResetPassword } from "../ResetPassword/Reset-password";
+import { Mailing } from "../Mailing/Mailing";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path='reset-password' element={<ResetPassword />} />
                     <Route path='/signup' element={<Registration />} />
                     <Route path='/signin' element={<Login />} />
+                    <Route path='/mailing' element={<Mailing />} />
                     <Route path='/ui' element={<UI />} />
                 </Routes>
             </PageWrapper>

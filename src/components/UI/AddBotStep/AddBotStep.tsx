@@ -1,6 +1,9 @@
 import React from 'react';
 import { FC } from 'react';
 import './AddBotStep.scss';
+import { Input } from '../Input/Input';
+import { AddPageField } from '../AddPageField/AddPageField';
+import { pages } from '../../../utils/data';
 
 interface IAddBotStep {
   step: '1' | '2' | '3';
@@ -54,7 +57,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                   <span>Ключ доступа</span>
                 </div>
                 {/* Ниже поле <Input placeholder='Введите ключ доступа' /> */}
-                <div className='input'></div>
+                <Input placeholder='Введите ключ доступа'/>
                 </>
               ) : 
               ( <>
@@ -63,7 +66,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                   <span>Ключ доступа</span>
                 </div>
                 {/* Поле <Input placeholder='Введите ключ доступа' /> */}
-                <div className='input'></div>
+                <Input placeholder='Введите ключ доступа'/>
                 </>
               )}
           </div>)}
@@ -77,7 +80,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Ключ доступа</span>
               </div>
               {/* Поле <Input placeholder='Введите ключ доступа' /> */}
-              <div className='input_sm'></div>
+              <Input placeholder='Введите ключ доступа' size='small'/>
               </>
             )}
           { stepTwo &&
@@ -87,7 +90,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>URI бота</span>
               </div>
               {/* Поле <Input placeholder='Введите URI' /> */}
-              <div className='input_sm'></div>
+              <Input placeholder='Введите URI' />
               </>
 
             )}
@@ -98,7 +101,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Название бота</span>
               </div>
               {/* Поле <Input placeholder='Введите ключ доступа' /> */}
-              <div className='input_sm'></div>
+              <Input placeholder='Введите ключ доступа' size='small'/>
               </>
             )}
         </div>)}
@@ -112,7 +115,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Загрузить страницу</span>
               </div>
               {/* Поле <Загрузить страницу /> */}
-              <div className='input'></div>
+              <AddPageField pages={pages}/>
               </>
             ) : 
             ( <>
@@ -121,7 +124,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Название бота</span>
               </div>
               {/* <Input placeholder='Введите ключ доступа' /> */}
-              <div className='input'></div>
+              <Input placeholder='Введите ключ доступа'/>
               </>
             )}
           </div>)}

@@ -6,10 +6,11 @@
 
 .titleSelect {
   font-family: Open Sans;
+  width: 556px;
   height: 40px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
   background-color:#F2F4F8;
   color:#BFC9D9;
@@ -22,11 +23,12 @@
 
 .titleSelected {
   font-family: Open Sans;
+  width: 556px;
   height: 40px;
   border: none;
   border-radius: 5px;
   background-color:#F2F4F8;
-  padding: 10px 40px 10px 10px;
+  padding: 12px;
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 400;
@@ -34,22 +36,19 @@
   color: #060C23;
   letter-spacing: 0.3px;
   text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ul {
   padding: 0;
-  margin: 0;
+  margin: 4px 0 16px 0;
   background-color: #fff;
   width: 100%;
-  height: auto;
+  height: 0px;
   overflow: hidden;
-  visibility: hidden;
   opacity: 0; 
   transition: opacity .4s ease, visibility 0.4s ease 1s;
-  position: absolute;
   box-sizing: border-box;
   top: 48px;
   cursor: pointer;
@@ -70,14 +69,13 @@
 }  
 
 .ulActive {
-  visibility: visible;
+  height: fit-content;
   opacity: 1;
   transition: opacity 1s ease;
 }
 
 .ulScroll {
   overflow-y: scroll;
-  max-height: 264px;
   border: none;
   box-shadow: 0px 6px 16px 0px #15123314;
   border-radius: 10px;
@@ -86,6 +84,7 @@
   line-height: 20px;
   letter-spacing: 0.3px;
   text-align: left;
+  margin: 0;
 }
 
 .ulScroll::-webkit-scrollbar {
@@ -100,29 +99,10 @@
   height: 16px;
 }
 
-.imgCaret {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 13px;
-  right: 10px;
-  transform: rotate(0deg);
-  transition: transform .4s ease;
-}
-
-.imgCaretActive {
-  transform: rotate(180deg);
-}
-
 .selectOriginal {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
-}
-
-/* Tick mark styles */
-.tick {
-  margin-right: 16px;
 }
