@@ -55,8 +55,8 @@ export const ButtonTutorial = ({
                     <path 
                         d="M2 109C45.6305 109 81 73.9533 81 30.7211M75.5131 2C77.1081 6.00503 78.3793 10.1717 79.295 14.4683" 
                         stroke="white" 
-                        stroke-width="3" 
-                        stroke-linecap="round"
+                        strokeWidth="3" 
+                        strokeLinecap="round"
                     />
                 </svg>
                 <img className={styles.buttonTutorial_mainIcon} src={coverIcon} alt="cover-icon" />

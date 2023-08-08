@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import { rootReducer } from "../src/redux/rootReducer";
 import { NavProvider } from "./context/navBarContext";
 
-const store = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

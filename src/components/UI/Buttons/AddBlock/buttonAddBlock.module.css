@@ -1,0 +1,57 @@
+.buttonAddBlock {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    padding: 16px 20px;
+
+    border: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonAddBlock__text {
+    color: #060C23;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 21px */
+    letter-spacing: 0.3px;
+}
+
+.buttonAddBlock:hover {
+    background-color: #F2F4F8;
+}
+
+/* .buttonAddBlock:hover .buttonAddBlock__text {
+    color: #243CBB;
+} */
+
+
+.buttonAddBlock:hover * {
+    stroke: #243CBB;
+    color: #243CBB;
+}
+
+.buttonAddBlock:active {
+    background-color: #ECEFFF;
+}
+
+.buttonAddBlock:active * {
+    stroke: #243CBB;
+    color: #243CBB;
+}
+
+.buttonAddBlock:disabled {
+    background-color: transparent;
+    cursor: default;
+}
+
+.buttonAddBlock:disabled * {
+    stroke: #BFC9D9;
+    color: #BFC9D9;
+}

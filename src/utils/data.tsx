@@ -14,19 +14,21 @@ import settingUp from '../images/icons/video settingup.svg';
 import mailing from '../images/icons/video mailing.svg';
 import schemes from '../images/icons/video schemes.svg';
 
+const descPlug = 'Бот ответит стандартным сообщением на запрос от человека. Подходит для всех мессенджеров. Шаблон возможно изменить под ваши цели.'
+
 export const templates = [
-	{ id: '1', name: "Бот автоответчик", icon: answeringMachine },
-  { id: '2', name: "Доставка еды", icon: foodDelivery },
-  { id: '3', name: "Демо бот", icon: demoBot },
-	{ id: '4', name: "Опрос", icon: poll },
-  { id: '5', name: "Лидогенерация/HR решения", icon: leadGeneration },
-  { id: '6', name: "Онлайн школа/Вебинар", icon: eLearning },
-	{ id: '7', name: "Закрытый клуб по подписке", icon: privateClub },
-  { id: '8', name: "Агенство по недвижимости", icon: realEstate },
-  { id: '9', name: "Развлечения", icon: entertainment },
-	{ id: '10', name: "Салон красоты", icon: beauty },
-  { id: '11', name: "Онлайн-покупки", icon: internetShopping },
-  { id: '12', name: "Вопрос/ответ", icon: question },
+	{ id: '1', name: "Бот автоответчик", icon: answeringMachine, keyName: 'answeringMachine', desc: descPlug },
+  { id: '2', name: "Доставка еды", icon: foodDelivery, keyName: 'foodDelivery', desc: descPlug },
+  { id: '3', name: "Демо бот", icon: demoBot, keyName: 'demoBot', desc: descPlug },
+	{ id: '4', name: "Опрос", icon: poll, keyName: 'poll', desc: descPlug },
+  { id: '5', name: "Лидогенерация/HR решения", icon: leadGeneration, keyName: 'leadGeneration', desc: descPlug },
+  { id: '6', name: "Онлайн школа/Вебинар", icon: eLearning, keyName: 'eLearning', desc: descPlug },
+	{ id: '7', name: "Закрытый клуб по подписке", icon: privateClub, keyName: 'privateClub', desc: descPlug },
+  { id: '8', name: "Агенство по недвижимости", icon: realEstate, keyName: 'realEstate', desc: descPlug },
+  { id: '9', name: "Развлечения", icon: entertainment, keyName: 'entertainment', desc: descPlug },
+	{ id: '10', name: "Салон красоты", icon: beauty, keyName: 'beauty', desc: descPlug },
+  { id: '11', name: "Онлайн-покупки", icon: internetShopping, keyName: 'internetShopping', desc: descPlug },
+  { id: '12', name: "Вопрос/ответ", icon: question, keyName: 'question', desc: descPlug },
 ]
 
 export const bots = [
