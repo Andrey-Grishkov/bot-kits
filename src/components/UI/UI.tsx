@@ -34,7 +34,8 @@ import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
-import { ModalAddBot } from '../Modals/ModalAddBot/ModalAddBot';
+// @ts-ignore
+import { ModalAddBot }  from '../Modals/ModalAddBot/ModalAddBot';
 import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
 import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
 import { Helper } from './Helper/Helper';
