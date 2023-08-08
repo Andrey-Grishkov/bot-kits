@@ -1,15 +1,12 @@
-@charset "UTF-8";
 .main-overlay {
   width: 100%;
 }
 
 .main-overlay::after {
-  /* Стили для псевдоэлемента без открытого оверлея (закрытого) */
   display: none;
 }
 
 .main-overlay--open::after {
-  /* Стили для псевдоэлемента при открытом оверлее */
   content: "";
   position: fixed;
   left: 0;
