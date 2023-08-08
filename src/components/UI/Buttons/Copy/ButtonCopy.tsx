@@ -13,7 +13,8 @@ const getColor = (type: TButtonTypes ) => {
 interface IButtonCopy {
     type: TButtonTypes;
     extraClass?: string;
-    disabled?: boolean
+    disabled?: boolean;
+    onClick?: () => void;
 }
 
 export const ButtonCopy = ({
