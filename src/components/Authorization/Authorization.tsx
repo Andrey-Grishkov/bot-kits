@@ -11,6 +11,7 @@ import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { AuthButton } from "../UI/AuthButton/AuthButton";
 import eye from "../../vendor/icons/eye.svg";
 import eyeOff from "../../vendor/icons/eye_off.svg";
+import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -324,6 +325,7 @@ export const Authorization: FC<IAuthProps> = ({
               setVisible={handlePasswordPopup}
             />
           </form>
+          <img src={roboIcon} alt="робот" />
         </>
       )}
     </div>

@@ -20,7 +20,7 @@ export const pages = [
 	{ id: '3', title: "Yandex", link: "https://yandex.com/" },
 	]
 
-//const descPlug = 'Бот ответит стандартным сообщением на запрос от человека. Подходит для всех мессенджеров. Шаблон возможно изменить под ваши цели.'
+const descPlug = 'Бот ответит стандартным сообщением на запрос от человека. Подходит для всех мессенджеров. Шаблон возможно изменить под ваши цели.'
 
 export const templates = [
 	{ id: '1', name: "Бот автоответчик", icon: answeringMachine, keyName: 'answeringMachine', desc: descPlug },
