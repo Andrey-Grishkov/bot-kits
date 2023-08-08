@@ -7,7 +7,7 @@ export interface InputProps {
   size?: string;
   placeholder?: string;
   value?: string;
-  error?: 'Вы ввели неправильное значение' | 'Ошибка';
+  error?: 'Вы ввели неправильное значение' | 'Введите ответ' | 'Ошибка';
   disabled?: boolean;
 }
 
