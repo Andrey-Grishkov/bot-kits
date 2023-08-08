@@ -13,6 +13,7 @@
 }
 
 .steps__title__container{
+  font-family: IBM Plex Mono;
   margin: 0;
   padding: 0 0 16px 0;
   display: flex;
@@ -23,18 +24,4 @@
   letter-spacing: 0.5px;
   text-align: left;
   color: #060C23;
-}
-
-.input {
-  width: 580px;
-  height: 65px;
-  background-color: #F8F9FB;
-  border-radius: 10px;
-}
-
-.input_sm {
-  width: 377px;
-  height: 65px;
-  background-color: #F8F9FB;
-  border-radius: 10px;
 }

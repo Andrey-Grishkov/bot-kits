@@ -39,10 +39,8 @@ import { ModalAddBot }  from '../Modals/ModalAddBot/ModalAddBot';
 import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
 import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
 import { Helper } from './Helper/Helper';
-import { MailingInput } from './MailingInput/MailingInput';
 import { Message } from './Message/Message';
 import { AddBotStep } from './AddBotStep/AddBotStep';
-import { MailingSelect } from './MailingSelect/MailingSelect';
 import { AuthButton } from './AuthButton/AuthButton';
 import { Input } from './Input/Input';
 import { LoadPageButton } from './LoadPageButton/LoadPageButton';
@@ -84,7 +82,7 @@ export function UI() {
       <ButtonMain theme='purple' label='' size='s'/>
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
-      <ButtonTutorial label='Пошаговая инструкция'/>
+      <ButtonTutorial label='Пошаговая инструкция' type='default'/>
       <Button />
       <StopButton />
       <InstructionButton />
@@ -157,10 +155,6 @@ export function UI() {
       <DateSelect />
       <DaySelect />
       <TimeSelect />
-      <MailingInput />
-      <MailingInput error/>
-      <MailingInput disabled/>
-      <MailingSelect />
       <Message text="Ссылка скопирована"/>
       <Helper text='В работе' type='vertical' />
       <Helper text='Невидимое сообщение' type='horizontal' />

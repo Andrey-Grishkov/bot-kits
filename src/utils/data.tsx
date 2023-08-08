@@ -14,7 +14,13 @@ import settingUp from '../images/icons/video settingup.svg';
 import mailing from '../images/icons/video mailing.svg';
 import schemes from '../images/icons/video schemes.svg';
 
-const descPlug = 'Бот ответит стандартным сообщением на запрос от человека. Подходит для всех мессенджеров. Шаблон возможно изменить под ваши цели.'
+export const pages = [
+	{ id: '1', title: "Yandex", link: "https://yandex.com/" },
+	{ id: '2', title: "Yandex", link: "https://yandex.com/" },
+	{ id: '3', title: "Yandex", link: "https://yandex.com/" },
+	]
+
+//const descPlug = 'Бот ответит стандартным сообщением на запрос от человека. Подходит для всех мессенджеров. Шаблон возможно изменить под ваши цели.'
 
 export const templates = [
 	{ id: '1', name: "Бот автоответчик", icon: answeringMachine, keyName: 'answeringMachine', desc: descPlug },
@@ -29,6 +35,30 @@ export const templates = [
 	{ id: '10', name: "Салон красоты", icon: beauty, keyName: 'beauty', desc: descPlug },
   { id: '11', name: "Онлайн-покупки", icon: internetShopping, keyName: 'internetShopping', desc: descPlug },
   { id: '12', name: "Вопрос/ответ", icon: question, keyName: 'question', desc: descPlug },
+]
+
+export const mailings = [
+  { id: '22496346', 
+    name: "№1", 
+    messenger: "Telegram", 
+    sent: "8",
+    conversion: "60",
+    status: "started",
+  },
+  { id: '32284427', 
+    name: "№2", 
+    messenger: "Viber", 
+    sent: "1",
+    conversion: "0",
+    status: "stopped",
+  },
+  { id: '65390710', 
+    name: "№3", 
+    messenger: "Vk", 
+    sent: "16",
+    conversion: "82",
+    status: "started",
+  },
 ]
 
 export const bots = [

@@ -1,0 +1,17 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 1190" filter="url(#filter0_d_1760_331951)">
+<circle id="Ellipse 193" cx="32" cy="26" r="20" fill="white"/>
+<path id="Vector 1 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M34.7204 31.7225C34.3476 32.0925 33.7433 32.0925 33.3705 31.7225L28.2796 26.6699C27.9068 26.2999 27.9068 25.7001 28.2796 25.3301L33.3705 20.2775C33.7433 19.9075 34.3476 19.9075 34.7204 20.2775C35.0932 20.6474 35.0932 21.2473 34.7204 21.6173L30.3045 26L34.7204 30.3827C35.0932 30.7527 35.0932 31.3526 34.7204 31.7225Z" fill="#060C23"/>
+</g>
+<defs>
+<filter id="filter0_d_1760_331951" x="0" y="0" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-2" dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1760_331951"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1760_331951" result="shape"/>
+</filter>
+</defs>
+</svg>

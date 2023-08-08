@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import cn from 'classnames';
 import coverIcon from "./tutorial.svg";
+import coverIconVideo from "./video.svg"
 import styles from './ButtonTutorial.module.scss';
 // import { TButtonTypes } from '../../../../types/button';
 
@@ -12,14 +13,15 @@ import styles from './ButtonTutorial.module.scss';
 //   };
 
 interface IButtonTutorial {
-    // type: TButtonTypes;
+    type: "default" | "video";
     label: string;
     extraClass?: string;
     disabled?: boolean;
+    onClick?: (() => void) | ((e: SyntheticEvent) => void);
 }
 
 export const ButtonTutorial = ({
-    // type = 'default',
+    type = 'default',
     label,
     extraClass,
     disabled = false,
@@ -59,7 +61,10 @@ export const ButtonTutorial = ({
                         strokeLinecap="round"
                     />
                 </svg>
-                <img className={styles.buttonTutorial_mainIcon} src={coverIcon} alt="cover-icon" />
+                {type === "video" ? 
+                    (<img className={styles.buttonTutorial_mainIcon} src={coverIconVideo} alt="cover-icon" />)
+                    :
+                    (<img className={styles.buttonTutorial_mainIcon} src={coverIcon} alt="cover-icon" />)}
             </div>
             <span className={styles.buttonTutorial__textArea}>{label}</span>
         </button>
