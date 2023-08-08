@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import './UI.scss';
 import {AddBotButton} from "./AddBotButton/AddBotButton";
 import {Button} from "./Button/Button";
@@ -35,13 +34,28 @@ import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
+import { ModalAddBot } from '../Modals/ModalAddBot/ModalAddBot';
+import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
+import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
+import { Helper } from './Helper/Helper';
+import { MailingInput } from './MailingInput/MailingInput';
+import { Message } from './Message/Message';
+import { AddBotStep } from './AddBotStep/AddBotStep';
+import { MailingSelect } from './MailingSelect/MailingSelect';
 import { AuthButton } from './AuthButton/AuthButton';
-import { NotificationModal } from '../Modals/NotificationModal/NotificationModal';
+import { Input } from './Input/Input';
+import { LoadPageButton } from './LoadPageButton/LoadPageButton';
+import { PageButton } from './PageButton/PageButton';
+import { AddPageField } from './AddPageField/AddPageField';
+
 export function UI() {
     const [showModal, setShowModal] = useState(false);
     const [showNotModal, setNotShowModal] = useState(false);
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
+    const [showCommonContentModal, setShowCommonContentModal] = useState(false);
+    const [showAddBotModal, setShowAddBotModal] = useState(false);
+
 
     const handleMailPopup = () => {
         setVisibleMailPopup(!visibleMailPopup);
@@ -50,27 +64,29 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
-    
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
       <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
-      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
+      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg' onClick={() => setShowAddBotModal(true)}/>
       <ButtonCopy type='default'/>
-      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowModal(true)}/>
+      <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
 
-      {showModal &&
-        <Modal onClose={() => setShowModal(false)}>
+      {showCommonContentModal &&
+        <Modal onClose={() => setShowCommonContentModal(false)}>
           <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
         </Modal>
       }
-      {showNotModal &&
-        <NotificationModal onClose={ () => setNotShowModal(false)}></NotificationModal>
+
+      <ButtonMain theme='purple' label='' size='s'/>
+
+      {showAddBotModal &&
+        <Modal onClose={() => setShowAddBotModal(false)}>
+          <ModalAddBot title='Бот автоответчик'></ModalAddBot>
+        </Modal>
       }
-      <ButtonMain theme='purple' label='' size='s' onClick={() => {
-        setNotShowModal(true)
-      }}/>
+
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция'/>
@@ -79,6 +95,41 @@ export function UI() {
       <InstructionButton />
       <MessageButton />
       <BotAnswerButton />
+      <Input placeholder='Введите ключ доступа' />
+      <Input
+        placeholder='Введите ключ доступа'
+        error='Вы ввели неправильное значение'
+      />
+      <Input placeholder='Введите ключ доступа' disabled />
+      <LoadPageButton title='Загрузить страницу' />
+      <LoadPageButton title='Загрузить страницу' size='md' />
+      <LoadPageButton title='Загрузить страницу' size='sm' />
+      <PageButton title='Загрузить' />
+      <PageButton title='Страница 1' />
+      <PageButton title='Страница 1' selected={true} />
+      <PageButton title='Страница 1' size='md' />
+      <AddPageField
+        pages={[
+          {
+            title: 'Страница 1',
+          },
+          {
+            title: 'Страница 2',
+          },
+          {
+            title: 'Страница 4',
+          },
+          {
+            title: 'Страница 4',
+          },
+          {
+            title: 'Страница 5',
+          },
+          {
+            title: 'Страница 6',
+          },
+        ]}
+      />
       <AddSocialButton value="Facebook">
         <img src={svgFacebook} />
       </AddSocialButton>
@@ -111,6 +162,16 @@ export function UI() {
       <DateSelect />
       <DaySelect />
       <TimeSelect />
+      <MailingInput />
+      <MailingInput error/>
+      <MailingInput disabled/>
+      <MailingSelect />
+      <Message text="Ссылка скопирована"/>
+      <Helper text='В работе' type='vertical' />
+      <Helper text='Невидимое сообщение' type='horizontal' />
+      <AddBotStep step='1' type='facebook'/>
+      <AccountSettingButton />
+      <DropdownWithArrow />
     </section>
   );
 }
