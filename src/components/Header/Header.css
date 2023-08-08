@@ -3,9 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fb;
   border-bottom: 1px solid #d7deea;
-  padding: 0 40px;
+  margin: 0 40px;
 }
 
 @media (max-width: 767px) {
