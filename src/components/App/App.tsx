@@ -13,25 +13,25 @@ import PageWrapper from "../PageWrapper/PageWrapper";
 import Overlay from "../NavBar/components/Overlay";
 
 function App() {
-  return (
-    <Overlay>
-      <div className="page app-container">
-        <Header />
-        <NavBar />
-        <PageWrapper>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/addbot" element={<AddBotPage />} />
-            <Route path="/botbuilder" element={<BotBuilder />} />
-            <Route path="/signup" element={<Registration />} />
-            <Route path="/signin" element={<Login />} />
-            <Route path="/ui" element={<UI />} />
-          </Routes>
-        </PageWrapper>
-        <Footer />
-      </div>
-    </Overlay>
-  );
+    return (
+        <Overlay>
+            <div className='page app-container'>
+                <Header />
+                <NavBar />
+                <PageWrapper>
+                    <Routes>
+                        <Route path='/' element={<Dashboard />} />
+                        <Route path='/addbot' element={<AddBotPage />} />
+                        <Route path='/botbuilder' element={<BotBuilder />} />
+                        <Route path='/signup' element={<Registration />} />
+                        <Route path='/signin' element={<Login />} />
+                        <Route path='/ui' element={<UI />} />
+                    </Routes>
+                </PageWrapper>
+                <Footer />
+            </div>
+        </Overlay>
+    );
 }
 
 export default App;
