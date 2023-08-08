@@ -24,19 +24,10 @@ interface IModalProps {
 
 export const Modal: FunctionComponent<IModalProps> = ({onClose, children}) => {
 
-  function closeModal() {
-    onClose();
-  }
-
-
   function onEscapeClick(event: KeyboardEvent) {
     if (event.key === "Escape") {
-      closeModal();
+      onClose();
     }
-  }
-
-  function onCrossClick() {
-    closeModal();
   }
 
   useEffect(
@@ -53,7 +44,7 @@ export const Modal: FunctionComponent<IModalProps> = ({onClose, children}) => {
   return ReactDOM.createPortal(
     (<>
       <div className={styles.modal}>
-        <div className={styles.close} onClick={onCrossClick}>
+        <div className={styles.close} onClick={onClose}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M19 5L5 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M5 5L19 19" stroke="#060C23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -65,7 +56,7 @@ export const Modal: FunctionComponent<IModalProps> = ({onClose, children}) => {
       </div>
 
 
-      <ModalOverlay onOverlayClick={closeModal}/>
+      <ModalOverlay onOverlayClick={onClose}/>
     </>),
 
     modalsContainer!

@@ -44,7 +44,7 @@ export function UI() {
   return (
     <section className="ui">
       <ButtonAddBlock type='default' label='Блок сообщений'/>
-      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg'/>
+      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg' onClick={() => setShowAddBotModal(true)}/>
       <ButtonCopy type='default'/>
       <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
 
@@ -54,7 +54,7 @@ export function UI() {
         </Modal>
       }
 
-      <ButtonMain theme='purple' label='' size='s' onClick={() => setShowAddBotModal(true)}/>
+      <ButtonMain theme='purple' label='' size='s'/>
 
       {showAddBotModal &&
         <Modal onClose={() => setShowAddBotModal(false)}>
