@@ -1,0 +1,28 @@
+.page {
+  width: 100%;
+  margin: 0 auto;
+  font-family: "'IBM Plex Mono', monospace";
+  color: #202020;
+  background-color: #FFFFFF;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 86px auto;
+  grid-template-rows: 50px auto 50px;
+  gap: 0px 0px;
+  grid-template-areas: "N H" "N C" "N F";
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .app-container {
+    grid-template-areas: "H H" "C C" "F F";
+  }
+}/*# sourceMappingURL=App.css.map */

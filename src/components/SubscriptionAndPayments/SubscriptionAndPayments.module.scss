@@ -1,0 +1,233 @@
+@import "../../utils/variables";
+.section {
+  margin: 0;
+  padding: 0px 30px 0 35px;
+  display: flex;
+  flex-direction: column;
+}
+.block {
+  width: 404px;
+  height: 352px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.title {
+  height: 112px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.titlePay {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  padding: 0;
+  border-radius: 30px;
+  background-color: $colorSecondaryCulturedHover;
+}
+.containerBalans {
+  bottom: 80px;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0;
+  width: 404px;
+  min-height: 205px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.subscription {
+  padding: 35px;
+  box-sizing: border-box;
+  z-index: 10;
+  background-color: $colorOffWhite;
+  width: 100%;
+  min-height: 228px;
+  box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.payments {
+  background-color: $colorSecondaryCulturedHover;
+  min-width: 836px;
+  min-height: 228px;
+  margin: 0 0 auto auto;
+  box-sizing: border-box;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.blockInfo {
+  display: flex;
+}
+.button {
+  @extend %AgButtonL;
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+  margin-right: 35px;
+  width: 229px;
+  height: 60px;
+  padding: 0;
+}
+.buttonChangeTariff {
+  @extend %AgButtonL;
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  line-height: 18.76px;
+  letter-spacing: 1px;
+  min-width: 188px;
+  height: 46px;
+  padding: 0;
+  margin: 0;
+}
+.sum {
+  @extend %AgH3Med;
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  margin: 0;
+  padding: 0;
+  line-height: 32px;
+}
+.balance {
+  width: 50px;
+  margin: auto auto 35px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  @extend %AgPSReg;
+  font-family: "Open Sans";
+  width: 87px;
+  min-height: 31px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.titleText {
+  @extend %AgH2;
+  font-family: "IBM Plex Mono";
+}
+.titleTableText {
+  @extend %AgH4;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  line-height: 23.4px;
+  margin: 0;
+}
+.titleTextSubscription {
+  @extend %AgH3Med;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  margin: 0 0 auto 0;
+}
+.titleSubscription {
+  margin: 0 0 auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.titleTextStatus {
+  @extend %AgH4;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+  line-height: 23.4px;
+  max-height: 23px;
+  margin: 0;
+  padding: 0;
+}
+.buttonActivedSubscription {
+  @extend %AgButtonL;
+  font-weight: 600;
+  font-family: "IBM Plex Mono";
+  line-height: 18.76px;
+  letter-spacing: 1px;
+  margin: auto 0 0 0;
+  width: 340px;
+  height: 56px;
+  padding: 0;
+}
+.buttonCancel {
+  @extend %AgPM;
+  font-weight: 600;
+  color: $colorGrey4;
+  background-color: $colorOffWhite;
+  font-family: "IBM Plex Mono";
+  line-height: 21px;
+  letter-spacing: 0.3px;
+  margin: auto auto 0 0;
+  height: auto;
+  padding: 0;
+}
+.answerText {
+  @extend %AgPSReg;
+  font-family: "Open Sans";
+  font-weight: 400;
+  align-self: self-start;
+  margin: 0 0 10px 0;
+  padding: 0;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
+}
+.answerData {
+  @extend %AgPL;
+  font-family: "Open Sans";
+  font-weight: 600;
+  align-self: self-start;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.3px;
+  line-height: 24px;
+}
+.cardNum {
+  @extend %AgPL;
+  font-family: "Open Sans";
+  font-weight: 600;
+  color: $colorGrey2;
+  margin: 0;
+  text-align-last: right;
+  letter-spacing: 0.3px;
+  line-height: 19.5px;
+}
+.tableHead {
+  margin: 7px;
+}
+.table__trHead {
+  @extend %AgPM;
+  font-weight: 600;
+  font-family: "Open Sans";
+  letter-spacing: 0.3px;
+  line-height: 21px;
+  padding: 0px 14px 14px 0;
+}
+.table__tr {
+  @extend %AgPSReg;
+  font-family: "Open Sans";
+  padding: 14px 14px 14px 0;
+  line-height: 20px;
+}
+.redColorText {
+  color: $colorSecondaryError;
+}
+.greenColorText {
+  color: $colorPrimaryDefaultMediumSpringGreen;
+}
+.dropDown{
+  @extend %AgPM;
+  margin-right: 35px;
+  align-self: center;
+  width: 115px;
+}
