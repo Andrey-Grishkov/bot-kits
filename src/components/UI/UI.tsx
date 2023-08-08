@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import './UI.scss';
 import {AddBotButton} from "./AddBotButton/AddBotButton";
 import {Button} from "./Button/Button";
@@ -35,7 +34,8 @@ import { DaySelect } from './DaySelect/DaySelect';
 import { TimeSelect } from './TimeSelect/TimeSelect';
 import { Modal } from '../Modals/Modal/Modal';
 import { ModalCommonContent } from '../Modals/ModalCommonContent/ModalCommonContent';
-import { ModalAddBot } from '../Modals/ModalAddBot/ModalAddBot';
+// @ts-ignore
+import { ModalAddBot }  from '../Modals/ModalAddBot/ModalAddBot';
 import { AccountSettingButton } from './AccountSettingButton/AccountSettingButton';
 import { DropdownWithArrow } from './DropdownWithArrow/DropdownWithArrow';
 import { Helper } from './Helper/Helper';
@@ -49,12 +49,13 @@ import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
 import { AddPageField } from './AddPageField/AddPageField';      
 
+
 export function UI() {
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
     const [showCommonContentModal, setShowCommonContentModal] = useState(false);
     const [showAddBotModal, setShowAddBotModal] = useState(false);
-  
+
 
     const handleMailPopup = () => {
         setVisibleMailPopup(!visibleMailPopup);
@@ -63,7 +64,7 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
-  
+
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
