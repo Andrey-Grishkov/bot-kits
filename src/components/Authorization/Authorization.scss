@@ -126,6 +126,15 @@
     opacity: 0.6;
     color: white;
   }
+  &__eye {
+    position: absolute;
+    right: 15px;
+    bottom: 18px;
+    cursor: pointer;
+  }
+  &__eye:hover {
+    opacity: .5;
+  }
 }
 .formfield {
   max-width: 670px;

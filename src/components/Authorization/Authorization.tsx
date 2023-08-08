@@ -7,10 +7,10 @@ import "react-phone-input-2/lib/style.css";
 // @ts-ignore
 import ru from "react-phone-input-2/lang/ru.json";
 import { Link } from "react-router-dom";
-import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { AuthButton } from "../UI/AuthButton/AuthButton";
-import robotImg from '../../vendor/icons/robo_registration.svg'
+import eye from "../../vendor/icons/eye.svg";
+import eyeOff from "../../vendor/icons/eye_off.svg";
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -27,7 +27,7 @@ export const Authorization: FC<IAuthProps> = ({
   const [username, setUsername] = useState("");
   const [visibleMailPopup, setVisibleMailPopup] = useState(false);
   const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
-
+  const [passwordIsVisible, setPasswordIsVisible] = useState(false);
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -56,6 +56,9 @@ export const Authorization: FC<IAuthProps> = ({
     setVisiblePasswordPopup(!visiblePasswordPopup);
   };
 
+  const handleEyeClick = () => {
+    setPasswordIsVisible(!passwordIsVisible);
+  };
   return (
     <div className="authorization">
       {isRegistrationPage && !isLoginPage && !isResetPasswordPage && (
@@ -146,11 +149,17 @@ export const Authorization: FC<IAuthProps> = ({
               <div className="input__container">
                 <input
                   className="formfield__input"
-                  type="password"
+                  type={passwordIsVisible ? "text" : "password"}
                   value={password}
                   placeholder="Пароль"
                   onChange={handlePasswordChange}
                   required
+                />
+                <img
+                  src={passwordIsVisible ? eye : eyeOff}
+                  alt="глаз"
+                  className="input__eye"
+                  onClick={handleEyeClick}
                 />
                 <span className="input__star">*</span>
               </div>
@@ -159,23 +168,23 @@ export const Authorization: FC<IAuthProps> = ({
                   country="ru"
                   localization={ru}
                   inputStyle={{
-                    backgroundColor: '#243cbb',
-                    border: 'none',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
-                    height: '60px',
-                    color: 'white',
-                    fontFamily: 'Open Sans',
+                    backgroundColor: "#243cbb",
+                    border: "none",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.5)",
+                    height: "60px",
+                    color: "white",
+                    fontFamily: "Open Sans",
                     fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '24px',
-                    width: '320px',
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    width: "320px",
                     borderRadius: 0,
                   }}
                   containerClass="formfield__phone_wrapper"
                   buttonStyle={{
-                    backgroundColor: '#060C23',
-                    border: 'none',
-                    height: '61px',
+                    backgroundColor: "#060C23",
+                    border: "none",
+                    height: "61px",
                   }}
                   value={phone}
                   onChange={handlePhoneChange}
@@ -195,7 +204,7 @@ export const Authorization: FC<IAuthProps> = ({
               </Link>
             </div>
             <div className="authorization__robot"></div>
-          </form>  
+          </form>
         </>
       )}
       {isLoginPage && !isRegistrationPage && !isResetPasswordPage && (
