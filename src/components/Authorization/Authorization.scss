@@ -10,7 +10,7 @@
   position: relative;
   &__robot {
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     right: 0;
     background-image: url('../../vendor/icons/robo_registration.svg');
     width: 225px;
@@ -155,19 +155,6 @@
     &_login {
       width: 500px;
     }
-    &_phone {
-      background-color: #243cbb !important;
-      border: none !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
-      height: 60px !important;
-      color: white;
-      font-family: "Open Sans";
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      width: 320px !important;
-      border-radius: 0 !important;
-    }
   }
 
   &__input:last-of-type {
@@ -181,7 +168,9 @@
     position: relative;
     display: flex;
     max-width: 324px;
-    background: none;
+  }
+  &__dropdown {
+    background-color: black;
   }
   &__select {
     background-color: #243cbb;
@@ -224,6 +213,9 @@
         top: 400px;
       }
     }
+    &__robot {
+      max-width: 205px;
+    }
   }
   .form {
     max-width: 700px;
@@ -252,6 +244,7 @@
       max-height: 145px;
       position: static;
       display: block;
+      margin-top: 30px;
     }
   }
   .form {
@@ -262,6 +255,9 @@
       max-width: 360px;
       border-radius: 30px 30px 0 0;
     }
+  }
+  .caption {
+      margin-top: 30px;
   }
   .formfield {
     max-width: 320px;

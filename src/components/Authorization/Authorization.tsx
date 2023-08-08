@@ -158,8 +158,25 @@ export const Authorization: FC<IAuthProps> = ({
                 <PhoneInput
                   country="ru"
                   localization={ru}
-                  inputClass="formfield__input_phone"
+                  inputStyle={{
+                    backgroundColor: '#243cbb',
+                    border: 'none',
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
+                    height: '60px',
+                    color: 'white',
+                    fontFamily: 'Open Sans',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    width: '320px',
+                    borderRadius: 0,
+                  }}
                   containerClass="formfield__phone_wrapper"
+                  buttonStyle={{
+                    backgroundColor: '#060C23',
+                    border: 'none',
+                    height: '61px',
+                  }}
                   value={phone}
                   onChange={handlePhoneChange}
                 />
@@ -177,8 +194,8 @@ export const Authorization: FC<IAuthProps> = ({
                 Войти
               </Link>
             </div>
-          </form>
-          <div className="authorization__robot"/>
+            <div className="authorization__robot"></div>
+          </form>  
         </>
       )}
       {isLoginPage && !isRegistrationPage && !isResetPasswordPage && (
@@ -298,7 +315,6 @@ export const Authorization: FC<IAuthProps> = ({
               setVisible={handlePasswordPopup}
             />
           </form>
-          <img src={roboIcon} alt="робот" />
         </>
       )}
     </div>
