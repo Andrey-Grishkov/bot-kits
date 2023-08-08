@@ -60,6 +60,11 @@
   font-weight: 600;
   line-height: 150%; /* 21px */
   letter-spacing: 0.3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 188px;
+  text-align: left;
 }
 
 .buttonAddTemplate__plusIcon {

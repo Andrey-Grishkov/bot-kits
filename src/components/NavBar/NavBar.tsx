@@ -1,21 +1,22 @@
-import React, { useMemo, useState } from "react";
-import Overlay from "./components/Overlay";
-import "./NavBar.css";
+import { useState, useCallback } from "react";
+
+import "./NavBar.scss";
 import { useNav } from "../../context/navBarContext";
 
 import { mockMenu } from "./mock";
 
 import { useLocation } from "react-router-dom";
 
+import logoIcon from "../../images/icon/side bar/logo.svg";
+import widthLogoIcon from "../../images/icon/side bar/widthLogo.svg";
+
 const NavBar = ({ ...props }) => {
     const location = useLocation();
 
-    const mockMenuItems = useMemo(() => mockMenu, [mockMenu]);
     const { isOverlayOpen, setIsOverlayOpen } = useNav();
 
-    //TODO refact this for array of links
-    const findActiveLink = () => {
-        const currentPath = location.pathname.substring(1);
+    const findActiveLink = useCallback(() => {
+        const currentPath = location.pathname;
 
         const activeLink = mockMenu.find((menuItem) => {
             if (menuItem.link === currentPath) return true;
@@ -29,8 +30,8 @@ const NavBar = ({ ...props }) => {
             return false;
         });
 
-        return activeLink ? activeLink.link : null;
-    };
+        return activeLink ? activeLink.link : undefined;
+    }, [location.pathname]);
 
     const [openSubMenu, setOpenSubMenu] = useState(null);
     const handleSubMenuClick = (index: any) => {
@@ -59,97 +60,165 @@ const NavBar = ({ ...props }) => {
                     backgroundColor: "#F8F9FB",
                     borderRadius: "10px",
                     transition: "width 0.15s ease",
-                    ...(isOverlayOpen && { position: "absolute" }),
+                    ...(isOverlayOpen && {
+                        position: "absolute",
+                    }),
                 }}
             >
-                <Overlay active={isOverlayOpen}>
-                    <nav {...props}>
-                        <ul
-                            style={{
-                                listStyle: "none",
-                                padding: 0,
-                                margin: 0,
-                                display: "flex",
-                                flexDirection: "column",
+                <nav {...props}>
+                    <ul
+                        style={{
+                            listStyle: "none",
+                            padding: 0,
+                            margin: 0,
+                            display: "flex",
+                            flexDirection: "column",
 
-                                gap: "8px",
+                            gap: "24px",
+                            ...(!isOverlayOpen
+                                ? {
+                                      alignItems: "center",
+                                      paddingLeft: 0,
+                                  }
+                                : { paddingLeft: "16px" }),
+                        }}
+                    >
+                        <div>
+                            {/* todo link to / */}
+                            {isOverlayOpen ? (
+                                <img
+                                    src={widthLogoIcon}
+                                    alt='logo'
+                                    width='145px'
+                                    height='34px'
+                                    style={{
+                                        marginTop: "16px",
+                                        flexShrink: 0,
+                                    }}
+                                />
+                            ) : (
+                                <img
+                                    src={logoIcon}
+                                    alt='logo'
+                                    width='38px'
+                                    height='34px'
+                                    style={{
+                                        marginTop: "16px",
+                                        flexShrink: 0,
+                                    }}
+                                />
+                            )}
+                        </div>
+
+                        <button
+                            style={{
+                                background: "#243CBB",
+                                color: "white",
+                                textTransform: "uppercase",
+                                margin: "4px 0 20px 0",
+                                border: "none",
+                                height: "46px",
+                                maxWidth: "182px",
+                                ...(!isOverlayOpen
+                                    ? {
+                                          width: "46px",
+                                          borderRadius: "50%",
+                                      }
+                                    : {
+                                          borderRadius: "10px",
+                                          padding: "14px 14px",
+                                      }),
                             }}
                         >
-                            {mockMenuItems.map((item, index) => (
-                                <li
-                                    key={item.text}
+                            {isOverlayOpen ? "Добавить бота" : "+"}
+                        </button>
+
+                        {mockMenu.map((item, index) => (
+                            <li
+                                key={item.text}
+                                style={{
+                                    marginRight: "20px",
+                                    position: "relative",
+                                    ...(!isOverlayOpen && {
+                                        margin: "0 auto",
+                                    }),
+                                }}
+                            >
+                                <a
+                                    href={item.link}
+                                    onClick={() => handleSubMenuClick(index)}
                                     style={{
-                                        marginRight: "20px",
-                                        position: "relative",
-                                        ...(!isOverlayOpen && {
-                                            margin: "0 auto",
-                                        }),
+                                        textDecoration: "none",
+                                        color: "#333",
+                                        display: "flex",
+                                        alignItems: "center",
                                     }}
                                 >
-                                    <a
-                                        href={item.link}
-                                        onClick={() =>
-                                            handleSubMenuClick(index)
-                                        }
+                                    {item.Icon && (
+                                        <item.Icon
+                                            style={{
+                                                ...(isOverlayOpen && {
+                                                    marginRight: "16px",
+                                                }),
+                                                flexShrink: 0,
+                                            }}
+                                            stroke={
+                                                findActiveLink() === item.link
+                                                    ? "blue"
+                                                    : "#D7DEEA"
+                                            }
+                                        />
+                                    )}
+
+                                    {isOverlayOpen && (
+                                        <>
+                                            {item.text}
+                                            {item.subMenu && (
+                                                <span
+                                                    style={{
+                                                        marginLeft: "5px",
+                                                        marginTop: "6px",
+                                                    }}
+                                                >
+                                                    {openSubMenu === index
+                                                        ? "▲"
+                                                        : "▼"}
+                                                </span>
+                                            )}
+                                        </>
+                                    )}
+                                </a>
+                                {item.subMenu && isOverlayOpen && (
+                                    <ul
                                         style={{
-                                            textDecoration: "none",
-                                            color: "#333",
+                                            listStyle: "none",
+                                            marginTop: "16px",
+                                            backgroundColor: "#f9f9f9",
+
+                                            display:
+                                                openSubMenu === index
+                                                    ? "block"
+                                                    : "none",
                                         }}
                                     >
-                                        {item.Icon && (
-                                            <img
-                                                src={item.Icon}
-                                                alt='information'
-                                                style={{
-                                                    marginRight: "16px",
-                                                    flexShrink: 0,
-                                                }}
-                                            />
-                                        )}
-                                        {isOverlayOpen && (
-                                            <>
-                                                {item.text}
-                                                {item.subMenu && (
-                                                    <span
-                                                        style={{
-                                                            marginLeft: "5px",
-                                                        }}
-                                                    >
-                                                        {openSubMenu === index
-                                                            ? "▲"
-                                                            : "▼"}
-                                                    </span>
-                                                )}
-                                            </>
-                                        )}
-                                    </a>
-                                    {item.subMenu && (
-                                        <ul
-                                            style={{
-                                                listStyle: "none",
-
-                                                backgroundColor: "#f9f9f9",
-
-                                                display:
-                                                    openSubMenu === index
-                                                        ? "block"
-                                                        : "none",
-                                            }}
-                                        >
-                                            {item.subMenu.map((subMenuItem) => (
-                                                <li key={subMenuItem.text}>
-                                                    <a href={subMenuItem.link}>
-                                                        {subMenuItem.text}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </Overlay>
+                                        {item.subMenu.map((subMenuItem) => (
+                                            <li key={subMenuItem.text}>
+                                                <a
+                                                    href={subMenuItem.link}
+                                                    style={{
+                                                        textDecoration: "auto",
+                                                    }}
+                                                >
+                                                    {subMenuItem.text}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             </div>
         </div>
     );
