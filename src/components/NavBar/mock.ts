@@ -13,7 +13,7 @@ export const mockMenu: MenuItemProps[] = [
     {
         text: "Дашборд",
         Icon: DashboardIcon,
-        link: "/dashboard",
+        link: "/",
     },
     {
         text: "Воронки",

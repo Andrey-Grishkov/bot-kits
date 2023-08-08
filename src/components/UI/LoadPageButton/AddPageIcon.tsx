@@ -12,16 +12,16 @@ export const AddPageIcon = ({ opacity = 1 }) => {
       <path
         d='M18 12.1667V23.8333'
         stroke='white'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M12.1665 18H23.8332'
         stroke='white'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
