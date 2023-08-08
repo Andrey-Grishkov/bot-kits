@@ -69,7 +69,7 @@ export function UI() {
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
       <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
-      <ButtonAddTemplate type='default' label='Бот автоответчик' icon='answering machine.svg' onClick={() => setShowAddBotModal(true)}/>
+      <ButtonAddTemplate keyName='answeringMachine' type='default' label='Бот автоответчик' onClick={() => setShowAddBotModal(true)}/>
       <ButtonCopy type='default'/>
       <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
 
@@ -80,13 +80,6 @@ export function UI() {
       }
 
       <ButtonMain theme='purple' label='' size='s'/>
-
-      {showAddBotModal &&
-        <Modal onClose={() => setShowAddBotModal(false)}>
-          <ModalAddBot title='Бот автоответчик'></ModalAddBot>
-        </Modal>
-      }
-
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция'/>
