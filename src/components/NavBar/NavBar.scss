@@ -1,0 +1,9 @@
+.navBar-Container {
+    grid-area: N;
+    position: relative;
+    min-width: 86px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
