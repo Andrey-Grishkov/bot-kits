@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import './UI.scss';
 import {AddBotButton} from "./AddBotButton/AddBotButton";
 import {Button} from "./Button/Button";
@@ -47,15 +46,14 @@ import { AuthButton } from './AuthButton/AuthButton';
 import { Input } from './Input/Input';
 import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
-import { AddPageField } from './AddPageField/AddPageField';      
-import { useState } from 'react'; 
+import { AddPageField } from './AddPageField/AddPageField';
 
 export function UI() {
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
     const [showCommonContentModal, setShowCommonContentModal] = useState(false);
     const [showAddBotModal, setShowAddBotModal] = useState(false);
-  
+
 
     const handleMailPopup = () => {
         setVisibleMailPopup(!visibleMailPopup);
@@ -64,7 +62,7 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
-  
+
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />

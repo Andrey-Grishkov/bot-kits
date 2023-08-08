@@ -31,7 +31,7 @@ export const AddPageField: FC<IAddPageFieldProps> = ({ pages }) => {
     <div className={cn(classes.container)}>
       <LoadPageButton title='Загрузить' size={columnSize} />
       {pages.map((page, index) => {
-        return <PageButton title={page.title} size={columnSize} />
+        return <PageButton title={page.title} size={columnSize} key={index}/>
       })}
     </div>
   );
