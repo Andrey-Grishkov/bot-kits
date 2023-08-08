@@ -4,11 +4,9 @@ import styles from "./SubscriptionAndPayments.module.scss";
 import className from "classnames";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { devConstant } from "./devConstant";
-import { element } from "prop-types";
 
 const {
   subscription,
-  statusActive,
   whyNoSubscription,
   answerSubscription,
   dateAnswerSubscription,
@@ -48,18 +46,21 @@ export const Subscription: FC<Subscription> = ({ status }) => {
       );
       break;
 
-    case "активен": // if (x === 'value2')
+    case "активен":
       element = (
         <>
           <div className={className(styles.titleSubscription)}>
-            <h3
-              className={className(
-                styles.titleTextSubscription,
-              )}
-            >
+            <h3 className={className(styles.titleTextSubscription)}>
               {subscription}
             </h3>
-            <h4 className={className(styles.titleTextStatus, styles.greenColorText)}>{status}</h4>
+            <h4
+              className={className(
+                styles.titleTextStatus,
+                styles.greenColorText
+              )}
+            >
+              {status}
+            </h4>
           </div>
           <p className={className(styles.answerText)}>{answerPayments}</p>
           <div className={className(styles.titleSubscription)}>
@@ -100,5 +101,4 @@ export const Subscription: FC<Subscription> = ({ status }) => {
       break;
   }
   return element;
-  //   );
 };

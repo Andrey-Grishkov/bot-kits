@@ -2,8 +2,8 @@
 const devConstant = {
     subscription: 'Бизнес',
     // statusActive: 'неактивен',
-    statusActive: 'новый',
-    // statusActive: 'активен',
+    // statusActive: 'новый',
+    statusActive: 'активен',
     whyNoSubscription: 'Недостаточно средств',
     answerSubscription: 'Не удалось продлить подписку ',
     answerPayments: 'Следующее списание',

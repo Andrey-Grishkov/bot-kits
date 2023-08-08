@@ -4,47 +4,34 @@
   padding: 0px 30px 0 35px;
   display: flex;
   flex-direction: column;
-  // position: relative;
 }
 .block {
-  // margin-left: 20px;
   width: 404px;
   height: 352px;
-  // padding: 0;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 .title {
-  // margin-left: 20px;
-  // width: 404px;
   height: 112px;
   padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  // position: relative;
 }
 .titlePay {
-  // margin-left: 20px;
-  // width: 404px;
-  // height: 112px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // position: relative;
 }
 
 .container {
   padding: 0;
   border-radius: 30px;
-  // display: block;
-  // position: relative;
   background-color: $colorSecondaryCulturedHover;
-  // margin-left: 20px;
 }
 .containerBalans {
   bottom: 80px;
@@ -68,35 +55,20 @@
   margin: 0px;
   display: flex;
   flex-direction: column;
-  // position: relative;
-  // align-items: center;
 }
 .payments {
-  // z-index: 10;
   background-color: $colorSecondaryCulturedHover;
   min-width: 836px;
   min-height: 228px;
-  // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
   margin: 0 0 auto auto;
   box-sizing: border-box;
   padding: 35px;
   display: flex;
   flex-direction: column;
   position: relative;
-  // align-items: center;
 }
 .blockInfo {
-  // z-index: 10;
-  // background-color: $colorSecondaryCulturedHover;
-  // width: 836px;
-  // min-height: 228px;
-  // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-  // margin-left: 30px;
   display: flex;
-  // flex-direction: row;
-  // position: relative;
-  // justify-content: space-between;
-  // align-items: center;
 }
 .button {
   @extend %AgButtonL;
@@ -115,9 +87,6 @@
   font-family: "IBM Plex Mono";
   line-height: 18.76px;
   letter-spacing: 1px;
-
-  // margin: auto 35 px 35px;
-  // margin-right: 35px;
   min-width: 188px;
   height: 46px;
   padding: 0;
@@ -151,13 +120,6 @@
 .titleText {
   @extend %AgH2;
   font-family: "IBM Plex Mono";
-  // margin: 0;
-  // min-width: 342px;
-  // min-height: 42px;
-  // margin-right: auto;
-  // padding: 0;
-  // display: flex;
-  // align-items: center;
 }
 .titleTableText {
   @extend %AgH4;
@@ -165,37 +127,17 @@
   font-weight: 600;
   line-height: 23.4px;
   margin: 0;
-  // min-width: 342px;
-  // min-height: 42px;
-  // margin-right: auto;
-  // padding: 0;
-  // display: flex;
-  // align-items: center;
 }
 .titleTextSubscription {
   @extend %AgH3Med;
   font-family: "IBM Plex Mono";
   font-weight: 600;
-  // min-width: 87px;
-  // min-height: 31px;
-  // margin: 0 150px 0 35px;
-  // padding-bottom: 35px;
   margin: 0 0 auto 0;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: row;
-  // position: relative;
-  // justify-content: space-between;
 }
 .titleSubscription {
-  // padding: 35px 0 10px 0;
   margin: 0 0 auto 0;
-  // padding-bottom: 35px;
   width: 100%;
   display: flex;
-  // align-items: center;
-  // flex-direction: row;
-  // position: relative;
   justify-content: space-between;
 }
 .titleTextStatus {
@@ -203,25 +145,10 @@
   font-family: "IBM Plex Mono";
   font-weight: 600;
   line-height: 23.4px;
-  // min-width: 98px;
   max-height: 23px;
-  // margin: 0 35px 0 0;
   margin: 0;
   padding: 0;
-  // display: flex;
-  // align-items: center;
 }
-// .titleText {
-//   @extend %AgH3Med;
-//   font-family: 'IBM Plex Mono';
-//   font-weight: 600;
-//   width: 87px;
-//   min-height: 31px;
-//   margin: 0;
-//   padding: 0;
-//   display: flex;
-//   align-items: center;
-// }
 .buttonActivedSubscription {
   @extend %AgButtonL;
   font-weight: 600;
@@ -229,8 +156,6 @@
   line-height: 18.76px;
   letter-spacing: 1px;
   margin: auto 0 0 0;
-  // letter-spacing: 0.3px;
-  // margin-right: 35px;
   width: 340px;
   height: 56px;
   padding: 0;
@@ -244,9 +169,6 @@
   line-height: 21px;
   letter-spacing: 0.3px;
   margin: auto auto 0 0;
-  // letter-spacing: 0.3px;
-  // margin-right: 35px;
-  // width: 140px;
   height: auto;
   padding: 0;
 }
@@ -257,7 +179,6 @@
   align-self: self-start;
   margin: 0 0 10px 0;
   padding: 0;
-  // margin: 0px auto 0 35px;
   letter-spacing: 0.3px;
   line-height: 19.5px;
 }
@@ -268,7 +189,6 @@
   align-self: self-start;
   margin: 0;
   padding: 0;
-  // margin: 0px auto 0 35px;
   letter-spacing: 0.3px;
   line-height: 24px;
 }
@@ -277,10 +197,8 @@
   font-family: "Open Sans";
   font-weight: 600;
   color: $colorGrey2;
-  // padding-left: 150px;
   margin: 0;
   text-align-last: right;
-  // align: left ;
   letter-spacing: 0.3px;
   line-height: 19.5px;
 }
@@ -300,8 +218,6 @@
   font-family: "Open Sans";
   padding: 14px 14px 14px 0;
   line-height: 20px;
-
-  // padding-left: 0;
 }
 .redColorText {
   color: $colorSecondaryError;
@@ -315,71 +231,3 @@
   align-self: center;
   width: 115px;
 }
-// .blockRate {
-//   position: absolute;
-//   // top: 30px;
-//   // left: -80px;
-//   width: 404px;
-//   height: 211px;
-//   border-radius: 30px;
-//   // box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
-//   display: flex;
-//   flex-direction: column;
-//   // gap: 5px;
-//   // cursor: pointer;
-//   // list-style-type: none;
-//   margin: 0;
-//   // padding: 10px 0;
-//   background-color: #fff;
-//   // z-index: 100;
-// }
-
-// .menuItem {
-//   margin: 0;
-// }
-
-// .button {
-//   margin: 0;
-//   width: 100%;
-//   height: 37px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-start;
-//   background-color: #fff;
-//   border: none;
-//   cursor: pointer;
-// }
-
-// .button:hover {
-//   background-color: rgba(242, 244, 248, 1);
-// }
-
-// .label {
-//   margin: 0;
-//   padding: 0;
-//   font-size: 13px;
-//   font-weight: 400;
-//   line-height: 20px;
-//   letter-spacing: 1px;
-//   text-align: left;
-// }
-
-// .buttonIcon {
-//   width: 24px;
-//   height: 24px;
-//   margin: 0px 16px 0 10px;
-// }
-
-// .name {
-//   margin: 42px auto 32px;
-//   padding: 0;
-//   width: 232px;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   font-size: 16px;
-//   font-weight: 600;
-//   line-height: 21px;
-//   letter-spacing: 0.5px;
-//   text-align: left;
-// }

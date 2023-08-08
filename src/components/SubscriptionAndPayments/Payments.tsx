@@ -37,7 +37,6 @@ export const Payments: FC = () => {
         </tr>
         {payArray.map(
           (item, index) =>
-            // (index > 10 && break;
             index <= 10 &&
             (repeatSelected === options[0] ||
               repeatSelected === item.operation) && (
