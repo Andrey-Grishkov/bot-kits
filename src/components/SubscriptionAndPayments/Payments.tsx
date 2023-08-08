@@ -28,6 +28,7 @@ export const Payments: FC = () => {
         />
       </div>
       <table className={".tableHead"}>
+        <thead>
         <tr className={styles.table__trHead}>
           <td className={styles.table__trHead}> {tableHead.data}</td>
           <td> {tableHead.sum}</td>
@@ -35,6 +36,8 @@ export const Payments: FC = () => {
           <td> {tableHead.annotation}</td>
           <td> {tableHead.statusPay}</td>
         </tr>
+        </thead>
+        <tbody>
         {payArray.map(
           (item, index) =>
             index <= 10 &&
@@ -58,6 +61,7 @@ export const Payments: FC = () => {
               </tr>
             )
         )}
+        </tbody>
       </table>
     </>
   );
