@@ -6,6 +6,14 @@
     border: none;
     cursor: pointer;
 
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 134%; /* 18.76px */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
     &:disabled {
       cursor: default;
     }

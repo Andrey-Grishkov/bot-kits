@@ -40,7 +40,7 @@ const Dashboard: FC = () => {
 				<div className='dashboard__templates' 
 						style={{ height: expanded ? '282px' : '125px', overflow: 'hidden', transition: 'height 0.3s' }}>
 					{templates.map((template) => {
-		  return <ButtonAddTemplate key={template.id} label={template.name} icon={template.icon} type='default'/>;
+		  return <ButtonAddTemplate keyName={template.keyName} key={template.id} label={template.name} type='default'/>;
 		})}
 				</div>
 	  </div>
