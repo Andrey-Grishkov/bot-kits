@@ -51,6 +51,8 @@ import { AddPageField } from './AddPageField/AddPageField';
 
 
 export function UI() {
+    const [showModal, setShowModal] = useState(false);
+    const [showNotModal, setNotShowModal] = useState(false);
     const [visibleMailPopup, setVisibleMailPopup] = useState(false);
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
     const [showCommonContentModal, setShowCommonContentModal] = useState(false);
@@ -64,7 +66,6 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
-
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
