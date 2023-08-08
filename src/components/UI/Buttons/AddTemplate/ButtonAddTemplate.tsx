@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './ButtonAddTemplate.module.scss';
-import answeringMachine from './answering machine.svg'
+import { templates } from '../../../../utils/data';
+// import answeringMachine from './answering machine.svg'
 
 export type TButtonTypes = 'default';
 
@@ -11,6 +12,16 @@ const getColor = (type: TButtonTypes ) => {
         return '#CCD4E0';
     }
   };
+
+
+//   const getTemplate = (buttonTemplate: any) => {
+//     switch (buttonTemplate) {
+//       case '1':
+//         return templates[0]
+//       default:
+//         return '#CCD4E0';
+//     }
+//   };
 
 interface IButtonAddTemplate {
     type: TButtonTypes;
@@ -26,13 +37,14 @@ export const ButtonAddTemplate = ({
     label,
     icon,
     extraClass,
+    onClick,
     disabled = false,
     ...rest
 }: IButtonAddTemplate) => {
     return (
         <div className={cn(styles.buttonAddTemplate__wrapper, extraClass)}>
-            <button className={styles.buttonAddTemplate} disabled={disabled} {...rest} >
-                <img className={styles.buttonAddTemplate__mainIcon} src={require(`./${icon}`)} alt="info-icon" />
+            <button className={styles.buttonAddTemplate} onClick={onClick} disabled={disabled} {...rest} >
+                <img className={styles.buttonAddTemplate__mainIcon} src={icon} alt="info-icon" />
                 <svg 
                     className={styles.buttonAddTemplate__plusIcon} 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -44,16 +56,16 @@ export const ButtonAddTemplate = ({
                     <path 
                         d="M12 5V19" 
                         stroke={getColor(type)} 
-                        stroke-width="2" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
                     />
                     <path 
                         d="M5 12H19" 
                         stroke={getColor(type)} 
-                        stroke-width="2" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
                     />
                 </svg>
             </button>
