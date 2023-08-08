@@ -1,7 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './ButtonAddTemplate.module.scss';
-import { TButtonTypes } from '../../../../types/button';
+import answeringMachine from './answering machine.svg'
+
+export type TButtonTypes = 'default';
 
 const getColor = (type: TButtonTypes ) => {
     switch (type) {
@@ -22,7 +24,7 @@ interface IButtonAddTemplate {
 export const ButtonAddTemplate = ({
     type = 'default',
     label,
-    icon = 'answering machine.svg',
+    icon,
     extraClass,
     disabled = false,
     ...rest
