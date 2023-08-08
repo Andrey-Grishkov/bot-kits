@@ -1,6 +1,6 @@
 import "./App.scss";
 import { UI } from "../UI/UI";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Registration from "../Registration/Registration";
@@ -17,11 +17,14 @@ import { SubscriptionAndPayments } from "../SubscriptionAndPayments/Subscription
 import Overlay from "../NavBar/components/Overlay";
 
 function App() {
+    const location = useLocation();
+    const isAuthPage = ['/reset-password', '/signup', '/signin'].includes(location.pathname);
+  
     return (
         <Overlay>
         <div className='page app-container'>
-            <Header />
-            <NavBar />
+            {isAuthPage ? null : <Header />}
+            {isAuthPage ? null : <NavBar />}
             <PageWrapper>
                 <Routes>
                     <Route path='/' element={<Dashboard />} />
@@ -36,7 +39,7 @@ function App() {
                     <Route path='/ui' element={<UI />} />
                 </Routes>
             </PageWrapper>
-            <Footer />
+            {isAuthPage ? null : <Footer />}
         </div>
         </Overlay>
     );
