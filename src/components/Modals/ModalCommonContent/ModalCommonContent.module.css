@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  align-self: start;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.buttonField {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
