@@ -58,7 +58,7 @@ export const Modal: FunctionComponent<IModalProps> = ({onClose, children, extraC
 
 
       <ModalOverlay onOverlayClick={onClose}/>
-    </>),
+    </>) ,
 
     modalsContainer!
   )
