@@ -21,6 +21,7 @@ interface IBotCard {
 
 export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
     const [open, setOpen] = React.useState(false);
+    const [modalContent, setModalContent] = React.useState({title: '', buttonText: ''});
     const [showCommonContentModal, setShowCommonContentModal] = React.useState(false);
 
     const handleOpen = () => {
@@ -31,23 +32,32 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
       setOpen(false);
     };
     const handleCopy = () => {
-      handleClose();
-      setShowCommonContentModal(true);
+  
     };
     const handleShare = () => {
-      
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Поделитесь доступом к боту', buttonText: 'скопировать ссылку'})
     };
     const handleEdit = () => {
-      
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Переименуйте файл', buttonText: 'скопировать ссылку'})
     };
     const handleLink = () => {
-      
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Скопируйте ссылку', buttonText: 'скопировать ссылку'})
     };
     const handleGetInfo = () => {
-      
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Информация о подключении', buttonText: 'скопировать ссылку'})
     };
     const handleNotify = () => {
-      
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Настройка уведомлений', buttonText: 'скопировать ссылку'})
     };
     const handleDelete = () => {
       
@@ -145,7 +155,7 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
 
         {showCommonContentModal &&
           <Modal onClose={() => setShowCommonContentModal(false)}>
-            <ModalCommonContent title='Переименуйте файл'></ModalCommonContent>
+            <ModalCommonContent title={modalContent.title}></ModalCommonContent>
           </Modal>
         }      
       </>

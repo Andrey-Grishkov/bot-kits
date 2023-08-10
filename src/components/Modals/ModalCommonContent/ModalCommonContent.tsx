@@ -1,4 +1,5 @@
 import { ButtonMain } from '../../UI/Buttons/Main/ButtonMain';
+import { Input } from '../../UI/Input/Input';
 import styles from './ModalCommonContent.module.scss';
 
 import React, { FunctionComponent }  from 'react';
@@ -13,18 +14,19 @@ export const ModalCommonContent: FunctionComponent<IModalCommonContent> = ({titl
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
         </div>
-        <input></input>
+        {/* <input></input> */}
+        <Input placeholder='placeholder'></Input>
         <div className={styles.buttonField}>
-        <ButtonMain 
-            theme='grey' 
-            label = 'Отмена' 
-            size = 'l' 
-        ></ButtonMain>
-        <ButtonMain 
-            theme='purple' 
-            label = 'Переименовать' 
-            size = 'l' 
-        ></ButtonMain>
+          <ButtonMain 
+              theme='grey' 
+              label = 'Отмена' 
+              size = 'l' 
+          ></ButtonMain>
+          <ButtonMain 
+              theme='purple' 
+              label = 'Переименовать' 
+              size = 'l' 
+          ></ButtonMain>
         </div>
     </>
   )
