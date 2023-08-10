@@ -70,9 +70,9 @@ export function UI() {
       <InstructionButton />
       <MessageButton />
       <BotAnswerButton />
-      <AddSocialButton value="Facebook">
+      {/* <AddSocialButton value="Facebook">
         <img src={svgFacebook} />
-      </AddSocialButton>
+      </AddSocialButton> */}
       <AddBotButton value="Добавить бота">
         <SvgPlus />
       </AddBotButton>
