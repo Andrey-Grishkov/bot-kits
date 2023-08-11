@@ -2,7 +2,8 @@
     grid-area: N;
     position: relative;
     min-width: 86px;
-    z-index: 999;
+    // z-index: 999;
+    z-index: 2;
     padding: 16px 0 16px 16px;
     box-sizing: border-box;
     @media (max-width: 767px) {
