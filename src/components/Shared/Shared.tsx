@@ -4,6 +4,8 @@ import copyImg from "./images/copy.png";
 import upImg from "./images/up.png";
 import { mockData, mockPayouts } from "../../utils/data";
 
+const COPIED_TIMEOUT_DURATION = 3000;
+
 interface RefLinkSectionProps {
   link: string;
   onCopy: () => void;
@@ -19,7 +21,6 @@ interface PayoutsTableProps {
   togglePayoutsVisibility: () => void;
 }
 
-const COPIED_TIMEOUT_DURATION = 3000;
 
 const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link, onCopy }) => (
   <div className="partners__ref">
