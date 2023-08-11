@@ -80,8 +80,8 @@ function AddBotPage() {
                 <img src={arrowSvg} alt="arrow"/>
               </div>
               <div className={styles.adviceButtonsWrapper}>
-                <ButtonTutorial label="Пошаговая инструкция" />
-                <ButtonTutorial label="Видео" />
+                <ButtonTutorial label="Пошаговая инструкция" type='default'/>
+                <ButtonTutorial label="Видео" type='default'/>
               </div>
             </div>
           </>
