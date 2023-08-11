@@ -24,10 +24,10 @@ function App() {
                     <Route path='/botbuilder' element={<BotBuilder />} />
                     <Route path='/signup' element={<Registration />} />
                     <Route path='/signin' element={<Login />} />
-                    <Route path='/shared-access' element={<Shared />} />
+                    <Route path='/partnership' element={<Shared />} />
                     <Route path='/ui' element={<UI />} />
                 </Routes>
-            </PageWrapper>
+            </PageWrapper>  
             <Footer />
         </div>
     );

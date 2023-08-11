@@ -24,7 +24,7 @@
     height: 46px;
     max-width: 188px;
     box-sizing: border-box;
-    padding: 13.5px 14.5px;
+    padding: 13px 14px;
     border: none;
     border-radius: 10px;
     background-color: #22ffaa;
@@ -62,6 +62,7 @@
 
   &__ref-copy {
     display: flex;
+
     &:hover {
       border-radius: 10px;
       background-color: #f2f4f8;
@@ -69,15 +70,13 @@
   }
 
   &__copied-notice {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background: #00e98f;
+    padding: 13px 20px;
+    background: #2E293D;
     border-radius: 5px;
     z-index: 1000;
-    font-size: 14px;
-    font-family: "IBM Plex Mono";
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "IBM Plex Mono", monospace;
     font-weight: 600;
   }
 
@@ -166,7 +165,6 @@
   &__table {
     &--stats {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
       width: 100%;
 
       th:nth-child(7n + 1),
@@ -211,7 +209,6 @@
 
     &--payouts {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
       width: 100%;
 
       th:nth-child(5n + 1),
@@ -274,10 +271,19 @@
       }
     }
 
+    &__section {
+      &--mobile {
+        flex-direction: column;
+        display: flex;
+        gap: 32px;
+      }
+    }
+
     &__btn-request {
       display: none;
       &--mobile {
         display: block;
+        max-width: 100%;
       }
     }
 

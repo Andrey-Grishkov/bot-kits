@@ -44,7 +44,7 @@ export const mockMenu: MenuItemProps[] = [
   {
     text: "Общий доступ",
     Icon: AccessIcon,
-    link: "/shared-access",
+    link: "/partnership",
   },
   {
     text: "Мини-лендинг",

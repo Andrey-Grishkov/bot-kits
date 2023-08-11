@@ -1,140 +1,213 @@
-  import React, { useState } from "react";
-  import "./Shared.scss";
-  import copyImg from "./images/copy.png";
-  import upImg from "./images/up.png";
+import React, { useCallback, useState } from "react";
+import "./Shared.scss";
+import copyImg from "./images/copy.png";
+import upImg from "./images/up.png";
+import { mockData, mockPayouts } from "../../utils/data";
 
-  const Shared = () => {
-    const [isPayoutsVisible, setPayoutsVisible] = useState(true);
-    const [isStatsVisible, setStatsVisibille] = useState(true);
-    const [refLink, setRefLink] = useState("botkits.ru/?ref=12345");
-    const [isCopied, setCopied] = useState(false);
+interface RefLinkSectionProps {
+  link: string;
+  onCopy: () => void;
+}
 
-    const togglePayoutsVisibility = () => {
-      setPayoutsVisible(!isPayoutsVisible);
-    };
+interface StatsTableProps {
+  isStatsVisible: boolean;
+  toggleStatsVisibility: () => void;
+}
 
-    const toggleStatsVisibility = () => {
-      setStatsVisibille(!isStatsVisible);
-    };
+interface PayoutsTableProps {
+  isPayoutsVisible: boolean;
+  togglePayoutsVisibility: () => void;
+}
 
-    const copyToClipboard = () => {
-      navigator.clipboard.writeText(refLink);
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000); // уведомление исчезнет через 2 секунды
-    };
+const COPIED_TIMEOUT_DURATION = 3000;
 
-    return (
-      <div className="partners">
-        <div className="partners__header">
-          <h2 className="partners__title">Партнерская программа</h2>
-          <button className="partners__btn-request">Запросить выплату</button>
+const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link, onCopy }) => (
+  <div className="partners__ref">
+    <div className="partners__ref-link">{link}</div>
+    <div className="partners__ref-copy" onClick={onCopy} role="button">
+      <img src={copyImg} alt="Скопировать" />
+    </div>
+  </div>
+);
+
+const StatsTable: React.FC<StatsTableProps> = ({
+  isStatsVisible,
+  toggleStatsVisibility,
+}) => {
+  return (
+    <div className="partners__stats">
+      <div className="partners__stats--title">
+        <h3>Статистика рефераллов</h3>
+        <button
+          className={`partners__detailed partners__detailed--stats ${
+            isStatsVisible ? "up" : "down"
+          }`}
+          onClick={toggleStatsVisibility}
+        >
+          <img src={upImg} alt="up" />
+        </button>
+      </div>
+      <div className="partners__section partners__section--mobile">
+        <div className="partners__table partners__table--stats">
+          <table>
+            <thead>
+              <tr>
+                <th>Перешли по ссылке</th>
+                <th>Регистраций</th>
+                <th>Оплата</th>
+                <th>Сумма</th>
+                <th>Комиссия</th>
+                <th>Выплачено</th>
+                <th>Вывод</th>
+              </tr>
+            </thead>
+            <tbody>
+              {isStatsVisible ? (
+                mockData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.linkClicks} человек</td>
+                    <td>{row.registrations}</td>
+                    <td className={row.paymentStatus ? "paid" : ""}>
+                      {row.paymentStatus ? "Оплачено" : "Не оплачено"}
+                    </td>
+                    <td>{row.sum} ₽</td>
+                    <td>{row.commission} ₽</td>
+                    <td>{row.paidOut} ₽</td>
+                    <td>{row.withdrawal} ₽</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td>{mockData[mockData.length - 1].linkClicks} человек</td>
+                  <td>{mockData[mockData.length - 1].registrations}</td>
+                  <td
+                    className={
+                      mockData[mockData.length - 1].paymentStatus ? "paid" : ""
+                    }
+                  >
+                    {mockData[mockData.length - 1].paymentStatus
+                      ? "Оплачено"
+                      : "Не оплачено"}
+                  </td>
+                  <td>{mockData[mockData.length - 1].sum} ₽</td>
+                  <td>{mockData[mockData.length - 1].commission} ₽</td>
+                  <td>{mockData[mockData.length - 1].paidOut} ₽</td>
+                  <td>{mockData[mockData.length - 1].withdrawal} ₽</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
-        <div className="partners__ref">
-          <div className="partners__ref-link">botkits.ru/?ref=12345</div>
-          <div className="partners__ref-copy" onClick={copyToClipboard}>
-            <img src={copyImg} alt="Скопировать" />
-            {isCopied && (
-              <div className="partners__copied-notice">Ссылка скопирована</div>
-            )}
-          </div>
-        </div>
-        <div className="partners__content">
-          <div className="partners__stats">
-            <div className="partners__stats--title">
-              <h3>Статистика рефераллов</h3>
-              <button
-                className={`partners__detailed partners__detailed--stats ${
-                  isStatsVisible ? "up" : "down"
-                }`}
-                onClick={toggleStatsVisibility}
-              >
-                <img src={upImg} alt="up" />
-              </button>
-            </div>
-            {isStatsVisible && (
-              <div className="partnerts__section">
-                <div className="partners__table partners__table--stats">
-                  <th>Перешли по ссылке</th>
-                  <th>Регистраций</th>
-                  <th>Оплата</th>
-                  <th>Сумма</th>
-                  <th>Комиссия</th>
-                  <th>Выплачено</th>
-                  <th>Вывод</th>
+        <button className="partners__btn-request partners__btn-request--mobile">
+          Запросить выплату
+        </button>
+      </div>
+    </div>
+  );
+};
 
-                  <td>28 человек</td>
-                  <td>15</td>
-                  <td className="paid">Оплачено</td>
-                  <td>5 000 ₽</td>
-                  <td>1 500 ₽</td>
-                  <td>4 500 ₽</td>
-                  <td>1 500 ₽</td>
-
-                  <td>17 человек</td>
-                  <td>8</td>
-                  <td className="paid">Оплачено</td>
-                  <td>15 000 ₽</td>
-                  <td>4 500 ₽</td>
-                  <td>8 200 ₽</td>
-                  <td>4 500 ₽</td>
-
-                  <td>10 человек</td>
-                  <td>10</td>
-                  <td className="paid">Оплачено</td>
-                  <td>5 000 ₽</td>
-                  <td>1 500 ₽</td>
-                  <td>10 000 ₽</td>
-                  <td>1 500 ₽</td>
-                </div>
-                <button className="partners__btn-request partners__btn-request--mobile">Запросить выплату</button>
-              </div>
-            )}
-          </div>
-          <div className="partners__payouts">
-            <div className="partners__payouts--title">
-              <h3>Выплаты</h3>
-              <button
-                className={`partners__detailed partners__detailed--payouts ${
-                  isPayoutsVisible ? "up" : "down"
-                }`}
-                onClick={togglePayoutsVisibility}
-              >
-                <img src={upImg} alt="up" />
-              </button>
-            </div>
-            {isPayoutsVisible && (
-              <div className="partners__table partners__table--payouts">
+const PayoutsTable: React.FC<PayoutsTableProps> = ({
+  isPayoutsVisible,
+  togglePayoutsVisibility,
+}) => {
+  return (
+    <div className="partners__payouts">
+      <div className="partners__payouts--title">
+        <h3>Выплаты</h3>
+        <button
+          className={`partners__detailed partners__detailed--payouts ${
+            isPayoutsVisible ? "up" : "down"
+          }`}
+          onClick={togglePayoutsVisibility}
+        >
+          <img src={upImg} alt="up" />
+        </button>
+      </div>
+      {isPayoutsVisible && (
+        <div className="partners__table partners__table--payouts">
+          <table>
+            <thead>
+              <tr>
                 <th>Дата запроса</th>
                 <th>Дата выплаты</th>
                 <th>Акт</th>
                 <th>Статус</th>
                 <th>Сумма выплаты</th>
-
-                <td>05.07.22</td>
-                <td>07.07.22</td>
-                <td className="act">Док.pdf</td>
-                <td className="paid">Выплачено</td>
-                <td>1 500 ₽</td>
-
-                <td>02.07.22</td>
-                <td>-</td>
-                <td className="act">Фото.png</td>
-                <td className="processing">В обработке</td>
-                <td>4 500 ₽</td>
-
-                <td>27.06.22</td>
-                <td>28.06.22</td>
-                <td className="act">Data.pdf</td>
-                <td className="paid">Выплачено</td>
-                <td>1 000 ₽</td>
-              </div>
-            )}
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {mockPayouts.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.requestDate}</td>
+                  <td>{row.paymentDate}</td>
+                  <td className="act">{row.act}</td>
+                  <td
+                    className={
+                      row.status === "Выплачено"
+                        ? "paid"
+                        : row.status === "В обработке"
+                        ? "processing"
+                        : ""
+                    }
+                  >
+                    {row.status}
+                  </td>
+                  <td>{row.payoutSum} ₽</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
-    );
+      )}
+    </div>
+  );
+};
+
+const Shared = () => {
+  const [isPayoutsVisible, setPayoutsVisible] = useState(true);
+  const [isCopied, setCopied] = useState(false);
+  const [isStatsVisible, setStatsVisibille] = useState(true);
+
+  const link = "botkits.ru/?ref=12345";
+
+  const toggleStatsVisibility = () => {
+    setStatsVisibille(!isStatsVisible);
   };
 
-  export default Shared;
+  const togglePayoutsVisibility = () => {
+    setPayoutsVisible(!isPayoutsVisible);
+  };
+
+  const copyToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(link);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, COPIED_TIMEOUT_DURATION);
+  }, []);
+
+  return (
+    <div className="partners">
+      <div className="partners__header">
+        <h2 className="partners__title">Партнерская программа</h2>
+        <button className="partners__btn-request">Запросить выплату</button>
+      </div>
+      <RefLinkSection link="botkits.ru/?ref=12345" onCopy={copyToClipboard} />
+      {isCopied && (
+        <div className="partners__copied-notice">Ссылка скопирована</div>
+      )}
+      <div className="partners__content">
+        <StatsTable
+          isStatsVisible={isStatsVisible}
+          toggleStatsVisibility={toggleStatsVisibility}
+        />
+        <PayoutsTable
+          isPayoutsVisible={isPayoutsVisible}
+          togglePayoutsVisibility={togglePayoutsVisibility}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Shared;
