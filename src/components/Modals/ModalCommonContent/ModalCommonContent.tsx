@@ -6,27 +6,30 @@ import React, { FunctionComponent }  from 'react';
 
 interface IModalCommonContent {
   title: string;
+  buttonText?: string;
+  isCancel?: boolean;
 }
 
-export const ModalCommonContent: FunctionComponent<IModalCommonContent> = ({title}) => {
+export const ModalCommonContent: FunctionComponent<IModalCommonContent> = ({title, buttonText = '', isCancel = true}) => {
   return (
     <>
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
         </div>
-        {/* <input></input> */}
-        <Input placeholder='placeholder'></Input>
+        <Input size='small' placeholder='placeholder'></Input>
         <div className={styles.buttonField}>
-          <ButtonMain 
-              theme='grey' 
-              label = 'Отмена' 
-              size = 'l' 
-          ></ButtonMain>
-          <ButtonMain 
-              theme='purple' 
-              label = 'Переименовать' 
-              size = 'l' 
-          ></ButtonMain>
+            {isCancel && 
+              <ButtonMain 
+                  theme='grey' 
+                  label = 'Отмена' 
+                  size = 'l' 
+              ></ButtonMain>
+            }
+            <ButtonMain 
+                theme='purple' 
+                label={buttonText} 
+                size = 'l' 
+            ></ButtonMain>
         </div>
     </>
   )

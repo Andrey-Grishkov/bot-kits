@@ -19,49 +19,11 @@ interface IBotCard {
   //type: 'alisa' | 'facebook' | 'google' | 'insta' | 'mailru' | 'odnoklassniki' | 'telegram'| 'twitter'| 'viber'| 'vk'| 'web'| 'whatsapp'| 'yandex'| 'youtube';
 }
 
+
 export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
     const [open, setOpen] = React.useState(false);
-    const [modalContent, setModalContent] = React.useState({title: '', buttonText: ''});
+    const [modalContent, setModalContent] = React.useState({title: '', buttonText: '', isCancel: true});
     const [showCommonContentModal, setShowCommonContentModal] = React.useState(false);
-
-    const handleOpen = () => {
-      setOpen(!open);
-    };
-
-    const handleClose = (): void => {
-      setOpen(false);
-    };
-    const handleCopy = () => {
-  
-    };
-    const handleShare = () => {
-      handleClose();
-      setShowCommonContentModal(true);
-      setModalContent({title: 'Поделитесь доступом к боту', buttonText: 'скопировать ссылку'})
-    };
-    const handleEdit = () => {
-      handleClose();
-      setShowCommonContentModal(true);
-      setModalContent({title: 'Переименуйте файл', buttonText: 'скопировать ссылку'})
-    };
-    const handleLink = () => {
-      handleClose();
-      setShowCommonContentModal(true);
-      setModalContent({title: 'Скопируйте ссылку', buttonText: 'скопировать ссылку'})
-    };
-    const handleGetInfo = () => {
-      handleClose();
-      setShowCommonContentModal(true);
-      setModalContent({title: 'Информация о подключении', buttonText: 'скопировать ссылку'})
-    };
-    const handleNotify = () => {
-      handleClose();
-      setShowCommonContentModal(true);
-      setModalContent({title: 'Настройка уведомлений', buttonText: 'скопировать ссылку'})
-    };
-    const handleDelete = () => {
-      
-    };
 
     function listenForOutsideClick(menuRef: any) {
       return () => {
@@ -78,6 +40,41 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
         })
       }
     }
+
+    const handleOpen = () => {
+      setOpen(!open);
+    };
+
+    const handleClose = (): void => {
+      setOpen(false);
+    };
+    const handleCopy = () => {
+  
+    };
+    const handleShare = () => {
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Поделитесь доступом к боту', buttonText: 'поделиться', isCancel: true})
+    };
+    const handleEdit = () => {
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Переименуйте файл', buttonText: 'переименовать', isCancel: true})
+    };
+    const handleLink = () => {
+      handleClose();
+      setShowCommonContentModal(true);
+      setModalContent({title: 'Скопируйте ссылку', buttonText: 'скопировать ссылку', isCancel: false})
+    };
+    const handleGetInfo = () => {
+      // handleClose();
+    };
+    const handleNotify = () => {
+      // handleClose();
+    };
+    const handleDelete = () => {
+      
+    };
 
     const menuRef = useRef(null);
     const [listening, setListening] = React.useState(false);
@@ -155,9 +152,9 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
 
         {showCommonContentModal &&
           <Modal onClose={() => setShowCommonContentModal(false)}>
-            <ModalCommonContent title={modalContent.title}></ModalCommonContent>
+            <ModalCommonContent title={modalContent.title} buttonText={modalContent.buttonText} isCancel={modalContent.isCancel}></ModalCommonContent>
           </Modal>
-        }      
+        }
       </>
 
     );
