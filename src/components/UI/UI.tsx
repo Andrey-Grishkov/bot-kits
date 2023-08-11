@@ -94,9 +94,9 @@ export function UI() {
         error='Вы ввели неправильное значение'
       />
       <Input placeholder='Введите ключ доступа' disabled />
-      <LoadPageButton title='Загрузить страницу' />
+      {/* <LoadPageButton title='Загрузить страницу' />
       <LoadPageButton title='Загрузить страницу' size='md' />
-      <LoadPageButton title='Загрузить страницу' size='sm' />
+      <LoadPageButton title='Загрузить страницу' size='sm' /> */}
       <PageButton title='Загрузить' />
       <PageButton title='Страница 1' />
       <PageButton title='Страница 1' selected={true} />

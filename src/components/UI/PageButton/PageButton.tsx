@@ -24,6 +24,7 @@ export const PageButton: FC<PageButtonProps> = ({
 }) => {
   let buttonCn = cn(classes.button);
   let buttonMdCn = cn(classes.button_md);
+  let buttonSmCn = cn(classes.button_sm);
   let buttonSelectedCn = cn(classes.button_selected);
   let buttonTitleCn = cn(classes.title);
 
@@ -33,6 +34,10 @@ export const PageButton: FC<PageButtonProps> = ({
   useEffect(() => {
     if (size === 'md') {
       setBtnClasses(buttonCn + ' ' + buttonMdCn);
+    }
+
+    if (size === 'sm') {
+      setBtnClasses(buttonCn + ' ' + buttonSmCn);
     }
 
   });
