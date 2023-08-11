@@ -78,21 +78,15 @@ const StatsTable: React.FC<StatsTableProps> = ({
                 ))
               ) : (
                 <tr>
-                  <td>{mockData[mockData.length - 1].linkClicks} человек</td>
-                  <td>{mockData[mockData.length - 1].registrations}</td>
-                  <td
-                    className={
-                      mockData[mockData.length - 1].paymentStatus ? "paid" : ""
-                    }
-                  >
-                    {mockData[mockData.length - 1].paymentStatus
-                      ? "Оплачено"
-                      : "Не оплачено"}
+                  <td>{mockData[0].linkClicks} человек</td>
+                  <td>{mockData[0].registrations}</td>
+                  <td className={mockData[0].paymentStatus ? "paid" : ""}>
+                    {mockData[0].paymentStatus ? "Оплачено" : "Не оплачено"}
                   </td>
-                  <td>{mockData[mockData.length - 1].sum} ₽</td>
-                  <td>{mockData[mockData.length - 1].commission} ₽</td>
-                  <td>{mockData[mockData.length - 1].paidOut} ₽</td>
-                  <td>{mockData[mockData.length - 1].withdrawal} ₽</td>
+                  <td>{mockData[0].sum} ₽</td>
+                  <td>{mockData[0].commission} ₽</td>
+                  <td>{mockData[0].paidOut} ₽</td>
+                  <td>{mockData[0].withdrawal} ₽</td>
                 </tr>
               )}
             </tbody>
