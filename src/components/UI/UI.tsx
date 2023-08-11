@@ -125,7 +125,7 @@ export function UI() {
       />
       <AddSocialButton value="Facebook">
         <img src={svgFacebook} />
-      </AddSocialButton>
+      </AddSocialButton> */}
       <AddBotButton value="Добавить бота">
         <SvgPlus />
       </AddBotButton>
