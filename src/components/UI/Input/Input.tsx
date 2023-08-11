@@ -16,6 +16,7 @@ export const Input: FC<InputProps> = ({ size, placeholder, value, error, disable
   const fieldsetCn = cn(classes.fieldset);
   const inputCn = cn(classes.input);
   const inputSmallCn = cn(classes.input_small);
+  const inputAdaptiveCn = cn(classes.input_adaptive);
   const errorInputCn = cn(classes.errorBorder);
   const errorMessageCn = cn(classes.error);
 
@@ -27,6 +28,10 @@ export const Input: FC<InputProps> = ({ size, placeholder, value, error, disable
 
   if (size === 'small') {
     inputClasses += ` ${inputSmallCn}`;
+  }
+
+  if (size === 'adaptive') {
+    inputClasses += ` ${inputAdaptiveCn}`;
   }
 
   return (

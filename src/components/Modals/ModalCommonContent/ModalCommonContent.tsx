@@ -16,7 +16,7 @@ export const ModalCommonContent: FunctionComponent<IModalCommonContent> = ({titl
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
         </div>
-        <Input size='small' placeholder='placeholder'></Input>
+        <Input size='adaptive' placeholder='placeholder'></Input>
         <div className={styles.buttonField}>
             {isCancel && 
               <ButtonMain 
