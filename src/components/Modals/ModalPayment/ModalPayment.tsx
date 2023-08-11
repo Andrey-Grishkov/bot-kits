@@ -16,10 +16,51 @@ export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonTex
   return (
     <>
         <div className={styles.topBackground}>
-            <img className={styles.topImage} src={cosmoRocket} alt="cosmoRocket" />
-            <h2 className={styles.title}>{title}</h2>
+          <h2 className={styles.title}>{title}</h2>
+          <img className={styles.topImage} src={cosmoRocket} alt="cosmoRocket" />
         </div>
 
+        <section className={styles.content}>
+          <h4 className={styles.content__header}>Выбери тариф</h4>
+          <div className={styles.content__buttons}>
+            <button className={styles.content__button}>
+              <span className={styles.button__text}>Старт</span>
+              <div className={styles.button__costArea}>
+                <span className={styles.button__cost}>390</span>
+                <span className={styles.button__currency}>руб</span>
+              </div>
+            </button>
+            <button className={styles.content__button}>
+              <span className={styles.button__text}>Стандарт</span>
+              <div className={styles.button__costArea}>
+                <span className={styles.button__cost}>790</span>
+                <span className={styles.button__currency}>руб</span>
+              </div>
+            </button>
+            <button className={styles.content__button}>
+              <span className={styles.button__text}>Бизнес</span>
+              <div className={styles.button__costArea}>
+                <span className={styles.button__cost}>1390</span>
+                <span className={styles.button__currency}>руб</span>
+              </div>
+            </button>
+          </div>
+          <div className={styles.content__desc}>
+            <p className={styles.content__descMain}>Цены на тарифы указаны за 1 месяц пользования.</p>
+            <p className={styles.content__descDefault}>Оплата будет автоматически взиматься каждый месяц до тех пор, пока вы не отмените подписку.</p>
+          </div>
+        </section>
+
+        <div className={styles.bottom}>
+          <div className={styles.bottom__buttonsSection}>
+            <span>К оплате</span>
+            <div>
+                <span>790</span>
+                <span>руб</span>
+              </div>
+          </div>
+          <img className={styles.topImage} src={cosmoRocket} alt="cosmoRocket" />
+        </div>
 
         {/* <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
