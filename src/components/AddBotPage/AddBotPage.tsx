@@ -81,7 +81,7 @@ function AddBotPage() {
               </div>
               <div className={styles.adviceButtonsWrapper}>
                 <ButtonTutorial label="Пошаговая инструкция" type='default'/>
-                <ButtonTutorial label="Видео" type='default'/>
+                <ButtonTutorial label="Видео" type="video"/>
               </div>
             </div>
           </>
