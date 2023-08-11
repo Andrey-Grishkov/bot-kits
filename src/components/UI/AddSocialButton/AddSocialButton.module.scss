@@ -1,84 +1,62 @@
-$defauil: #f8f9fb;
-$iconground: #243cbb;
-$iconblue: #2d88ff;
-$inactive: #ccd4e0;
-$fontColor: #a6b3c9;
+$defauil: #F8F9FB;
+$iconground: #243CBB;
+$iconblue: #2D88FF;
+$inactive: #CCD4E0;
+$fontColor: #A6B3C9;
 $shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
-$viber: #7360f2;
-$telegram: #2aabee;
 
 @mixin flex($align, $justify) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-}
-
-@mixin chosen($color) {
-  div {
-    background-color: $color;
-  }
-  background-color: #fff;
-  box-shadow: $shadow;
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
 }
 
 .button {
-  background-color: $defauil;
-  width: 124px;
-  height: 124px;
-  border-radius: 30px;
-  @include flex($align: center, $justify: center);
-  flex-direction: column;
-  border: none;
-  cursor: pointer;
-  font-family: Open Sans;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.button {
-  div {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
+    background-color: $defauil;
+    width: 124px;
+    height:  124px;
+    border-radius: 30px;
     @include flex($align: center, $justify: center);
-    margin-bottom: 12px;
-  }
+    flex-direction: column;
+    border: none;
+    cursor: pointer;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.button {
+    div {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        @include flex($align: center, $justify: center);
+        margin-bottom: 12px;
+    }
 }
 
 .active {
-  div {
-    background-color: $iconground;
-    transition: background-color 0.5s;
-  }
+    div {
+        background-color: $iconground;
+        transition: background-color .5s;
+    }
 }
 
 .inactive {
-  div {
-    background-color: $inactive;
-  }
-  color: $fontColor;
+    div {
+        background-color: $inactive;
+        
+    }
+    color: $fontColor;
 }
 
 .active:hover {
-  div {
+    div {
     background-color: $iconblue;
-  }
+    }
 }
 
 .active:active {
-  background-color: #fff;
-  box-shadow: $shadow;
-}
-
-.chosenFacebook {
-  @include chosen($iconblue);
-}
-
-.chosenTelegram {
-  @include chosen($telegram);
-}
-
-.chosenViber {
-  @include chosen($viber);
+    background-color: #fff;
+    box-shadow: $shadow;
 }
