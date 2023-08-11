@@ -46,6 +46,7 @@ import { Input } from './Input/Input';
 import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
 import { AddPageField } from './AddPageField/AddPageField';      
+import { ModalPayment } from '../Modals/ModalPayment/ModalPayment';
 
 
 export function UI() {
@@ -55,6 +56,8 @@ export function UI() {
     const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
     const [showCommonContentModal, setShowCommonContentModal] = useState(false);
     const [showAddBotModal, setShowAddBotModal] = useState(false);
+    const [showPaymentModal, setShowPaymentModal] = useState(false);
+
 
 
     const handleMailPopup = () => {
@@ -79,7 +82,13 @@ export function UI() {
         </Modal>
       }
 
-      <ButtonMain theme='purple' label='' size='s'/>
+      <ButtonMain theme='purple' label='' size='s' onClick={() => setShowPaymentModal(true)}/>
+      {showPaymentModal &&
+        <Modal onClose={() => setShowPaymentModal(false)}>
+          <ModalPayment title='Переименуйте файл'></ModalPayment>
+        </Modal>
+      }
+
       <ButtonMain theme='grey' label='Остановить' size='l'/>
       <ButtonPlus type='default'/>
       <ButtonTutorial label='Пошаговая инструкция' type='default'/>
