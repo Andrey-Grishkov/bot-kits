@@ -71,10 +71,10 @@
 
   &__copied-notice {
     padding: 13px 20px;
-    background: #2E293D;
+    background: #2e293d;
     border-radius: 5px;
     z-index: 1000;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 16px;
     font-family: "IBM Plex Mono", monospace;
     font-weight: 600;
@@ -248,11 +248,16 @@
           font-weight: 600;
         }
       }
-
       th:last-child,
       td:last-child {
         text-align: right;
       }
+    }
+    &--desktop {
+      display: grid;
+    }
+    &--mobile {
+      display: none;
     }
   }
 }
@@ -268,6 +273,22 @@
     &__detailed {
       &--stats {
         display: flex;
+      }
+    }
+
+    &__table {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: grid;
+        th {
+          font-weight: 400;
+          color: #A6B3C9;
+        }
+        td {
+          font-weight: 600;
+        }
       }
     }
 

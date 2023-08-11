@@ -49,7 +49,81 @@ const StatsTable: React.FC<StatsTableProps> = ({
         </button>
       </div>
       <div className="partners__section partners__section--mobile">
-        <div className="partners__table partners__table--stats">
+        <div className="partners__table partners__table--stats partners__table--mobile">
+          <table>
+            <tbody>
+              {isStatsVisible ? 
+                mockData.map((row, index) => (
+                  <React.Fragment key={index}>
+                    <tr key={"linkClicks-" + index}>
+                      <th>Перешли по ссылке</th>
+                      <td>{row.linkClicks} человек</td>
+                    </tr>
+                    <tr key={"registrations-" + index}>
+                      <th>Регистраций</th>
+                      <td>{row.registrations}</td>
+                    </tr>
+                    <tr key={"paymentStatus-" + index}>
+                      <th>Оплата</th>
+                      <td className={row.paymentStatus ? "paid" : ""}>
+                        {row.paymentStatus ? "Оплачено" : "Не оплачено"}
+                      </td>
+                    </tr>
+                    <tr key={"sum-" + index}>
+                      <th>Сумма</th> 
+                      <td>{row.sum} ₽</td> 
+                    </tr>
+                    <tr key={"commission-" + index}>
+                      <th>Комиссия</th>
+                      <td>{row.commission} ₽</td>
+                    </tr>
+                    <tr key={"paidOut-" + index}>
+                      <th>Выплачено</th>
+                      <td>{row.paidOut} ₽</td>
+                    </tr>       
+                    <tr key={"withdrawal-" + index}>
+                      <th>Вывод:</th>
+                      <td>{row.withdrawal} ₽</td>
+                    </tr>
+                  </React.Fragment>
+                )) : 
+                <>
+                  <tr>
+                    <th>Перешли по ссылке</th>
+                    <td>{mockData[0].linkClicks} человек</td>
+                  </tr>
+                  <tr>
+                    <th>Регистраций</th>
+                    <td>{mockData[0].registrations}</td>
+                  </tr>
+                  <tr>
+                    <th>Оплата</th>
+                    <td className={mockData[0].paymentStatus ? "paid" : ""}>
+                      {mockData[0].paymentStatus ? "Оплачено" : "Не оплачено"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Сумма</th>
+                    <td>{mockData[0].sum} ₽</td>
+                  </tr>
+                  <tr>
+                    <th>Комиссия</th>
+                    <td>{mockData[0].commission} ₽</td>
+                  </tr>
+                  <tr>
+                    <th>Выплачено</th>
+                    <td>{mockData[0].paidOut} ₽</td>
+                  </tr>
+                  <tr>
+                    <th>Вывод:</th>
+                    <td>{mockData[0].withdrawal} ₽</td>
+                  </tr>
+                </>
+              }
+            </tbody>
+          </table>
+        </div>
+        <div className="partners__table partners__table--stats partners__table--desktop">
           <table>
             <thead>
               <tr>
