@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import cn from 'classnames';
 import styles from './ButtonMain.module.scss';
 
@@ -23,6 +23,7 @@ interface IButtonMain {
         * Доступность кнопки
     */
     disabled?: boolean;
+    onClick?: (() => void) | ((e: SyntheticEvent) => void);
 }
 
 /**
