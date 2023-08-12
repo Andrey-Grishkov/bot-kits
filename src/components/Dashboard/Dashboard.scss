@@ -137,7 +137,10 @@
 	padding: 0;
 	background-color: transparent;
 	border: none;
+
 	cursor: pointer;
+	text-decoration: none;
+	color: #060C23;
 }
 .dashboard__tutorial-button:hover {
 	opacity: 0.5px;

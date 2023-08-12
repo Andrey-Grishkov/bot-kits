@@ -27,7 +27,7 @@ export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonTex
           <div className={styles.content__header}>
             <h4 className={styles.content__title}>Выбери тариф</h4>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M23.75 8.75L11.7188 20L6.25 14.8864" stroke="#00E98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M23.75 8.75L11.7188 20L6.25 14.8864" stroke="#00E98F" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           <div className={styles.content__buttons}>
