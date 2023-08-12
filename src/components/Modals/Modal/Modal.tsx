@@ -25,14 +25,15 @@ interface IModalProps {
 
 export const Modal: FunctionComponent<IModalProps> = ({onClose, children, extraClass}) => {
 
-  function onEscapeClick(event: KeyboardEvent) {
-    if (event.key === "Escape") {
-      onClose();
-    }
-  }
-
   useEffect(
     () => {
+
+      function onEscapeClick(event: KeyboardEvent) {
+        if (event.key === "Escape") {
+          onClose();
+        }
+      }
+
       document.addEventListener('keydown', onEscapeClick);
 
       return () => {
