@@ -3,8 +3,9 @@ import { Input } from '../../UI/Input/Input';
 import styles from './ModalPayment.module.scss';
 
 import cosmoRocket from '../../../images/modal/cosmoRocket.svg';
+import uKassa from '../../../images/modal/uKassa.svg';
 
-import React, { FunctionComponent }  from 'react';
+import React, { FunctionComponent, useState }  from 'react';
 
 interface IModalPayment {
   title: string;
@@ -13,6 +14,8 @@ interface IModalPayment {
 }
 
 export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonText = '', isCancel = true}) => {
+  const [cost, setCost] = useState(390);
+  
   return (
     <>
         <div className={styles.topBackground}>
@@ -21,23 +24,28 @@ export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonTex
         </div>
 
         <section className={styles.content}>
-          <h4 className={styles.content__header}>Выбери тариф</h4>
+          <div className={styles.content__header}>
+            <h4 className={styles.content__title}>Выбери тариф</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M23.75 8.75L11.7188 20L6.25 14.8864" stroke="#00E98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <div className={styles.content__buttons}>
-            <button className={styles.content__button}>
+            <button className={styles.content__button} onClick={() => setCost(390)}>
               <span className={styles.button__text}>Старт</span>
               <div className={styles.button__costArea}>
                 <span className={styles.button__cost}>390</span>
                 <span className={styles.button__currency}>руб</span>
               </div>
             </button>
-            <button className={styles.content__button}>
+            <button className={styles.content__button} onClick={() => setCost(790)}>
               <span className={styles.button__text}>Стандарт</span>
               <div className={styles.button__costArea}>
                 <span className={styles.button__cost}>790</span>
                 <span className={styles.button__currency}>руб</span>
               </div>
             </button>
-            <button className={styles.content__button}>
+            <button className={styles.content__button} onClick={() => setCost(1390)}>
               <span className={styles.button__text}>Бизнес</span>
               <div className={styles.button__costArea}>
                 <span className={styles.button__cost}>1390</span>
@@ -54,15 +62,17 @@ export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonTex
         <div className={styles.bottom}>
           <div className={styles.bottom__buttonsSection}>
             <div className={styles.buttonsSection__cost}>
-              <span className={styles.button__text}>К оплате</span>
+              <span className={styles.button__text}>К оплате:</span>
               <div>
-                <span className={styles.button__costLarge}>790</span>
+                <span className={styles.button__costLarge}>{cost}</span>
                 <span className={styles.button__currency}>руб</span>
               </div>
             </div>
             <div className={styles.buttonsSection__controls}>
-              <ButtonMain theme='purple'label='Оплатить через' size='l'></ButtonMain>
-              <ButtonMain theme='grey'label='запросить счёт' size='l'></ButtonMain>
+              <ButtonMain extraClass={styles.button__customPaddings} theme='purple'label='Оплатить через' size='l'>
+                <img className={styles.buttonsSection__logo} src={uKassa} alt="uKassa" />
+              </ButtonMain>
+              <ButtonMain extraClass={styles.button__narrowPaddings} theme='grey'label='запросить счёт' size='l'></ButtonMain>
             </div>
           </div>
           

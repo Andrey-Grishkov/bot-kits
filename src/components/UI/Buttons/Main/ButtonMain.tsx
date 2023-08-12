@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { ReactNode, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import styles from './ButtonMain.module.scss';
 
@@ -24,6 +24,7 @@ interface IButtonMain {
     */
     disabled?: boolean;
     onClick?: (() => void) | ((e: SyntheticEvent) => void);
+    children?: ReactNode,
 }
 
 /**
@@ -35,6 +36,8 @@ export const ButtonMain = ({
     size = 'l',
     extraClass,
     disabled = false,
+    children,
+
     ...rest
 }: IButtonMain) => {
     const themeClass = styles[`button_theme_${theme}`];
@@ -48,6 +51,7 @@ export const ButtonMain = ({
             {...rest}
         >
             {label}
+            {children}
         </button>
     )
 }
