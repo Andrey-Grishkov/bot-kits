@@ -47,6 +47,8 @@ import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
 import { AddPageField } from './AddPageField/AddPageField';      
 import { ModalPayment } from '../Modals/ModalPayment/ModalPayment';
+import vkSvg from "../../images/icons/vk.svg";
+
 
 
 export function UI() {
@@ -132,8 +134,15 @@ export function UI() {
           },
         ]}
       />
-      <AddSocialButton value="Facebook">
-        <img src={svgFacebook} />
+      <AddSocialButton
+          value="Facebook"
+          href='../images/icons/vk.svg'
+        variant='active'
+        chosen=''
+          onclick={()=>{}}
+      >
+        <img src={svgFacebook}
+        />
       </AddSocialButton>
       <AddBotButton value="Добавить бота">
         <SvgPlus />

@@ -14,11 +14,11 @@ import robot from '../../../images/icons/Robot.svg';
 import label from '../../../images/icons/Frame250.svg';
 import toggle from '../../../images/icons/Group 1190.svg'
 
-export type TMessage = { 
-  name: string, 
+export type TMessage = {
+  name: string,
   text: string,
-  target: string, 
-  photo: string, 
+  target: string,
+  photo: string,
   video: string,
   audio: string,
   button: string,
@@ -65,26 +65,26 @@ export const MailingStepOne: FC<{
       />
       <MailingSelect name="name" value={data.target} onChange={onChangeSelect}/>
     </div>
-    <Textarea 
-      id="2" 
-      value={data.text} 
-      label="Текст сообщения" 
+    <Textarea
+      id="2"
+      value={data.text}
+      label="Текст сообщения"
       onChange={onChangeText}
     />
     <div className={styles.media_container}>
       <h3 className={styles.container_title}>Добавить</h3>
       <div className={styles.media_buttons}>
-        <AddSocialButton value="Фото">
-          <img src={photo} alt="Добавить фото" />  
+        <AddSocialButton value="Фото" chosen='' href='' variant='active' onclick={()=>{}}>
+          <img src={photo} alt="Добавить фото" />
         </AddSocialButton>
-        <AddSocialButton value="Видео">
-          <img src={video} alt="Добавить видео" />  
+        <AddSocialButton value="Видео" chosen='' href='' variant='active' onclick={()=>{}}>
+          <img src={video} alt="Добавить видео" />
         </AddSocialButton>
-        <AddSocialButton value="Аудио">
-          <img src={audio} alt="Добавить аудио" />  
+        <AddSocialButton value="Аудио" chosen='' href='' variant='active' onclick={()=>{}}>
+          <img src={audio} alt="Добавить аудио" />
         </AddSocialButton>
-        <AddSocialButton value="Кнопка">
-          <img src={button} alt="Добавить кнопку" />  
+        <AddSocialButton value="Кнопка" chosen='' href='' variant='active' onclick={()=>{}}>
+          <img src={button} alt="Добавить кнопку" />
         </AddSocialButton>
       </div>
     </div>
@@ -99,7 +99,7 @@ export const MailingStepOne: FC<{
     </div>
     {showWidget === false ? (<div className={styles.widget_label}>
       <img className={styles.widget_label_img} src={label} alt="Виджет" />
-    </div>) : 
+    </div>) :
     (<div className={styles.widget_container}>
       <h4 className={styles.widget_title}>Текстовый виджет</h4>
       <h3 className={styles.widget_name}>{data.name}</h3>
@@ -109,13 +109,13 @@ export const MailingStepOne: FC<{
       <div className={styles.widget_area}>
       <div className={styles.widget_messages}>
         <img src={robot} alt='Бот' />
-        { data.text ? 
+        { data.text ?
         (<div className={styles.widget_messages__box}>
           <h4 className={styles.widget_messages__title}>Бот</h4>
           <p className={styles.widget_messages__text}>{data.text}</p>
           <p className={styles.widget_messages__time}>{currentTime}</p>
         </div>)
-        : 
+        :
         (<div className={styles.widget_messages__box_elipsis}>
           <p className={styles.widget_messages__text}>...</p>
         </div>)
