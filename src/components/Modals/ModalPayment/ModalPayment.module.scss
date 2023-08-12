@@ -6,6 +6,7 @@
 
     margin: -40px -40px -34px -40px;
     border-radius: 8px;
+    // width: calc(970/1440) * 100vw;
 }
 
 .topImage {
@@ -16,7 +17,7 @@
 }
 
 .title {
-    margin: 0;
+    margin: 50px 0 0 0;
     padding: 0;
     text-align: center;
 
@@ -73,6 +74,8 @@
     flex-direction: column;
     row-gap: 12px;
 
+    margin: 33px 0 0 0;
+
     color: #131118;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
@@ -84,19 +87,53 @@
 
 .content__descMain {
     font-weight: 600;
+    margin: 0;
 }
 
 .content__descDefault {
     font-weight: 400;
+    margin: 0;
+}
+
+.button__costLarge {
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
 }
 
 .bottom {
-    min-height: 144px;
+    position: relative;
+    padding: 40px;
+    border-radius: 8px;
     background-color: #131118;
+
+    margin: -40px -40px -34px -40px;
 }
 
 .bottom__buttonsSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+
     border-radius: 10px;
-    opacity: 0.15;
-    background-color: #EFFDFF;
+    background-color: rgba(239, 253, 255, 0.15);
+    color: #FFF;
+}
+
+.buttonsSection__cost {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.buttonsSection__controls {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
 }

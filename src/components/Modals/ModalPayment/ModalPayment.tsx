@@ -53,13 +53,19 @@ export const ModalPayment: FunctionComponent<IModalPayment> = ({title, buttonTex
 
         <div className={styles.bottom}>
           <div className={styles.bottom__buttonsSection}>
-            <span>К оплате</span>
-            <div>
-                <span>790</span>
-                <span>руб</span>
+            <div className={styles.buttonsSection__cost}>
+              <span className={styles.button__text}>К оплате</span>
+              <div>
+                <span className={styles.button__costLarge}>790</span>
+                <span className={styles.button__currency}>руб</span>
               </div>
+            </div>
+            <div className={styles.buttonsSection__controls}>
+              <ButtonMain theme='purple'label='Оплатить через' size='l'></ButtonMain>
+              <ButtonMain theme='grey'label='запросить счёт' size='l'></ButtonMain>
+            </div>
           </div>
-          <img className={styles.topImage} src={cosmoRocket} alt="cosmoRocket" />
+          
         </div>
 
         {/* <div className={styles.header}>

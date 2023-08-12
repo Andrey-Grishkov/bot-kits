@@ -85,7 +85,7 @@ export function UI() {
       <ButtonMain theme='purple' label='' size='s' onClick={() => setShowPaymentModal(true)}/>
       {showPaymentModal &&
         <Modal onClose={() => setShowPaymentModal(false)}>
-          <ModalPayment title='Переименуйте файл'></ModalPayment>
+          <ModalPayment title='Подписаться'></ModalPayment>
         </Modal>
       }
 
