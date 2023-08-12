@@ -1,26 +1,27 @@
 import className from "classnames";
 import { DropdownOperations } from "./DropdownOperations";
-import { devConstant, options, payArray, tableHead } from "./devConstant";
+import { devConstant, options, payArray, tableHead, titlePaymentsDecktop, titlePaymentsMobile } from "./devConstant";
 import { Dispatch, FC, SetStateAction } from "react";
 import React from "react";
 import styles from "./SubscriptionAndPayments.module.scss";
 
-const {
-  subscription,
-  balance,
-  statusActive,
-  whyNoSubscription,
-  answerSubscription,
-  dateAnswerSubscription,
-} = devConstant;
-const status = statusActive;
+// const {
+//   subscription,
+//   balance,
+//   statusActive,
+//   whyNoSubscription,
+//   answerSubscription,
+//   dateAnswerSubscription,
+// } = devConstant;
+// const status = devConstant.statusActive;
 
 export const Payments: FC = () => {
   const [repeatSelected, setRepeatSeleted] = React.useState("Все");
   return (
     <>
       <div className={className(styles.titlePay)}>
-        <h2 className={className(styles.titleTableText)}>История платежей</h2>
+        <h2 className={className(styles.titleTableText, styles.switchDesktop)}>{titlePaymentsDecktop}</h2>
+        <h2 className={className(styles.titleTableText, styles.switchMobile)}>{titlePaymentsMobile}</h2>
 
         <DropdownOperations
           repeatSelected={repeatSelected}
@@ -33,8 +34,8 @@ export const Payments: FC = () => {
           <td className={styles.table__trHead}> {tableHead.data}</td>
           <td> {tableHead.sum}</td>
           <td> {tableHead.operation}</td>
-          <td> {tableHead.annotation}</td>
-          <td> {tableHead.statusPay}</td>
+          <td  className={styles.switchDesktop}> {tableHead.annotation}</td>
+          <td  className={styles.switchDesktop}> {tableHead.statusPay}</td>
         </tr>
         </thead>
         <tbody>
@@ -50,10 +51,12 @@ export const Payments: FC = () => {
                 </td>
                 <td> {item.sum}&#8381;</td>
                 <td> {item.operation}</td>
-                <td> {item.annotation}</td>
+                <td  className={styles.switchDesktop}> {item.annotation}</td>
                 <td
-                  className={
-                    item.status === "Отклонено" ? styles.redColorText : ""
+                  className={className(
+                    item.status === "Отклонено" ? styles.redColorText : "",
+                    styles.switchDesktop
+                  )
                   }
                 >
                   {item.status}

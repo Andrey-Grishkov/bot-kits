@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { FC } from "react";
 import styles from "./SubscriptionAndPayments.module.scss";
 import className from "classnames";
@@ -6,24 +6,20 @@ import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { Subscription } from "./Subscription";
 import { BlockBalance } from "./BlockBalance";
 import { Container } from "./Container";
-import { DropdownOperations } from "./DropdownOperations";
+// import { DropdownOperations } from "./DropdownOperations";
 import { devConstant } from "./devConstant";
 import { Payments } from "./Payments";
 
 const {
-  subscription,
   balance,
   statusActive,
-  whyNoSubscription,
-  answerSubscription,
-  dateAnswerSubscription,
 } = devConstant;
 
 export const SubscriptionAndPayments: FC = () => {
   const [status, setStatusActive] = React.useState("");
-  React.useEffect(() => {
-    setStatusActive(statusActive);
-  }, [status]);
+  // React.useEffect(() => {
+  //   setStatusActive(statusActive);
+  // }, [status]);
   return (
     <div className={className(styles.section)}>
       <div className={className(styles.title)}>
@@ -48,6 +44,32 @@ export const SubscriptionAndPayments: FC = () => {
         <Container extraClass="payments">
           <Payments />
         </Container>
+      </div>
+      <div 
+      className={className(styles.devExtraClass)}
+      >
+        <p>кнопки разработчика:  </p>
+        <ButtonMain
+          onClick={() => setStatusActive('неактивен')}
+          theme={"green"}
+          label={'неактивен'}
+          size={"s"}
+          extraClass={styles.buttonDEV}
+        />
+                <ButtonMain
+          onClick={() => setStatusActive('новый')}
+          theme={"green"}
+          label={'новый'}
+          size={"s"}
+          extraClass={styles.buttonDEV}
+        />
+                <ButtonMain
+          onClick={() => setStatusActive('активен')}
+          theme={"green"}
+          label={'активен'}
+          size={"s"}
+          extraClass={styles.buttonDEV}
+        />
       </div>
     </div>
   );
