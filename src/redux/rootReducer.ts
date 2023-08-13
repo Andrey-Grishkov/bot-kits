@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 //import odnoklassnikiSvg from "../images/icons/odnoklassniki.svg";
 import { buttonsHardCodNikit, CHENGE_ITEMS_STATE_SOCIAL } from "../utils/constants";
 import { IchegeItemsSocialAction } from './actions';
+import visibilityReducer from "./visibilitySlice";
 
 interface IsocialButtonsState {
   href: string;
@@ -39,6 +40,5 @@ export const rootReducer = combineReducers({
   visibility: visibilityReducer
 });
 
-import visibilityReducer from "./visibilitySlice";
 
 export type RootState = ReturnType<typeof rootReducer>;
