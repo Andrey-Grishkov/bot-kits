@@ -27,7 +27,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
 
     if (step === '2') {
 			setStepTwo(true);
-		} 
+		}
 
     if (step === '3') {
       setStepThree(true);
@@ -37,10 +37,10 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
   React.useEffect(() => {
     if (type === 'viber') {
       setViberType(true);
-		} 
+		}
     if (type === 'telegram') {
 			setTelegramType(true);
-		} 
+		}
     if (type !== 'telegram' && type !== 'viber') {
       setDefaultType(true);
     }
@@ -48,7 +48,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
 
   return (
     <div>
-      { telegramType && 
+      { telegramType &&
         ( <div className='steps__wrapper'>
             { stepOne ?
               ( <>
@@ -59,7 +59,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 {/* Ниже поле <Input placeholder='Введите ключ доступа' /> */}
                 <Input placeholder='Введите ключ доступа'/>
                 </>
-              ) : 
+              ) :
               ( <>
                 <div className='steps__title__container'>
                   <span>{`${step}`} Шаг	&#10095; </span>
@@ -71,7 +71,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
               )}
           </div>)}
 
-     { viberType && 
+     { viberType &&
         ( <div className='steps__wrapper_sm'>
           { stepOne &&
             ( <>
@@ -106,7 +106,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
             )}
         </div>)}
 
-      { defaultType && 
+      { defaultType &&
         ( <div className='steps__wrapper'>
           { stepOne ?
             ( <>
@@ -117,9 +117,9 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
               {/* Поле <Загрузить страницу /> */}
               <AddPageField pages={pages}/>
               </>
-            ) : 
+            ) :
             ( <>
-              <div className='steps__title_container'>
+              <div className='steps__title__container'>
                 <span>{`${step}`} Шаг	&#10095; </span>
                 <span>Название бота</span>
               </div>
