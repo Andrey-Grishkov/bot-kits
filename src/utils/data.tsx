@@ -68,9 +68,9 @@ export const bots = [
 	]
 
 export	const videos = [
-	{ id: '1', title: "Подключение и основные параметры", image: settingUp, video: "https://www.youtube.com/embed/lVFj91Z1AfM" },
-	{ id: '2', title: "Настраиваем простую рассылку", image: mailing, video: "https://www.youtube.com/embed/lVFj91Z1AfM" },
-	{ id: '3', title: "Начало работы с блок-схемами", image: schemes, video: "https://www.youtube.com/embed/lVFj91Z1AfM" },
+	{ id: '1', title: "Подключение и основные параметры", image: settingUp, video: "https://www.youtube.com/embed/FKOn5DfpJDA" },
+	{ id: '2', title: "Настраиваем простую рассылку", image: mailing, video: "https://www.youtube.com/embed/pr-oEDI_Iu8" },
+	{ id: '3', title: "Начало работы с блок-схемами", image: schemes, video: "https://www.youtube.com/embed/5Ga4CifgkK0" },
 ]
 
 export const countries = [

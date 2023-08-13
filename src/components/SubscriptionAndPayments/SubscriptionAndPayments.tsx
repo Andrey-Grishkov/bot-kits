@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { FC } from "react";
 import styles from "./SubscriptionAndPayments.module.scss";
 import className from "classnames";
@@ -6,17 +6,12 @@ import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { Subscription } from "./Subscription";
 import { BlockBalance } from "./BlockBalance";
 import { Container } from "./Container";
-import { DropdownOperations } from "./DropdownOperations";
 import { devConstant } from "./devConstant";
 import { Payments } from "./Payments";
 
 const {
-  subscription,
   balance,
-  statusActive,
-  whyNoSubscription,
-  answerSubscription,
-  dateAnswerSubscription,
+  statusActive
 } = devConstant;
 
 export const SubscriptionAndPayments: FC = () => {
@@ -32,7 +27,7 @@ export const SubscriptionAndPayments: FC = () => {
           theme={"green"}
           label={"СМЕНИТЬ ТАРИФ"}
           size={"l"}
-          extraClass={styles.buttonChangeTariff}
+          extraClass={className(styles.buttonChangeTariff, styles.switchDesktop)}
         />
       </div>
 
@@ -49,6 +44,12 @@ export const SubscriptionAndPayments: FC = () => {
           <Payments />
         </Container>
       </div>
+      <ButtonMain
+          theme={"green"}
+          label={"СМЕНИТЬ ТАРИФ"}
+          size={"l"}
+          extraClass={className(styles.buttonChangeTariff, styles.switchMobile)}
+        />
     </div>
   );
 };

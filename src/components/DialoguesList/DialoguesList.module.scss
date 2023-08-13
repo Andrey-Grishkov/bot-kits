@@ -1,0 +1,48 @@
+.dialogues {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Mono';
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-size: 32px;
+        line-height: 42px;
+        font-weight: 600;
+    }
+    &__form {
+        position: relative;
+        margin: 26px 0 32px 0;
+        width: 308px;
+    }
+    &__fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__input {
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: #f2f4f8;
+        padding-left: 36px;
+        width: 308px;
+        height: 40px;
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+    }
+    &__search-icon {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+    }
+    &__filter-icon {
+        position: absolute;
+        top: 10px;
+        right: 8px;
+    }
+    &__list-wrapper {
+
+    }
+}

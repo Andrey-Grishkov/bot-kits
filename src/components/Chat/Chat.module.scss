@@ -1,0 +1,13 @@
+.chat {
+    display: flex;
+    padding: 32px 0 0 46px;
+    &__dialogues-list {
+        width: 328px;
+    }
+    &__dialogue-container {
+        width: 650px;
+    }
+    &__user-details {
+        width: 328px;
+    }
+}

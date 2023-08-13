@@ -1,0 +1,26 @@
+.icon {
+  max-width: 34px;
+  max-height: 34px;
+  &:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.item {
+    margin: 10px 10px 10px 0;
+    cursor: pointer;
+    &:nth-of-type(1) {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .item {
+        margin: 8px 8px 8px 0;
+        &:nth-of-type(1) {
+            margin-left: 8px;
+        }
+    }
+    
+}

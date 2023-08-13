@@ -37,7 +37,7 @@ const Dashboard: FC = () => {
 						alt="Стрелка вниз"
 					/>
 				</button>
-				<div className='dashboard__templates' 
+				<div className='dashboard__templates'
 						style={{ height: expanded ? '282px' : '125px', overflow: 'hidden', transition: 'height 0.3s' }}>
 					{templates.map((template) => {
 		  return <ButtonAddTemplate keyName={template.keyName} key={template.id} label={template.name} type='default'/>;
@@ -73,42 +73,42 @@ const Dashboard: FC = () => {
 		  		<h3 className='dashboard__subtitle'>База знаний</h3>
 					<p className='dashboard__text'>Узнай, как создать чат бота. Примеры и описание опций сервиса!</p>
 					<div className='dashboard__buttons-area'>
-  					<button className='dashboard__tutorial-button'>
+  						<a className='dashboard__tutorial-button' href='https://botkits.ru/start/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Начало работы в сервисе</span>
-						</button>
-						<button className='dashboard__tutorial-button'>
+						</a>
+						<a className='dashboard__tutorial-button' href='https://botkits.ru/block-schemes/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Блок схемы</span>
-						</button>
-						<button className='dashboard__tutorial-button'>
+						</a>
+						<a className='dashboard__tutorial-button' href='https://botkits.ru/newsletter/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Рассылка</span>
-						</button>
-						<button className='dashboard__tutorial-button'>
+						</a>
+						<a className='dashboard__tutorial-button' href='https://botkits.ru/configuration/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Конфигурации</span>
-						</button>
-						<button className='dashboard__tutorial-button'>
+						</a>
+						<a className='dashboard__tutorial-button' href='https://botkits.ru/statistics/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Статистика</span>
-						</button>
-						<button className='dashboard__tutorial-button'>
+						</a>
+						<a className='dashboard__tutorial-button' href='https://botkits.ru/dialogues/'>
 							<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0.6875 6.54688L6.03125 4.35156L0.6875 1.875V0L8.44531 3.875V4.99219L0.6875 8.41406V6.54688Z" fill="#A6B3C9"/>
-							</svg>		
+							</svg>
 							<span className='dashboard__tutorial-button__label'>Диалоги</span>
-						</button>
+						</a>
 					</div>
 				</div>
 			</section>
