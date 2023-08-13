@@ -1,0 +1,23 @@
+.auth-button {
+  background-color: #22FFAA;
+  border-radius: 12px;
+  font-size: 18px;
+  width: 100% !important;
+  max-width: 260px !important;
+  height: 100% !important;
+  max-height: 64px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  border: none;
+  padding: 20px 42px;
+}
+
+@media (max-width: 360px) {
+  .auth-button {
+    max-width: 320px;
+    width: 100%;
+  }
+}

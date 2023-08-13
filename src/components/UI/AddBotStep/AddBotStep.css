@@ -1,0 +1,27 @@
+.steps__wrapper {
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.steps__wrapper_sm {
+  width: 377px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.steps__title__container {
+  font-family: IBM Plex Mono;
+  margin: 0;
+  padding: 0 0 16px 0;
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #060C23;
+}

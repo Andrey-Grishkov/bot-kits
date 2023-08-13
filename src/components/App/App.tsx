@@ -19,17 +19,21 @@ import { Chat } from '../Chat/Chat';
 
 function App() {
     const location = useLocation();
-    const isAuthPage = ['/reset-password', '/signup', '/signin'].includes(location.pathname);
-  
+    const isAuthPage = ["/reset-password", "/signup", "/signin"].includes(
+        location.pathname
+    );
+
     return (
-        <Overlay>
         <div className='page app-container'>
             {isAuthPage ? null : <Header />}
             {isAuthPage ? null : <NavBar />}
             <PageWrapper>
                 <Routes>
                     <Route path='/' element={<Dashboard />} />
-                    <Route path='/subscription_and_payments' element={<SubscriptionAndPayments />} />
+                    <Route
+                        path='/subscription_and_payments'
+                        element={<SubscriptionAndPayments />}
+                    />
                     <Route path='/addbot' element={<AddBotPage />} />
                     <Route path='/botbuilder' element={<BotBuilder />} />
                     <Route path='reset-password' element={<ResetPassword />} />
@@ -43,7 +47,6 @@ function App() {
             </PageWrapper>
             {isAuthPage ? null : <Footer />}
         </div>
-        </Overlay>
     );
 }
 
