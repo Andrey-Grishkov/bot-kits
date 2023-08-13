@@ -15,6 +15,7 @@ import { ResetPassword } from "../ResetPassword/Reset-password";
 import { Mailing } from "../Mailing/Mailing";
 import { SubscriptionAndPayments } from "../SubscriptionAndPayments/SubscriptionAndPayments";
 import Overlay from "../NavBar/components/Overlay";
+import { Chat } from '../Chat/Chat';
 
 function App() {
     const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
                     <Route path='/mailing' element={<Mailing />} />
                     <Route path='/shared-access' element={<Shared />} />
                     <Route path='/ui' element={<UI />} />
+                    <Route path='/chat' element={<Chat />} />
                 </Routes>
             </PageWrapper>
             {isAuthPage ? null : <Footer />}

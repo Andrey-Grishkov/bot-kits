@@ -2,19 +2,23 @@ import cn from 'classnames';
 import classes from './LoadPageButton.module.scss';
 import { FC, MouseEventHandler, useEffect, useState } from 'react';
 import { AddPageIcon } from './AddPageIcon';
+import { IPage } from '../AddPageField/AddPageField';
 // import AddIcon from './add.svg';
 
 export interface LoadPageButtonProps {
   type?: 'button';
   title?: string;
-  handleClick?: () => void;
+  // onClick?: (page: IPage) => void;
+  onClick?: () => void;
+  // page: IPage;
   size?: string;
   error?: 'Вы ввели неправильное значение' | 'Ошибка';
   disabled?: boolean;
 }
 
 export const LoadPageButton: FC<LoadPageButtonProps> = ({
-  handleClick,
+  onClick,
+  // page,
   type = 'button',
   title,
   size = 'xl',
@@ -29,6 +33,8 @@ export const LoadPageButton: FC<LoadPageButtonProps> = ({
   const [btnClasses, setBtnClasses] = useState(buttonCn);
   const [titleColor, setTitleColor] = useState(buttonTitleCn);
   const [iconOpacity, setIconOpacity] = useState(0.5);
+
+  
 
   useEffect(() => {
     if (size === 'md') {
@@ -54,11 +60,14 @@ export const LoadPageButton: FC<LoadPageButtonProps> = ({
     }
   };
 
+  
+
   return (
     <button
       className={btnClasses}
       type={type}
-      onClick={handleClick}
+      // onClick={() => onClick!(page)}
+      onClick={() => onClick!()}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
       disabled={disabled}
