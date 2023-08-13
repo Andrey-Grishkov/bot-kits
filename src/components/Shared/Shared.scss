@@ -24,7 +24,7 @@
     height: 46px;
     max-width: 188px;
     box-sizing: border-box;
-    padding: 13.5px 14.5px;
+    padding: 13px 14px;
     border: none;
     border-radius: 10px;
     background-color: #22ffaa;
@@ -47,6 +47,12 @@
     align-items: center;
   }
 
+  &__ref-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
   &__ref-link {
     width: 100%;
     color: #243cbb;
@@ -58,10 +64,12 @@
     padding: 22px 24px;
     border-radius: 10px;
     background-color: #f8f9fb;
+    min-width: 400px;
   }
 
   &__ref-copy {
     display: flex;
+
     &:hover {
       border-radius: 10px;
       background-color: #f2f4f8;
@@ -69,15 +77,13 @@
   }
 
   &__copied-notice {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background: #00e98f;
+    padding: 13px 20px;
+    background: #2e293d;
     border-radius: 5px;
     z-index: 1000;
-    font-size: 14px;
-    font-family: "IBM Plex Mono";
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "IBM Plex Mono", monospace;
     font-weight: 600;
   }
 
@@ -166,7 +172,6 @@
   &__table {
     &--stats {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
       width: 100%;
 
       th:nth-child(7n + 1),
@@ -211,7 +216,6 @@
 
     &--payouts {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
       width: 100%;
 
       th:nth-child(5n + 1),
@@ -251,19 +255,18 @@
           font-weight: 600;
         }
       }
-
       th:last-child,
       td:last-child {
         text-align: right;
       }
     }
+    &--desktop {
+      display: grid;
+    }
+    &--mobile {
+      display: none;
+    }
   }
-}
-
-@media (max-width: 360px) {
-}
-
-@media (max-width: 768px) {
 }
 
 @media (max-width: 1024px) {
@@ -274,10 +277,56 @@
       }
     }
 
+    &__title {
+      font-size: 24px;
+    }
+
+    &__ref {
+      flex-direction: column;
+      &-link {
+        max-width: 100%;
+        min-width: auto;
+      }
+      &-container {
+        width: 100%;
+      }
+    }
+
+    &__copied-notice {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    &__table {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: grid;
+        th {
+          font-weight: 400;
+          color: #a6b3c9;
+        }
+        td {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__section {
+      &--mobile {
+        flex-direction: column;
+        display: flex;
+        gap: 32px;
+      }
+    }
+
     &__btn-request {
       display: none;
       &--mobile {
         display: block;
+        max-width: 100%;
       }
     }
 

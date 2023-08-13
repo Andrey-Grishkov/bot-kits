@@ -1,18 +1,19 @@
-import answeringMachine from '../images/bots/answering machine.svg';
-import beauty from '../images/bots/beauty.svg';
-import demoBot from '../images/bots/demo bot.svg';
-import eLearning from '../images/bots/e-learning.svg';
-import entertainment from '../images/bots/entertainment.svg';
-import foodDelivery from '../images/bots/food delivery.svg';
-import internetShopping from '../images/bots/internet shoping.svg';
-import leadGeneration from '../images/bots/lead generation.svg';
-import poll from '../images/bots/poll.svg';
-import privateClub from '../images/bots/private club.svg';
-import question from '../images/bots/question.svg';
-import realEstate from '../images/bots/real estate.svg';
-import settingUp from '../images/icons/video settingup.svg';
-import mailing from '../images/icons/video mailing.svg';
-import schemes from '../images/icons/video schemes.svg';
+import answeringMachine from "../images/bots/answering machine.svg";
+import beauty from "../images/bots/beauty.svg";
+import demoBot from "../images/bots/demo bot.svg";
+import eLearning from "../images/bots/e-learning.svg";
+import entertainment from "../images/bots/entertainment.svg";
+import foodDelivery from "../images/bots/food delivery.svg";
+import internetShopping from "../images/bots/internet shoping.svg";
+import leadGeneration from "../images/bots/lead generation.svg";
+import poll from "../images/bots/poll.svg";
+import privateClub from "../images/bots/private club.svg";
+import question from "../images/bots/question.svg";
+import realEstate from "../images/bots/real estate.svg";
+import settingUp from "../images/icons/video settingup.svg";
+import mailing from "../images/icons/video mailing.svg";
+import schemes from "../images/icons/video schemes.svg";
+import { PayoutRow, TableRow } from "./types";
 
 export const pages = [
 	{ id: '1', title: "Yandex", link: "https://yandex.com/" },
@@ -62,10 +63,10 @@ export const mailings = [
 ]
 
 export const bots = [
-	{ id: '1', name: "Салон красоты", type: "telegram" },
-	{ id: '2', name: "Запись клиентов для консультации", type: "telegram" },
-	{ id: '3', name: "Опрос клиентов для проведения встречи", type: "telegram" },
-	]
+  { id: "1", name: "Салон красоты", type: "telegram" },
+  { id: "2", name: "Запись клиентов для консультации", type: "telegram" },
+  { id: "3", name: "Опрос клиентов для проведения встречи", type: "telegram" },
+];
 
 export	const videos = [
 	{ id: '1', title: "Подключение и основные параметры", image: settingUp, video: "https://www.youtube.com/embed/FKOn5DfpJDA" },

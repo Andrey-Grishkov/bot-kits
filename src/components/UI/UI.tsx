@@ -60,11 +60,13 @@ export function UI() {
     const [showAddBotModal, setShowAddBotModal] = useState(false);
     const [showPaymentModal, setShowPaymentModal] = useState(false);
 
+  const handleMailPopup = () => {
+    setVisibleMailPopup(!visibleMailPopup);
+  };
 
-
-    const handleMailPopup = () => {
-        setVisibleMailPopup(!visibleMailPopup);
-    };
+  const handlePasswordPopup = () => {
+    setVisiblePasswordPopup(!visiblePasswordPopup);
+  };
 
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
@@ -78,7 +80,7 @@ export function UI() {
       <AuthButton visible={visiblePasswordPopup} notificationType={'password'} setVisible={handlePasswordPopup} />
       <ButtonAddBlock type='default' label='Блок сообщений'/>
       <ButtonAddTemplate keyName='answeringMachine' type='default' label='Бот автоответчик' onClick={() => setShowAddBotModal(true)}/>
-      <ButtonCopy type='default'/>
+      <ButtonCopy type="default" onClick={() => {}} />
       <ButtonMain theme='purple' label='Добавить бота' size='l' onClick={() => setShowCommonContentModal(true)}/>
 
       {showCommonContentModal &&
@@ -158,12 +160,12 @@ export function UI() {
         <SvgLogicPluse />
       </ConstructorLogicButton>
       <ConstructorBackground>
-      <ConstructorLogicButton value="Добавить условие">
-        <SvgLogicPluse />
-      </ConstructorLogicButton>
-      <ConstructorLogicButton value="Добавить условие">
-        <SvgLogicPluse />
-      </ConstructorLogicButton>
+        <ConstructorLogicButton value="Добавить условие">
+          <SvgLogicPluse />
+        </ConstructorLogicButton>
+        <ConstructorLogicButton value="Добавить условие">
+          <SvgLogicPluse />
+        </ConstructorLogicButton>
       </ConstructorBackground>
       <ConstructorPhoneButton/>
       <BotCard id="id" name="Салон красоты" type="telegram"/>

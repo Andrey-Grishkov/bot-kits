@@ -10,7 +10,7 @@ import AddBotPage from "../AddBotPage/AddBotPage";
 import BotBuilder from "../BotBuilder/BotBuilder";
 import NavBar from "../NavBar/NavBar";
 import PageWrapper from "../PageWrapper/PageWrapper";
-import Shared from "../Shared/Shared";
+import SharedAccess from "../Shared/Shared";
 import { ResetPassword } from "../ResetPassword/Reset-password";
 import { Mailing } from "../Mailing/Mailing";
 import { SubscriptionAndPayments } from "../SubscriptionAndPayments/SubscriptionAndPayments";
@@ -38,8 +38,8 @@ function App() {
                     <Route path='reset-password' element={<ResetPassword />} />
                     <Route path='/signup' element={<Registration />} />
                     <Route path='/signin' element={<Login />} />
+                    <Route path='/partnership' element={<SharedAccess />} />
                     <Route path='/mailing' element={<Mailing />} />
-                    <Route path='/shared-access' element={<Shared />} />
                     <Route path='/ui' element={<UI />} />
                     <Route path='/chat' element={<Chat />} />
                 </Routes>
