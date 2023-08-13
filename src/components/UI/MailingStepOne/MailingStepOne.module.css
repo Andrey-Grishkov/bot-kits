@@ -1,0 +1,230 @@
+.title_container {
+  margin: 0;
+  font-family: IBM Plex Mono;
+  padding: 32px 0 16px 40px;
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #060C23;
+}
+
+.inputs_container {
+  display: flex;
+  padding: 0 0 32px 40px;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.media_container {
+  display: flex;
+  padding: 0 0 32px 40px;
+  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container_title {
+  color: var(--primary-oxford-blue-default, #060C23);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  font-family: IBM Plex Mono;
+}
+
+.media_buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.widget_container {
+  width: 296px;
+  max-height: 651px;
+  overflow: scroll;
+  border-radius: 10px;
+  background: var(--off-white, #FFF);
+  box-shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
+  top: 75px;
+  right: 40px;
+  position: absolute;
+}
+
+.widget_title {
+  color: var(--grey-3, #A6B3C9);
+  font-family: IBM Plex Mono;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.4px;
+  margin: 12px 0 8px 16px;
+  text-align: left;
+}
+
+.widget_name {
+  text-align: left;
+  color: var(--primary-oxford-blue-default, #060C23);
+  font-family: IBM Plex Mono;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  width: 252px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 16px 14px;
+}
+
+.widget_messages {
+  height: 561px;
+  display: flex;
+  align-items: flex-start;
+  margin: 32px 16px 32px;
+  gap: 24px;
+  overflow: scroll;
+}
+
+.widget_messages__box {
+  width: 220px;
+  padding: 12px;
+  text-align: left;
+  border-radius: 10px;
+  background: var(--secondary-cultured-default, #F8F9FB);
+  position: relative;
+}
+
+.widget_messages__title {
+  margin: 0 0 2px;
+  font-family: Open Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
+.widget_messages__text {
+  font-family: Open Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  margin: 0;
+  padding: 0;
+  max-width: 160px;
+  overflow-wrap: break-word;
+}
+
+.widget_messages__box_elipsis {
+  text-align: left;
+  border-radius: 10px;
+  background: var(--secondary-cultured-default, #F8F9FB);
+  position: relative;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+}
+
+.widget_messages__time {
+  color: var(--grey-3, #A6B3C9);
+  font-family: Open Sans;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.widget_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 490px;
+}
+
+.widget_button {
+  margin: 0 auto 30px;
+  padding: 6px 20px;
+  border-radius: 32px;
+  background: var(--primary-medium-spring-green-default, #2FA);
+  color: var(--primary-oxford-blue-default, #060C23);
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+}
+
+.widget_footer {
+  padding: 32px 16px 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--grey-3, #A6B3C9);
+  font-family: IBM Plex Mono;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.4px;
+}
+
+.widget_toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 27px;
+  right: 63px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.widget_toggle_active {
+  top: 19px;
+  right: 54px;
+}
+
+.widget_toggle_img {
+  margin: 0;
+  padding: 0;
+}
+
+.widget_toggle_img_active {
+  transform: rotate(180deg);
+}
+
+.widget_label {
+  background-image: url(../../../images/icons/Rectangle701.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 115px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 65px;
+  right: 0px;
+}
+
+.widget_label_img {
+  margin: 7px 15px 0px 29px;
+}

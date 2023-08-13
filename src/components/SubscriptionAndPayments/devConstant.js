@@ -1,9 +1,10 @@
 
 const devConstant = {
     subscription: 'Бизнес',
-    // statusActive: 'неактивен',
+    // для рендеринга разных состояний необходимо вручную поменять значение переменной statusActive (см ниже 3 строчки)
+    statusActive: 'неактивен', 
     // statusActive: 'новый',
-    statusActive: 'активен',
+    // statusActive: 'активен',
     whyNoSubscription: 'Недостаточно средств',
     answerSubscription: 'Не удалось продлить подписку ',
     answerPayments: 'Следующее списание',
@@ -12,7 +13,8 @@ const devConstant = {
     cardBank: '*****1119',
     balance: 0
   }
-
+const titlePaymentsDecktop = 'История платежей' 
+const titlePaymentsMobile = 'Платежи'
 const options = [ 
     'Все', 
     'списание',
@@ -25,6 +27,7 @@ const tableHead = {
     annotation: 'Примечание', 
     statusPay: 'Статус'
 };
+
 const payArray = [
     {data: {d: "15/05/21", h: "13.56"}, sum: 1390, operation: "поступление", annotation: "Активация тарифа бизнес", status: "Отклонено"},
     {data: {d: "15/05/21", h: "13.56"}, sum: 1390, operation: "списание", annotation: "Активация тарифа бизнес", status: "Успешно"},
@@ -62,4 +65,4 @@ const payArray = [
 
 ]
 
-export { devConstant, options, payArray, tableHead }
+export { titlePaymentsDecktop, titlePaymentsMobile, devConstant, options, payArray, tableHead }

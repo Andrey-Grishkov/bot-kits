@@ -33,12 +33,12 @@ export const mockMenu: MenuItemProps[] = [
     {
         text: "Статистика",
         Icon: StatisticsIcon,
-        link: "/statistics",
+        link: "/subscription_and_payments",
     },
     {
         text: "Диалоги",
         Icon: DialoguesIcon,
-        link: "/dialogues",
+        link: "/chat",
     },
     {
         text: "Общий доступ",

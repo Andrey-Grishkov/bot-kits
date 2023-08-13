@@ -1,5 +1,6 @@
 .fieldset {
     border: none;
+    padding: 0;
 }
 
 .input {
@@ -24,6 +25,22 @@
     background-color: #f8f9fb;
     color: #060c23;
     font-size: 13px;
+}
+
+.input_medium {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    width: 378px;
+    height: 65px;
+    padding-left: 22px;
+    background-color: #f8f9fb;
+    color: #060c23;
+    font-size: 14px;
+}
+
+.input_adaptive {
+    width: 100%;
 }
 
 .input:focus {
