@@ -99,7 +99,7 @@
   flex-direction: column;
   @media (max-width: 767px) {
     padding: 24px;
-    margin-bottom: 50%;
+    margin-bottom: 155px;
 
   }
 }
@@ -107,7 +107,7 @@
   background-color: $colorSecondaryCulturedHover;
   width: 836px;
   min-height: 228px;
-  margin: 0 0 auto auto;
+  margin: 0 0 auto 29px;
   box-sizing: border-box;
   padding: 35px;
   display: flex;
@@ -117,15 +117,17 @@
     width: 105%;
     padding: 20px;
     border-radius: 20px 0 0 20px;
-    // margin-bottom: 5%;
+    // margin-bottom: 35px;
+    margin: 0 0 35px 0;
 overflow: hidden;
   }
 }
 .blockInfo {
   display: flex;
+  justify-content: space-between;
   @media (max-width: 767px) {
   flex-direction: column;
-  width: 320px;
+  // width: 320px;
 }
 }
 .button {
@@ -155,7 +157,7 @@ overflow: hidden;
   padding: 0;
   margin: 0;
   @media (max-width: 767px) {
-    display: none;
+  margin-bottom: 70px;
 }
 }
 .sum {
@@ -336,6 +338,7 @@ margin-right: auto;
 .dropDown{
   @extend %AgPM;
   // margin-right: 35px;
+  font-size: 35px !important;
   align-self: center;
   width: 115px;
 }

@@ -28,7 +28,7 @@ export const SubscriptionAndPayments: FC = () => {
           theme={"green"}
           label={"СМЕНИТЬ ТАРИФ"}
           size={"l"}
-          extraClass={styles.buttonChangeTariff}
+          extraClass={className(styles.buttonChangeTariff, styles.switchDesktop)}
         />
       </div>
 
@@ -45,6 +45,12 @@ export const SubscriptionAndPayments: FC = () => {
           <Payments />
         </Container>
       </div>
+      <ButtonMain
+          theme={"green"}
+          label={"СМЕНИТЬ ТАРИФ"}
+          size={"l"}
+          extraClass={className(styles.buttonChangeTariff, styles.switchMobile)}
+        />
       <div 
       className={className(styles.devExtraClass)}
       >
