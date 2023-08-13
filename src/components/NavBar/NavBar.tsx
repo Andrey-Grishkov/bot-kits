@@ -5,7 +5,7 @@ import { useNav } from "../../context/navBarContext";
 
 import { mockMenu } from "./mock";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logoIcon from "../../images/icon/side bar/logo.svg";
 import widthLogoIcon from "../../images/icon/side bar/widthLogo.svg";
@@ -38,53 +38,36 @@ const NavBar = ({ ...props }) => {
         setOpenSubMenu(openSubMenu === index ? null : index);
     };
 
-    const handleMouseEnter = () => {
-        setIsOverlayOpen(true);
-    };
-    const handleMouseLeave = () => {
-        setIsOverlayOpen(false);
-    };
-
     return (
         <div
-            className='navBar-Container'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className={
+                isOverlayOpen
+                    ? "navBar-Container navBar-Container_isOpen_open"
+                    : "navBar-Container"
+            }
         >
+            {isOverlayOpen && (
+                <div
+                    className='overlay'
+                    onClick={() => setIsOverlayOpen(false)}
+                />
+            )}
             <div
-                style={{
-                    height: "100%",
-                    width: isOverlayOpen ? "240px" : "100%",
-                    margin: "16xp 0 16px 16px",
-                    overflowX: "hidden",
-                    backgroundColor: "#F8F9FB",
-                    borderRadius: "10px",
-                    transition: "width 0.15s ease",
-                    ...(isOverlayOpen && {
-                        position: "absolute",
-                    }),
-                }}
+                className={
+                    isOverlayOpen
+                        ? "navBar__menu navBar__menu_size_open"
+                        : "navBar__menu"
+                }
             >
                 <nav {...props}>
                     <ul
-                        style={{
-                            listStyle: "none",
-                            padding: 0,
-                            margin: 0,
-                            display: "flex",
-                            flexDirection: "column",
-
-                            gap: "24px",
-                            ...(!isOverlayOpen
-                                ? {
-                                      alignItems: "center",
-                                      paddingLeft: 0,
-                                  }
-                                : { paddingLeft: "16px" }),
-                        }}
+                        className={
+                            isOverlayOpen
+                                ? "navBar__list navBar__list_size_open"
+                                : "navBar__list"
+                        }
                     >
-                        <div>
-                            {/* todo link to / */}
+                        <Link to='/'>
                             {isOverlayOpen ? (
                                 <img
                                     src={widthLogoIcon}
@@ -108,36 +91,37 @@ const NavBar = ({ ...props }) => {
                                     }}
                                 />
                             )}
-                        </div>
+                        </Link>
 
-                        <button
-                            style={{
-                                background: "#243CBB",
-                                color: "white",
-                                textTransform: "uppercase",
-                                margin: "4px 0 20px 0",
-                                border: "none",
-                                height: "46px",
-                                maxWidth: "182px",
-                                ...(!isOverlayOpen
-                                    ? {
-                                          width: "46px",
-                                          borderRadius: "50%",
-                                      }
-                                    : {
-                                          borderRadius: "10px",
-                                          padding: "14px 14px",
-                                      }),
-                            }}
-                        >
-                            {isOverlayOpen ? "Добавить бота" : "+"}
-                        </button>
-
+                        <Link to='addbot'>
+                            <button
+                                style={{
+                                    background: "#243CBB",
+                                    color: "white",
+                                    textTransform: "uppercase",
+                                    margin: "4px 0 20px 0",
+                                    border: "none",
+                                    height: "46px",
+                                    maxWidth: "182px",
+                                    ...(!isOverlayOpen
+                                        ? {
+                                              width: "46px",
+                                              borderRadius: "50%",
+                                          }
+                                        : {
+                                              borderRadius: "10px",
+                                              padding: "14px 14px",
+                                          }),
+                                }}
+                            >
+                                {isOverlayOpen ? "Добавить бота" : "+"}
+                            </button>
+                        </Link>
                         {mockMenu.map((item, index) => (
                             <li
                                 key={item.text}
                                 style={{
-                                    marginRight: "20px",
+                                    margin: "0 20px 0 0",
                                     position: "relative",
                                     ...(!isOverlayOpen && {
                                         margin: "0 auto",

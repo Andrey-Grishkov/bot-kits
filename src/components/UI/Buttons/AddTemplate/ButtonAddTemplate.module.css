@@ -54,7 +54,7 @@
 
 .buttonAddTemplate__text {
   color: var(--primary-oxford-blue-default, #060C23);
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -69,4 +69,4 @@
 
 .buttonAddTemplate__plusIcon {
   align-self: center;
-}/*# sourceMappingURL=ButtonAddTemplate.module.css.map */
+}

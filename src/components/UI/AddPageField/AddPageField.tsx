@@ -11,9 +11,17 @@ export interface IPage {
 
 export interface IAddPageFieldProps {
   pages: Array<IPage>;
+  handleClick?: () => void;
 }
 
-export const AddPageField: FC<IAddPageFieldProps> = ({ pages }) => {
+// export const AddPageField: FC<IAddPageFieldProps> = ({ pages }) => {
+export const AddPageField: FC<IAddPageFieldProps> = () => {
+  const [pages, setPages] = useState(Array<IPage>);
+
+  // const page = {
+  //   title: 'Страница 1',
+  //   link: 'Ссылка 1',
+  // };
 
   const [columnSize, setColumnSize] = useState<string>('');
 
@@ -25,13 +33,28 @@ export const AddPageField: FC<IAddPageFieldProps> = ({ pages }) => {
     } else {
       setColumnSize('sm');
     }
-  });
+  }, [pages, columnSize]);
+
+  const handleClick = (/*page: IPage*/) => {
+    // console.log(page);
+    const newPage: IPage = {
+      title: 'Страница 1',
+      link: 'Ссылка 1',
+    };
+    setPages((prevPages) => [...prevPages, newPage]);
+  };
 
   return (
     <div className={cn(classes.container)}>
-      <LoadPageButton title='Загрузить' size={columnSize} />
+      <LoadPageButton
+        title='Загрузить'
+        size={columnSize}
+        // page={page}
+        // onClick={() => handleClick(page)}
+        onClick={() => handleClick()}
+      />
       {pages.map((page, index) => {
-        return <PageButton title={page.title} size={columnSize} key={index}/>
+        return <PageButton title={page.title} size={columnSize} key={index} />;
       })}
     </div>
   );

@@ -1,0 +1,39 @@
+.helper__container-vertical {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.helper__container-horizontal {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.helper {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  padding: 4px 6px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  background-color: #2E293D;
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.helper__stroke-vertical {
+  margin: 0 0 0 -1px;
+}
+
+.helper__stroke-horizontal {
+  margin: -3px 0 0 0;
+  transform: rotate(90deg);
+}

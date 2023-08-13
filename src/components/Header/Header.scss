@@ -5,6 +5,24 @@
     align-items: center;
     border-bottom: 1px solid #d7deea;
     margin: 0 40px;
+
+    &__burger-icon {
+        height: 34px;
+        background-color: white;
+        border: 0;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 100%;
+        transition: 0.2s linear;
+        &:hover {
+            background-color: rgba(215, 222, 234, 0.5);
+        }
+        &_state_active {
+            > svg {
+                fill: #243cbb;
+            }
+        }
+    }
 }
 
 .icon-desktop {

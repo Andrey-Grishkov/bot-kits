@@ -5,6 +5,13 @@
   height: 46px;
   border: none;
   cursor: pointer;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 134%; /* 18.76px */
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .button:disabled {
   cursor: default;
@@ -73,4 +80,4 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
-}/*# sourceMappingURL=ButtonMain.module.css.map */
+}
