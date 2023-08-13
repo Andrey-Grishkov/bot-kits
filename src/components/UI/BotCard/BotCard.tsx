@@ -156,6 +156,5 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
           </Modal>
         }
       </>
-
     );
   };

@@ -53,6 +53,13 @@ $telegram: #2aabee;
   }
 }
 
+.active.button_mailing {
+    div {
+        background-color: $inactive;
+        transition: background-color .5s;
+    }
+}
+
 .inactive {
   div {
     background-color: $inactive;
@@ -64,6 +71,12 @@ $telegram: #2aabee;
   div {
     background-color: $iconblue;
   }
+}
+
+.active:hover.button_mailing {
+    div {
+    background-color: $iconground;
+    }
 }
 
 .active:active {

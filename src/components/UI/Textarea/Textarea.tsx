@@ -192,8 +192,8 @@ export const Textarea: FC<ITextarea> = ({
           textIndent: code ? '20px' : '0px',
           fontFamily:   code ?  "Courier New" : "Open Sans",
         }}
+        placeholder='Введите текст'
       >
-        Введите текст
       </textarea>
       <p className={styles.charCount}>
         {charCount}/{charLimit}
