@@ -6,7 +6,7 @@ import {StopButton} from "./StopButton/StopButton";
 import {InstructionButton} from "./InstructionButton/InstructionButton";
 import {MessageButton} from "./MessageButton/MessageButton";
 import {BotAnswerButton} from "./BotAnswerButton/BotAnswerButton";
-import {AddSocialButton} from "./AddSocialButton/AddSocialButton";
+import {AddSocialButtonAddBotPage} from "./AddSocialButton/AddSocialButtonAddBotPage";
 import { ButtonAddBlock } from './Buttons/AddBlock/ButtonAddBlock';
 import { ButtonAddTemplate } from './Buttons/AddTemplate/ButtonAddTemplate';
 import { ButtonCopy } from './Buttons/Copy/ButtonCopy';
@@ -45,7 +45,7 @@ import { AuthButton } from './AuthButton/AuthButton';
 import { Input } from './Input/Input';
 import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
-import { AddPageField } from './AddPageField/AddPageField';      
+import { AddPageField } from './AddPageField/AddPageField';
 import { ModalPayment } from '../Modals/ModalPayment/ModalPayment';
 import vkSvg from "../../images/icons/vk.svg";
 
@@ -71,7 +71,7 @@ export function UI() {
     };
 
     const onChange = () => null;
-    
+
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
@@ -137,7 +137,7 @@ export function UI() {
           },
         ]}
       />
-      <AddSocialButton
+      <AddSocialButtonAddBotPage
           value="Facebook"
           href='../images/icons/vk.svg'
         variant='active'
@@ -146,7 +146,7 @@ export function UI() {
       >
         <img src={svgFacebook}
         />
-      </AddSocialButton>
+      </AddSocialButtonAddBotPage>
       <AddBotButton value="Добавить бота">
         <SvgPlus />
       </AddBotButton>

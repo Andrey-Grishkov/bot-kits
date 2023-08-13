@@ -2,7 +2,7 @@ import styles from "./AddBotPage.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 import { store } from "../../index";
-import { AddSocialButton } from "../UI/AddSocialButton/AddSocialButton";
+import { AddSocialButtonAddBotPage } from "../UI/AddSocialButton/AddSocialButtonAddBotPage";
 import { useState, useCallback } from "react";
 import { chegeItemsSocialAction } from "../../redux/actions";
 import { ButtonTutorial } from "../UI/Buttons/Tutorial/ButtonTutorial";
@@ -35,7 +35,7 @@ function AddBotPage() {
       <div className={styles.listConteiner}>
         <div className={styles.list}>
           {socialButtons.map((item, index) => (
-            <AddSocialButton
+            <AddSocialButtonAddBotPage
               value={item.name}
               key={index}
               variant={item.variant}
@@ -44,7 +44,7 @@ function AddBotPage() {
               href={item.href}
             >
               <img src={item.href} alt={item.name} />
-            </AddSocialButton>
+            </AddSocialButtonAddBotPage>
           ))}
         </div>
       </div>

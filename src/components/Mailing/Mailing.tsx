@@ -8,21 +8,21 @@ import { ButtonTutorial } from "../UI/Buttons/Tutorial/ButtonTutorial";
 import cn from 'classnames';
 import { MailingStepOne } from "../UI/MailingStepOne/MailingStepOne";
 
-export type TMessage = { 
-  name: string, 
+export type TMessage = {
+  name: string,
   text: string,
-  target: string, 
-  photo: File[], 
+  target: string,
+  photo: File[],
   video: File[],
   audio: File[],
   button: string,
   funnel: string,
   }
 
-export type TMailing = { 
-  id: string, 
-  name: string, 
-  messenger: string, 
+export type TMailing = {
+  id: string,
+  name: string,
+  messenger: string,
   sent: string,
   conversion: string,
   status: string,
@@ -113,15 +113,15 @@ export const Mailing: FC = () => {
       button: data,
     });
   };
-  
+
   return (
     <>
     <section className={styles.wrapper}>
       <h1 className={styles.title}>Рассылки</h1>
       {addingMode === false && (<ButtonMain  onClick={switchToAddingMode} extraClass={styles.button} theme = 'green' label = 'Cоздать рассылку' size = 'l' />)}
-      { (addingMode === false && mailingList.length > 0) && 
+      { (addingMode === false && mailingList.length > 0) &&
       (<div className={styles.field}>
-        <div 
+        <div
           className={styles.list_block}
           style={{ height: expanded ? '90px' : '318px', transition: 'height 0.3s' }}
         >
@@ -178,19 +178,19 @@ export const Mailing: FC = () => {
       <div className={styles.container}>
           <h2 className={styles.subtitle}>Давайте скорее запустим вашу первую рассылку!</h2>
           <p className={styles.text} >Нажмите на кнопку “создать рассылку”</p>
-        </div>)} 
+        </div>)}
       {addingMode === true && (<div className={styles.field_adding}>
         <div className={styles.constructor_block}>
           <form className={styles.form}>
             {step === 1 ? (
-              <MailingStepOne 
-                onChangeSelect={onChangeSelect} 
-                onChangeInput={onChangeInput} 
-                data={messageData} 
-                onChangeText={onChangeText} 
-                onChangePhoto={onChangePhoto} 
-                onChangeVideo={onChangeVideo} 
-                onChangeAudio={onChangeAudio} 
+              <MailingStepOne
+                onChangeSelect={onChangeSelect}
+                onChangeInput={onChangeInput}
+                data={messageData}
+                onChangeText={onChangeText}
+                onChangePhoto={onChangePhoto}
+                onChangeVideo={onChangeVideo}
+                onChangeAudio={onChangeAudio}
                 onChangeButton={onChangeButton}  />
               ) : (
               <h2>2 Шаг</h2>
@@ -198,17 +198,17 @@ export const Mailing: FC = () => {
           </form>
         </div>
         <div className={styles.field_buttons}>
-        <ButtonMain 
-          theme='grey' 
-          label="Выйти" 
-          size="l" 
+        <ButtonMain
+          theme='grey'
+          label="Выйти"
+          size="l"
           onClick={handleExit}
           extraClass={styles.exit}
         />
-        <ButtonMain 
-          theme='green' 
-          label="Далее" 
-          size="l" 
+        <ButtonMain
+          theme='green'
+          label="Далее"
+          size="l"
           onClick={handleToStepTwo}
           extraClass={styles.to_step_two}
         />

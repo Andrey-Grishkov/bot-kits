@@ -19,8 +19,8 @@ import { ButtonOptionsSelect } from '../ButtonOptionsSelect/ButtonOptionsSelect'
 export type TMessage = {
   name: string,
   text: string,
-  target: string, 
-  photo: File[], 
+  target: string,
+  photo: File[],
   video: File[],
   audio: File[],
   button: string,
@@ -97,15 +97,13 @@ export const MailingStepOne: FC<{
         setAddPhoto(false);
       }
     };
-  
+
     React.useEffect(() => {
       document.addEventListener('mousedown', handleOutsideClick);
       return () => {
         document.removeEventListener('mousedown', handleOutsideClick);
       };
     }, []);
-
-   
 
   return (
     <>
@@ -133,17 +131,17 @@ export const MailingStepOne: FC<{
     <div className={styles.media_container}>
       <h3 className={styles.container_title}>Добавить</h3>
       <div className={styles.media_buttons}>
-        <AddSocialButton value="Фото" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={photo} alt="Добавить фото" />
+        <AddSocialButton value="Фото" variant='active' onClick={handleAddPhoto}>
+          <img src={photo} alt="Добавить фото" onClick={()=>{}}/>
         </AddSocialButton>
-        <AddSocialButton value="Видео" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={video} alt="Добавить видео" />
+        <AddSocialButton value="Видео">
+          <img src={video} alt="Добавить видео" onClick={handleAddVideo}/>
         </AddSocialButton>
-        <AddSocialButton value="Аудио" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={audio} alt="Добавить аудио" />
+        <AddSocialButton value="Аудио">
+          <img src={audio} alt="Добавить аудио" onClick={handleAddAudio}/>
         </AddSocialButton>
-        <AddSocialButton value="Кнопка" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={button} alt="Добавить кнопку" />
+        <AddSocialButton value="Кнопка">
+          <img src={button} alt="Добавить кнопку" onClick={handleAddButton}/>
         </AddSocialButton>
       </div>
     </div>
@@ -156,7 +154,7 @@ export const MailingStepOne: FC<{
     { addAudio && <div className={styles.upload_block} ref={addingRef}>
       <UploadButton size='M' name='audio' onChange={onChangeAudio}/>
     </div>}
-    { addButton && 
+    { addButton &&
     <div className={styles.upload_button_block} ref={addingRef}>
       <ButtonOptionsSelect onChange={onChangeButton} />
     </div>}
