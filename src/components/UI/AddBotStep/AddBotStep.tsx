@@ -80,7 +80,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Ключ доступа</span>
               </div>
               {/* Поле <Input placeholder='Введите ключ доступа' /> */}
-              <Input placeholder='Введите ключ доступа' size='small'/>
+              <Input placeholder='Введите ключ доступа' size='medium'/>
               </>
             )}
           { stepTwo &&
@@ -90,7 +90,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>URI бота</span>
               </div>
               {/* Поле <Input placeholder='Введите URI' /> */}
-              <Input placeholder='Введите URI' />
+              <Input placeholder='Введите URI' size='medium'/>
               </>
 
             )}
@@ -101,7 +101,7 @@ export const AddBotStep: FC<IAddBotStep> = ({step, type}) => {
                 <span>Название бота</span>
               </div>
               {/* Поле <Input placeholder='Введите ключ доступа' /> */}
-              <Input placeholder='Введите ключ доступа' size='small'/>
+              <Input placeholder='Введите ключ доступа' size='medium'/>
               </>
             )}
         </div>)}

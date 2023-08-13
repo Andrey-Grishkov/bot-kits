@@ -17,17 +17,22 @@ export const Input: FC<InputProps> = ({ size, placeholder, value, error, disable
   const inputCn = cn(classes.input);
   const inputSmallCn = cn(classes.input_small);
   const inputAdaptiveCn = cn(classes.input_adaptive);
+  const inputMediumCn = cn(classes.input_medium);
   const errorInputCn = cn(classes.errorBorder);
   const errorMessageCn = cn(classes.error);
 
   let inputClasses = inputCn;
-   
+
   if (error) {
     inputClasses += ` ${errorInputCn}`;
   }
 
   if (size === 'small') {
     inputClasses += ` ${inputSmallCn}`;
+  }
+
+  if (size === 'medium') {
+    inputClasses += ` ${inputMediumCn}`;
   }
 
   if (size === 'adaptive') {
