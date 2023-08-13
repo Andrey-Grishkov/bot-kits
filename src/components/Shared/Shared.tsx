@@ -285,7 +285,7 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
 };
 
 
-const Shared = () => {
+const SharedAccess = () => {
   const [isPayoutsVisible, setPayoutsVisible] = useState(true);
   const [isStatsVisible, setStatsVisibille] = useState(true);
 
@@ -320,4 +320,4 @@ const Shared = () => {
   );
 };
 
-export default Shared;
+export default SharedAccess;

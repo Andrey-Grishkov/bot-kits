@@ -10,7 +10,7 @@ import AddBotPage from "../AddBotPage/AddBotPage";
 import BotBuilder from "../BotBuilder/BotBuilder";
 import NavBar from "../NavBar/NavBar";
 import PageWrapper from "../PageWrapper/PageWrapper";
-import Shared from "../Shared/Shared";
+import SharedAccess from "../Shared/Shared";
 
 function App() {
     return (
@@ -24,7 +24,7 @@ function App() {
                     <Route path='/botbuilder' element={<BotBuilder />} />
                     <Route path='/signup' element={<Registration />} />
                     <Route path='/signin' element={<Login />} />
-                    <Route path='/partnership' element={<Shared />} />
+                    <Route path='/partnership' element={<SharedAccess />} />
                     <Route path='/ui' element={<UI />} />
                 </Routes>
             </PageWrapper>  
