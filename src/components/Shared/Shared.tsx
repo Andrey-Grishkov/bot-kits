@@ -7,6 +7,10 @@ import { ButtonCopy } from "../UI/Buttons/Copy/ButtonCopy";
 
 const COPIED_TIMEOUT_DURATION = 3000;
 
+interface RefLinkSectionProps {
+  link: string;
+}
+
 interface ToggleTableProps {
   isVisible: boolean;
   toggleVisibility: () => void;
@@ -22,7 +26,7 @@ interface PayoutsTableProps {
   togglePayoutsVisibility: () => void;
 }
 
-const RefLinkSection: React.FC<RefLinkSectionProps> = () => {
+const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
   const [isCopied, setCopied] = useState(false);
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(link);
@@ -49,8 +53,6 @@ const RefLinkSection: React.FC<RefLinkSectionProps> = () => {
     </div>
   );
 };
-
-export default RefLinkSection;
 
 const StatsTable: React.FC<StatsTableProps> = ({
   isStatsVisible,
