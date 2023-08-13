@@ -9,18 +9,18 @@ import {
   IRefLinkSectionProps,
   IStatsTableProps,
 } from "./types/types";
+import { useClipboard } from "../../hooks/useClipboard";
+import {
+  togglePayoutsVisibility,
+  toggleStatsVisibility,
+} from "../../redux/visibilitySlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 
 const COPIED_TIMEOUT_DURATION = 3000;
 
 const RefLinkSection: React.FC<IRefLinkSectionProps> = ({ link }) => {
-  const [isCopied, setCopied] = useState(false);
-  const copyToClipboard = useCallback(() => {
-    navigator.clipboard.writeText(link);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, COPIED_TIMEOUT_DURATION);
-  }, [link]);
+  const { isCopied, copyToClipboard } = useClipboard(link);
 
   return (
     <div className="partners__ref">
@@ -30,13 +30,32 @@ const RefLinkSection: React.FC<IRefLinkSectionProps> = ({ link }) => {
           type="default"
           onClick={copyToClipboard}
           role="button"
-          aria-label="Скопировать ссылку" // для доступности, так как у нас нет текста внутри кнопки
+          aria-label="Скопировать ссылку"
         />
       </div>
       {isCopied && (
         <div className="partners__copied-notice">Ссылка скопирована</div>
       )}
     </div>
+  );
+};
+
+const renderMobileStatsRows = (data: typeof mockData) => {
+  return data.map((row, index) =>
+    statsColumns.map((column) => (
+      <tr key={column.key + "-" + index}>
+        <th>{column.label}</th>
+        <td
+          className={
+            column.key === "paymentStatus" && row[column.key] ? "paid" : ""
+          }
+        >
+          {column.format
+            ? column.format(row[column.key])
+            : row[column.key] + (column.suffix || "")}
+        </td>
+      </tr>
+    ))
   );
 };
 
@@ -79,44 +98,9 @@ const StatsTable: React.FC<IStatsTableProps> = ({
       <div className="partners__section partners__section--mobile">
         <div className="partners__table partners__table--stats partners__table--mobile">
           <table>
-            <tbody>
-              {isStatsVisible
-                ? mockData.map((row, index) =>
-                    statsColumns.map((column) => (
-                      <tr key={column.key + "-" + index}>
-                        <th>{column.label}</th>
-                        <td
-                          className={
-                            column.key === "paymentStatus" && row[column.key]
-                              ? "paid"
-                              : ""
-                          }
-                        >
-                          {column.format
-                            ? column.format(row[column.key])
-                            : row[column.key] + (column.suffix || "")}
-                        </td>
-                      </tr>
-                    ))
-                  )
-                : statsColumns.slice(0, 7).map((column) => (
-                    <tr key={column.key}>
-                      <th>{column.label}</th>
-                      <td
-                        className={
-                          column.key === "paymentStatus" &&
-                          mockData[0][column.key]
-                            ? "paid"
-                            : ""
-                        }
-                      >
-                        {column.format
-                          ? column.format(mockData[0][column.key])
-                          : mockData[0][column.key] + (column.suffix || "")}
-                      </td>
-                    </tr>
-                  ))}
-            </tbody>
+            {isStatsVisible
+              ? renderMobileStatsRows(mockData)
+              : renderMobileStatsRows([mockData[0]])}
           </table>
         </div>
 
@@ -284,18 +268,16 @@ const PayoutsTable: React.FC<IPayoutsTableProps> = ({
 };
 
 const SharedAccess = () => {
-  const [isPayoutsVisible, setPayoutsVisible] = useState(true);
-  const [isStatsVisible, setStatsVisibille] = useState(true);
+  const dispatch = useDispatch();
+  const isStatsVisible = useSelector(
+    (state: RootState) => state.visibility.isStatsVisible
+  );
+
+  const isPayoutsVisible = useSelector(
+    (state: RootState) => state.visibility.isPayoutsVisible
+  );
 
   const link = "botkits.ru/?ref=12345";
-
-  const toggleStatsVisibility = () => {
-    setStatsVisibille(!isStatsVisible);
-  };
-
-  const togglePayoutsVisibility = () => {
-    setPayoutsVisible(!isPayoutsVisible);
-  };
 
   return (
     <div className="partners">
@@ -307,11 +289,11 @@ const SharedAccess = () => {
       <div className="partners__content">
         <StatsTable
           isStatsVisible={isStatsVisible}
-          toggleStatsVisibility={toggleStatsVisibility}
+          toggleStatsVisibility={() => dispatch(toggleStatsVisibility())}
         />
         <PayoutsTable
           isPayoutsVisible={isPayoutsVisible}
-          togglePayoutsVisibility={togglePayoutsVisibility}
+          togglePayoutsVisibility={() => dispatch(togglePayoutsVisibility())}
         />
       </div>
     </div>
