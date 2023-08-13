@@ -1,35 +1,23 @@
 import styles from "./AddSocialButton.module.scss";
+import React from "react";
 import { Dispatch, ReactNode, SetStateAction, useState } from "react";
 import classNames from "classnames";
 
 interface IaddSocialButtonProps {
-  children: ReactNode;
-  value: string;
-  variant?: string;
-  onclick: (name: string, href: string) => void;
-  chosen: string,
-  href: string
+    children: ReactNode
+    value: string
+    variant?: string
+    purpose?: 'default' | 'mailing'
+    onClick?: (() => void) | ((e: React.SyntheticEvent) => void);
 }
 
-export function AddSocialButton({
-  children,
-  value,
-  variant = "active",
-  onclick,
-  chosen,
-  href
-}: IaddSocialButtonProps) {  
-  return (
-    <button
-      className={classNames(
-        styles.button,
-        styles[variant],
-        styles["chosen" + chosen]
-      )}
-      onClick={() => onclick(value, href)}
-    >
-      <div>{children}</div>
-      {value}
-    </button>
-  );
+export function AddSocialButton({ children, value, purpose = 'default', variant = 'active', onClick }: IaddSocialButtonProps) {
+    return (
+        <button className={classNames(styles.button, styles[variant], purpose as IaddSocialButtonProps["purpose"] === 'mailing' ? styles.button_mailing : '')} onClick={onClick}>
+            <div>
+                {children}
+            </div>
+            {value}
+        </button>
+    );
 }

@@ -6,7 +6,7 @@ import {StopButton} from "./StopButton/StopButton";
 import {InstructionButton} from "./InstructionButton/InstructionButton";
 import {MessageButton} from "./MessageButton/MessageButton";
 import {BotAnswerButton} from "./BotAnswerButton/BotAnswerButton";
-import {AddSocialButton} from "./AddSocialButton/AddSocialButton";
+import {AddSocialButtonAddBotPage} from "./AddSocialButton/AddSocialButtonAddBotPage";
 import { ButtonAddBlock } from './Buttons/AddBlock/ButtonAddBlock';
 import { ButtonAddTemplate } from './Buttons/AddTemplate/ButtonAddTemplate';
 import { ButtonCopy } from './Buttons/Copy/ButtonCopy';
@@ -45,7 +45,7 @@ import { AuthButton } from './AuthButton/AuthButton';
 import { Input } from './Input/Input';
 import { LoadPageButton } from './LoadPageButton/LoadPageButton';
 import { PageButton } from './PageButton/PageButton';
-import { AddPageField } from './AddPageField/AddPageField';      
+import { AddPageField } from './AddPageField/AddPageField';
 import { ModalPayment } from '../Modals/ModalPayment/ModalPayment';
 import vkSvg from "../../images/icons/vk.svg";
 
@@ -69,6 +69,9 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
+
+    const onChange = () => null;
+
   return (
     <section className="ui">
       <AuthButton visible={visibleMailPopup} notificationType={'letter'} setVisible={handleMailPopup} />
@@ -105,9 +108,9 @@ export function UI() {
         error='Вы ввели неправильное значение'
       />
       <Input placeholder='Введите ключ доступа' disabled />
-      <LoadPageButton title='Загрузить страницу' />
+      {/* <LoadPageButton title='Загрузить страницу' />
       <LoadPageButton title='Загрузить страницу' size='md' />
-      <LoadPageButton title='Загрузить страницу' size='sm' />
+      <LoadPageButton title='Загрузить страницу' size='sm' /> */}
       <PageButton title='Загрузить' />
       <PageButton title='Страница 1' />
       <PageButton title='Страница 1' selected={true} />
@@ -134,7 +137,7 @@ export function UI() {
           },
         ]}
       />
-      <AddSocialButton
+      <AddSocialButtonAddBotPage
           value="Facebook"
           href='../images/icons/vk.svg'
         variant='active'
@@ -143,7 +146,7 @@ export function UI() {
       >
         <img src={svgFacebook}
         />
-      </AddSocialButton>
+      </AddSocialButtonAddBotPage>
       <AddBotButton value="Добавить бота">
         <SvgPlus />
       </AddBotButton>
@@ -163,8 +166,8 @@ export function UI() {
       </ConstructorLogicButton>
       </ConstructorBackground>
       <ConstructorPhoneButton/>
-      <UploadButton size="M" />
       <BotCard id="id" name="Салон красоты" type="telegram"/>
+      <UploadButton size="M" name="photo" onChange={onChange} />
       <CountriesSelect />
       <NumberSelect />
       <AddTo />

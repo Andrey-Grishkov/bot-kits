@@ -1,0 +1,62 @@
+.button {
+  width: 296px;
+  height: 172px;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  line-height: 130%;
+  cursor: pointer;
+  font-family: IBM Plex Mono;
+}
+
+.button div {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.active {
+  color: #a6b3c9;
+  background-color: #f2f4f8;
+  transition: color 0.5s;
+}
+.active div {
+  border: 2px solid #a6b3c9;
+  transition: border 0.5s;
+}
+.active div svg path {
+  transition: stroke 0.5s;
+}
+
+.active:hover {
+  color: #243cbb;
+}
+.active:hover div {
+  border: 2px solid #243cbb;
+}
+.active:hover div svg path {
+  stroke: #243cbb;
+}
+
+.active:active {
+  background-color: #ecefff;
+}
+
+.inactive {
+  color: #ccd4e0;
+}
+.inactive div {
+  border: 2px solid #ccd4e0;
+}
+.inactive div svg path {
+  stroke: #ccd4e0;
+}

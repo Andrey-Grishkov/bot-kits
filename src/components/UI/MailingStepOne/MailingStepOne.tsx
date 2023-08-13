@@ -13,14 +13,16 @@ import { FunnelSelect } from '../FunnelSelect/FunnelSelect';
 import robot from '../../../images/icons/Robot.svg';
 import label from '../../../images/icons/Frame250.svg';
 import toggle from '../../../images/icons/Group 1190.svg'
+import { UploadButton } from '../UploadButton/UploadButton';
+import { ButtonOptionsSelect } from '../ButtonOptionsSelect/ButtonOptionsSelect';
 
 export type TMessage = {
   name: string,
   text: string,
   target: string,
-  photo: string,
-  video: string,
-  audio: string,
+  photo: File[],
+  video: File[],
+  audio: File[],
   button: string,
   funnel: string,
   }
@@ -29,9 +31,19 @@ export const MailingStepOne: FC<{
   onChangeInput: ((e:any) => void);
   onChangeSelect: ((e:any) => void);
   onChangeText: ((e:any) => void);
+  onChangePhoto: ((data: any) => void);
+  onChangeVideo: ((data: any) => void);
+  onChangeAudio: ((data: any) => void);
+  onChangeButton: ((data:any) => void);
   data: TMessage;
-  }> = ({ onChangeInput, onChangeSelect, onChangeText, data }) => {
+  }> = ({ onChangeInput, onChangeSelect, onChangeText, onChangePhoto, onChangeAudio, onChangeButton, onChangeVideo, data }) => {
+    const [showMessage, setShowMessage] = React.useState(false);
     const [showWidget, setShowWidget] = React.useState(true);
+    const [addPhoto, setAddPhoto] = React.useState(false);
+    const [addVideo, setAddVideo] = React.useState(false);
+    const [addAudio, setAddAudio] = React.useState(false);
+    const [addButton, setAddButton] = React.useState(false);
+    const addingRef = React.useRef<HTMLInputElement>(null);
     const formatTime = (date: Date) => {
       const hours = String(date.getHours()).padStart(2, '0');
       const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -40,13 +52,58 @@ export const MailingStepOne: FC<{
 
     const [currentTime, setCurrentTime] = React.useState(formatTime(new Date()));
 
-    const handleButtonClick = () => {
+    const handleButtonClick = (e: React.SyntheticEvent) => {
+      e.preventDefault();
       setCurrentTime(formatTime(new Date()));
     };
 
     const handleShowWidget = () => {
       setShowWidget(!showWidget);
     };
+
+    const handleAddPhoto = (e:React.SyntheticEvent) => {
+      e.preventDefault();
+      setAddPhoto(true);
+      setAddVideo(false);
+      setAddAudio(false);
+    };
+
+    const handleAddVideo = (e:React.SyntheticEvent) => {
+      e.preventDefault();
+      setAddVideo(true);
+      setAddAudio(false);
+      setAddPhoto(false);
+    };
+
+    const handleAddAudio = (e:React.SyntheticEvent) => {
+      e.preventDefault();
+      setAddAudio(true);
+      setAddVideo(false);
+      setAddPhoto(false);
+    };
+    const handleAddButton = (e:React.SyntheticEvent) => {
+      e.preventDefault();
+      setAddButton(true);
+      setAddAudio(false);
+      setAddVideo(false);
+      setAddPhoto(false);
+    };
+
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (addingRef.current && !addingRef.current.contains(event.target as Node)) {
+        setAddButton(false);
+        setAddAudio(false);
+        setAddVideo(false);
+        setAddPhoto(false);
+      }
+    };
+
+    React.useEffect(() => {
+      document.addEventListener('mousedown', handleOutsideClick);
+      return () => {
+        document.removeEventListener('mousedown', handleOutsideClick);
+      };
+    }, []);
 
   return (
     <>
@@ -74,20 +131,33 @@ export const MailingStepOne: FC<{
     <div className={styles.media_container}>
       <h3 className={styles.container_title}>Добавить</h3>
       <div className={styles.media_buttons}>
-        <AddSocialButton value="Фото" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={photo} alt="Добавить фото" />
+        <AddSocialButton value="Фото" variant='active' onClick={handleAddPhoto}>
+          <img src={photo} alt="Добавить фото" onClick={()=>{}}/>
         </AddSocialButton>
-        <AddSocialButton value="Видео" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={video} alt="Добавить видео" />
+        <AddSocialButton value="Видео">
+          <img src={video} alt="Добавить видео" onClick={handleAddVideo}/>
         </AddSocialButton>
-        <AddSocialButton value="Аудио" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={audio} alt="Добавить аудио" />
+        <AddSocialButton value="Аудио">
+          <img src={audio} alt="Добавить аудио" onClick={handleAddAudio}/>
         </AddSocialButton>
-        <AddSocialButton value="Кнопка" chosen='' href='' variant='active' onclick={()=>{}}>
-          <img src={button} alt="Добавить кнопку" />
+        <AddSocialButton value="Кнопка">
+          <img src={button} alt="Добавить кнопку" onClick={handleAddButton}/>
         </AddSocialButton>
       </div>
     </div>
+    { addPhoto && <div className={styles.upload_block} ref={addingRef} >
+      <UploadButton size='M' name='photo' onChange={onChangePhoto}/>
+    </div>}
+    { addVideo && <div className={styles.upload_block} ref={addingRef}>
+      <UploadButton size='M' name='video' onChange={onChangeVideo}/>
+    </div>}
+    { addAudio && <div className={styles.upload_block} ref={addingRef}>
+      <UploadButton size='M' name='audio' onChange={onChangeAudio}/>
+    </div>}
+    { addButton &&
+    <div className={styles.upload_button_block} ref={addingRef}>
+      <ButtonOptionsSelect onChange={onChangeButton} />
+    </div>}
     <div className={styles.media_container}>
       <h3 className={styles.container_title}>Активировать воронку</h3>
       <FunnelSelect name="name" value={data.funnel} onChange={onChangeSelect}/>

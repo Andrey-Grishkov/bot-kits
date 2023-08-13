@@ -8,7 +8,7 @@
 
 .label {
   color: var(--primary-oxford-blue-default, #060C23);
-  font-family: Open Sans;
+  font-family: IBM Plex Mono;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -40,14 +40,14 @@
   border: 1px solid var(--primary-medium-spring-green-default, #2FA);
 }
 
-.input::placeholder {
+.textarea::placeholder {
   font-family: Open Sans;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.3px;
-  color:#060C23;
+  color: var(--grey-3, #A6B3C9);
 }
 
 .textarea {

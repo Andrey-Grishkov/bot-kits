@@ -1,17 +1,17 @@
-import "./Authorization.scss";
-import googleLogo from "../../vendor/icons/google_icon.svg";
+import styles from "./Authorization.module.scss";
 import { ChangeEvent, FormEvent, useState, FC } from "react";
 // @ts-ignore
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 // @ts-ignore
 import ru from "react-phone-input-2/lang/ru.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { AuthButton } from "../UI/AuthButton/AuthButton";
 import eye from "../../vendor/icons/eye.svg";
 import eyeOff from "../../vendor/icons/eye_off.svg";
 import roboIcon from "../../vendor/icons/robo_icon_desktop.svg";
+import { SocialIcon } from "../UI/SocialIcon/Social-icon";
 interface IAuthProps {
   isLoginPage?: boolean;
   isRegistrationPage?: boolean;
@@ -29,24 +29,86 @@ export const Authorization: FC<IAuthProps> = ({
   const [visibleMailPopup, setVisibleMailPopup] = useState(false);
   const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    username: "",
+    phone: "",
+  });
+  const navigate = useNavigate();
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password: string) => {
+    return password.length >= 6;
+  };
+
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+
+    if (!e.target.value) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Поле обязательно для заполнения",
+      }));
+    } else if (!validateEmail(e.target.value)) {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "Неверный формат" }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
+    }
   };
 
   const handlePhoneChange = (value: string) => {
-    setPhone(value);
+    const newPhone = value;
+    setPhone(newPhone);
+
+    if (!newPhone) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        phone: "Поле обязательно для заполнения",
+      }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+    }
   };
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
+    if (!e.target.value) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "Поле обязательно для заполнения",
+      }));
+    } else if (!validatePassword(e.target.value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "Пароль должен содержать не менее 6 символов",
+      }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, password: "" }));
+    }
   };
 
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
+    const newUsername = e.target.value;
+    setUsername(newUsername);
+
+    if (!newUsername) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        username: "Поле обязательно для заполнения",
+      }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, username: "" }));
+    }
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    navigate('/')
   };
 
   const handleMailPopup = () => {
@@ -61,95 +123,67 @@ export const Authorization: FC<IAuthProps> = ({
     setPasswordIsVisible(!passwordIsVisible);
   };
   return (
-    <div className="authorization">
+    <div className={styles.authorization}>
       {isRegistrationPage && !isLoginPage && !isResetPasswordPage && (
         <>
-          <h2 className="authorization__title">Создай аккаунт с помощью</h2>
-          <div className="socials">
-            <ul className="socials__list">
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
+          <h2 className={styles.authorization__title}>
+            Создай аккаунт с помощью
+          </h2>
+          <div className={styles.socials}>
+            <ul className={styles.socials__list}>
+              <SocialIcon type="gmail" />
+              <SocialIcon type="yandex" />
+              <SocialIcon type="mailru" />
             </ul>
-            <ul className="socials__list">
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
+            <ul className={styles.socials__list}>
+              <SocialIcon type="vk" />
+              <SocialIcon type="ok" />
+              <SocialIcon type="facebook" />
+              <SocialIcon type="telegram" />
             </ul>
           </div>
-          <div className="authorization__choice">
-            <p className="authorization__text">или</p>
+          <div className={styles.authorization__choice}>
+            <p className={styles.authorization__text}>или</p>
           </div>
-          <form onSubmit={handleSubmit} className="form">
-            <fieldset className="formfield">
-              <div className="input__container">
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <fieldset className={styles.formfield}>
+              <div className={styles.input__container}>
                 <input
-                  className="formfield__input"
+                  className={`${styles.formfield__input} ${
+                    errors.username ? styles.formfield__input_error : ""
+                  }`}
                   type="text"
                   value={username}
                   placeholder="Имя"
                   onChange={handleUsernameChange}
                   required
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
+                {errors.username && (
+                  <p className={styles.input__error}>{errors.username}</p>
+                )}
               </div>
-              <div className="input__container">
+              <div className={styles.input__container}>
                 <input
-                  className="formfield__input"
+                  className={`${styles.formfield__input} ${
+                    errors.email ? styles.formfield__input_error : ""
+                  }`}
                   type="email"
                   value={email}
                   placeholder="E-mail"
                   onChange={handleEmailChange}
                   required
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
+                {errors.email && (
+                  <p className={styles.input__error}>{errors.email}</p>
+                )}
               </div>
-              <div className="input__container">
+              <div className={styles.input__container}>
                 <input
-                  className="formfield__input"
+                  className={`${styles.formfield__input} ${
+                    errors.password ? styles.formfield__input_error : ""
+                  }`}
                   type={passwordIsVisible ? "text" : "password"}
                   value={password}
                   placeholder="Пароль"
@@ -159,12 +193,15 @@ export const Authorization: FC<IAuthProps> = ({
                 <img
                   src={passwordIsVisible ? eye : eyeOff}
                   alt="глаз"
-                  className="input__eye"
+                  className={styles.input__eye}
                   onClick={handleEyeClick}
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
+                {errors.password && (
+                  <p className={styles.input__error}>{errors.password}</p>
+                )}
               </div>
-              <div className="input__container">
+              <div className={styles.input__container}>
                 <PhoneInput
                   country="ru"
                   localization={ru}
@@ -181,7 +218,7 @@ export const Authorization: FC<IAuthProps> = ({
                     width: "320px",
                     borderRadius: 0,
                   }}
-                  containerClass="formfield__phone_wrapper"
+                  containerClass={styles.formfield__phone_wrapper}
                   buttonStyle={{
                     backgroundColor: "#060C23",
                     border: "none",
@@ -190,128 +227,106 @@ export const Authorization: FC<IAuthProps> = ({
                   value={phone}
                   onChange={handlePhoneChange}
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
               </div>
             </fieldset>
             <AuthButton
               visible={visibleMailPopup}
               notificationType={"letter"}
               setVisible={handleMailPopup}
+              disabled={Object.values(errors).some((error) => error !== "")}
             />
-            <div className="caption">
-              <p className="caption__text">Уже прошли регистрацию?</p>
-              <Link to={"/signin"} className="caption__link">
+            <div className={styles.caption}>
+              <p className={styles.caption__text}>Уже прошли регистрацию?</p>
+              <Link to={"/signin"} className={styles.caption__link}>
                 Войти
               </Link>
             </div>
-            <div className="authorization__robot"></div>
+            <div className={styles.authorization__robot}></div>
           </form>
         </>
       )}
       {isLoginPage && !isRegistrationPage && !isResetPasswordPage && (
         <>
-          <form onSubmit={handleSubmit} className="form_login">
-            <fieldset className="formfield formfield_login">
-              <div className="input__container">
+          <form onSubmit={handleSubmit} className={styles.form_login}>
+            <fieldset
+              className={`${styles.formfield} ${styles.formfield_login}`}
+            >
+              <div className={styles.input__container}>
                 <input
-                  className="formfield__input formfield__input_login"
+                  className={`${styles.formfield__input} ${
+                    styles.formfield__input_login
+                  }  ${errors.email ? styles.formfield__input_error : ""}`}
                   type="email"
                   value={email}
                   placeholder="E-mail"
                   onChange={handleEmailChange}
                   required
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
+                {errors.email && (
+                  <p className={styles.input__error}>{errors.email}</p>
+                )}
               </div>
-              <div className="input__container">
+              <div className={styles.input__container}>
                 <input
-                  className="formfield__input formfield__input_login"
+                  className={`${styles.formfield__input} ${
+                    styles.formfield__input_login
+                  } ${errors.password ? styles.formfield__input_error : ""}`}
                   type="password"
                   value={password}
                   placeholder="Пароль"
                   onChange={handlePasswordChange}
                   required
                 />
-                <span className="input__star">*</span>
+                <span className={styles.input__star}>*</span>
+                {errors.password && (
+                  <p className={styles.input__error}>{errors.email}</p>
+                )}
               </div>
             </fieldset>
-            <div className="caption caption_login">
-              <Link to={"/reset-password"} className="caption__link">
+            <div className={`${styles.caption} ${styles.caption_login}`}>
+              <Link to={"/reset-password"} className={styles.caption__link}>
                 Забыли пароль?
               </Link>
-              <Link to={"/signup"} className="caption__link">
+              <Link to={"/signup"} className={styles.caption__link}>
                 Регистрация
               </Link>
             </div>
-            <ButtonMain size="l" theme="green" label="войти" />
+            <ButtonMain
+              size="l"
+              theme="green"
+              label="войти"
+              disabled={Object.values(errors).some((error) => error !== "")}
+              type='submit'
+              extraClass={styles.authorization__button}
+            />
           </form>
-          <div className="authorization__choice_login">
-            <p className="authorization__text">Быстрый вход</p>
+          <div className={styles.authorization__choice_login}>
+            <p className={styles.authorization__text}>Быстрый вход</p>
           </div>
-          <div className="socials_login">
-            <ul className="socials__list">
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
+          <div className={styles.socials_login}>
+            <ul className={styles.socials__list}>
+              <SocialIcon type="gmail" />
+              <SocialIcon type="yandex" />
+              <SocialIcon type="mailru" />
             </ul>
-            <ul className="socials__list">
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
-              <li className="socials__item">
-                <img
-                  src={googleLogo}
-                  alt="иконка гугла"
-                  className="socials__icon"
-                />
-              </li>
+            <ul className={styles.socials__list}>
+              <SocialIcon type="vk" />
+              <SocialIcon type="ok" />
+              <SocialIcon type="facebook" />
+              <SocialIcon type="telegram" />
             </ul>
           </div>
         </>
       )}
       {isResetPasswordPage && !isLoginPage && !isRegistrationPage && (
         <>
-          <form onSubmit={handleSubmit} className="form_login">
-            <h2 className="authorization__title">Введи свой E-mail</h2>
-            <fieldset className="formfield">
+          <form onSubmit={handleSubmit} className={styles.form_login}>
+            <h2 className={styles.authorization__title}>Введи свой E-mail</h2>
+            <fieldset className={styles.formfield}>
               <input
-                className="formfield__input formfield__input_login"
+                className={`${styles.formfield__input} ${styles.formfield__input_login}`}
                 type="email"
                 value={email}
                 placeholder="E-mail"
@@ -323,6 +338,7 @@ export const Authorization: FC<IAuthProps> = ({
               visible={visiblePasswordPopup}
               notificationType={"password"}
               setVisible={handlePasswordPopup}
+              disabled={!email}
             />
           </form>
           <img src={roboIcon} alt="робот" />

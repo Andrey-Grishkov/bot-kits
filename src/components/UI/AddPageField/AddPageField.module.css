@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 580px;
+  max-height: 146px;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 12px;
+  background-color: #f8f9fb;
+}
+
+.container::-webkit-scrollbar {
+  background-color: #f8f9fb;
+  width: 14px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #d7deea;
+  border: 5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 17px;
+}
