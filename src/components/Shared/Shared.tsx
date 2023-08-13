@@ -4,29 +4,11 @@ import copyImg from "./images/copy.png";
 import upImg from "./images/up.png";
 import { mockData, mockPayouts } from "../../utils/data";
 import { ButtonCopy } from "../UI/Buttons/Copy/ButtonCopy";
+import { IPayoutsTableProps, IRefLinkSectionProps, IStatsTableProps } from "./types/types";
 
 const COPIED_TIMEOUT_DURATION = 3000;
 
-interface RefLinkSectionProps {
-  link: string;
-}
-
-interface ToggleTableProps {
-  isVisible: boolean;
-  toggleVisibility: () => void;
-}
-
-interface StatsTableProps {
-  isStatsVisible: boolean;
-  toggleStatsVisibility: () => void;
-}
-
-interface PayoutsTableProps {
-  isPayoutsVisible: boolean;
-  togglePayoutsVisibility: () => void;
-}
-
-const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
+const RefLinkSection: React.FC<IRefLinkSectionProps> = ({ link }) => {
   const [isCopied, setCopied] = useState(false);
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(link);
@@ -54,7 +36,7 @@ const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
   );
 };
 
-const StatsTable: React.FC<StatsTableProps> = ({
+const StatsTable: React.FC<IStatsTableProps> = ({
   isStatsVisible,
   toggleStatsVisibility,
 }) => {
@@ -202,7 +184,7 @@ const StatsTable: React.FC<StatsTableProps> = ({
   );
 };
 
-const PayoutsTable: React.FC<PayoutsTableProps> = ({
+const PayoutsTable: React.FC<IPayoutsTableProps> = ({
   isPayoutsVisible,
   togglePayoutsVisibility,
 }) => {
