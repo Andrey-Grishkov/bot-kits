@@ -299,6 +299,7 @@ export const Authorization: FC<IAuthProps> = ({
               label="войти"
               disabled={Object.values(errors).some((error) => error !== "")}
               type='submit'
+              extraClass={styles.authorization__button}
             />
           </form>
           <div className={styles.authorization__choice_login}>

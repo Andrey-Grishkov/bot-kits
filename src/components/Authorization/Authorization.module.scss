@@ -57,6 +57,10 @@
     color: white;
     margin: 0;
   }
+  &__button {
+    max-width: 260px;
+    min-height: 64px;
+  }
 }
 
 .socials_login {
