@@ -2,8 +2,8 @@
 const devConstant = {
     subscription: 'Бизнес',
     // для рендеринга разных состояний необходимо вручную поменять значение переменной statusActive (см ниже 3 строчки)
-    // statusActive: 'неактивен', 
-    statusActive: 'новый',
+    statusActive: 'неактивен', 
+    // statusActive: 'новый',
     // statusActive: 'активен',
     whyNoSubscription: 'Недостаточно средств',
     answerSubscription: 'Не удалось продлить подписку ',

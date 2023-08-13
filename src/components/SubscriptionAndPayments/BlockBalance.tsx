@@ -1,4 +1,3 @@
-import React, { ReactNode } from "react";
 import { FC } from "react";
 import styles from "./SubscriptionAndPayments.module.scss";
 import className from "classnames";

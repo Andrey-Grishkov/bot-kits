@@ -1,16 +1,4 @@
 @import "../../utils/variables";
-.devExtraClass {
-  display: flex;
-  position: absolute;
-  top: 0px;
-  // right: 50%;
-  background-color:rgb(229, 235, 215);
-}
-.buttonDEV {
-  display: flex;
-  width: 100%;
-  background-color:rgb(187, 176, 165);
-}
 
 .section {
   overflow: hidden;
@@ -20,7 +8,6 @@
   flex-direction: column;
   @media (max-width: 767px) {
     width: 94.5%;
-  // height: 58%;
   padding: 0px 20px;
   }
 }
@@ -70,14 +57,12 @@
   align-items: end;
   margin: 0;
   width: 100%;
-  // width: 404px;
   min-height: 205px;
   display: flex;
   flex-direction: row;
   position: relative;
   @media (max-width: 767px) {
   flex-direction: column;
-  // min-height: 45%;
   position: absolute;
   bottom: 0px;
   overflow:hidden;
@@ -117,7 +102,6 @@
     width: 105%;
     padding: 20px;
     border-radius: 20px 0 0 20px;
-    // margin-bottom: 35px;
     margin: 0 0 35px 0;
 overflow: hidden;
   }
@@ -127,7 +111,6 @@ overflow: hidden;
   justify-content: space-between;
   @media (max-width: 767px) {
   flex-direction: column;
-  // width: 320px;
 }
 }
 .button {
@@ -141,7 +124,6 @@ overflow: hidden;
   height: 60px;
   padding: 0;
   @media (max-width: 767px) {
-    // display: none;
     margin: 0 auto;
     width: 100%;
 }
@@ -178,10 +160,8 @@ align-self: end;
   flex-direction: column;
   @media (max-width: 767px) {
   flex-direction: row;
-  // justify-content: space-between;
   width: 90%;
   margin: auto auto 20px auto;
-  // align-self: end;
 }
 }
 
@@ -232,8 +212,6 @@ margin-right: auto;
 
 .titleTextSubscription {
   @extend %AgH3IBM600;
-  // font-family: "IBM Plex Mono";
-  // font-weight: 600;
   margin: 0 0 auto 0;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -337,8 +315,6 @@ margin-right: auto;
 }
 .dropDown{
   @extend %AgPM;
-  // margin-right: 35px;
-  font-size: 35px !important;
   align-self: center;
   width: 115px;
 }

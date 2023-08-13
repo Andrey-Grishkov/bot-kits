@@ -1,19 +1,10 @@
 import className from "classnames";
 import { DropdownOperations } from "./DropdownOperations";
-import { devConstant, options, payArray, tableHead, titlePaymentsDecktop, titlePaymentsMobile } from "./devConstant";
-import { Dispatch, FC, SetStateAction } from "react";
+import { options, payArray, tableHead, titlePaymentsDecktop, titlePaymentsMobile } from "./devConstant";
+import { FC } from "react";
 import React from "react";
 import styles from "./SubscriptionAndPayments.module.scss";
 
-// const {
-//   subscription,
-//   balance,
-//   statusActive,
-//   whyNoSubscription,
-//   answerSubscription,
-//   dateAnswerSubscription,
-// } = devConstant;
-// const status = devConstant.statusActive;
 
 export const Payments: FC = () => {
   const [repeatSelected, setRepeatSeleted] = React.useState("Все");
