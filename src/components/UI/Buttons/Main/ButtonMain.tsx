@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { FormEvent, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import styles from './ButtonMain.module.scss';
 
@@ -24,6 +24,7 @@ interface IButtonMain {
     */
     disabled?: boolean;
     onClick?: (() => void) | ((e: SyntheticEvent) => void);
+    type?: 'submit' | 'button';
 }
 
 /**
@@ -35,13 +36,14 @@ export const ButtonMain = ({
     size = 'l',
     extraClass,
     disabled = false,
+    type,
     ...rest
 }: IButtonMain) => {
     const themeClass = styles[`button_theme_${theme}`];
     const sizeClass = styles[`button_size_${size}`];
     return (
         <button 
-            type="button"
+            type={type}
             className={cn(styles.button, themeClass, sizeClass, extraClass)}
             // style={{ backgroundColor, color: textColor }}
             disabled={disabled}
