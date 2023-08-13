@@ -47,6 +47,12 @@
     align-items: center;
   }
 
+  &__ref-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
   &__ref-link {
     width: 100%;
     color: #243cbb;
@@ -58,6 +64,7 @@
     padding: 22px 24px;
     border-radius: 10px;
     background-color: #f8f9fb;
+    min-width: 400px;
   }
 
   &__ref-copy {
@@ -268,7 +275,23 @@
       &--stats {
         display: flex;
       }
-    } 
+    }
+
+    &__ref {
+      flex-direction: column;
+      &-link {
+        max-width: 100%;
+      }
+      &-container {
+        width: 100%;
+      }
+    }
+
+    &__copied-notice {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
 
     &__table {
       &--desktop {

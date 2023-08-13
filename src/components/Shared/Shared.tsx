@@ -32,13 +32,15 @@ const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
 
   return (
     <div className="partners__ref">
-      <div className="partners__ref-link">{link}</div>
-      <div
-        className="partners__ref-copy"
-        onClick={copyToClipboard}
-        role="button"
-      >
-        <img src={copyImg} alt="Скопировать" />
+      <div className="partners__ref-container">
+        <div className="partners__ref-link">{link}</div>
+        <div
+          className="partners__ref-copy"
+          onClick={copyToClipboard}
+          role="button"
+        >
+          <img src={copyImg} alt="Скопировать" />
+        </div>
       </div>
       {isCopied && (
         <div className="partners__copied-notice">Ссылка скопирована</div>
