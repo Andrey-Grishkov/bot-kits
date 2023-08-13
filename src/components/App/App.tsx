@@ -14,7 +14,6 @@ import Shared from "../Shared/Shared";
 import { ResetPassword } from "../ResetPassword/Reset-password";
 import { Mailing } from "../Mailing/Mailing";
 import { SubscriptionAndPayments } from "../SubscriptionAndPayments/SubscriptionAndPayments";
-import Overlay from "../NavBar/components/Overlay";
 import { Chat } from '../Chat/Chat';
 
 function App() {
