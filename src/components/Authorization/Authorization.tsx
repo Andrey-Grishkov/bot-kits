@@ -26,7 +26,6 @@ export const Authorization: FC<IAuthProps> = ({
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
   const [visibleMailPopup, setVisibleMailPopup] = useState(false);
   const [visiblePasswordPopup, setVisiblePasswordPopup] = useState(false);
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
@@ -107,7 +106,7 @@ export const Authorization: FC<IAuthProps> = ({
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate('/')
   };
