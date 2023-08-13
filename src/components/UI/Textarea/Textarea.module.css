@@ -1,0 +1,139 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin: 0 40px 30px;
+}
+
+.label {
+  color: var(--primary-oxford-blue-default, #060C23);
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: left;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.input {
+  width: 264px;
+  height: 102px;
+  outline: none;
+  border: none;
+  padding: 12px 12px 33px;
+  border-radius: 16px;
+  background-color: #F8F9FB;
+  box-sizing: border-box;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+}
+
+.input:focus {
+  border: 1px solid var(--primary-medium-spring-green-default, #2FA);
+}
+
+.input::-moz-placeholder {
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  color: #060C23;
+}
+
+.input::placeholder {
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  color: #060C23;
+}
+
+.textarea {
+  resize: none;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
+.area_buttons {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  top: 110px;
+  left: 200px;
+}
+
+.area_button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.emojis {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #F8F9FB;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  top: 100px;
+  left: 270px;
+  display: flex;
+  gap: 10px;
+}
+
+.text_styles {
+  width: 192px;
+  height: 40px;
+  border-radius: 5px;
+  background: var(--off-white, #FFF);
+  box-shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -20px;
+  left: 36px;
+}
+
+.style_button {
+  background-color: transparent;
+  padding: 0 12px;
+  border: none;
+  border-right: 1px solid #F2F4F8;
+  cursor: pointer;
+}
+
+.style_button:last-child {
+  border: none;
+}
+
+.charCount {
+  color: var(--grey-3, #A6B3C9);
+  font-family: IBM Plex Mono;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.4px;
+  position: absolute;
+  top: 100px;
+  left: 12px;
+}

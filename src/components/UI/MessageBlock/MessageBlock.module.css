@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  width: 526px;
+  height: 48px;
+}
+
+.fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  padding-left: 16px;
+  width: 526px;
+  height: 48px;
+  background-color: #f8f9fb;
+  color: #a6b3c9;
+  font-size: 13px;
+}
+
+.input::-moz-placeholder {
+  color: #a6b3c9;
+}
+
+.input::placeholder {
+  color: #a6b3c9;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.actions {
+  position: absolute;
+  display: flex;
+  top: 12px;
+  right: 8px;
+}
+
+.icon {
+  margin-right: 8px;
+}

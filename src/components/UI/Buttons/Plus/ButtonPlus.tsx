@@ -34,16 +34,16 @@ export const ButtonPlus = ({
                 <path 
                     d="M10 2V18" 
                     stroke={getColor(type)} 
-                    stroke-width="3" 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round"
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
                 />
                 <path 
                     d="M2 10H18" 
                     stroke={getColor(type)} 
-                    stroke-width="3" 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round"
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
                 />
             </svg>
         </button>

@@ -1,0 +1,100 @@
+.notification__popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2vw;
+  background-color: #243CBB;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  gap: 30px;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.notification__popup--visible {
+  opacity: 1;
+}
+.notification__popup__message {
+  font-family: IBM Plex Mono, monospace;
+  font-size: 64px;
+  color: white;
+  width: 100%;
+  max-width: 570px;
+}
+.notification__popup__email {
+  color: #22FFAA;
+  padding: 9px 20px;
+  border-radius: 14px;
+  display: inline;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-family: IBM Plex Mono, monospace;
+  font-size: 34px;
+  background-color: #435CDB;
+}
+.notification__popup__image {
+  width: 100%;
+  height: 100%;
+  max-width: 570px;
+  max-height: 540px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.notification__popup__close-button {
+  position: absolute;
+  width: 32px;
+  background-image: url(./images/close.png);
+  height: 32px;
+  right: 2vw;
+  top: 2vw;
+  border: none;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .notification__popup {
+    gap: 9vw;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    align-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .notification__popup__message {
+    font-family: IBM Plex Mono, monospace;
+    font-size: 48px;
+  }
+  .notification__popup__email {
+    padding: 9px 20px;
+  }
+  .notification__popup__image {
+    max-width: 388px;
+    max-height: 367px;
+  }
+}
+@media (max-width: 360px) {
+  .notification__popup {
+    gap: 4.5vw;
+    padding-left: 4.5vw;
+    flex-wrap: wrap;
+    gap: 124px;
+  }
+  .notification__popup__message {
+    font-family: IBM Plex Mono, monospace;
+    font-size: 32px;
+  }
+  .notification__popup__email {
+    margin-left: 5px;
+    padding: 7px 10px;
+    font-family: IBM Plex Mono, monospace;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+  .notification__popup__image {
+    max-width: 194px;
+    max-height: 183px;
+  }
+}

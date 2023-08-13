@@ -26,6 +26,7 @@ export const ButtonCopy = ({
   disabled = false,
   ...rest
 }: IButtonCopy) => {
+
   return (
     <button
       className={cn(styles.buttonCopy, extraClass)}

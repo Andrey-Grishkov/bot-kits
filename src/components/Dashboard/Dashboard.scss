@@ -1,6 +1,6 @@
 .dashboard__wrapper {
 	width: 1268px;
-	margin: 40px auto 0;
+	margin: 40px 40px 32px 46px;
 }
 
 .dashboard__container {
@@ -8,16 +8,19 @@
 }
 
 .dashboard__title {
+	font-family: IBM Plex Mono;
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 42px;
 	letter-spacing: -0.20000000298023224px;
 	text-align: left;
 	color: #060C23;
+	margin: 0;
 }
 
 .dashboard__button {
 	position: absolute;
+	font-family: Open Sans;
 	top: 22px;
 	right: 0;
 	padding: 0;
@@ -71,6 +74,7 @@
 }
 
 .dashboard__subtitle {
+	font-family: IBM Plex Mono;
 	padding: 32px 0 24px;
 	margin: 0;
 	font-size: 18px;
@@ -94,7 +98,7 @@
 	background-color: #E4E9F1;
 	border-radius: 30px;
 	padding: 0 0 0 32px;
-	z-index: 25;
+	// z-index: 25;
 }
 
 .dashboard__menu-button {
@@ -109,6 +113,7 @@
 }
 
 .dashboard__text {
+	font-family: Open Sans;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 21px;
@@ -119,6 +124,7 @@
 }
 
 .dashboard__buttons-area {
+	font-family: Open Sans;
 	display: grid;
 	grid-template-columns: repeat(2, 264px);
 	gap: 16px;
@@ -131,7 +137,10 @@
 	padding: 0;
 	background-color: transparent;
 	border: none;
+
 	cursor: pointer;
+	text-decoration: none;
+	color: #060C23;
 }
 .dashboard__tutorial-button:hover {
 	opacity: 0.5px;

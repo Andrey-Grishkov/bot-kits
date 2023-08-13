@@ -47,6 +47,7 @@
   
 .menuItem {
   margin: 0;
+  font-family: Open Sans;
 }
 
 .button {
@@ -59,6 +60,13 @@
   background-color: #fff;
   border: none;
   cursor: pointer;
+  color: var(--primary-oxford-blue-default, #060C23);
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 19.5px */
+  letter-spacing: 0.3px;
 }
 
 .button:hover {
@@ -90,4 +98,5 @@
   line-height: 21px;
   letter-spacing: 0.5px;
   text-align: left;
+  font-family: IBM Plex Mono;
 }

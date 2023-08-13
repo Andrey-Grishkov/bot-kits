@@ -9,6 +9,9 @@
   flex-direction: column;
   border: none;
   cursor: pointer;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .button div {

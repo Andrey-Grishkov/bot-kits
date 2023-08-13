@@ -5,6 +5,16 @@
     height: 46px;
     border: none;
     cursor: pointer;
+    width: 100%;
+
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 134%; /* 18.76px */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
 
     &:disabled {
       cursor: default;
@@ -69,6 +79,7 @@
   }
 
   .button_size_l {
+    width: 188px;
     padding: 20px 50px 20px 50px;
     font-size: 14px;
     font-weight: 600;
@@ -84,4 +95,3 @@
     background-position: center;
     background-size: auto;
   }
-  

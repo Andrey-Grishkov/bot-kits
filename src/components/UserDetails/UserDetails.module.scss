@@ -1,0 +1,77 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 auto;
+    padding-top: 40px;
+    &__about {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__icon {
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+    }
+    &__username {
+        margin: 16px 0 auto;
+        padding: 0;
+        color: #060c23;
+        font-family: 'IBM Plex Mono';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0px;
+    }
+    &__status {
+        margin: 4px 0 auto;
+        padding: 0;
+        text-align: center;
+        color: #a6b3c9;
+        font-family: 'Open Sans';
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+    }
+    &__tabs {
+        display: flex;
+    }
+    &__info-tab {
+        width: 50%;
+        border-bottom: 0.8px solid #d7deea;
+        padding-bottom: 12px;
+        color: #ccd4e0;
+        font-family: 'Open Sans';
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        text-align: center;
+    }
+    &__files-tab {
+        width: 50%;
+        border-bottom: 3px solid #243cbb;
+        border-radius: 2px;
+        padding-bottom: 12px;
+        color: #243cbb;
+        font-family: 'Open Sans';
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        text-align: center;
+    }
+    &__nofiles {
+        color: #a6b3c9;
+        margin: 32px auto 0;
+        font-family: 'Open Sans';
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        text-align: left;
+    }
+}

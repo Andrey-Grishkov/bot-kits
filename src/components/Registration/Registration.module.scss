@@ -1,0 +1,22 @@
+.registration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        color: black;
+    &__logo {
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        height: 35px;
+        max-width: 149px;
+    }
+    &__title {
+        align-self: center;
+        font-size: 48px;
+        line-height: 52px;
+        font-family: 'IBM Plex Mono';
+        font-weight: 500;
+    }
+}
