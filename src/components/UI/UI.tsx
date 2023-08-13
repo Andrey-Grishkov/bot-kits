@@ -68,10 +68,6 @@ export function UI() {
     setVisiblePasswordPopup(!visiblePasswordPopup);
   };
 
-    const handlePasswordPopup = () => {
-        setVisiblePasswordPopup(!visiblePasswordPopup);
-    };
-
     const onChange = () => null;
 
   return (
