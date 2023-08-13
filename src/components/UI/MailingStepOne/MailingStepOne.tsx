@@ -37,7 +37,6 @@ export const MailingStepOne: FC<{
   onChangeButton: ((data:any) => void);
   data: TMessage;
   }> = ({ onChangeInput, onChangeSelect, onChangeText, onChangePhoto, onChangeAudio, onChangeButton, onChangeVideo, data }) => {
-    const [showMessage, setShowMessage] = React.useState(false);
     const [showWidget, setShowWidget] = React.useState(true);
     const [addPhoto, setAddPhoto] = React.useState(false);
     const [addVideo, setAddVideo] = React.useState(false);
@@ -132,16 +131,16 @@ export const MailingStepOne: FC<{
       <h3 className={styles.container_title}>Добавить</h3>
       <div className={styles.media_buttons}>
         <AddSocialButton value="Фото" variant='active' onClick={handleAddPhoto}>
-          <img src={photo} alt="Добавить фото" onClick={()=>{}}/>
+          <img src={photo} alt="Добавить фото" />
         </AddSocialButton>
-        <AddSocialButton value="Видео">
-          <img src={video} alt="Добавить видео" onClick={handleAddVideo}/>
+        <AddSocialButton value="Видео" onClick={handleAddVideo}>
+          <img src={video} alt="Добавить видео" />
         </AddSocialButton>
-        <AddSocialButton value="Аудио">
-          <img src={audio} alt="Добавить аудио" onClick={handleAddAudio}/>
+        <AddSocialButton value="Аудио" onClick={handleAddAudio}>
+          <img src={audio} alt="Добавить аудио" />
         </AddSocialButton>
-        <AddSocialButton value="Кнопка">
-          <img src={button} alt="Добавить кнопку" onClick={handleAddButton}/>
+        <AddSocialButton value="Кнопка" onClick={handleAddButton}>
+          <img src={button} alt="Добавить кнопку "/>
         </AddSocialButton>
       </div>
     </div>

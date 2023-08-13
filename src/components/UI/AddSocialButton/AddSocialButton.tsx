@@ -11,7 +11,7 @@ interface IaddSocialButtonProps {
     onClick?: (() => void) | ((e: React.SyntheticEvent) => void);
 }
 
-export function AddSocialButton({ children, value, purpose = 'default', variant = 'active', onClick }: IaddSocialButtonProps) {
+export function AddSocialButton({ children, value, purpose = 'mailing', variant = 'active', onClick }: IaddSocialButtonProps) {
     return (
         <button className={classNames(styles.button, styles[variant], purpose as IaddSocialButtonProps["purpose"] === 'mailing' ? styles.button_mailing : '')} onClick={onClick}>
             <div>
