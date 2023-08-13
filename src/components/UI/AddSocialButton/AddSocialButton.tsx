@@ -1,6 +1,6 @@
-import styles from './AddSocialButton.module.scss';
-import { ReactNode } from 'react';
-import classNames from 'classnames';
+import styles from "./AddSocialButton.module.scss";
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+import classNames from "classnames";
 
 interface IaddSocialButtonProps {
     children: ReactNode

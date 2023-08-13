@@ -5,6 +5,16 @@
     height: 46px;
     border: none;
     cursor: pointer;
+    width: 100%;
+
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 134%; /* 18.76px */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
 
     &:disabled {
       cursor: default;

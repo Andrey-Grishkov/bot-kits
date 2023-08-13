@@ -42,7 +42,7 @@
     height: auto;
     overflow: hidden;
     visibility: hidden;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity .4s ease, visibility 0.4s ease 1s;
     position: absolute;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
 .ul li:hover {
     background-color: #F8F9FB;
     ;
-}  
+}
 
 .ulActive {
     border: 1px solid #100C34;
@@ -114,3 +114,4 @@
     height: 0;
     width: 0;
 }
+

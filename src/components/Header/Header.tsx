@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./Header.scss";
 import Burger from "../../images/icons/24/burger_menu.svg";
 import Arrow from "../../images/icons/24/arrow_down.svg";
 import Avatar from "../../images/user_icon.png";

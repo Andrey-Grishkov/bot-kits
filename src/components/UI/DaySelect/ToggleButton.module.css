@@ -1,0 +1,17 @@
+.container {
+  width: 569px;
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  width: 65px;
+  height: 32px;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+<<<<<<< HEAD
+}/*# sourceMappingURL=ToggleButton.module.css.map */
+=======
+}
+>>>>>>> sidebar
