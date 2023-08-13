@@ -22,7 +22,7 @@
   width: 264px;
   height: 102px;
   outline: none;
-  border: none;
+  border: #F2F4F8;
   padding: 12px 12px 33px;
   border-radius: 16px;
   background-color: #F8F9FB;
@@ -34,6 +34,11 @@
   line-height: 150%;
   letter-spacing: 0.3px;
   cursor: pointer;
+  overflow: scroll;
+}
+
+.input::-webkit-scrollbar {
+  width: 0;
 }
 
 .input:focus {

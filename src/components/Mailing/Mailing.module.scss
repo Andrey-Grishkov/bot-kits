@@ -54,7 +54,6 @@
 }
 
 .field {
-	height: 505px;
 	border-radius: 30px;
 	background-color: #F2F4F8;
 	display: flex;
@@ -210,7 +209,6 @@
 
 .field_adding {
 	width: 849px;
-	min-height: 849px;
 	border-radius: 30px;
 	background-color: #F2F4F8;
 	display: flex;
@@ -228,16 +226,17 @@
 .field_buttons {
 	font-family: IBM Plex Mono;
 	display: flex;
-	gap: 12px;
-	margin: 32px 40px 32px 540px;
+	margin: 32px 40px 32px 516px;
 }
 
 .exit {
 	color: #8392AB;
 	text-transform: uppercase;
+	background-color: #F2F4F8;
 }
 
 .exit:hover {
+	background-color: #F2F4F8;
 	color: #060C23;
 }
 
