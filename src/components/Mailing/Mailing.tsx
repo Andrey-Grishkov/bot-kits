@@ -12,40 +12,39 @@ export type TMessage = {
   name: string, 
   text: string,
   target: string, 
-  photo: string, 
-  video: string,
-  audio: string,
+  photo: File[], 
+  video: File[],
+  audio: File[],
   button: string,
   funnel: string,
   }
 
 export type TMailing = { 
-id: string, 
-name: string, 
-messenger: string, 
-sent: string,
-conversion: string,
+  id: string, 
+  name: string, 
+  messenger: string, 
+  sent: string,
+  conversion: string,
+  status: string,
 }
 
 export const Mailing: FC = () => {
-  const [mailingList, setMailingList] = React.useState<TMailing[]>([]);
+  const [mailingList, setMailingList] = React.useState<TMailing[] | []>([]);
   const [expanded, setExpanded] = React.useState(false);
   const [addingMode, setAddingMode] = React.useState(false);
   const [step, setStep] = React.useState(1);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [messages, setMessages] = React.useState<TMessage[]>([]);
-  const [messageData, setMessageData] = React.useState({
+  const [messageData, setMessageData] = React.useState<TMessage>({
     name: "",
     text: "",
     target: "",
-    photo: "",
-    video: "",
-    audio: "",
+    photo: [],
+    video: [],
+    audio: [],
     button: "",
     funnel: "",
   });
-
-  const handleAdd = () => setAddingMode(true);
 
   React.useEffect(() => {
     setMailingList(mailings);
@@ -59,7 +58,10 @@ export const Mailing: FC = () => {
 
   const switchToAddingMode = () => setAddingMode(true);
 
-  const handleExit = () => setAddingMode(false);
+  const handleExit = () => {
+    setAddingMode(false);
+    setStep(1)
+  }
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
@@ -70,19 +72,47 @@ export const Mailing: FC = () => {
     });
   };
 
-  const onChangeSelect = (data: any) => {
+  const onChangeSelect = (data: string) => {
     setMessageData({
       ...messageData,
       target: data
     })
   }
 
-  const onChangeText = (data: any) => {
+  const onChangeText = (data: string) => {
     setMessageData({
       ...messageData,
       text: data
     })
   }
+
+  const onChangePhoto = (data: any) => {
+    setMessageData({
+      ...messageData,
+      photo: data,
+    });
+  };
+
+  const onChangeVideo = (data: any) => {
+    setMessageData({
+      ...messageData,
+      video: data,
+    });
+  };
+
+  const onChangeAudio = (data: any) => {
+    setMessageData({
+      ...messageData,
+      audio: data,
+    });
+  };
+
+  const onChangeButton = (data: any) => {
+    setMessageData({
+      ...messageData,
+      button: data,
+    });
+  };
   
   return (
     <>
@@ -93,7 +123,7 @@ export const Mailing: FC = () => {
       (<div className={styles.field}>
         <div 
           className={styles.list_block}
-          style={{ height: expanded ? '168px' : '318px', transition: 'height 0.3s' }}
+          style={{ height: expanded ? '90px' : '318px', transition: 'height 0.3s' }}
         >
           <h2 className={styles.subtitle}>Мои рассылки</h2>
           <button onClick={handleExpand} className={styles.button_all}>
@@ -113,9 +143,9 @@ export const Mailing: FC = () => {
                 <li>Конверсия</li>
                 <li>Статус запуска</li>
               </ul>
-              <div className={styles.list_wrapper}>
+              {mailingList.length > 0 &&<div className={styles.list_wrapper}>
                 <ul className={styles.list}>
-                  {mailings.map((el, index) => (
+                  {mailingList.map((el, index) => (
                     <li className={styles.list_item} key={index}>
                       <p className={styles.list_item_text}>{el.id}</p>
                       <p className={styles.list_item_text}>{el.name}</p>
@@ -132,7 +162,7 @@ export const Mailing: FC = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div>}
             </div>
         </div>
         <div className={styles.tutorial_container}>
@@ -153,7 +183,15 @@ export const Mailing: FC = () => {
         <div className={styles.constructor_block}>
           <form className={styles.form}>
             {step === 1 ? (
-              <MailingStepOne onChangeSelect={onChangeSelect} onChangeInput={onChangeInput} data={messageData} onChangeText={onChangeText} />
+              <MailingStepOne 
+                onChangeSelect={onChangeSelect} 
+                onChangeInput={onChangeInput} 
+                data={messageData} 
+                onChangeText={onChangeText} 
+                onChangePhoto={onChangePhoto} 
+                onChangeVideo={onChangeVideo} 
+                onChangeAudio={onChangeAudio} 
+                onChangeButton={onChangeButton}  />
               ) : (
               <h2>2 Шаг</h2>
             )}

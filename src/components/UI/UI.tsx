@@ -50,6 +50,8 @@ export function UI() {
     const handlePasswordPopup = () => {
         setVisiblePasswordPopup(!visiblePasswordPopup);
     };
+
+    const onChange = () => null;
     
   return (
     <section className="ui">
@@ -90,8 +92,8 @@ export function UI() {
       </ConstructorLogicButton>
       </ConstructorBackground>
       <ConstructorPhoneButton/>
-      <UploadButton size="M" />
       <BotCard id="id" name="Салон красоты" type="telegram"/>
+      <UploadButton size="M" name="photo" onChange={onChange} />
       <CountriesSelect />
       <NumberSelect />
       <AddTo />

@@ -59,8 +59,7 @@ export const BotCard: FC<IBotCard> = ({ id, name = "", type }) => {
         <div className={styles.dropdown}>
           <button 
           onClick={handleOpen} 
-          onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
-          handleClose(e)}
+          onBlur={handleClose}
           className={styles.dropbtn}></button>
           {open ? (
         <ul className={styles.menu}>

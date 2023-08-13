@@ -6,11 +6,13 @@ interface IaddSocialButtonProps {
     children: ReactNode
     value: string
     variant?: string
+    purpose?: 'default' | 'mailing'
+    onClick?: (() => void) | ((e: React.SyntheticEvent) => void);
 }
 
-export function AddSocialButton({ children, value, variant = 'active' }: IaddSocialButtonProps) {
+export function AddSocialButton({ children, value, purpose = 'default', variant = 'active', onClick }: IaddSocialButtonProps) {
     return (
-        <button className={classNames(styles.button, styles[variant])} >
+        <button className={classNames(styles.button, styles[variant], purpose as IaddSocialButtonProps["purpose"] === 'mailing' ? styles.button_mailing : '')} onClick={onClick}>
             <div>
                 {children}
             </div>
