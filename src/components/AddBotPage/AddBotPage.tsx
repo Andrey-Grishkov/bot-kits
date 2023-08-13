@@ -1,5 +1,5 @@
 import styles from "./AddBotPage.module.scss";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch, useSelector, RootState} from '../../types/hooks'
 import classNames from "classnames";
 import { store } from "../../index";
 import { AddSocialButtonAddBotPage } from "../UI/AddSocialButton/AddSocialButtonAddBotPage";
@@ -11,7 +11,7 @@ import arrowSvg from '../../images/icons/24/arrow_down.svg';
 
 function AddBotPage() {
   const { socialButtons } = useSelector(
-    (state: ReturnType<typeof store.getState>) => state
+    (state) => state
   );
   const dispatch = useDispatch();
   const [bot, setbot] = useState(false);
