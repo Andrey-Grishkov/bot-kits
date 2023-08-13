@@ -262,19 +262,13 @@
   }
 }
 
-@media (max-width: 360px) {
-}
-
-@media (max-width: 768px) {
-}
-
 @media (max-width: 1024px) {
   .partners {
     &__detailed {
       &--stats {
         display: flex;
       }
-    }
+    } 
 
     &__table {
       &--desktop {
@@ -284,7 +278,7 @@
         display: grid;
         th {
           font-weight: 400;
-          color: #A6B3C9;
+          color: #a6b3c9;
         }
         td {
           font-weight: 600;

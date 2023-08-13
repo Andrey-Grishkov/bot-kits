@@ -8,7 +8,6 @@ const COPIED_TIMEOUT_DURATION = 3000;
 
 interface RefLinkSectionProps {
   link: string;
-  onCopy: () => void;
 }
 
 interface StatsTableProps {
@@ -21,15 +20,32 @@ interface PayoutsTableProps {
   togglePayoutsVisibility: () => void;
 }
 
+const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
+  const [isCopied, setCopied] = useState(false);
+  const copyToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(link);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, COPIED_TIMEOUT_DURATION);
+  }, []);
 
-const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link, onCopy }) => (
-  <div className="partners__ref">
-    <div className="partners__ref-link">{link}</div>
-    <div className="partners__ref-copy" onClick={onCopy} role="button">
-      <img src={copyImg} alt="Скопировать" />
+  return (
+    <div className="partners__ref">
+      <div className="partners__ref-link">{link}</div>
+      <div
+        className="partners__ref-copy"
+        onClick={copyToClipboard}
+        role="button"
+      >
+        <img src={copyImg} alt="Скопировать" />
+      </div>
+      {isCopied && (
+        <div className="partners__copied-notice">Ссылка скопирована</div>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 const StatsTable: React.FC<StatsTableProps> = ({
   isStatsVisible,
@@ -52,7 +68,7 @@ const StatsTable: React.FC<StatsTableProps> = ({
         <div className="partners__table partners__table--stats partners__table--mobile">
           <table>
             <tbody>
-              {isStatsVisible ? 
+              {isStatsVisible ? (
                 mockData.map((row, index) => (
                   <React.Fragment key={index}>
                     <tr key={"linkClicks-" + index}>
@@ -70,8 +86,8 @@ const StatsTable: React.FC<StatsTableProps> = ({
                       </td>
                     </tr>
                     <tr key={"sum-" + index}>
-                      <th>Сумма</th> 
-                      <td>{row.sum} ₽</td> 
+                      <th>Сумма</th>
+                      <td>{row.sum} ₽</td>
                     </tr>
                     <tr key={"commission-" + index}>
                       <th>Комиссия</th>
@@ -80,13 +96,17 @@ const StatsTable: React.FC<StatsTableProps> = ({
                     <tr key={"paidOut-" + index}>
                       <th>Выплачено</th>
                       <td>{row.paidOut} ₽</td>
-                    </tr>       
-                    <tr key={"withdrawal-" + index}>
+                    </tr>
+                    <tr
+                      key={"withdrawal-" + index}
+                      className="partners__list-item"
+                    >
                       <th>Вывод:</th>
                       <td>{row.withdrawal} ₽</td>
                     </tr>
                   </React.Fragment>
-                )) : 
+                ))
+              ) : (
                 <>
                   <tr>
                     <th>Перешли по ссылке</th>
@@ -119,7 +139,7 @@ const StatsTable: React.FC<StatsTableProps> = ({
                     <td>{mockData[0].withdrawal} ₽</td>
                   </tr>
                 </>
-              }
+              )}
             </tbody>
           </table>
         </div>
@@ -234,7 +254,6 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
 
 const Shared = () => {
   const [isPayoutsVisible, setPayoutsVisible] = useState(true);
-  const [isCopied, setCopied] = useState(false);
   const [isStatsVisible, setStatsVisibille] = useState(true);
 
   const link = "botkits.ru/?ref=12345";
@@ -247,24 +266,13 @@ const Shared = () => {
     setPayoutsVisible(!isPayoutsVisible);
   };
 
-  const copyToClipboard = useCallback(() => {
-    navigator.clipboard.writeText(link);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, COPIED_TIMEOUT_DURATION);
-  }, []);
-
   return (
     <div className="partners">
       <div className="partners__header">
         <h2 className="partners__title">Партнерская программа</h2>
         <button className="partners__btn-request">Запросить выплату</button>
       </div>
-      <RefLinkSection link="botkits.ru/?ref=12345" onCopy={copyToClipboard} />
-      {isCopied && (
-        <div className="partners__copied-notice">Ссылка скопирована</div>
-      )}
+      <RefLinkSection link={link} />
       <div className="partners__content">
         <StatsTable
           isStatsVisible={isStatsVisible}
