@@ -74,7 +74,7 @@
 .subscription {
   padding: 35px;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1;
   background-color: $colorOffWhite;
   width: 100%;
   min-height: 228px;
@@ -217,7 +217,7 @@ margin-right: auto;
     flex-direction: column;
     width: 320px;
   }
-  
+
 }
 .titleSubscription {
   margin: 0 0 auto 0;
