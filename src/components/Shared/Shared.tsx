@@ -4,7 +4,11 @@ import copyImg from "./images/copy.png";
 import upImg from "./images/up.png";
 import { mockData, mockPayouts } from "../../utils/data";
 import { ButtonCopy } from "../UI/Buttons/Copy/ButtonCopy";
-import { IPayoutsTableProps, IRefLinkSectionProps, IStatsTableProps } from "./types/types";
+import {
+  IPayoutsTableProps,
+  IRefLinkSectionProps,
+  IStatsTableProps,
+} from "./types/types";
 
 const COPIED_TIMEOUT_DURATION = 3000;
 
@@ -36,6 +40,25 @@ const RefLinkSection: React.FC<IRefLinkSectionProps> = ({ link }) => {
   );
 };
 
+const statsColumns = [
+  {
+    label: "Перешли по ссылке",
+    key: "linkClicks",
+    suffix: " человек",
+    format: (val: any) => `${val} человек`,
+  },
+  { label: "Регистраций", key: "registrations" },
+  {
+    label: "Оплата",
+    key: "paymentStatus",
+    format: (val: any) => (val ? "Оплачено" : "Не оплачено"),
+  },
+  { label: "Сумма", key: "sum", suffix: " ₽" },
+  { label: "Комиссия", key: "commission", suffix: " ₽" },
+  { label: "Выплачено", key: "paidOut", suffix: " ₽" },
+  { label: "Вывод:", key: "withdrawal", suffix: " ₽" },
+];
+
 const StatsTable: React.FC<IStatsTableProps> = ({
   isStatsVisible,
   toggleStatsVisibility,
@@ -57,125 +80,98 @@ const StatsTable: React.FC<IStatsTableProps> = ({
         <div className="partners__table partners__table--stats partners__table--mobile">
           <table>
             <tbody>
-              {isStatsVisible ? (
-                mockData.map((row, index) => (
-                  <React.Fragment key={index}>
-                    <tr key={"linkClicks-" + index}>
-                      <th>Перешли по ссылке</th>
-                      <td>{row.linkClicks} человек</td>
-                    </tr>
-                    <tr key={"registrations-" + index}>
-                      <th>Регистраций</th>
-                      <td>{row.registrations}</td>
-                    </tr>
-                    <tr key={"paymentStatus-" + index}>
-                      <th>Оплата</th>
-                      <td className={row.paymentStatus ? "paid" : ""}>
-                        {row.paymentStatus ? "Оплачено" : "Не оплачено"}
+              {isStatsVisible
+                ? mockData.map((row, index) =>
+                    statsColumns.map((column) => (
+                      <tr key={column.key + "-" + index}>
+                        <th>{column.label}</th>
+                        <td
+                          className={
+                            column.key === "paymentStatus" && row[column.key]
+                              ? "paid"
+                              : ""
+                          }
+                        >
+                          {column.format
+                            ? column.format(row[column.key])
+                            : row[column.key] + (column.suffix || "")}
+                        </td>
+                      </tr>
+                    ))
+                  )
+                : statsColumns.slice(0, 7).map((column) => (
+                    <tr key={column.key}>
+                      <th>{column.label}</th>
+                      <td
+                        className={
+                          column.key === "paymentStatus" &&
+                          mockData[0][column.key]
+                            ? "paid"
+                            : ""
+                        }
+                      >
+                        {column.format
+                          ? column.format(mockData[0][column.key])
+                          : mockData[0][column.key] + (column.suffix || "")}
                       </td>
                     </tr>
-                    <tr key={"sum-" + index}>
-                      <th>Сумма</th>
-                      <td>{row.sum} ₽</td>
-                    </tr>
-                    <tr key={"commission-" + index}>
-                      <th>Комиссия</th>
-                      <td>{row.commission} ₽</td>
-                    </tr>
-                    <tr key={"paidOut-" + index}>
-                      <th>Выплачено</th>
-                      <td>{row.paidOut} ₽</td>
-                    </tr>
-                    <tr
-                      key={"withdrawal-" + index}
-                      className="partners__list-item"
-                    >
-                      <th>Вывод:</th>
-                      <td>{row.withdrawal} ₽</td>
-                    </tr>
-                  </React.Fragment>
-                ))
-              ) : (
-                <>
-                  <tr>
-                    <th>Перешли по ссылке</th>
-                    <td>{mockData[0].linkClicks} человек</td>
-                  </tr>
-                  <tr>
-                    <th>Регистраций</th>
-                    <td>{mockData[0].registrations}</td>
-                  </tr>
-                  <tr>
-                    <th>Оплата</th>
-                    <td className={mockData[0].paymentStatus ? "paid" : ""}>
-                      {mockData[0].paymentStatus ? "Оплачено" : "Не оплачено"}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Сумма</th>
-                    <td>{mockData[0].sum} ₽</td>
-                  </tr>
-                  <tr>
-                    <th>Комиссия</th>
-                    <td>{mockData[0].commission} ₽</td>
-                  </tr>
-                  <tr>
-                    <th>Выплачено</th>
-                    <td>{mockData[0].paidOut} ₽</td>
-                  </tr>
-                  <tr>
-                    <th>Вывод:</th>
-                    <td>{mockData[0].withdrawal} ₽</td>
-                  </tr>
-                </>
-              )}
+                  ))}
             </tbody>
           </table>
         </div>
+
         <div className="partners__table partners__table--stats partners__table--desktop">
           <table>
             <thead>
               <tr>
-                <th>Перешли по ссылке</th>
-                <th>Регистраций</th>
-                <th>Оплата</th>
-                <th>Сумма</th>
-                <th>Комиссия</th>
-                <th>Выплачено</th>
-                <th>Вывод</th>
+                {statsColumns.map((column) => (
+                  <th key={column.key}>{column.label}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
               {isStatsVisible ? (
                 mockData.map((row, index) => (
                   <tr key={index}>
-                    <td>{row.linkClicks} человек</td>
-                    <td>{row.registrations}</td>
-                    <td className={row.paymentStatus ? "paid" : ""}>
-                      {row.paymentStatus ? "Оплачено" : "Не оплачено"}
-                    </td>
-                    <td>{row.sum} ₽</td>
-                    <td>{row.commission} ₽</td>
-                    <td>{row.paidOut} ₽</td>
-                    <td>{row.withdrawal} ₽</td>
+                    {statsColumns.map((column) => (
+                      <td
+                        key={column.key}
+                        className={
+                          column.key === "paymentStatus" && row[column.key]
+                            ? "paid"
+                            : ""
+                        }
+                      >
+                        {column.format
+                          ? column.format(row[column.key])
+                          : row[column.key] + (column.suffix || "")}
+                      </td>
+                    ))}
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td>{mockData[0].linkClicks} человек</td>
-                  <td>{mockData[0].registrations}</td>
-                  <td className={mockData[0].paymentStatus ? "paid" : ""}>
-                    {mockData[0].paymentStatus ? "Оплачено" : "Не оплачено"}
-                  </td>
-                  <td>{mockData[0].sum} ₽</td>
-                  <td>{mockData[0].commission} ₽</td>
-                  <td>{mockData[0].paidOut} ₽</td>
-                  <td>{mockData[0].withdrawal} ₽</td>
+                  {statsColumns.map((column) => (
+                    <td
+                      key={column.key}
+                      className={
+                        column.key === "paymentStatus" &&
+                        mockData[0][column.key]
+                          ? "paid"
+                          : ""
+                      }
+                    >
+                      {column.format
+                        ? column.format(mockData[0][column.key])
+                        : mockData[0][column.key] + (column.suffix || "")}
+                    </td>
+                  ))}
                 </tr>
               )}
             </tbody>
           </table>
         </div>
+
         <button className="partners__btn-request partners__btn-request--mobile">
           Запросить выплату
         </button>

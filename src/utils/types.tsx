@@ -1,4 +1,5 @@
-export interface TableRow {
+export type TableRow = {
+  [key: string]: number | boolean | string;
   linkClicks: number;
   registrations: number;
   paymentStatus: boolean;
@@ -6,7 +7,7 @@ export interface TableRow {
   commission: number;
   paidOut: number;
   withdrawal: number;
-}
+};
 
 export interface PayoutRow {
   requestDate: string;
