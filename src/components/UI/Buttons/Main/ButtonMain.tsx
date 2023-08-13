@@ -24,6 +24,7 @@ interface IButtonMain {
     */
     disabled?: boolean;
     onClick?: (() => void) | ((e: SyntheticEvent) => void);
+    type?: 'submit' | 'button';
     children?: ReactNode,
 }
 
@@ -36,6 +37,7 @@ export const ButtonMain = ({
     size = 'l',
     extraClass,
     disabled = false,
+    type,
     children,
 
     ...rest
@@ -44,7 +46,7 @@ export const ButtonMain = ({
     const sizeClass = styles[`button_size_${size}`];
     return (
         <button 
-            type="button"
+            type={type}
             className={cn(styles.button, themeClass, sizeClass, extraClass)}
             // style={{ backgroundColor, color: textColor }}
             disabled={disabled}

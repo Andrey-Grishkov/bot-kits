@@ -6,9 +6,11 @@ interface AuthButtonProps {
     visible?: boolean;
     notificationType?: 'letter' | 'password';
     setVisible: (value: boolean) => void;
+    disabled?: boolean;
+    type?: 'button' | 'submit';
 }
 
-export const AuthButton: FC<AuthButtonProps> = ({ visible, notificationType = 'password', setVisible }) => {
+export const AuthButton: FC<AuthButtonProps> = ({ visible, notificationType = 'password', setVisible, disabled, type }) => {
 
     let buttonText = notificationType !== 'password' ? 'СОЗДАТЬ АККАУНТ' : 'СБРОСИТЬ ПАРОЛЬ';
 
@@ -18,7 +20,7 @@ export const AuthButton: FC<AuthButtonProps> = ({ visible, notificationType = 'p
 
     return (
         <div>
-            <button className="auth-button" onClick={handleClick}>
+            <button className="auth-button" onClick={handleClick}  disabled={disabled} type={type}>
                 {buttonText}
             </button>
             {visible && <Notification setVisible={setVisible} imageType={notificationType} visible={visible} />}

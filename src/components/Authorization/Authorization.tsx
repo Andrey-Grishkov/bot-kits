@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 // @ts-ignore
 import ru from "react-phone-input-2/lang/ru.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ButtonMain } from "../UI/Buttons/Main/ButtonMain";
 import { AuthButton } from "../UI/AuthButton/AuthButton";
 import eye from "../../vendor/icons/eye.svg";
@@ -32,7 +32,10 @@ export const Authorization: FC<IAuthProps> = ({
   const [errors, setErrors] = useState({
     email: "",
     password: "",
+    username: "",
+    phone: "",
   });
+  const navigate = useNavigate();
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -59,7 +62,17 @@ export const Authorization: FC<IAuthProps> = ({
   };
 
   const handlePhoneChange = (value: string) => {
-    setPhone(value);
+    const newPhone = value;
+    setPhone(newPhone);
+
+    if (!newPhone) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        phone: "Поле обязательно для заполнения",
+      }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+    }
   };
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -72,7 +85,7 @@ export const Authorization: FC<IAuthProps> = ({
     } else if (!validatePassword(e.target.value)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        password: "Пароль должен содержать не менее 8 символов",
+        password: "Пароль должен содержать не менее 6 символов",
       }));
     } else {
       setErrors((prevErrors) => ({ ...prevErrors, password: "" }));
@@ -80,11 +93,22 @@ export const Authorization: FC<IAuthProps> = ({
   };
 
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
+    const newUsername = e.target.value;
+    setUsername(newUsername);
+
+    if (!newUsername) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        username: "Поле обязательно для заполнения",
+      }));
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, username: "" }));
+    }
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    navigate('/')
   };
 
   const handleMailPopup = () => {
@@ -125,7 +149,9 @@ export const Authorization: FC<IAuthProps> = ({
             <fieldset className={styles.formfield}>
               <div className={styles.input__container}>
                 <input
-                  className={styles.formfield__input}
+                  className={`${styles.formfield__input} ${
+                    errors.username ? styles.formfield__input_error : ""
+                  }`}
                   type="text"
                   value={username}
                   placeholder="Имя"
@@ -133,6 +159,9 @@ export const Authorization: FC<IAuthProps> = ({
                   required
                 />
                 <span className={styles.input__star}>*</span>
+                {errors.username && (
+                  <p className={styles.input__error}>{errors.username}</p>
+                )}
               </div>
               <div className={styles.input__container}>
                 <input
@@ -153,7 +182,7 @@ export const Authorization: FC<IAuthProps> = ({
               <div className={styles.input__container}>
                 <input
                   className={`${styles.formfield__input} ${
-                    errors.email ? styles.formfield__input_error : ""
+                    errors.password ? styles.formfield__input_error : ""
                   }`}
                   type={passwordIsVisible ? "text" : "password"}
                   value={password}
@@ -205,6 +234,7 @@ export const Authorization: FC<IAuthProps> = ({
               visible={visibleMailPopup}
               notificationType={"letter"}
               setVisible={handleMailPopup}
+              disabled={Object.values(errors).some((error) => error !== "")}
             />
             <div className={styles.caption}>
               <p className={styles.caption__text}>Уже прошли регистрацию?</p>
@@ -242,7 +272,7 @@ export const Authorization: FC<IAuthProps> = ({
                 <input
                   className={`${styles.formfield__input} ${
                     styles.formfield__input_login
-                  } ${errors.email ? styles.formfield__input_error : ""}`}
+                  } ${errors.password ? styles.formfield__input_error : ""}`}
                   type="password"
                   value={password}
                   placeholder="Пароль"
@@ -263,7 +293,14 @@ export const Authorization: FC<IAuthProps> = ({
                 Регистрация
               </Link>
             </div>
-            <ButtonMain size="l" theme="green" label="войти" />
+            <ButtonMain
+              size="l"
+              theme="green"
+              label="войти"
+              disabled={Object.values(errors).some((error) => error !== "")}
+              type='submit'
+              extraClass={styles.authorization__button}
+            />
           </form>
           <div className={styles.authorization__choice_login}>
             <p className={styles.authorization__text}>Быстрый вход</p>
@@ -301,6 +338,7 @@ export const Authorization: FC<IAuthProps> = ({
               visible={visiblePasswordPopup}
               notificationType={"password"}
               setVisible={handlePasswordPopup}
+              disabled={!email}
             />
           </form>
           <img src={roboIcon} alt="робот" />
