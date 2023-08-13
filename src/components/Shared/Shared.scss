@@ -277,10 +277,15 @@
       }
     }
 
+    &__title {
+      font-size: 24px;
+    }
+
     &__ref {
       flex-direction: column;
       &-link {
         max-width: 100%;
+        min-width: auto;
       }
       &-container {
         width: 100%;

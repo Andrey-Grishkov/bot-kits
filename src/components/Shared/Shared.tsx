@@ -3,11 +3,13 @@ import "./Shared.scss";
 import copyImg from "./images/copy.png";
 import upImg from "./images/up.png";
 import { mockData, mockPayouts } from "../../utils/data";
+import { ButtonCopy } from "../UI/Buttons/Copy/ButtonCopy";
 
 const COPIED_TIMEOUT_DURATION = 3000;
 
-interface RefLinkSectionProps {
-  link: string;
+interface ToggleTableProps {
+  isVisible: boolean;
+  toggleVisibility: () => void;
 }
 
 interface StatsTableProps {
@@ -20,7 +22,7 @@ interface PayoutsTableProps {
   togglePayoutsVisibility: () => void;
 }
 
-const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
+const RefLinkSection: React.FC<RefLinkSectionProps> = () => {
   const [isCopied, setCopied] = useState(false);
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(link);
@@ -28,19 +30,18 @@ const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
     setTimeout(() => {
       setCopied(false);
     }, COPIED_TIMEOUT_DURATION);
-  }, []);
+  }, [link]);
 
   return (
     <div className="partners__ref">
       <div className="partners__ref-container">
         <div className="partners__ref-link">{link}</div>
-        <div
-          className="partners__ref-copy"
+        <ButtonCopy
+          type="default"
           onClick={copyToClipboard}
           role="button"
-        >
-          <img src={copyImg} alt="Скопировать" />
-        </div>
+          aria-label="Скопировать ссылку" // для доступности, так как у нас нет текста внутри кнопки
+        />
       </div>
       {isCopied && (
         <div className="partners__copied-notice">Ссылка скопирована</div>
@@ -48,6 +49,8 @@ const RefLinkSection: React.FC<RefLinkSectionProps> = ({ link }) => {
     </div>
   );
 };
+
+export default RefLinkSection;
 
 const StatsTable: React.FC<StatsTableProps> = ({
   isStatsVisible,
@@ -214,7 +217,7 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
           <img src={upImg} alt="up" />
         </button>
       </div>
-      
+
       {isPayoutsVisible && (
         <>
           {/* Мобильная версия */}
@@ -237,7 +240,15 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
                     </tr>
                     <tr key={"status-" + index}>
                       <th>Статус</th>
-                      <td className={row.status === "Выплачено" ? "paid" : row.status === "В обработке" ? "processing" : ""}>
+                      <td
+                        className={
+                          row.status === "Выплачено"
+                            ? "paid"
+                            : row.status === "В обработке"
+                            ? "processing"
+                            : ""
+                        }
+                      >
                         {row.status}
                       </td>
                     </tr>
@@ -269,7 +280,15 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
                     <td>{row.requestDate}</td>
                     <td>{row.paymentDate}</td>
                     <td>{row.act}</td>
-                    <td className={row.status === "Выплачено" ? "paid" : row.status === "В обработке" ? "processing" : ""}>
+                    <td
+                      className={
+                        row.status === "Выплачено"
+                          ? "paid"
+                          : row.status === "В обработке"
+                          ? "processing"
+                          : ""
+                      }
+                    >
                       {row.status}
                     </td>
                     <td>{row.payoutSum} ₽</td>
@@ -283,7 +302,6 @@ const PayoutsTable: React.FC<PayoutsTableProps> = ({
     </div>
   );
 };
-
 
 const SharedAccess = () => {
   const [isPayoutsVisible, setPayoutsVisible] = useState(true);
