@@ -323,3 +323,57 @@ export const countries = [
   'Йемен',
   'Замбия',
 ];
+
+export const mockData: TableRow[] = [
+  {
+    linkClicks: 28,
+    registrations: 15,
+    paymentStatus: true,
+    sum: 5000,
+    commission: 1500,
+    paidOut: 4500,
+    withdrawal: 1500,
+  },
+  {
+    linkClicks: 17,
+    registrations: 8,
+    paymentStatus: true,
+    sum: 15000,
+    commission: 4500,
+    paidOut: 8200,
+    withdrawal: 4500,
+  },
+  {
+    linkClicks: 10,
+    registrations: 10,
+    paymentStatus: true,
+    sum: 5000,
+    commission: 1500,
+    paidOut: 10000,
+    withdrawal: 1500,
+  },
+];
+
+export const mockPayouts: PayoutRow[] = [
+  {
+    requestDate: "05.07.22",
+    paymentDate: "07.07.22",
+    act: "Док.pdf",
+    status: "Выплачено",
+    payoutSum: 1500,
+  },
+  {
+    requestDate: "02.07.22",
+    paymentDate: "-",
+    act: "Фото.png",
+    status: "В обработке",
+    payoutSum: 4500,
+  },
+  {
+    requestDate: "27.06.22",
+    paymentDate: "28.06.22",
+    act: "Data.pdf",
+    status: "Выплачено",
+    payoutSum: 1000,
+  },
+];
