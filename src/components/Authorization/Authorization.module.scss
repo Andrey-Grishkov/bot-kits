@@ -12,7 +12,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    background-image: url('../../vendor/icons/robo_registration.svg');
+    background-image: url("../../vendor/icons/robo_registration.svg");
     width: 225px;
     height: 187px;
     background-size: cover;
@@ -61,6 +61,7 @@
 
 .socials_login {
   margin-top: 40px;
+  margin-bottom: 60px;
   @include flex(row, center, none);
   max-width: 540px;
 }
@@ -76,18 +77,10 @@
     border-radius: 30px;
     background: #314dd8;
     min-height: 60px;
-    max-width: 300px;
   }
   &__list:last-of-type {
     margin: 0;
-  }
-  &__item {
-    margin: 10px;
-    cursor: pointer;
-  }
-  &__icon:hover {
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+    min-width: 280px;
   }
 }
 .form_login {
@@ -115,6 +108,15 @@
     max-width: 500px;
     position: relative;
   }
+  &__error {
+    color: #FF5555;
+    font-family: 'Open Sans';
+    size: 10px;
+    line-height: 15px;
+    margin: 0;
+    position: absolute;
+    top: 65px
+  }
   &__star {
     position: absolute;
     top: 20px;
@@ -133,7 +135,7 @@
     cursor: pointer;
   }
   &__eye:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 .formfield {
@@ -161,6 +163,15 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: white;
+      -webkit-box-shadow: 0 0 0px 40rem #243cbb inset;
+    }
+    &_error {
+      color: #FF5555;
+    }
     &_login {
       width: 500px;
     }
@@ -248,7 +259,7 @@
       }
     }
     &__robot {
-      background-image: url('../../vendor/icons/robo_mobile.svg');
+      background-image: url("../../vendor/icons/robo_mobile.svg");
       max-width: 230px;
       max-height: 145px;
       position: static;
@@ -266,7 +277,7 @@
     }
   }
   .caption {
-      margin-top: 30px;
+    margin-top: 30px;
   }
   .formfield {
     max-width: 320px;
@@ -295,21 +306,13 @@
     }
     &__list:last-of-type {
       margin: 0;
-      max-width: 182px;
+      min-width: 182px;
     }
     &__item {
       margin: 8px 0 8px 5px;
     }
     &__item:last-of-type {
       margin-right: 8px;
-    }
-    &__icon {
-      max-width: 34px;
-      max-height: 34px;
-    }
-    &__icon:hover {
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
     }
   }
 }
