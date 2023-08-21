@@ -8,63 +8,61 @@ $viber: #7360f2;
 $telegram: #2aabee;
 
 %baseConstructor {
-  border-radius: 30px;
-  min-height: 330px;
+    border-radius: 30px;
+    min-height: 330px;
 }
 %centerFlex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main {
   font-family: IBM Plex Mono;
   padding: 32px 46px 0 46px;
-
 }
 
 .list {
-  width: 1268px;
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .listConteiner {
-  width: 100%;
-  overflow-x: scroll;
+    width: 100%;
+    overflow-x: scroll;
 }
 
 .listConteiner::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 .fieldConstructor {
-  @extend %baseConstructor;
-  text-align: center;
-  background-color: $grey;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: $colorGrey;
-  h2 {
-    margin-bottom: 16px;
-  }
+    @extend %baseConstructor;
+    text-align: center;
+    background-color: $grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $colorGrey;
+    h2 {
+        margin-bottom: 16px;
+    }
 
-  p {
-    margin: 0;
-    font-family: Open Sans;
-    font-weight: 600;
-  }
+    p {
+        margin: 0;
+        font-family: Open Sans;
+        font-weight: 600;
+    }
 }
 
 .botConstructor {
-  @extend %baseConstructor;
-  padding: 43px 40px 36px 40px;
-  box-shadow: $shadow;
-  background-color: #fff;
-  z-index: 1;
-  position: relative;
+    @extend %baseConstructor;
+    padding: 43px 40px 36px 40px;
+    box-shadow: $shadow;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
 }
 
 .adviceContainer {
@@ -94,78 +92,78 @@ $telegram: #2aabee;
 }
 
 .botTitle {
-  display: flex;
-  align-items: center;
-  h2 {
-    margin-right: 20px;
-  }
-  .subTitle {
-    background-color: $titleSpan;
-    min-width: 276px;
-    min-height: 32px;
-    border-radius: 16px;
-    @extend %centerFlex;
-    font-size: 13px;
-    font-family: Open Sans;
-    letter-spacing: 0.3px;
-    color: $subTitle;
+    display: flex;
+    align-items: center;
+    h2 {
+        margin-right: 20px;
+    }
+    .subTitle {
+        background-color: $titleSpan;
+        min-width: 276px;
+        min-height: 32px;
+        border-radius: 16px;
+        @extend %centerFlex;
+        font-size: 13px;
+        font-family: Open Sans;
+        letter-spacing: 0.3px;
+        color: $subTitle;
 
-    b {
-      margin-left: 2px;
+        b {
+            margin-left: 2px;
+        }
     }
-  }
-  .imgContainer {
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    @extend %centerFlex;
-    margin-right: 15px;
-  }
-  .typeFacebook {
-    background-color: $facebookColor;
-    img {
-      width: 6px;
-      height: 11px;
+    .imgContainer {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        @extend %centerFlex;
+        margin-right: 15px;
     }
-  }
+    .typeFacebook {
+        background-color: $facebookColor;
+        img {
+            width: 6px;
+            height: 11px;
+        }
+    }
 
-  .typeViber {
-    background-color: $viber;
-    img {
-      width: 12.958px;
-      height: 13.663px;
+    .typeViber {
+        background-color: $viber;
+        img {
+            width: 12.958px;
+            height: 13.663px;
+        }
     }
-  }
 
-  .typeTelegram {
-    background-color: $telegram;
-    img {
-      width: 12.51px;
-      height: 10.492px;
+    .typeTelegram {
+        background-color: $telegram;
+        img {
+            width: 12.51px;
+            height: 10.492px;
+        }
     }
-  }
 }
 
 @media screen and (max-width: 360px) {
-  .main {
-    padding: 24px 0px 0 20px;
-    h1 {
-      font-size: 24px;
-    }
-  }
-
-  .fieldContainer {
-    padding-right: 20px;
-  }
-
-  .fieldConstructor {
-    padding: 0px 12px;
-    h2 {
-      font-size: 18px;
+    .main {
+        padding: 24px 0px 0 20px;
+        h1 {
+            font-size: 24px;
+        }
     }
 
-    p {
-      font-size: 14px;
+    .fieldContainer {
+        padding-right: 20px;
     }
-  }
+
+    .fieldConstructor {
+        padding: 0px 12px;
+        h2 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
 }

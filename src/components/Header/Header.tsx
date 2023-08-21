@@ -11,7 +11,6 @@ function Header() {
     const { isOverlayOpen, setIsOverlayOpen } = useNav();
 
     const [widthOffset, setWidthOffset] = useState(getWidthOffset());
-
     function getWidthOffset() {
         const screenWidth = window.innerWidth;
         if (screenWidth > 1440) {
