@@ -1,0 +1,75 @@
+.buttonTutorial {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 52px;
+       column-gap: 52px;
+  width: 579px;
+  height: 76px;
+  border-radius: 10px;
+  border: transparent;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+.buttonTutorial:hover {
+  border-color: transparent;
+  box-shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
+}
+.buttonTutorial:hover .buttonTutorial_icon * {
+  fill: #85FFD0;
+}
+.buttonTutorial:hover .buttonTutorial_mainIcon {
+  content: url(./tutorial_active.svg);
+}
+.buttonTutorial:active {
+  box-shadow: 0px 6px 16px 0px rgba(21, 18, 51, 0.08);
+}
+.buttonTutorial:disabled {
+  background-color: #FFFFFF;
+  cursor: default;
+  box-shadow: none;
+}
+.buttonTutorial:disabled .buttonTutorial_icon * {
+  fill: #E4E9F1;
+}
+.buttonTutorial:disabled .buttonTutorial_mainIcon {
+  content: url(./tutorial_disabled.svg);
+}
+
+.buttonTutorial_iconsArea {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 149px;
+}
+
+.buttonTutorial_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+.buttonTutorial_strip {
+  top: 7px;
+  left: 61px;
+}
+
+.buttonTutorial_mainIcon {
+  width: 65px;
+  height: 46px;
+  align-self: center;
+  flex-shrink: 0;
+  position: relative;
+  margin-left: 32px;
+}
+
+.buttonTutorial__textArea {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 21px */
+  letter-spacing: 0.3px;
+  align-self: center;
+}

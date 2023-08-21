@@ -1,0 +1,117 @@
+.wrapper {
+    width: 304px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    cursor: pointer;
+}
+
+.titleSelect {
+    height: 37px;
+    border-bottom: 1px solid #E4E9F1;
+    padding: 0;
+    box-sizing: border-box;
+    color: #A6B3C9;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
+
+.titleSelected {
+    height: 37px;
+    border-bottom: 1px solid #E4E9F1;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #060C23;
+    text-align: left;
+}
+
+.ul {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease, visibility 0.4s ease 1s;
+    position: absolute;
+    box-sizing: border-box;
+    top: 48px;
+    cursor: pointer;
+}
+
+.ul li {
+    list-style: none;
+    padding: 6px 0 6px 6px;
+}
+
+.ul li:hover {
+    background-color: #F8F9FB;
+    ;
+}
+
+.ulActive {
+    border: 1px solid #100C34;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.ulScroll {
+    overflow-y: scroll;
+    height: 135px;
+    border: none;
+    box-shadow: 0px 6px 16px 0px #15123314;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    padding: 0 0 0 16px;
+    z-index: 100;
+}
+
+.ulScroll::-webkit-scrollbar {
+    width: 2px;
+    padding-right: 4px;
+}
+
+.ulScroll::-webkit-scrollbar-thumb {
+    background-color: #A6B3C9;
+    border-radius: 25px;
+    width: 2px;
+    height: 16px;
+}
+
+.imgCaret {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 0px;
+    transform: rotate(0deg);
+    transition: transform .4s ease;
+}
+
+.imgCaretActive {
+    transform: rotate(180deg);
+}
+
+.selectOriginal {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+

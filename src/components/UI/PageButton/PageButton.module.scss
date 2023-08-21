@@ -1,0 +1,56 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 180px;
+    height: 52px;
+    background-color: #f2f4f8;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: 0.3px;
+}
+
+.button_md {
+    justify-content: flex-start;
+    border-radius: 50px;
+    width: 274px;
+    height: 52px;
+}
+
+.button_sm {
+    justify-content: flex-start;
+    border-radius: 50px;
+    width: 180px;
+    height: 52px;
+}
+
+.button_selected {
+    background-color: #ecefff;
+}
+
+.title {
+    margin-left: 12px;
+    color: #060c23;
+}
+
+.title_hover {
+    // = selected
+    margin-left: 12px;
+    color: #243cbb;
+}
+
+.title_disabled {
+    margin-left: 12px;
+    color: #bfc9d9;
+}
+
+.icon_default {
+  opacity: 1;
+}
+
+.icon_disabled {
+  opacity: .5;
+}

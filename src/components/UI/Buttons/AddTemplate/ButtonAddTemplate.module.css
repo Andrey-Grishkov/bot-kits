@@ -1,0 +1,72 @@
+.buttonAddTemplate__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.buttonAddTemplate {
+  width: 188px;
+  height: 88px;
+  border-radius: 185px;
+  background-color: #F2F4F8;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 34px;
+       column-gap: 34px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.buttonAddTemplate:hover {
+  background-color: #FFF;
+  box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+  color: #243CBB;
+}
+.buttonAddTemplate:hover .buttonAddTemplate__plusIcon * {
+  stroke: #243CBB;
+}
+.buttonAddTemplate:active {
+  background-color: #FFF;
+  box-shadow: 0px 12px 24px 0px rgba(21, 18, 51, 0.13);
+  color: #243CBB;
+}
+.buttonAddTemplate:active .buttonAddTemplate__plusIcon * {
+  stroke: #243CBB;
+}
+.buttonAddTemplate:disabled {
+  background-color: #F2F4F8;
+  cursor: default;
+  box-shadow: none;
+  color: #CCD4E0;
+}
+.buttonAddTemplate:disabled .buttonAddTemplate__mainIcon {
+  opacity: 0.5;
+}
+.buttonAddTemplate:disabled .buttonAddTemplate__plusIcon * {
+  stroke: #CCD4E0;
+}
+
+.buttonAddTemplate__mainIcon {
+  width: 88px;
+  height: 88px;
+}
+
+.buttonAddTemplate__text {
+  color: var(--primary-oxford-blue-default, #060C23);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 21px */
+  letter-spacing: 0.3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 188px;
+  text-align: left;
+}
+
+.buttonAddTemplate__plusIcon {
+  align-self: center;
+}
