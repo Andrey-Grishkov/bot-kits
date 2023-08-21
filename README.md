@@ -1,7 +1,5 @@
 # Bot-kit
 
----
-
 ## 🌍 Ссылки
 
 * [Bot-kit](https://bot-kits-mqyd4sd1b-andrey-grishkov.vercel.app/) - сайт на хостинге Vercel;
@@ -53,7 +51,7 @@ __Наставник__: [Алексей Мартынов](https://github.com/Fen
 __Project Manager__: [Ильзира Сабитова](https://github.com/IlziraSabitova) 💼    
 __Team Leader__: [Андрей Гришков](https://github.com/Andrey-Grishkov) 👑    
 
-#### Команда разработчиков
+### Команда разработчиков
 [Никита Перепелицын](https://github.com/trashmarket) 🙂   
 [Игорь Степанов](https://github.com/randomu3) 😉    
 [Елизавета Юновидова](https://github.com/lizonkisel) 😊    
@@ -62,18 +60,20 @@ __Team Leader__: [Андрей Гришков](https://github.com/Andrey-Grishko
 [Константин Шереметов](https://github.com/Konstantin0099) 😀    
 [Руслан Кулиш](https://github.com/happy-land) 😋    
 [Елизавета Циприс](https://github.com/Dumisel) 😎️    
+
 ---
 
 ## 🛠️ Cтек технологий
 HTML, SASS, GitHub, TypeScript, React, Redux, Story Book
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)      
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)      
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)    
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)    
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)    
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)    
+
 ---
 
 ## 💡 Реализованные части проекта
@@ -105,7 +105,7 @@ HTML, SASS, GitHub, TypeScript, React, Redux, Story Book
 * _Partnership Program_ - страница с партнерской программой доступна по линку '/partnership'. 
   Реализована функция копирования ссылки и сохранения ее в память браузера. Реализована имитация данных с сервера путем 
   создания массива данных по которому рендерится страница. Можно свернуть и развернуть блок с выплатами.
-* _Mailing_ - страница рассылок доступна по линку '/mailing'. Создана также иммитация получения данных с апи.
+* *_Mailing_* - страница рассылок доступна по линку '/mailing'. Создана также иммитация получения данных с апи.
 Сворачивается и разворачивается блок с моими рассылками. По нажатию на кнопку "создать рассылку" появляется форма.
 Работают выпадающие списки, сворачивается и разворачивается текстовый виджет, в текстовом виджете 
 дублируется текст, который вводиться в textarea, доступна вставка смайликов из выпадающего меню. 
@@ -118,4 +118,3 @@ HTML, SASS, GitHub, TypeScript, React, Redux, Story Book
 * Доработать адаптивную верстку
 * Провести тщательный рефакторинг по изменению структуры, оптимизации и стандартизации кода, 
   провести проверку линтером и устранить ошибки, удалить ненужные и задублированные фаилы
----
