@@ -28,20 +28,21 @@ function App() {
             {isAuthPage ? null : <NavBar />}
             <PageWrapper>
                 <Routes>
+                    <Route path='/signup' element={<Registration />} />
+                    <Route path='/signin' element={<Login />} />
+                    <Route path='reset-password' element={<ResetPassword />} />
                     <Route path='/' element={<Dashboard />} />
+                    <Route path='/addbot' element={<AddBotPage />} />
+                    <Route path='/botbuilder' element={<BotBuilder />} />
                     <Route
                         path='/subscription_and_payments'
                         element={<SubscriptionAndPayments />}
                     />
-                    <Route path='/addbot' element={<AddBotPage />} />
-                    <Route path='/botbuilder' element={<BotBuilder />} />
-                    <Route path='reset-password' element={<ResetPassword />} />
-                    <Route path='/signup' element={<Registration />} />
-                    <Route path='/signin' element={<Login />} />
+                    <Route path='/chat' element={<Chat />} />
                     <Route path='/partnership' element={<SharedAccess />} />
                     <Route path='/mailing' element={<Mailing />} />
                     <Route path='/ui' element={<UI />} />
-                    <Route path='/chat' element={<Chat />} />
+
                 </Routes>
             </PageWrapper>
             {isAuthPage ? null : <Footer />}

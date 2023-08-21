@@ -93,7 +93,7 @@ const NavBar = ({ ...props }) => {
                             )}
                         </Link>
 
-                        <Link to='addbot'>
+                        <Link to='/addbot'>
                             <button
                                 style={{
                                     background: "#243CBB",

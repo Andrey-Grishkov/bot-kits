@@ -18,7 +18,7 @@ export const mockMenu: MenuItemProps[] = [
     {
         text: "Воронки",
         Icon: FunnelsIcon,
-        link: "/funnels",
+        link: "/botbuilder",
     },
     {
         text: "Рассылки",
